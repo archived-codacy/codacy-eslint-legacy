@@ -1,0 +1,14 @@
+[
+  {
+    "patternId": "quotes",
+    "title": "Quotes Style",
+    "description": "Enforce coherent quotes style",
+    "timeToFix": 5,
+    "parameters": [
+      {
+        "name": "quotesStyle",
+        "description": "The quoting style you prefer [single, double]"
+      }
+    ]
+  }
+]

@@ -1,0 +1,16 @@
+{
+  "name": "eslint",
+  "patterns": [
+    {
+      "patternId": "quotes",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "quotesStyle",
+          "default": "double"
+        }
+      ]
+    }
+  ]
+}
