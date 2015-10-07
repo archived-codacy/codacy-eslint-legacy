@@ -77,13 +77,21 @@ object ESLint extends Tool {
           message =>
             val isFatal = (message \ "fatal").asOpt[Boolean].getOrElse(false)
             if (isFatal) {
-              Some(FileError(SourcePath(FileHelper.stripPath(filePath, basePath)), Some(ErrorMessage((message \ "message").asOpt[String].getOrElse("Fatal Error")))))
+              val path = SourcePath(FileHelper.stripPath(filePath, basePath))
+              val msg = (message \ "message").asOpt[String].getOrElse("Fatal Error")
+              val patternId = PatternId("fatal")
+              val line = ResultLine((message \ "line").asOpt[Int].getOrElse(1))
+
+              val fileError = FileError(path, Some(ErrorMessage(msg)))
+              val issue = Issue(path,ResultMessage(msg), patternId, line)
+
+              Seq(fileError, issue)
             }
             else {
               message.asOpt[WarnResult].map {
                 warn =>
                   Issue(SourcePath(FileHelper.stripPath(filePath, basePath)), ResultMessage(warn.message), PatternId(warn.ruleId), ResultLine(warn.line.asOpt[Int].getOrElse(1)))
-              }
+              }.toSeq
             }
         }
     ).getOrElse(Seq())

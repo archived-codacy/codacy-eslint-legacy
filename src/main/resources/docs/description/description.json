@@ -1,5 +1,11 @@
 [
   {
+    "patternId": "fatal",
+    "title": "Fatal Errors",
+    "description": "Prohibits code that will not run, like code with syntax errors",
+    "timeToFix": 30
+  },
+  {
     "patternId": "quotes",
     "title": "Quotes Style",
     "description": "Enforce coherent quotes style",

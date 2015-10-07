@@ -2,6 +2,11 @@
   "name": "eslint",
   "patterns": [
     {
+      "patternId": "fatal",
+      "level": "Error",
+      "category": "ErrorProne"
+    },
+    {
       "patternId": "quotes",
       "level": "Info",
       "category": "CodeStyle",
