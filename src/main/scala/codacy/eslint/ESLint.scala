@@ -42,10 +42,7 @@ object ESLint extends Tool {
   }
 
   def parameterToConfig(parameter: ParameterDef): String = {
-    parameter.value match {
-      case JsString(value) => value
-      case other => Json.stringify(other)
-    }
+    Json.stringify(parameter.value)
   }
 
   def patternToConfig(pattern: PatternDef): String = {
@@ -61,10 +58,11 @@ object ESLint extends Tool {
   }
 
   def writeConfigFile(patternsToLint: Seq[PatternDef]): String = {
-    val rules : Seq[String] = patternsToLint.map(patternToConfig)
-    val env : Seq[String] = Seq(""""browser":true""")
+    val rules = patternsToLint.map(patternToConfig)
+    val env = Seq(""""es6":true""",""""node":true""",""""browser":true""")
+    val ecmaFeatures = Seq(""""jsx":true""")
 
-    val content = s"""{"rules":{${rules.mkString(",")}},"env":{${env.mkString(",")}}}"""
+    val content = s"""{"rules":{${rules.mkString(",")}},"env":{${env.mkString(",")}},"ecmaFeatures":{${ecmaFeatures.mkString(",")}}}"""
 
     FileHelper.createTmpFile(content, "config", ".json").toString
   }
