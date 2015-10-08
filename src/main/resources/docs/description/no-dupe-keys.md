@@ -4,8 +4,9 @@ The following patterns are considered problems:
 
 ```
 var foo = {
-bar: "baz", bar: "qux" }
-;
+    bar: "baz",
+    bar: "qux"
+};
 
 ```
 

@@ -3,115 +3,67 @@
     "patternId": "fatal",
     "title": "Fatal Errors",
     "description": "Prohibits code that will not run, like code with syntax errors",
-    "timeToFix": 30
-  },
-  {
-    "patternId": "quotes",
-    "title": "Quotes Style",
-    "description": "Enforce coherent quotes style",
-    "timeToFix": 5,
-    "parameters": [
-      {
-        "name": "quotesStyle",
-        "description": "The quoting style you prefer [single, double]"
-      }
-    ]
+    "timeToFix": 10
   },
   {
     "patternId": "comma-dangle",
-    "title": "Disallow or Enforce Dangling Commas (comma-dangle)",
-    "description": "Trailing commas in object literals are valid according to the ECMAScript 5 (and ECMAScript 3!) spec. However, IE8 (when not in IE8 document mode) and below will throw an error when it encounters trailing commas in JavaScript.",
+    "title": "Enforce Dangling Commas",
+    "description": "Enforces consistent use of trailing commas in object and array literals",
     "timeToFix": 5,
     "parameters": [
       {
-        "name": "TODO-ParamName",
-        "description": "TODO-Description"
+        "name": "commaStyle",
+        "description": "The style of trailing commas [never, always, always-multiline]"
       }
     ]
   },
   {
     "patternId": "no-cond-assign",
-    "title": "Disallow Assignment in Conditional Statements (no-cond-assign)",
-    "description": "In conditional statements, it is very easy to mistype a comparison operator (such as ==) as an assignment operator (such as =). For example:",
+    "title": "Prohibit Assignment in Conditions",
+    "description": "Prohibits an assignment operator (such as =) in a conditional statement.",
     "timeToFix": 5,
     "parameters": [
       {
-        "name": "TODO-ParamName",
-        "description": "TODO-Description"
+        "name": "disallowAssignment",
+        "description": "Cases where you want the assignment to be prohibited [except-parens, always]"
       }
     ]
   },
   {
     "patternId": "no-console",
-    "title": "Disallow Use of console (no-console)",
-    "description": "In JavaScript that is designed to be executed in the browser, it's considered a best practice to avoid using methods on console. Such messages are considered to be for debugging purposes and therefore not suitable to ship to the client. In general, calls using console should be stripped before being pushed to production.",
-    "timeToFix": 5,
-    "parameters": [
-      {
-        "name": "TODO-ParamName",
-        "description": "TODO-Description"
-      }
-    ]
+    "title": "Prohibit console messages",
+    "description": "Console messages are considered to be for debugging purposes and therefore not suitable to ship to the client.",
+    "timeToFix": 5
   },
   {
     "patternId": "no-constant-condition",
-    "title": "Disallow use of constant expressions in conditions (no-constant-condition)",
-    "description": "Comparing a literal expression in a condition is usually a typo or development trigger for a specific behavior.",
-    "timeToFix": 5,
-    "parameters": [
-      {
-        "name": "TODO-ParamName",
-        "description": "TODO-Description"
-      }
-    ]
+    "title": "Prohibit constant expressions in conditions",
+    "description": "Comparing a literal expression in a condition is usually a typo",
+    "timeToFix": 10
   },
   {
     "patternId": "no-control-regex",
-    "title": "Disallow Controls Characters in Regular Expressions (no-control-regex)",
-    "description": "Control characters are special, invisible characters in the ASCII range 0-31. These characters are rarely used in JavaScript strings so a regular expression containing these characters is most likely a mistake.",
-    "timeToFix": 5,
-    "parameters": [
-      {
-        "name": "TODO-ParamName",
-        "description": "TODO-Description"
-      }
-    ]
+    "title": "Prohibit Control Characters in Regular Expressions",
+    "description": "Prohibits special, invisible characters in the ASCII range 0-31. These characters are rarely used in JavaScript strings",
+    "timeToFix": 15
   },
   {
     "patternId": "no-debugger",
-    "title": "Disallow debugger (no-debugger)",
+    "title": "Prohibit debugger",
     "description": "The debugger statement is used to tell the executing JavaScript environment to stop execution and start up a debugger at the current point in the code. This has fallen out of favor as a good practice with the advent of modern debugging and development tools. Production code should definitely not contain debugger, as it will cause the browser to stop executing code and open an appropriate debugger.",
-    "timeToFix": 5,
-    "parameters": [
-      {
-        "name": "TODO-ParamName",
-        "description": "TODO-Description"
-      }
-    ]
+    "timeToFix": 5
   },
   {
     "patternId": "no-dupe-args",
-    "title": "No duplicate arguments (no-dupe-args)",
-    "description": "In strict mode you will receive a SyntaxError if a function takes multiple arguments with the same name. Outside of strict mode duplicate arguments will mask the value of the first argument. This rule checks for duplicate parameter names to help prevent that mistake.",
-    "timeToFix": 5,
-    "parameters": [
-      {
-        "name": "TODO-ParamName",
-        "description": "TODO-Description"
-      }
-    ]
+    "title": "Prohibit duplicate arguments",
+    "description": "Prohibits duplicated parameter names in the same function",
+    "timeToFix": 15
   },
   {
     "patternId": "no-dupe-keys",
-    "title": "Disallow Duplicate Keys (no-dupe-keys)",
-    "description": "Creating objects with duplicate keys in objects can cause unexpected behavior in your application. The no-dupe-keys rule flags the use of duplicate keys in object literals.",
-    "timeToFix": 5,
-    "parameters": [
-      {
-        "name": "TODO-ParamName",
-        "description": "TODO-Description"
-      }
-    ]
+    "title": "Prohibit Duplicated Keys",
+    "description": "Prohibits duplicated key names in the same object",
+    "timeToFix": 10
   },
   {
     "patternId": "no-duplicate-case",
@@ -1783,13 +1735,13 @@
   },
   {
     "patternId": "quotes",
-    "title": "Enforce Quote Style (quotes)",
-    "description": "JavaScript allows you to define strings in one of three ways: double quotes, single quotes, and backticks (as of ECMAScript 6). For example:",
+    "title": "Quotes Style",
+    "description": "Enforce coherent quotes style",
     "timeToFix": 5,
     "parameters": [
       {
-        "name": "TODO-ParamName",
-        "description": "TODO-Description"
+        "name": "quotesStyle",
+        "description": "The quoting style you prefer [single, double]"
       }
     ]
   },

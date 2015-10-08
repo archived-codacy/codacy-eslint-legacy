@@ -7,24 +7,13 @@
       "category": "ErrorProne"
     },
     {
-      "patternId": "quotes",
-      "level": "Info",
-      "category": "CodeStyle",
-      "parameters": [
-        {
-          "name": "quotesStyle",
-          "default": "double"
-        }
-      ]
-    },
-    {
       "patternId": "comma-dangle",
       "level": "Warning",
       "category": "CodeStyle",
       "parameters": [
         {
-          "name": "TODO-ParamName",
-          "default": "TODO-DefaultValue"
+          "name": "commaStyle",
+          "default": "never"
         }
       ]
     },
@@ -34,76 +23,40 @@
       "category": "CodeStyle",
       "parameters": [
         {
-          "name": "TODO-ParamName",
-          "default": "TODO-DefaultValue"
+          "name": "disallowAssignment",
+          "default": "except-parens"
         }
       ]
     },
     {
       "patternId": "no-console",
-      "level": "Warning",
-      "category": "CodeStyle",
-      "parameters": [
-        {
-          "name": "TODO-ParamName",
-          "default": "TODO-DefaultValue"
-        }
-      ]
+      "level": "Info",
+      "category": "CodeStyle"
     },
     {
       "patternId": "no-constant-condition",
       "level": "Warning",
-      "category": "CodeStyle",
-      "parameters": [
-        {
-          "name": "TODO-ParamName",
-          "default": "TODO-DefaultValue"
-        }
-      ]
+      "category": "ErrorProne"
     },
     {
       "patternId": "no-control-regex",
       "level": "Warning",
-      "category": "CodeStyle",
-      "parameters": [
-        {
-          "name": "TODO-ParamName",
-          "default": "TODO-DefaultValue"
-        }
-      ]
+      "category": "ErrorProne"
     },
     {
       "patternId": "no-debugger",
-      "level": "Warning",
-      "category": "CodeStyle",
-      "parameters": [
-        {
-          "name": "TODO-ParamName",
-          "default": "TODO-DefaultValue"
-        }
-      ]
+      "level": "Info",
+      "category": "CodeStyle"
     },
     {
       "patternId": "no-dupe-args",
-      "level": "Warning",
-      "category": "CodeStyle",
-      "parameters": [
-        {
-          "name": "TODO-ParamName",
-          "default": "TODO-DefaultValue"
-        }
-      ]
+      "level": "Error",
+      "category": "ErrorProne"
     },
     {
       "patternId": "no-dupe-keys",
       "level": "Warning",
-      "category": "CodeStyle",
-      "parameters": [
-        {
-          "name": "TODO-ParamName",
-          "default": "TODO-DefaultValue"
-        }
-      ]
+      "category": "CodeStyle"
     },
     {
       "patternId": "no-duplicate-case",
@@ -1636,12 +1589,12 @@
     },
     {
       "patternId": "quotes",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle",
       "parameters": [
         {
-          "name": "TODO-ParamName",
-          "default": "TODO-DefaultValue"
+          "name": "quotesStyle",
+          "default": "double"
         }
       ]
     },

@@ -5,10 +5,10 @@ This inspection reports any duplicated case labels on JavaScript switch statemen
 ```
 var a = 1;
 switch (a) {
-case 1: break;
-case 2: break;
-case 1: // duplicate literal 1 break;
-default: break;
+	case 1: break;
+	case 2: break;
+	case 1: // duplicate literal 1 break;
+	default: break;
 }
 
 ```
