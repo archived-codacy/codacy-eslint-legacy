@@ -8,6 +8,14 @@ import scala.util.Try
 
 object FileHelper {
 
+  def createFile(path: String, content: String): Path = {
+    Files.write(
+      Files.createFile(Paths.get(path)),
+      content.getBytes(StandardCharsets.UTF_8),
+      StandardOpenOption.CREATE
+    )
+  }
+
   def createTmpFile(content: String, prefix: String = "config", suffix: String = ".conf"): Path = {
     Files.write(
       Files.createTempFile(prefix, suffix),

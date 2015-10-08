@@ -1,0 +1,18 @@
+It is considered good practice to only throw the Error object itself or an object using the Error object as base objects for user-defined exceptions. The fundamental benefit of Error objects is that they automatically keep track of where they were built and originated.
+This rule restricts what can be thrown as an exception. When it was first created, it only prevented literals from being thrown (hence the name), but it has now been expanded to only allow expressions which have a possibility of being an Error object.
+This rule is aimed at maintaining consistency when throwing exception by disallowing to throw literals and other expressions which cannot possibly be an Error object.
+
+```
+/*eslint no-throw-literal: 2*/ /*eslint-env es6*/ throw "error";
+/*error Expected an object to be thrown.*/ throw 0;
+/*error Expected an object to be thrown.*/ throw undefined;
+/*error Do not throw undefined.*/ throw null;
+/*error Expected an object to be thrown.*/ var err = new Error();
+throw "an " + err;
+/*error Expected an object to be thrown.*/ // err is recast to a string literal var err = new Error();
+throw `${
+err}
+` /*error Expected an object to be thrown.*/
+```
+
+[Source](http://eslint.org/docs/rules/no-throw-literal)

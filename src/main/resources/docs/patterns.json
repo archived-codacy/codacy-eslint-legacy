@@ -16,6 +16,1964 @@
           "default": "double"
         }
       ]
+    },
+    {
+      "patternId": "comma-dangle",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-cond-assign",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-console",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-constant-condition",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-control-regex",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-debugger",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-dupe-args",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-dupe-keys",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-duplicate-case",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-empty-character-class",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-empty",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-ex-assign",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-extra-boolean-cast",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-extra-parens",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-extra-semi",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-func-assign",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-inner-declarations",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-invalid-regexp",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-irregular-whitespace",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-negated-in-lhs",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-obj-calls",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-regex-spaces",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-sparse-arrays",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-unreachable",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "use-isnan",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "valid-jsdoc",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "valid-typeof",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-unexpected-multiline",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "accessor-pairs",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "block-scoped-var",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "complexity",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "consistent-return",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "curly",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "default-case",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "dot-notation",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "dot-location",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "eqeqeq",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "guard-for-in",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-alert",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-caller",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-div-regex",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-else-return",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-empty-label",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-eq-null",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-eval",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-extend-native",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-extra-bind",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-fallthrough",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-floating-decimal",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-implicit-coercion",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-implied-eval",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-invalid-this",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-iterator",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-labels",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-lone-blocks",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-loop-func",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-multi-spaces",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-multi-str",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-native-reassign",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-new-func",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-new-wrappers",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-new",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-octal-escape",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-octal",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-param-reassign",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-process-env",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-proto",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-redeclare",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-return-assign",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-script-url",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-self-compare",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-sequences",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-throw-literal",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-unused-expressions",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-useless-call",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-useless-concat",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-void",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-warning-comments",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-with",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "radix",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "vars-on-top",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "wrap-iife",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "yoda",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "strict",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "init-declarations",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-catch-shadow",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-delete-var",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-label-var",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-shadow-restricted-names",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-shadow",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-undef-init",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-undef",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-undefined",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-unused-vars",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-use-before-define",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "callback-return",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "global-require",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "handle-callback-err",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-mixed-requires",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-new-require",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-path-concat",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-process-exit",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-restricted-modules",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-sync",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "array-bracket-spacing",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "block-spacing",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "brace-style",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "camelcase",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "comma-spacing",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "comma-style",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "computed-property-spacing",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "consistent-this",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "eol-last",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "func-names",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "func-style",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "id-length",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "id-match",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "indent",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "jsx-quotes",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "key-spacing",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "lines-around-comment",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "linebreak-style",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "max-nested-callbacks",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "new-cap",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "new-parens",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "newline-after-var",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-array-constructor",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-continue",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-inline-comments",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-lonely-if",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-mixed-spaces-and-tabs",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-multiple-empty-lines",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-nested-ternary",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-negated-condition",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-new-object",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-restricted-syntax",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-spaced-func",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-ternary",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-trailing-spaces",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-underscore-dangle",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-unneeded-ternary",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "object-curly-spacing",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "one-var",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "operator-assignment",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "operator-linebreak",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "padded-blocks",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "quote-props",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "quotes",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "require-jsdoc",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "semi-spacing",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "semi",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "sort-vars",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "space-after-keywords",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "space-before-keywords",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "space-before-blocks",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "space-before-function-paren",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "space-in-parens",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "space-infix-ops",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "space-return-throw-case",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "space-unary-ops",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "spaced-comment",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "wrap-regex",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "arrow-parens",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "arrow-spacing",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "constructor-super",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "generator-star-spacing",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-class-assign",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-const-assign",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-dupe-class-members",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-this-before-super",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "no-var",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "object-shorthand",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "prefer-arrow-callback",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "prefer-const",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "prefer-spread",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "prefer-reflect",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "prefer-template",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
+    },
+    {
+      "patternId": "require-yield",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "TODO-ParamName",
+          "default": "TODO-DefaultValue"
+        }
+      ]
     }
   ]
 }
