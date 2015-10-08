@@ -4,9 +4,11 @@ The following patterns are considered problems:
 
 ```
 if (!!foo) {
-// ... }
+// ... 
+}
 if (foo) {
-// ... }
+// ... 
+}
 
 ```
 

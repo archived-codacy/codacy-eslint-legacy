@@ -67,73 +67,43 @@
   },
   {
     "patternId": "no-duplicate-case",
-    "title": "Rule to disallow a duplicate case label (no-duplicate-case)",
-    "description": "A switch statements with duplicate case labels is normally an indication of a programmer error.",
-    "timeToFix": 5,
-    "parameters": [
-      {
-        "name": "TODO-ParamName",
-        "description": "TODO-Description"
-      }
-    ]
+    "title": "Prohibit duplicate case label",
+    "description": "A switch statement with duplicate case labels is an error.",
+    "timeToFix": 10
   },
   {
     "patternId": "no-empty-character-class",
-    "title": "Disallow Empty Character Classes (no-empty-character-class)",
-    "description": "Empty character classes in regular expressions do not match anything and can result in code that may not work as intended.",
-    "timeToFix": 5,
-    "parameters": [
-      {
-        "name": "TODO-ParamName",
-        "description": "TODO-Description"
-      }
-    ]
+    "title": "Prohibit malformed Regular Expressions",
+    "description": "Prohibits empty character classes in regular expressions, they do not match anything.",
+    "timeToFix": 20
   },
   {
     "patternId": "no-empty",
-    "title": "Disallow Empty Block Statements (no-empty)",
-    "description": "Empty statements usually occur due to refactoring that wasn't completed, such as:",
-    "timeToFix": 5,
-    "parameters": [
-      {
-        "name": "TODO-ParamName",
-        "description": "TODO-Description"
-      }
-    ]
+    "title": "Prohibit empty Block Statements",
+    "description": "Prohibits empty block statements, they are useless",
+    "timeToFix": 5
   },
   {
     "patternId": "no-ex-assign",
-    "title": "Disallow Assignment of the Exception Parameter (no-ex-assign)",
-    "description": "When an error is caught using a catch block, it's possible to accidentally (or purposely) overwrite the reference to the error. Such as:",
-    "timeToFix": 5,
-    "parameters": [
-      {
-        "name": "TODO-ParamName",
-        "description": "TODO-Description"
-      }
-    ]
+    "title": "Prohibit assignment of the Exception Parameter",
+    "description": "When an error is caught using a catch block, it's possible to accidentally (or purposely) overwrite the reference to the error.",
+    "timeToFix": 10
   },
   {
     "patternId": "no-extra-boolean-cast",
-    "title": "Disallow Extra Boolean Casts (no-extra-boolean-cast)",
-    "description": "In contexts such as an if statement's test where the result of the expression will already be coerced to a Boolean, casting to a Boolean via double negation (!!) is unnecessary. For example, these if statements are equivalent:",
-    "timeToFix": 5,
-    "parameters": [
-      {
-        "name": "TODO-ParamName",
-        "description": "TODO-Description"
-      }
-    ]
+    "title": "Prohibit extra boolean casts",
+    "description": "Prohibits extra boolean casts like using double negation (!!)",
+    "timeToFix": 10
   },
   {
     "patternId": "no-extra-parens",
-    "title": "Disallow Extra Parens (no-extra-parens)",
-    "description": "This rule restricts the use of parentheses to only where they are necessary. It may be restricted to report only function expressions.",
-    "timeToFix": 5,
+    "title": "Prohibit Extra Parentheses",
+    "description": "Restricts the use of parentheses to only where they are necessary.",
+    "timeToFix": 10,
     "parameters": [
       {
-        "name": "TODO-ParamName",
-        "description": "TODO-Description"
+        "name": "unnecessaryParens",
+        "description": "Cases where will report unnecessary parentheses[all, functions]"
       }
     ]
   },

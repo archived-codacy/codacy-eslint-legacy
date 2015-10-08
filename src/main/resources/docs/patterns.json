@@ -55,72 +55,42 @@
     },
     {
       "patternId": "no-dupe-keys",
-      "level": "Warning",
-      "category": "CodeStyle"
+      "level": "Error",
+      "category": "ErrorProne"
     },
     {
       "patternId": "no-duplicate-case",
-      "level": "Warning",
-      "category": "CodeStyle",
-      "parameters": [
-        {
-          "name": "TODO-ParamName",
-          "default": "TODO-DefaultValue"
-        }
-      ]
+      "level": "Error",
+      "category": "ErrorProne"
     },
     {
       "patternId": "no-empty-character-class",
-      "level": "Warning",
-      "category": "CodeStyle",
-      "parameters": [
-        {
-          "name": "TODO-ParamName",
-          "default": "TODO-DefaultValue"
-        }
-      ]
+      "level": "Error",
+      "category": "ErrorProne"
     },
     {
       "patternId": "no-empty",
-      "level": "Warning",
-      "category": "CodeStyle",
-      "parameters": [
-        {
-          "name": "TODO-ParamName",
-          "default": "TODO-DefaultValue"
-        }
-      ]
+      "level": "Info",
+      "category": "UnusedCode"
     },
     {
       "patternId": "no-ex-assign",
       "level": "Warning",
-      "category": "CodeStyle",
-      "parameters": [
-        {
-          "name": "TODO-ParamName",
-          "default": "TODO-DefaultValue"
-        }
-      ]
+      "category": "ErrorProne"
     },
     {
       "patternId": "no-extra-boolean-cast",
       "level": "Warning",
-      "category": "CodeStyle",
-      "parameters": [
-        {
-          "name": "TODO-ParamName",
-          "default": "TODO-DefaultValue"
-        }
-      ]
+      "category": "UnusedCode"
     },
     {
       "patternId": "no-extra-parens",
-      "level": "Warning",
-      "category": "CodeStyle",
+      "level": "Info",
+      "category": "UnusedCode",
       "parameters": [
         {
-          "name": "TODO-ParamName",
-          "default": "TODO-DefaultValue"
+          "name": "unnecessaryParens",
+          "default": "all"
         }
       ]
     },
