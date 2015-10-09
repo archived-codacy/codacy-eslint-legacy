@@ -3,10 +3,15 @@ This rule is aimed at eliminating potential errors as the result of comparing ag
 The following patterns are considered problems:
 
 ```
-/*eslint use-isnan: 2*/ if (foo == NaN) {
-/*error Use the isNaN function to compare with NaN.*/ // ... }
-if (foo != NaN) {
-/*error Use the isNaN function to compare with NaN.*/ // ... }
+/*eslint use-isnan: 2*/
+
+if (foo == NaN) { /*error Use the isNaN function to compare with NaN.*/
+    // ...
+}
+
+if (foo != NaN) { /*error Use the isNaN function to compare with NaN.*/
+    // ...
+}
 
 ```
 

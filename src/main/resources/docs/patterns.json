@@ -128,101 +128,47 @@
     {
       "patternId": "no-negated-in-lhs",
       "level": "Warning",
-      "category": "CodeStyle",
-      "parameters": [
-        {
-          "name": "TODO-ParamName",
-          "default": "TODO-DefaultValue"
-        }
-      ]
+      "category": "ErrorProne"
     },
     {
       "patternId": "no-obj-calls",
-      "level": "Warning",
-      "category": "CodeStyle",
-      "parameters": [
-        {
-          "name": "TODO-ParamName",
-          "default": "TODO-DefaultValue"
-        }
-      ]
+      "level": "Error",
+      "category": "ErrorProne"
     },
     {
       "patternId": "no-regex-spaces",
       "level": "Warning",
-      "category": "CodeStyle",
-      "parameters": [
-        {
-          "name": "TODO-ParamName",
-          "default": "TODO-DefaultValue"
-        }
-      ]
+      "category": "ErrorProne"
     },
     {
       "patternId": "no-sparse-arrays",
       "level": "Warning",
-      "category": "CodeStyle",
-      "parameters": [
-        {
-          "name": "TODO-ParamName",
-          "default": "TODO-DefaultValue"
-        }
-      ]
+      "category": "ErrorProne"
     },
     {
       "patternId": "no-unreachable",
       "level": "Warning",
-      "category": "CodeStyle",
-      "parameters": [
-        {
-          "name": "TODO-ParamName",
-          "default": "TODO-DefaultValue"
-        }
-      ]
+      "category": "UnusedCode"
     },
     {
       "patternId": "use-isnan",
-      "level": "Warning",
-      "category": "CodeStyle",
-      "parameters": [
-        {
-          "name": "TODO-ParamName",
-          "default": "TODO-DefaultValue"
-        }
-      ]
+      "level": "Error",
+      "category": "ErrorProne"
     },
     {
       "patternId": "valid-jsdoc",
-      "level": "Warning",
-      "category": "CodeStyle",
-      "parameters": [
-        {
-          "name": "TODO-ParamName",
-          "default": "TODO-DefaultValue"
-        }
-      ]
+      "level": "Info",
+      "category": "Documentation"
     },
     {
       "patternId": "valid-typeof",
-      "level": "Warning",
-      "category": "CodeStyle",
-      "parameters": [
-        {
-          "name": "TODO-ParamName",
-          "default": "TODO-DefaultValue"
-        }
-      ]
+      "level": "Error",
+      "category": "ErrorProne"
     },
     {
       "patternId": "no-unexpected-multiline",
-      "level": "Warning",
-      "category": "CodeStyle",
-      "parameters": [
-        {
-          "name": "TODO-ParamName",
-          "default": "TODO-DefaultValue"
-        }
-      ]
+      "level": "Error",
+      "category": "ErrorProne"
     },
     {
       "patternId": "accessor-pairs",

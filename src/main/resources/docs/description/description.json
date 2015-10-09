@@ -145,111 +145,57 @@
   },
   {
     "patternId": "no-negated-in-lhs",
-    "title": "Disallow negated left operand of in operator",
-    "description": "This error is raised to highlight a potential error. Commonly, when a developer intends to write",
-    "timeToFix": 5,
-    "parameters": [
-      {
-        "name": "TODO-ParamName",
-        "description": "TODO-Description"
-      }
-    ]
+    "title": "Prohibit negated left operand in operator",
+    "description": "This error is raised to highlight a potential error, usually you want to negate both operand.",
+    "timeToFix": 15
   },
   {
     "patternId": "no-obj-calls",
-    "title": "Disallow Global Object Function Calls",
-    "description": "ECMAScript provides several global objects that are intended to be used as-is. Some of these objects look as if they could be constructors due their capitalization (such as Math and JSON) but will throw an error if you try to execute them as functions.",
-    "timeToFix": 5,
-    "parameters": [
-      {
-        "name": "TODO-ParamName",
-        "description": "TODO-Description"
-      }
-    ]
+    "title": "Prohibit Global Object function calls",
+    "description": "ECMAScript provides several global objects that are intended to be used as-is. Some will throw an error if you try to execute them as functions.",
+    "timeToFix": 10
   },
   {
     "patternId": "no-regex-spaces",
-    "title": "Disallow Spaces in Regular Expressions",
-    "description": "Regular expressions can be very complex and difficult to understand, which is why it's important to keep them as simple as possible in order to avoid mistakes. One of the more error-prone things you can do with a regular expression is to use more than one space, such as:",
-    "timeToFix": 5,
-    "parameters": [
-      {
-        "name": "TODO-ParamName",
-        "description": "TODO-Description"
-      }
-    ]
+    "title": "Prohibit Spaces in Regular Expressions",
+    "description": "Prohibits the usage of spaces in Regular expressions",
+    "timeToFix": 5
   },
   {
     "patternId": "no-sparse-arrays",
-    "title": "Disallow Sparse Arrays",
-    "description": "Sparse arrays contain empty slots, most frequently due to multiple commas being used in an array literal, such as:",
-    "timeToFix": 5,
-    "parameters": [
-      {
-        "name": "TODO-ParamName",
-        "description": "TODO-Description"
-      }
-    ]
+    "title": "Prohibit Sparse Arrays",
+    "description": "Prohibits the usage of sparse arrays.",
+    "timeToFix": 20
   },
   {
     "patternId": "no-unreachable",
-    "title": "Disallow Unreachable Code",
+    "title": "Prohibit Unreachable Code",
     "description": "A number of statements unconditionally exit a block of code. Any statements after that will not be executed and may be an error. The presence of unreachable code is usually a sign of a coding error.",
-    "timeToFix": 5,
-    "parameters": [
-      {
-        "name": "TODO-ParamName",
-        "description": "TODO-Description"
-      }
-    ]
+    "timeToFix": 20
   },
   {
     "patternId": "use-isnan",
-    "title": "Require isNaN()",
-    "description": "In JavaScript, NaN is a special value of the Number type. It's used to represent any of the \"not-a-number\" values represented by the double-precision 64-bit format as specified by the IEEE Standard for Binary Floating-Point Arithmetic. NaN has the unique property of not being equal to anything, including itself. That is to say, that the condition NaN !== NaN evaluates to true.",
-    "timeToFix": 5,
-    "parameters": [
-      {
-        "name": "TODO-ParamName",
-        "description": "TODO-Description"
-      }
-    ]
+    "title": "Enforce isNaN() to test for NaN",
+    "description": "Enforces that you use isNaN instead of (== NaN) to compare with NaN",
+    "timeToFix": 10
   },
   {
     "patternId": "valid-jsdoc",
-    "title": "Validates JSDoc comments are syntactically correct",
-    "description": "JSDoc is a JavaScript API documentation generator. It uses specially-formatted comments inside of code to generate API documentation automatically. For example, this is what a JSDoc comment looks like for a function:",
-    "timeToFix": 5,
-    "parameters": [
-      {
-        "name": "TODO-ParamName",
-        "description": "TODO-Description"
-      }
-    ]
+    "title": "Enforce JSDoc correctness",
+    "description": "Makes sure that your JSDoc generates your documentation correctly",
+    "timeToFix": 15
   },
   {
     "patternId": "valid-typeof",
-    "title": "Ensures that the results of typeof are compared against a valid string",
-    "description": "For a vast majority of use-cases, the only valid results of the typeof operator will be one of the following: \"undefined\", \"object\", \"boolean\", \"number\", \"string\", and \"function\". When the result of a typeof operation is compared against a string that is not one of these strings, it is usually a typo. This rule ensures that when the result of a typeof operation is compared against a string, that string is in the aforementioned set.",
-    "timeToFix": 5,
-    "parameters": [
-      {
-        "name": "TODO-ParamName",
-        "description": "TODO-Description"
-      }
-    ]
+    "title": "Prohibit invalid typeof comparisons",
+    "description": "Prohibits comparisons with strings that will never be a valid return of a typeof",
+    "timeToFix": 5
   },
   {
     "patternId": "no-unexpected-multiline",
-    "title": "Avoid unexpected multiline expressions",
-    "description": "Semicolons are optional in JavaScript, via a process called automatic semicolon insertion (ASI). See the documentation for semi for a fuller discussion of that feature.",
-    "timeToFix": 5,
-    "parameters": [
-      {
-        "name": "TODO-ParamName",
-        "description": "TODO-Description"
-      }
-    ]
+    "title": "Prohibit unexpected multiline expressions",
+    "description": "Prohibits unexpected multiline expressions when not using semicolons",
+    "timeToFix": 15
   },
   {
     "patternId": "accessor-pairs",

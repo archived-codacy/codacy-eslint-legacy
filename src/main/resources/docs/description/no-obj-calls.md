@@ -2,10 +2,12 @@ ECMAScript provides several global objects that are intended to be used as-is. S
 The ECMAScript 5 specification makes it clear that both Math and JSON cannot be invoked:
 This rule is aimed at preventing the accidental calling of global objects as functions.
 
+The following patterns are considered problems:
 ```
-/*eslint no-obj-calls: 2*/ var x = Math();
-/*error 'Math' is not a function.*/ var y = JSON();
-/*error 'JSON' is not a function.*/
+/*eslint no-obj-calls: 2*/ 
+
+var x = Math(); /*error 'Math' is not a function.*/
+var y = JSON();/*error 'JSON' is not a function.*/
 ```
 
 [Source](http://eslint.org/docs/rules/no-obj-calls)
