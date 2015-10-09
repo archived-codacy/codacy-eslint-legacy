@@ -4,12 +4,12 @@ The following patterns are considered problems:
 
 ```
 function doSomething() {
-if (true) {
-var build = true;
-}
-console.log(build);
-}
+    if (true) {
+        var build = true;
+    }
 
+    console.log(build);
+}
 ```
 
 [Source](http://eslint.org/docs/rules/block-scoped-var)

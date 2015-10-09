@@ -199,109 +199,79 @@
   },
   {
     "patternId": "accessor-pairs",
-    "title": "Enforces getter/setter pairs in objects",
-    "description": "It's a common mistake in JavaScript to create an object with just a setter for a property but never have a corresponding getter defined for it. Without a getter, you cannot read the property, so it ends up not being used.",
-    "timeToFix": 5,
-    "parameters": [
-      {
-        "name": "TODO-ParamName",
-        "description": "TODO-Description"
-      }
-    ]
+    "title": "Enforce getter/setter pairs in objects",
+    "description": "When you define a setter, you must also define a getter.",
+    "timeToFix": 10
   },
   {
     "patternId": "block-scoped-var",
-    "title": "Treat var as Block Scoped",
-    "description": "The block-scoped-var rule generates warnings when variables are used outside of the block in which they were defined. This emulates C-style block scope.",
-    "timeToFix": 5,
-    "parameters": [
-      {
-        "name": "TODO-ParamName",
-        "description": "TODO-Description"
-      }
-    ]
+    "title": "Prohibit out of scope variables",
+    "description": "Prohibits the usage of variables outside the block where they are defined",
+    "timeToFix": 15
   },
   {
     "patternId": "complexity",
-    "title": "Limit Cyclomatic Complexity",
-    "description": "Cyclomatic complexity measures the number of linearly independent paths through a program's source code. This rule allows setting a cyclomatic complexity threshold.",
-    "timeToFix": 5,
+    "title": "Prohibits high Cyclomatic Complexity",
+    "description": "Cyclomatic complexity measures the number paths through a program's source code. Usually, the lower the better.",
+    "timeToFix": 40,
     "parameters": [
       {
-        "name": "TODO-ParamName",
-        "description": "TODO-Description"
+        "name": "threshold",
+        "description": "The maximum cyclomatic complexity you want to allow"
       }
     ]
   },
   {
     "patternId": "consistent-return",
-    "title": "Require Consistent Returns",
-    "description": "One of the confusing aspects of JavaScript is that any function may or may not return a value at any point in time. When a function exits without any return statement executing, the function returns undefined. Similarly, calling return without specifying any value will cause the function to return undefined. Only when return is called with a value is there a change in the function's return value.",
-    "timeToFix": 5,
-    "parameters": [
-      {
-        "name": "TODO-ParamName",
-        "description": "TODO-Description"
-      }
-    ]
+    "title": "Enforce Consistent Returns",
+    "description": "Enforces that every return statement in a function to return the same type",
+    "timeToFix": 20
   },
   {
     "patternId": "curly",
-    "title": "Require Following Curly Brace Conventions",
-    "description": "JavaScript allows the omission of curly braces when a block contains only one statement. However, it is considered by many to be best practice to never omit curly braces around blocks, even when they are optional, because it can lead to bugs and reduces code clarity. So the following:",
-    "timeToFix": 5,
+    "title": "Enforce Curly Brace Conventions",
+    "description": "Enforces that you use the same curly brace convention throughout all the code",
+    "timeToFix": 10,
     "parameters": [
       {
-        "name": "TODO-ParamName",
-        "description": "TODO-Description"
+        "name": "bracesConvention",
+        "description": "The convention used by this pattern [all, multi, multi-line, multi-or-nest]"
       }
     ]
   },
   {
     "patternId": "default-case",
-    "title": "Require Default Case in Switch Statements",
-    "description": "Some code conventions require that all switch statements have a default case, even if the default case is empty, such as:",
-    "timeToFix": 5,
-    "parameters": [
-      {
-        "name": "TODO-ParamName",
-        "description": "TODO-Description"
-      }
-    ]
+    "title": "Enforce Default in Switch",
+    "description": "Enforces that you have a default case in your switch statements",
+    "timeToFix": 15
   },
   {
     "patternId": "dot-notation",
-    "title": "Require Dot Notation",
-    "description": "In JavaScript, one can access properties using the dot notation (foo.bar) or square-bracket notation (foo[\"bar\"]). However, the dot notation is often preferred because it is easier to read, less verbose, and works better with aggressive JavaScript minimizers.",
-    "timeToFix": 5,
-    "parameters": [
-      {
-        "name": "TODO-ParamName",
-        "description": "TODO-Description"
-      }
-    ]
+    "title": "Prohibit square-bracket notation",
+    "description": "Prohibits access properties using the square-bracket notation (foo[\"bar\"]).",
+    "timeToFix": 10
   },
   {
     "patternId": "dot-location",
-    "title": "Enforce newline before and after dot",
-    "description": "JavaScript allows you to place newlines before or after a dot in a member expression.",
+    "title": "Enforce coherent multiline dot",
+    "description": "Enforces the dot location when accessing a member in an object",
     "timeToFix": 5,
     "parameters": [
       {
-        "name": "TODO-ParamName",
-        "description": "TODO-Description"
+        "name": "dotConvention",
+        "description": "Specifies where you prefer the dot [property, object]"
       }
     ]
   },
   {
     "patternId": "eqeqeq",
-    "title": "Require === and !==",
-    "description": "It is considered good practice to use the type-safe equality operators === and !== instead of their regular counterparts == and !=.",
+    "title": "Enforce === and !==",
+    "description": "Requires the use of === and !== instead of == and !=",
     "timeToFix": 5,
     "parameters": [
       {
-        "name": "TODO-ParamName",
-        "description": "TODO-Description"
+        "name": "equalityStyle",
+        "description": "The style of equality to follow [smart, allow-null]"
       }
     ]
   },

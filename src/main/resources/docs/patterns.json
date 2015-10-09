@@ -172,80 +172,50 @@
     },
     {
       "patternId": "accessor-pairs",
-      "level": "Warning",
-      "category": "CodeStyle",
-      "parameters": [
-        {
-          "name": "TODO-ParamName",
-          "default": "TODO-DefaultValue"
-        }
-      ]
+      "level": "Error",
+      "category": "ErrorProne"
     },
     {
       "patternId": "block-scoped-var",
       "level": "Warning",
-      "category": "CodeStyle",
-      "parameters": [
-        {
-          "name": "TODO-ParamName",
-          "default": "TODO-DefaultValue"
-        }
-      ]
+      "category": "ErrorProne"
     },
     {
       "patternId": "complexity",
       "level": "Warning",
-      "category": "CodeStyle",
+      "category": "ErrorProne",
       "parameters": [
         {
-          "name": "TODO-ParamName",
-          "default": "TODO-DefaultValue"
+          "name": "complexity",
+          "default": 3
         }
       ]
     },
     {
       "patternId": "consistent-return",
-      "level": "Warning",
-      "category": "CodeStyle",
-      "parameters": [
-        {
-          "name": "TODO-ParamName",
-          "default": "TODO-DefaultValue"
-        }
-      ]
+      "level": "Error",
+      "category": "ErrorProne"
     },
     {
       "patternId": "curly",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle",
       "parameters": [
         {
-          "name": "TODO-ParamName",
-          "default": "TODO-DefaultValue"
+          "name": "bracesConvention",
+          "default": "all"
         }
       ]
     },
     {
       "patternId": "default-case",
-      "level": "Warning",
-      "category": "CodeStyle",
-      "parameters": [
-        {
-          "name": "TODO-ParamName",
-          "default": "TODO-DefaultValue"
-        }
-      ]
+      "level": "Error",
+      "category": "ErrorProne"
     },
     {
       "patternId": "dot-notation",
       "level": "Warning",
-      "category": "CodeStyle",
-      "parameters": [
-        {
-          "name": "TODO-ParamName",
-          "default": "TODO-DefaultValue"
-        }
-      ]
+      "category": "CodeStyle"
     },
     {
       "patternId": "dot-location",
@@ -253,19 +223,19 @@
       "category": "CodeStyle",
       "parameters": [
         {
-          "name": "TODO-ParamName",
-          "default": "TODO-DefaultValue"
+          "name": "dotConvention",
+          "default": "property"
         }
       ]
     },
     {
       "patternId": "eqeqeq",
       "level": "Warning",
-      "category": "CodeStyle",
+      "category": "ErrorProne",
       "parameters": [
         {
-          "name": "TODO-ParamName",
-          "default": "TODO-DefaultValue"
+          "name": "equalityStyle",
+          "default": "smart"
         }
       ]
     },
