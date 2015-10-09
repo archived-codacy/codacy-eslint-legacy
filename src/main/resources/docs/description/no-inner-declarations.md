@@ -2,24 +2,32 @@ In JavaScript, prior to ES6, a function declaration is only allowed in the first
 A variable declaration is permitted anywhere a statement can go, even nested deeply inside other blocks. This is often undesirable due to variable hoisting, and moving declarations to the root of the program or function body can increase clarity. Note that block bindings (let, const) are not hoisted and therefore they are not affected by this rule.
 This rule requires that function declarations and, optionally, variable declarations be in the root of a program or the body of a function.
 
+
+When Not To Use It
+
+The function declaration portion rule will be rendered obsolete when block-scoped functions land in ES6, but until then, it should be left on to enforce valid constructions. Disable checking variable declarations when using block-scoped-var or if declaring variables in nested blocks is acceptable despite hoisting.
+
 ```
-// Good function doSomething() {
-}
-// Bad if (test) {
-function doSomethingElse () {
-}
-}
-function anotherThing() {
-var fn;
+// Good
+function doSomething() { }
+
+// Bad
 if (test) {
-// Good fn = function expression() {
-}
-;
-// Bad function declaration() {
-}
-}
+    function doSomethingElse () { }
 }
 
+function anotherThing() {
+    var fn;
+
+    if (test) {
+
+        // Good
+        fn = function expression() { };
+
+        // Bad
+        function declaration() { }
+    }
+}
 ```
 
 [Source](http://eslint.org/docs/rules/no-inner-declarations)

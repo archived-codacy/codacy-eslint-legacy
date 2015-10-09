@@ -3,12 +3,12 @@ Fixable: This rule is automatically fixable using the --fix flag on the command 
 This rule is aimed at eliminating extra unnecessary semicolons. While not technically an error, extra semicolons can be a source of confusion when reading code.
 
 ```
-/*eslint no-extra-semi: 2*/ var x = 5;
-;
-/*error Unnecessary semicolon.*/ function foo() {
-// code }
-;
-/*error Unnecessary semicolon.*/
+/*eslint no-extra-semi: 2*/
+var x = 5;; /*error Unnecessary semicolon.*/
+
+function foo() {
+	// code
+}; /*error Unnecessary semicolon.*/
 ```
 
 [Source](http://eslint.org/docs/rules/no-extra-semi)

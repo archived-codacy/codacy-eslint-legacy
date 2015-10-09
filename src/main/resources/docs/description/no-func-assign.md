@@ -3,10 +3,8 @@ This rule is aimed at flagging probable mistakes and issues in the form of overw
 The following patterns are considered problems:
 
 ```
-function foo() {
-}
+function foo() {}
 foo = bar;
-
 ```
 
 [Source](http://eslint.org/docs/rules/no-func-assign)

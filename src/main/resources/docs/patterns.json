@@ -96,25 +96,13 @@
     },
     {
       "patternId": "no-extra-semi",
-      "level": "Warning",
-      "category": "CodeStyle",
-      "parameters": [
-        {
-          "name": "TODO-ParamName",
-          "default": "TODO-DefaultValue"
-        }
-      ]
+      "level": "Info",
+      "category": "UnusedCode"
     },
     {
       "patternId": "no-func-assign",
       "level": "Warning",
-      "category": "CodeStyle",
-      "parameters": [
-        {
-          "name": "TODO-ParamName",
-          "default": "TODO-DefaultValue"
-        }
-      ]
+      "category": "ErrorProne"
     },
     {
       "patternId": "no-inner-declarations",
@@ -122,32 +110,20 @@
       "category": "CodeStyle",
       "parameters": [
         {
-          "name": "TODO-ParamName",
-          "default": "TODO-DefaultValue"
+          "name": "checkType",
+          "default": "functions"
         }
       ]
     },
     {
       "patternId": "no-invalid-regexp",
-      "level": "Warning",
-      "category": "CodeStyle",
-      "parameters": [
-        {
-          "name": "TODO-ParamName",
-          "default": "TODO-DefaultValue"
-        }
-      ]
+      "level": "Error",
+      "category": "ErrorProne"
     },
     {
       "patternId": "no-irregular-whitespace",
-      "level": "Warning",
-      "category": "CodeStyle",
-      "parameters": [
-        {
-          "name": "TODO-ParamName",
-          "default": "TODO-DefaultValue"
-        }
-      ]
+      "level": "Error",
+      "category": "ErrorProne"
     },
     {
       "patternId": "no-negated-in-lhs",
