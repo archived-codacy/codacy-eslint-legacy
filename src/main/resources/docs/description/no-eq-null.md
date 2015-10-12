@@ -4,7 +4,7 @@ The following patterns are considered problems:
 
 ```
 if (foo == null) {
-bar();
+	bar();
 }
 
 ```

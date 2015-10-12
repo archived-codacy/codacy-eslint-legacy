@@ -24,7 +24,7 @@
     "timeToFix": 5,
     "parameters": [
       {
-        "name": "disallowAssignment",
+        "name": "ProhibitAssignment",
         "description": "Cases where you want the assignment to be prohibited [except-parens, always]"
       }
     ]
@@ -277,127 +277,67 @@
   },
   {
     "patternId": "guard-for-in",
-    "title": "Require Guarding for-in",
-    "description": "Looping over objects with a for in loop will include properties that are inherited through the prototype chain. This behavior can lead to unexpected items in your for loop.",
-    "timeToFix": 5,
-    "parameters": [
-      {
-        "name": "TODO-ParamName",
-        "description": "TODO-Description"
-      }
-    ]
+    "title": "Enforce Guarding for-in",
+    "description": "Enforces that you make sure the properties exist when looping over objects",
+    "timeToFix": 10
   },
   {
     "patternId": "no-alert",
-    "title": "Disallow Use of Alert",
-    "description": "JavaScripts' alert, confirm, and prompt functions are widely considered to be obtrusive as UI elements and should be replaced by a more appropriate custom UI implementation. Furthermore, alert is often used while debugging code, which should be removed before deployment to production.",
-    "timeToFix": 5,
-    "parameters": [
-      {
-        "name": "TODO-ParamName",
-        "description": "TODO-Description"
-      }
-    ]
+    "title": "Prohibits Alert",
+    "description": "Prohibits the usage of alert, confirm, and prompt, as they are widely considered to be obtrusive as UI elements",
+    "timeToFix": 30
   },
   {
     "patternId": "no-caller",
-    "title": "Disallow Use of caller/callee",
-    "description": "The use of arguments.caller and arguments.callee make several code optimizations impossible. They have been deprecated in future versions of JavaScript and their use is forbidden in ECMAScript 5 while in strict mode.",
-    "timeToFix": 5,
-    "parameters": [
-      {
-        "name": "TODO-ParamName",
-        "description": "TODO-Description"
-      }
-    ]
+    "title": "Prohibit caller/callee",
+    "description": "Prohibits the usage of arguments.caller and arguments.callee",
+    "timeToFix": 20
   },
   {
     "patternId": "no-div-regex",
-    "title": "Disallow Regexs That Look Like Division",
-    "description": "Require regex literals to escape division operators.",
-    "timeToFix": 5,
-    "parameters": [
-      {
-        "name": "TODO-ParamName",
-        "description": "TODO-Description"
-      }
-    ]
+    "title": "Prohibit Regex like division",
+    "description": "Prohibits regexs that look like a division",
+    "timeToFix": 15
   },
   {
     "patternId": "no-else-return",
-    "title": "Disallow return in else",
-    "description": "If an if block contains a return statement, the else block becomes unnecessary. Its contents can be placed outside of the block.",
-    "timeToFix": 5,
-    "parameters": [
-      {
-        "name": "TODO-ParamName",
-        "description": "TODO-Description"
-      }
-    ]
+    "title": "Prohibit return in else",
+    "description": "Prohibits using return inside a else blockIf an if block contains a return statement, its contents can be placed outside of the block.",
+    "timeToFix": 15
   },
   {
     "patternId": "no-empty-label",
-    "title": "No empty labels",
-    "description": "Labeled statements are only used in conjunction with labeled break and continue statements. ECMAScript has no goto statement.",
-    "timeToFix": 5,
-    "parameters": [
-      {
-        "name": "TODO-ParamName",
-        "description": "TODO-Description"
-      }
-    ]
+    "title": "Prohibit empty labels",
+    "description": "Prohibits labels when they're used to mark a statement that are not an iteration or switch",
+    "timeToFix": 5
   },
   {
     "patternId": "no-eq-null",
-    "title": "Disallow Null Comparisons",
-    "description": "Comparing to null without a type-checking operator (== or !=), can have unintended results as the comparison will evaluate to true when comparing to not just a null, but also an undefined value.",
-    "timeToFix": 5,
-    "parameters": [
-      {
-        "name": "TODO-ParamName",
-        "description": "TODO-Description"
-      }
-    ]
+    "title": "Prohibit Null Comparisons ==",
+    "description": "Prohibits comparing null with == or !=, use === or !== instead",
+    "timeToFix": 5
   },
   {
     "patternId": "no-eval",
-    "title": "Disallow eval()",
-    "description": "JavaScript's eval() function is potentially dangerous and is often misused. Using eval() on untrusted code can open a program up to several different injection attacks. The use of eval() in most contexts can be substituted for a better, alternative approach to a problem.",
-    "timeToFix": 5,
-    "parameters": [
-      {
-        "name": "TODO-ParamName",
-        "description": "TODO-Description"
-      }
-    ]
+    "title": "Prohibit eval()",
+    "description": "Prohibits the usage of eval()",
+    "timeToFix": 5
   },
   {
     "patternId": "no-extend-native",
-    "title": "Disallow Extending of Native Objects",
-    "description": "In JavaScript, you can extend any object, including builtin or \"native\" objects. Sometimes people change the behavior of these native objects in ways that break the assumptions made about them in other parts of the code.",
-    "timeToFix": 5,
-    "parameters": [
-      {
-        "name": "TODO-ParamName",
-        "description": "TODO-Description"
-      }
-    ]
+    "title": "Prohibit Extending of Native Objects",
+    "description": "Prohibits extension of native objects.",
+    "timeToFix": 20
   },
   {
     "patternId": "no-extra-bind",
-    "title": "Disallow unnecessary function binding",
-    "description": "The bind() method is used to create functions with specific this values and, optionally, binds arguments to specific values. When used to specify the value of this, it's important that the function actually use this in its function body. For example:",
-    "timeToFix": 5,
-    "parameters": [
-      {
-        "name": "TODO-ParamName",
-        "description": "TODO-Description"
-      }
-    ]
+    "title": "Prohibit unnecessary function binding",
+    "description": "Prohibits bind() method when it does not accomplish anything",
+    "timeToFix": 15
   },
   {
     "patternId": "no-fallthrough",
-    "title": "Disallow Case Statement Fallthrough",
+    "title": "Prohibit Case Statement Fallthrough",
     "description": "The switch statement in JavaScript is one of the more error-prone constructs of the language thanks in part to the ability to \"fall through\" from one case to the next. For example:",
     "timeToFix": 5,
     "parameters": [
@@ -409,7 +349,7 @@
   },
   {
     "patternId": "no-floating-decimal",
-    "title": "Disallow Floating Decimals",
+    "title": "Prohibit Floating Decimals",
     "description": "Float values in JavaScript contain a decimal point, and there is no requirement that the decimal point be preceded or followed by a number. For example, the following are all valid JavaScript numbers:",
     "timeToFix": 5,
     "parameters": [
@@ -421,7 +361,7 @@
   },
   {
     "patternId": "no-implicit-coercion",
-    "title": "Disallow the type conversion with shorter notations.",
+    "title": "Prohibit the type conversion with shorter notations.",
     "description": "In JavaScript, there are a lot of different ways to convert value types. Some of them might be hard to read and understand.",
     "timeToFix": 5,
     "parameters": [
@@ -433,8 +373,8 @@
   },
   {
     "patternId": "no-implied-eval",
-    "title": "Disallow Implied eval()",
-    "description": "It's considered a good practice to avoid using eval() in JavaScript. There are security and performance implications involved with doing so, which is why many linters (including ESLint) recommend disallowing eval(). However, there are some other ways to pass a string and have it interpreted as JavaScript code that have similar concerns.",
+    "title": "Prohibit Implied eval()",
+    "description": "It's considered a good practice to avoid using eval() in JavaScript. There are security and performance implications involved with doing so, which is why many linters (including ESLint) recommend Prohibiting eval(). However, there are some other ways to pass a string and have it interpreted as JavaScript code that have similar concerns.",
     "timeToFix": 5,
     "parameters": [
       {
@@ -445,7 +385,7 @@
   },
   {
     "patternId": "no-invalid-this",
-    "title": "Disallow this keywords outside of classes or class-like objects.",
+    "title": "Prohibit this keywords outside of classes or class-like objects.",
     "description": "Under the strict mode, this keywords outside of classes or class-like objects might be undefined and raise a TypeError.",
     "timeToFix": 5,
     "parameters": [
@@ -457,7 +397,7 @@
   },
   {
     "patternId": "no-iterator",
-    "title": "Disallow Iterator",
+    "title": "Prohibit Iterator",
     "description": "The __iterator__ property was a SpiderMonkey extension to JavaScript that could be used to create custom iterators that are compatible with JavaScript's for in and for each constructs. However, this property is now obsolete, so it should not be used. Here's an example of how this used to work:",
     "timeToFix": 5,
     "parameters": [
@@ -469,7 +409,7 @@
   },
   {
     "patternId": "no-labels",
-    "title": "Disallow Labeled Statements",
+    "title": "Prohibit Labeled Statements",
     "description": "Labeled statements in JavaScript are used in conjunction with break and continue to control flow around multiple loops. For example:",
     "timeToFix": 5,
     "parameters": [
@@ -481,7 +421,7 @@
   },
   {
     "patternId": "no-lone-blocks",
-    "title": "Disallow Unnecessary Nested Blocks",
+    "title": "Prohibit Unnecessary Nested Blocks",
     "description": "In JavaScript, prior to ES6, standalone code blocks delimited by curly braces do not create a new scope and have no use. For example, these curly braces do nothing to foo:",
     "timeToFix": 5,
     "parameters": [
@@ -493,7 +433,7 @@
   },
   {
     "patternId": "no-loop-func",
-    "title": "Disallow Functions in Loops",
+    "title": "Prohibit Functions in Loops",
     "description": "Writing functions within loops tends to result in errors due to the way the function creates a closure around the loop. For example:",
     "timeToFix": 5,
     "parameters": [
@@ -505,7 +445,7 @@
   },
   {
     "patternId": "no-multi-spaces",
-    "title": "Disallow multiple spaces",
+    "title": "Prohibit multiple spaces",
     "description": "Multiple spaces in a row that are not used for indentation are typically mistakes. For example:",
     "timeToFix": 5,
     "parameters": [
@@ -517,7 +457,7 @@
   },
   {
     "patternId": "no-multi-str",
-    "title": "Disallow Multiline Strings",
+    "title": "Prohibit Multiline Strings",
     "description": "It's possible to create multiline strings in JavaScript by using a slash before a newline, such as:",
     "timeToFix": 5,
     "parameters": [
@@ -529,7 +469,7 @@
   },
   {
     "patternId": "no-native-reassign",
-    "title": "Disallow Reassignment of Native Objects",
+    "title": "Prohibit Reassignment of Native Objects",
     "description": "Reports an error when they encounter an attempt to assign a value to built-in native object.",
     "timeToFix": 5,
     "parameters": [
@@ -541,7 +481,7 @@
   },
   {
     "patternId": "no-new-func",
-    "title": "Disallow Function Constructor",
+    "title": "Prohibit Function Constructor",
     "description": "It's possible to create functions in JavaScript using the Function constructor, such as:",
     "timeToFix": 5,
     "parameters": [
@@ -553,7 +493,7 @@
   },
   {
     "patternId": "no-new-wrappers",
-    "title": "Disallow Primitive Wrapper Instances",
+    "title": "Prohibit Primitive Wrapper Instances",
     "description": "There are three primitive types in JavaScript that have wrapper objects: string, number, and boolean. These are represented by the constructors String, Number, and Boolean, respectively. The primitive wrapper types are used whenever one of these primitive values is read, providing them with object-like capabilities such as methods. Behind the scenes, an object of the associated wrapper type is created and then destroyed, which is why you can call methods on primitive values, such as:",
     "timeToFix": 5,
     "parameters": [
@@ -565,7 +505,7 @@
   },
   {
     "patternId": "no-new",
-    "title": "Disallow new For Side Effects",
+    "title": "Prohibit new For Side Effects",
     "description": "The goal of using new with a constructor is typically to create an object of a particular type and store that object in a variable, such as:",
     "timeToFix": 5,
     "parameters": [
@@ -577,7 +517,7 @@
   },
   {
     "patternId": "no-octal-escape",
-    "title": "Disallow Octal Escapes",
+    "title": "Prohibit Octal Escapes",
     "description": "As of version 5 of the ECMAScript specification, octal escape sequences are a deprecated feature and should not be used. It is recommended that Unicode escapes be used instead.",
     "timeToFix": 5,
     "parameters": [
@@ -589,7 +529,7 @@
   },
   {
     "patternId": "no-octal",
-    "title": "Disallow Octal Literals",
+    "title": "Prohibit Octal Literals",
     "description": "Octal literals are numerals that begin with a leading zero, such as:",
     "timeToFix": 5,
     "parameters": [
@@ -601,7 +541,7 @@
   },
   {
     "patternId": "no-param-reassign",
-    "title": "Disallow Reassignment of Function Parameters",
+    "title": "Prohibit Reassignment of Function Parameters",
     "description": "Assignment to variables declared as function parameters can be misleading and lead to confusing behavior, as modifying function parameters will also mutate the arguments object. Often, assignment to function parameters is unintended and indicative of a mistake or programmer error.",
     "timeToFix": 5,
     "parameters": [
@@ -613,7 +553,7 @@
   },
   {
     "patternId": "no-process-env",
-    "title": "Disallow process.env",
+    "title": "Prohibit process.env",
     "description": "The process.env object in Node.js is used to store deployment/configuration parameters. Littering it through out a project could lead to maintenance issues as it's another kind of global dependency. As such, it could lead to merge conflicts in a multi-user setup and deployment issues in a multi-server setup. Instead, one of the best practices is to define all those parameters in a single configuration/settings file which could be accessed throughout the project.",
     "timeToFix": 5,
     "parameters": [
@@ -625,7 +565,7 @@
   },
   {
     "patternId": "no-proto",
-    "title": "Disallow Use of __proto__",
+    "title": "Prohibit Use of __proto__",
     "description": "__proto__ property has been deprecated as of ECMAScript 3.1 and shouldn't be used in the code. Use getPrototypeOf method instead.",
     "timeToFix": 5,
     "parameters": [
@@ -637,7 +577,7 @@
   },
   {
     "patternId": "no-redeclare",
-    "title": "Disallow Redeclaring Variables",
+    "title": "Prohibit Redeclaring Variables",
     "description": "In JavaScript, it's possible to redeclare the same variable name using var. This can lead to confusion as to where the variable is actually declared and initialized.",
     "timeToFix": 5,
     "parameters": [
@@ -649,7 +589,7 @@
   },
   {
     "patternId": "no-return-assign",
-    "title": "Disallow Assignment in return Statement",
+    "title": "Prohibit Assignment in return Statement",
     "description": "One of the interesting, and sometimes confusing, aspects of JavaScript is that assignment can happen at almost any point. Because of this, an errant equals sign can end up causing assignment when the true intent was to do a comparison. This is especially true when using a return statement. For example:",
     "timeToFix": 5,
     "parameters": [
@@ -661,7 +601,7 @@
   },
   {
     "patternId": "no-script-url",
-    "title": "Disallow Script URLs",
+    "title": "Prohibit Script URLs",
     "description": "Using javascript: URLs is considered by some as a form of eval. Code passed in javascript: URLs has to be parsed and evaluated by the browser in the same way that eval is processed.",
     "timeToFix": 5,
     "parameters": [
@@ -673,7 +613,7 @@
   },
   {
     "patternId": "no-self-compare",
-    "title": "Disallow Self Compare",
+    "title": "Prohibit Self Compare",
     "description": "Comparing a variable against itself is usually an error, either an typo or refactoring error. It is confusing to the reader and may potentially introduce a runtime error.",
     "timeToFix": 5,
     "parameters": [
@@ -685,7 +625,7 @@
   },
   {
     "patternId": "no-sequences",
-    "title": "Disallow Use of the Comma Operator",
+    "title": "Prohibit Use of the Comma Operator",
     "description": "The comma operator includes multiple expressions where only one is expected. It evaluates each operand from left to right and returns the value of the last operand. However, this frequently obscures side effects, and its use is often an accident. Here are some examples of its use:",
     "timeToFix": 5,
     "parameters": [
@@ -709,7 +649,7 @@
   },
   {
     "patternId": "no-unused-expressions",
-    "title": "Disallow Unused Expressions",
+    "title": "Prohibit Unused Expressions",
     "description": "Unused expressions are those expressions that evaluate to a value but are never used. For example:",
     "timeToFix": 5,
     "parameters": [
@@ -721,7 +661,7 @@
   },
   {
     "patternId": "no-useless-call",
-    "title": "Disallow unnecessary .call() and .apply().",
+    "title": "Prohibit unnecessary .call() and .apply().",
     "description": "The function invocation can be written by Function.prototype.call() and Function.prototype.apply(). But Function.prototype.call() and Function.prototype.apply() are slower than the normal function invocation.",
     "timeToFix": 5,
     "parameters": [
@@ -733,7 +673,7 @@
   },
   {
     "patternId": "no-useless-concat",
-    "title": "Disallow unncessary concatenation of strings",
+    "title": "Prohibit unncessary concatenation of strings",
     "description": "It is unncessary to concatenate two strings together when they are on the same line since they could be combined into a single string (\"a\" + \"b\" -> \"ab\").",
     "timeToFix": 5,
     "parameters": [
@@ -745,7 +685,7 @@
   },
   {
     "patternId": "no-void",
-    "title": "Disallow use of the void operator.",
+    "title": "Prohibit use of the void operator.",
     "description": "The void operator takes an operand and returns undefined: void expression will evaluate expression and return undefined. It can be used to ignore any side effects expression may produce:",
     "timeToFix": 5,
     "parameters": [
@@ -757,7 +697,7 @@
   },
   {
     "patternId": "no-warning-comments",
-    "title": "Disallow Warning Comments",
+    "title": "Prohibit Warning Comments",
     "description": "Often code is marked during development process for later work on it or with additional thoughts. Examples are typically // TODO: do something or // FIXME: this is not a good idea. These comments are a warning signal, that there is something not production ready in your code. Most likely you want to fix it or remove the comments before you roll out your code with a good feeling.",
     "timeToFix": 5,
     "parameters": [
@@ -817,7 +757,7 @@
   },
   {
     "patternId": "yoda",
-    "title": "Require or disallow Yoda Conditions",
+    "title": "Require or Prohibit Yoda Conditions",
     "description": "Yoda conditions are so named because the literal value of the condition comes first while the variable comes second. For example, the following is a Yoda condition:",
     "timeToFix": 5,
     "parameters": [
@@ -841,7 +781,7 @@
   },
   {
     "patternId": "init-declarations",
-    "title": "Enforce/Disallow Variable Initializations",
+    "title": "Enforce/Prohibit Variable Initializations",
     "description": "In JavaScript, variables can be assigned during declaration, or at any point afterwards using an assignment statement. For example, in the following code, foo is initialized during declaration, while bar is initialized later.",
     "timeToFix": 5,
     "parameters": [
@@ -853,7 +793,7 @@
   },
   {
     "patternId": "no-catch-shadow",
-    "title": "Disallow Shadowing of Variables Inside of catch",
+    "title": "Prohibit Shadowing of Variables Inside of catch",
     "description": "In IE 8 and earlier, the catch clause parameter can overwrite the value of a variable in the outer scope, if that variable has the same name as the catch clause parameter.",
     "timeToFix": 5,
     "parameters": [
@@ -865,7 +805,7 @@
   },
   {
     "patternId": "no-delete-var",
-    "title": "Disallow Variables Deletion",
+    "title": "Prohibit Variables Deletion",
     "description": "This rule prevents the use of delete operator on variables:",
     "timeToFix": 5,
     "parameters": [
@@ -877,8 +817,8 @@
   },
   {
     "patternId": "no-label-var",
-    "title": "Disallow Labels That Are Variables Names",
-    "description": "This rule aims to create clearer code by disallowing the bad practice of creating a label that shares a name with a variable that is in scope.",
+    "title": "Prohibit Labels That Are Variables Names",
+    "description": "This rule aims to create clearer code by Prohibiting the bad practice of creating a label that shares a name with a variable that is in scope.",
     "timeToFix": 5,
     "parameters": [
       {
@@ -889,7 +829,7 @@
   },
   {
     "patternId": "no-shadow-restricted-names",
-    "title": "Disallow Shadowing of Restricted Names",
+    "title": "Prohibit Shadowing of Restricted Names",
     "description": "ES5 §15.1.1 Value Properties of the Global Object (NaN, Infinity, undefined) as well as strict mode restricted identifiers eval and arguments are considered to be restricted names in JavaScript. Defining them to mean something else can have unintended consequences and confuse others reading the code. For example, there's nothing prevent you from writing:",
     "timeToFix": 5,
     "parameters": [
@@ -901,7 +841,7 @@
   },
   {
     "patternId": "no-shadow",
-    "title": "Disallow Shadowing",
+    "title": "Prohibit Shadowing",
     "description": "Shadowing is the process by which a local variable shares the same name as a variable in its containing scope. For example:",
     "timeToFix": 5,
     "parameters": [
@@ -913,7 +853,7 @@
   },
   {
     "patternId": "no-undef-init",
-    "title": "Disallow Initializing to undefined",
+    "title": "Prohibit Initializing to undefined",
     "description": "In JavaScript, a variable that is declared and not initialized to any value automatically gets the value of undefined. For example:",
     "timeToFix": 5,
     "parameters": [
@@ -925,7 +865,7 @@
   },
   {
     "patternId": "no-undef",
-    "title": "Disallow Undeclared Variables",
+    "title": "Prohibit Undeclared Variables",
     "description": "Any reference to an undeclared variable causes a warning, unless the variable is explicitly mentioned in a /*global ...*/ comment. This rule provides compatibility with JSHint's and JSLint's treatment of global variables.",
     "timeToFix": 5,
     "parameters": [
@@ -937,8 +877,8 @@
   },
   {
     "patternId": "no-undefined",
-    "title": "Disallow Use of undefined Variable",
-    "description": "The undefined variable is unique in JavaScript because it is actually a property of the global object. As such, in ECMAScript 3 it was possible to overwrite the value of undefined. While ECMAScript 5 disallows overwriting undefined, it's still possible to shadow undefined, such as:",
+    "title": "Prohibit Use of undefined Variable",
+    "description": "The undefined variable is unique in JavaScript because it is actually a property of the global object. As such, in ECMAScript 3 it was possible to overwrite the value of undefined. While ECMAScript 5 Prohibits overwriting undefined, it's still possible to shadow undefined, such as:",
     "timeToFix": 5,
     "parameters": [
       {
@@ -949,7 +889,7 @@
   },
   {
     "patternId": "no-unused-vars",
-    "title": "Disallow Unused Variables",
+    "title": "Prohibit Unused Variables",
     "description": "Variables that are declared and not used anywhere in the code are most likely an error due to incomplete refactoring. Such variables take up space in the code and can lead to confusion by readers.",
     "timeToFix": 5,
     "parameters": [
@@ -961,7 +901,7 @@
   },
   {
     "patternId": "no-use-before-define",
-    "title": "Disallow Early Use",
+    "title": "Prohibit Early Use",
     "description": "In JavaScript, prior to ES6, variable and function declarations are hoisted to the top of a scope, so it's possible to use identifiers before their formal declarations in code. This can be confusing and some believe it is best to always declare variables and functions before using them.",
     "timeToFix": 5,
     "parameters": [
@@ -985,7 +925,7 @@
   },
   {
     "patternId": "global-require",
-    "title": "Disallow require() outside of the top-level module scope.",
+    "title": "Prohibit require() outside of the top-level module scope.",
     "description": "Declaring module's dependencies at the beginning of a module improves readability and provides insight to other developers about what modules are required. Declaring these dependencies inline within other parts of the code may make them harder to spot and could lead to poorly-maintainable code in the long term.",
     "timeToFix": 5,
     "parameters": [
@@ -1009,7 +949,7 @@
   },
   {
     "patternId": "no-mixed-requires",
-    "title": "Disallow Mixed Requires",
+    "title": "Prohibit Mixed Requires",
     "description": "In the Node.JS community it is often customary to separate the required modules from other variable declarations, sometimes also grouping them by their type. This rule helps you enforce this convention.",
     "timeToFix": 5,
     "parameters": [
@@ -1021,7 +961,7 @@
   },
   {
     "patternId": "no-new-require",
-    "title": "Disallow new require",
+    "title": "Prohibit new require",
     "description": "The require function is used to include modules that exist in separate files, such as:",
     "timeToFix": 5,
     "parameters": [
@@ -1033,7 +973,7 @@
   },
   {
     "patternId": "no-path-concat",
-    "title": "Disallow string concatenation when using _dirname and _filename",
+    "title": "Prohibit string concatenation when using _dirname and _filename",
     "description": "In Node.js, the __dirname and __filename global variables contain the directory path and the file path of the currently executing script file, respectively. Sometimes, developers try to use these variables to create paths to other files, such as:",
     "timeToFix": 5,
     "parameters": [
@@ -1045,7 +985,7 @@
   },
   {
     "patternId": "no-process-exit",
-    "title": "Disallow process.exit()",
+    "title": "Prohibit process.exit()",
     "description": "The process.exit() method in Node.js is used to immediately stop the Node.js process and exit. This is a dangerous operation because it can occur in any method at any point in time, potentially stopping a Node.js application completely when an error occurs. For example:",
     "timeToFix": 5,
     "parameters": [
@@ -1057,8 +997,8 @@
   },
   {
     "patternId": "no-restricted-modules",
-    "title": "Disallow Node modules",
-    "description": "Disallowing usage of specific node modules can be useful if you want to control the available methods, a developer can use, to implement a feature.",
+    "title": "Prohibit Node modules",
+    "description": "Prohibiting usage of specific node modules can be useful if you want to control the available methods, a developer can use, to implement a feature.",
     "timeToFix": 5,
     "parameters": [
       {
@@ -1069,7 +1009,7 @@
   },
   {
     "patternId": "no-sync",
-    "title": "Disallow Synchronous Methods",
+    "title": "Prohibit Synchronous Methods",
     "description": "In Node.js, most I/O is done through asynchronous methods. However, there are often synchronous versions of the asynchronous methods. For example, fs.exists() and fs.existsSync(). In some contexts, using synchronous operations is okay (if, as with ESLint, you are writing a command line utility). However, in other contexts the use of synchronous operations is considered a bad practice that should be avoided. For example, if you are running a high-travel web server on Node.js, you should consider carefully if you want to allow any synchronous operations that could lock up the server.",
     "timeToFix": 5,
     "parameters": [
@@ -1081,8 +1021,8 @@
   },
   {
     "patternId": "array-bracket-spacing",
-    "title": "Disallow or enforce spaces inside of brackets.",
-    "description": "A number of style guides require or disallow spaces between array brackets. This rule applies to both array literals and destructuring assignment (EcmaScript 6) using arrays.",
+    "title": "Prohibit or enforce spaces inside of brackets.",
+    "description": "A number of style guides require or Prohibit spaces between array brackets. This rule applies to both array literals and destructuring assignment (EcmaScript 6) using arrays.",
     "timeToFix": 5,
     "parameters": [
       {
@@ -1093,7 +1033,7 @@
   },
   {
     "patternId": "block-spacing",
-    "title": "Disallow or enforce spaces inside of single line blocks.",
+    "title": "Prohibit or enforce spaces inside of single line blocks.",
     "description": "This rule is for spacing style within single line blocks.",
     "timeToFix": 5,
     "parameters": [
@@ -1153,8 +1093,8 @@
   },
   {
     "patternId": "computed-property-spacing",
-    "title": "Disallow or enforce spaces inside of computed properties.",
-    "description": "While formatting preferences are very personal, a number of style guides require or disallow spaces between computed properties in the following situations:",
+    "title": "Prohibit or enforce spaces inside of computed properties.",
+    "description": "While formatting preferences are very personal, a number of style guides require or Prohibit spaces between computed properties in the following situations:",
     "timeToFix": 5,
     "parameters": [
       {
@@ -1285,7 +1225,7 @@
   },
   {
     "patternId": "linebreak-style",
-    "title": "Disallow mixing CRLF and LF linebreaks",
+    "title": "Prohibit mixing CRLF and LF linebreaks",
     "description": "When developing with a lot of people all having different editors, VCS applications and operating systems it may occur that different line endings are written by either of the mentioned (might especially happen when using the windows and mac versions of SourceTree together).",
     "timeToFix": 5,
     "parameters": [
@@ -1333,7 +1273,7 @@
   },
   {
     "patternId": "newline-after-var",
-    "title": "Require or disallow an empty newline after variable declarations",
+    "title": "Require or Prohibit an empty newline after variable declarations",
     "description": "As of today there is no consistency in separating variable declarations from the rest of the code. Some developers leave an empty line between var statements and the rest of the code like:",
     "timeToFix": 5,
     "parameters": [
@@ -1345,7 +1285,7 @@
   },
   {
     "patternId": "no-array-constructor",
-    "title": "Disallow creation of dense arrays using the Array constructor",
+    "title": "Prohibit creation of dense arrays using the Array constructor",
     "description": "Use of the Array constructor to construct a new array is generally discouraged in favour of array literal notation because of the single-argument pitfall and because the Array global may be redefined. The exception is when the Array constructor is used to intentionally create sparse arrays of a specified size by giving the constructor a single numeric argument.",
     "timeToFix": 5,
     "parameters": [
@@ -1357,7 +1297,7 @@
   },
   {
     "patternId": "no-continue",
-    "title": "Disallow continue",
+    "title": "Prohibit continue",
     "description": "The continue statement terminates execution of the statements in the current iteration of the current or labeled loop, and continues execution of the loop with the next iteration. When used incorrectly it makes code less testable, less readable and less maintainable. Structured control flow statements such as if should be used instead.",
     "timeToFix": 5,
     "parameters": [
@@ -1369,8 +1309,8 @@
   },
   {
     "patternId": "no-inline-comments",
-    "title": "Disallows comments after code. Comments must come on their own lines",
-    "description": "Some style guides disallow a comments on the same line as code. If there are comments immediately following code, it can make it harder to read the code. On the other hand, it is sometimes faster and more obvious to put comments immediately following code.",
+    "title": "Prohibits comments after code. Comments must come on their own lines",
+    "description": "Some style guides Prohibit a comments on the same line as code. If there are comments immediately following code, it can make it harder to read the code. On the other hand, it is sometimes faster and more obvious to put comments immediately following code.",
     "timeToFix": 5,
     "parameters": [
       {
@@ -1381,7 +1321,7 @@
   },
   {
     "patternId": "no-lonely-if",
-    "title": "Disallow if as the Only Statement in an else Block",
+    "title": "Prohibit if as the Only Statement in an else Block",
     "description": "If an if statement is the only statement in the else block of a parent if statement, it is often clearer to combine the two to using else if form.",
     "timeToFix": 5,
     "parameters": [
@@ -1393,7 +1333,7 @@
   },
   {
     "patternId": "no-mixed-spaces-and-tabs",
-    "title": "Disallow mixed spaces and tabs for indentation",
+    "title": "Prohibit mixed spaces and tabs for indentation",
     "description": "Most code conventions require either tabs or spaces be used for indentation. As such, it's usually an error if a single line of code is indented with both tabs and spaces.",
     "timeToFix": 5,
     "parameters": [
@@ -1405,7 +1345,7 @@
   },
   {
     "patternId": "no-multiple-empty-lines",
-    "title": "Disallows multiple blank lines",
+    "title": "Prohibits multiple blank lines",
     "description": "Some developers prefer to have multiple blank lines removed, while others feel that it helps improve readability. Whitespace is useful for separating logical sections of code, but excess whitespace takes up more of the screen.",
     "timeToFix": 5,
     "parameters": [
@@ -1417,8 +1357,8 @@
   },
   {
     "patternId": "no-nested-ternary",
-    "title": "Disallow Nested Ternaries",
-    "description": "Nesting ternary expressions makes code unclear. The no-nested-ternary rule disallows the use of nested ternary expressions.",
+    "title": "Prohibit Nested Ternaries",
+    "description": "Nesting ternary expressions makes code unclear. The no-nested-ternary rule Prohibits the use of nested ternary expressions.",
     "timeToFix": 5,
     "parameters": [
       {
@@ -1429,7 +1369,7 @@
   },
   {
     "patternId": "no-negated-condition",
-    "title": "Disallow use of negated expressions in conditions",
+    "title": "Prohibit use of negated expressions in conditions",
     "description": "Checks against the use of a negated expression in an if condition when the else branch is not empty or in a ternary operator. Negated conditions are more difficult to understand. Code can be made more readable by inverting the condition instead.",
     "timeToFix": 5,
     "parameters": [
@@ -1441,7 +1381,7 @@
   },
   {
     "patternId": "no-new-object",
-    "title": "Disallow the use of the Object constructor",
+    "title": "Prohibit the use of the Object constructor",
     "description": "The Object constructor is used to create new generic objects in JavaScript, such as:",
     "timeToFix": 5,
     "parameters": [
@@ -1453,7 +1393,7 @@
   },
   {
     "patternId": "no-restricted-syntax",
-    "title": "Disallow certain syntax",
+    "title": "Prohibit certain syntax",
     "description": "Some code bases prefer to not use certain features of JavaScript that are identified on the parsed AST such as FunctionExpression or WithStatement. This is implemented to warn on any AST node type that is passed to it. You may find the full list of AST node names you can use on GitHub and use the online parser to see what type of nodes your code consists of.",
     "timeToFix": 5,
     "parameters": [
@@ -1465,7 +1405,7 @@
   },
   {
     "patternId": "no-spaced-func",
-    "title": "Disallow Spaces in Function Calls",
+    "title": "Prohibit Spaces in Function Calls",
     "description": "While it's possible to have whitespace between the name of a function and the parentheses that execute it, such patterns tend to look more like errors.",
     "timeToFix": 5,
     "parameters": [
@@ -1477,7 +1417,7 @@
   },
   {
     "patternId": "no-ternary",
-    "title": "Disallow Ternary Operators",
+    "title": "Prohibit Ternary Operators",
     "description": "The ternary operator is used to conditionally assign a value to a variable. Some believe that the use of ternary operators leads to unclear code.",
     "timeToFix": 5,
     "parameters": [
@@ -1489,7 +1429,7 @@
   },
   {
     "patternId": "no-trailing-spaces",
-    "title": "Disallow trailing spaces at the end of lines",
+    "title": "Prohibit trailing spaces at the end of lines",
     "description": "Sometimes in the course of editing files, you can end up with extra whitespace at the end of lines. These whitespace differences can be picked up by source control systems and flagged as diffs, causing frustration for developers. While this extra whitespace causes no functional issues, many code conventions require that trailing spaces be removed before checkin.",
     "timeToFix": 5,
     "parameters": [
@@ -1501,7 +1441,7 @@
   },
   {
     "patternId": "no-underscore-dangle",
-    "title": "Disallow Dangling Underscores in Identifiers",
+    "title": "Prohibit Dangling Underscores in Identifiers",
     "description": "As far as naming conventions for identifiers go, dangling underscores may be the most polarizing in JavaScript. Dangling underscores are underscores at either the beginning or end of an identifier, such as:",
     "timeToFix": 5,
     "parameters": [
@@ -1513,7 +1453,7 @@
   },
   {
     "patternId": "no-unneeded-ternary",
-    "title": "Disallow conditional expressions that can be expressed with simpler constructs",
+    "title": "Prohibit conditional expressions that can be expressed with simpler constructs",
     "description": "It's a common mistake in JavaScript to use a conditional expression to select between two Boolean values instead of using ! to convert the test to a Boolean. Here are some examples:",
     "timeToFix": 5,
     "parameters": [
@@ -1525,8 +1465,8 @@
   },
   {
     "patternId": "object-curly-spacing",
-    "title": "Disallow or enforce spaces inside of curly braces in objects.",
-    "description": "While formatting preferences are very personal, a number of style guides require or disallow spaces between curly braces in the following situations:",
+    "title": "Prohibit or enforce spaces inside of curly braces in objects.",
+    "description": "While formatting preferences are very personal, a number of style guides require or Prohibit spaces between curly braces in the following situations:",
     "timeToFix": 5,
     "parameters": [
       {
@@ -1537,7 +1477,7 @@
   },
   {
     "patternId": "one-var",
-    "title": "Require or Disallow One Variable Declaration per Scope",
+    "title": "Require or Prohibit One Variable Declaration per Scope",
     "description": "Variables can be declared at any point in JavaScript code using var, let, or const. There are many styles and preferences related to the declaration of variables, and one of those is deciding on how many variable declarations should be allowed in a single function.",
     "timeToFix": 5,
     "parameters": [
@@ -1633,7 +1573,7 @@
   },
   {
     "patternId": "semi",
-    "title": "Enforce or Disallow Semicolons",
+    "title": "Enforce or Prohibit Semicolons",
     "description": "JavaScript is unique amongst the C-like languages in that it doesn't require semicolons at the end of each statement. In many cases, the JavaScript engine can determine that a semicolon should be in a certain spot and will automatically add it. This feature is known as automatic semicolon insertion (ASI) and is considered one of the more controversial features of JavaScript. For example, the following lines are both valid:",
     "timeToFix": 5,
     "parameters": [
@@ -1657,8 +1597,8 @@
   },
   {
     "patternId": "space-after-keywords",
-    "title": "Require or disallow spaces following keywords",
-    "description": "Some style guides will require or disallow spaces following the certain keywords.",
+    "title": "Require or Prohibit spaces following keywords",
+    "description": "Some style guides will require or Prohibit spaces following the certain keywords.",
     "timeToFix": 5,
     "parameters": [
       {
@@ -1669,8 +1609,8 @@
   },
   {
     "patternId": "space-before-keywords",
-    "title": "Require or disallow spaces before keywords",
-    "description": "Some styleguides require or disallow spaces preceding certain keywords.",
+    "title": "Require or Prohibit spaces before keywords",
+    "description": "Some styleguides require or Prohibit spaces preceding certain keywords.",
     "timeToFix": 5,
     "parameters": [
       {
@@ -1681,7 +1621,7 @@
   },
   {
     "patternId": "space-before-blocks",
-    "title": "Require Or Disallow Space Before Blocks",
+    "title": "Require Or Prohibit Space Before Blocks",
     "description": "Consistency is an important part of any style guide. While it is a personal preference where to put the opening brace of blocks, it should be consistent across a whole project. Having an inconsistent style distracts the reader from seeing the important parts of the code.",
     "timeToFix": 5,
     "parameters": [
@@ -1693,7 +1633,7 @@
   },
   {
     "patternId": "space-before-function-paren",
-    "title": "Require or disallow a space before function parenthesis",
+    "title": "Require or Prohibit a space before function parenthesis",
     "description": "When formatting a function, whitespace is allowed between the function name or function keyword and the opening paren. Named functions also require a space between the function keyword and the function name, but anonymous functions require no whitespace. For example:",
     "timeToFix": 5,
     "parameters": [
@@ -1705,8 +1645,8 @@
   },
   {
     "patternId": "space-in-parens",
-    "title": "Disallow or enforce spaces inside of parentheses",
-    "description": "Some style guides require or disallow spaces inside of parentheses:",
+    "title": "Prohibit or enforce spaces inside of parentheses",
+    "description": "Some style guides require or Prohibit spaces inside of parentheses:",
     "timeToFix": 5,
     "parameters": [
       {
@@ -1741,8 +1681,8 @@
   },
   {
     "patternId": "space-unary-ops",
-    "title": "Require or disallow spaces before/after unary operators",
-    "description": "Some styleguides require or disallow spaces before or after unary operators. This is mainly a stylistic issue, however, some JavaScript expressions can be written without spacing which makes it harder to read and maintain.",
+    "title": "Require or Prohibit spaces before/after unary operators",
+    "description": "Some styleguides require or Prohibit spaces before or after unary operators. This is mainly a stylistic issue, however, some JavaScript expressions can be written without spacing which makes it harder to read and maintain.",
     "timeToFix": 5,
     "parameters": [
       {
@@ -1753,8 +1693,8 @@
   },
   {
     "patternId": "spaced-comment",
-    "title": "Requires or disallows a whitespace (space or tab) beginning a comment",
-    "description": "Some style guides require or disallow a whitespace immediately after the initial // or /* of a comment. Whitespace after the // or /* makes it easier to read text in comments. On the other hand, commenting out code is easier without having to put a whitespace right after the // or /*.",
+    "title": "Requires or Prohibits a whitespace (space or tab) beginning a comment",
+    "description": "Some style guides require or Prohibit a whitespace immediately after the initial // or /* of a comment. Whitespace after the // or /* makes it easier to read text in comments. On the other hand, commenting out code is easier without having to put a whitespace right after the // or /*.",
     "timeToFix": 5,
     "parameters": [
       {
@@ -1825,7 +1765,7 @@
   },
   {
     "patternId": "no-class-assign",
-    "title": "Disallow modifying variables of class declarations",
+    "title": "Prohibit modifying variables of class declarations",
     "description": "ClassDeclaration creates a variable, and we can modify the variable.",
     "timeToFix": 5,
     "parameters": [
@@ -1837,7 +1777,7 @@
   },
   {
     "patternId": "no-const-assign",
-    "title": "Disallow modifying variables that are declared using const",
+    "title": "Prohibit modifying variables that are declared using const",
     "description": "We cannot modify variables that are declared using const keyword. It will raise a runtime error.",
     "timeToFix": 5,
     "parameters": [
@@ -1849,7 +1789,7 @@
   },
   {
     "patternId": "no-dupe-class-members",
-    "title": "Disallow duplicate name in class members",
+    "title": "Prohibit duplicate name in class members",
     "description": "If there are declarations of the same name in class members, the last declaration overwrites other declarations silently. It can cause unexpected behaviors.",
     "timeToFix": 5,
     "parameters": [
@@ -1861,7 +1801,7 @@
   },
   {
     "patternId": "no-this-before-super",
-    "title": "Disallow use of this/super before calling super() in constructors.",
+    "title": "Prohibit use of this/super before calling super() in constructors.",
     "description": "In the constructor of derived classes, if this/super are used before super() calls, it raises a reference error.",
     "timeToFix": 5,
     "parameters": [
@@ -1957,7 +1897,7 @@
   },
   {
     "patternId": "require-yield",
-    "title": "Disallow generator functions that do not have yield",
+    "title": "Prohibit generator functions that do not have yield",
     "description": "This rule generates warnings for generator functions that do not have the yield keyword.",
     "timeToFix": 5,
     "parameters": [

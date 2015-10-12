@@ -3,10 +3,9 @@ This rule is aimed at preventing potentially dangerous, unnecessary, and slow co
 The following patterns are considered problems:
 
 ```
-var obj = {
-x: "foo" }
-, key = "x", value = eval("obj." + key);
-
+var obj = { x: "foo" },
+    key = "x",
+    value = eval("obj." + key);
 ```
 
 [Source](http://eslint.org/docs/rules/no-eval)

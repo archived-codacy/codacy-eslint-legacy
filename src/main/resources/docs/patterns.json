@@ -242,112 +242,52 @@
     {
       "patternId": "guard-for-in",
       "level": "Warning",
-      "category": "CodeStyle",
-      "parameters": [
-        {
-          "name": "TODO-ParamName",
-          "default": "TODO-DefaultValue"
-        }
-      ]
+      "category": "ErrorProne"
     },
     {
       "patternId": "no-alert",
-      "level": "Warning",
-      "category": "CodeStyle",
-      "parameters": [
-        {
-          "name": "TODO-ParamName",
-          "default": "TODO-DefaultValue"
-        }
-      ]
+      "level": "Info",
+      "category": "CodeStyle"
     },
     {
       "patternId": "no-caller",
-      "level": "Warning",
-      "category": "CodeStyle",
-      "parameters": [
-        {
-          "name": "TODO-ParamName",
-          "default": "TODO-DefaultValue"
-        }
-      ]
+      "level": "Error",
+      "category": "ErrorProne"
     },
     {
       "patternId": "no-div-regex",
       "level": "Warning",
-      "category": "CodeStyle",
-      "parameters": [
-        {
-          "name": "TODO-ParamName",
-          "default": "TODO-DefaultValue"
-        }
-      ]
+      "category": "ErrorProne"
     },
     {
       "patternId": "no-else-return",
-      "level": "Warning",
-      "category": "CodeStyle",
-      "parameters": [
-        {
-          "name": "TODO-ParamName",
-          "default": "TODO-DefaultValue"
-        }
-      ]
+      "level": "Info",
+      "category": "CodeStyle"
     },
     {
       "patternId": "no-empty-label",
-      "level": "Warning",
-      "category": "CodeStyle",
-      "parameters": [
-        {
-          "name": "TODO-ParamName",
-          "default": "TODO-DefaultValue"
-        }
-      ]
+      "level": "Info",
+      "category": "UnusedCode"
     },
     {
       "patternId": "no-eq-null",
       "level": "Warning",
-      "category": "CodeStyle",
-      "parameters": [
-        {
-          "name": "TODO-ParamName",
-          "default": "TODO-DefaultValue"
-        }
-      ]
+      "category": "ErrorProne"
     },
     {
       "patternId": "no-eval",
       "level": "Warning",
-      "category": "CodeStyle",
-      "parameters": [
-        {
-          "name": "TODO-ParamName",
-          "default": "TODO-DefaultValue"
-        }
-      ]
+      "category": "ErrorProne"
     },
     {
       "patternId": "no-extend-native",
       "level": "Warning",
-      "category": "CodeStyle",
-      "parameters": [
-        {
-          "name": "TODO-ParamName",
-          "default": "TODO-DefaultValue"
-        }
-      ]
+      "category": "ErrorProne"
     },
     {
       "patternId": "no-extra-bind",
-      "level": "Warning",
-      "category": "CodeStyle",
-      "parameters": [
-        {
-          "name": "TODO-ParamName",
-          "default": "TODO-DefaultValue"
-        }
-      ]
+      "level": "Info",
+      "category": "UnusedCode"
     },
     {
       "patternId": "no-fallthrough",

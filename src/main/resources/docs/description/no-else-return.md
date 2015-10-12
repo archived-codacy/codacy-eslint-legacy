@@ -4,14 +4,12 @@ The following patterns are considered problems:
 
 ```
 function foo() {
-if (x) {
-return y;
+    if (x) {
+        return y;
+    } else {
+        return z;
+    }
 }
-else {
-return z;
-}
-}
-
 ```
 
 [Source](http://eslint.org/docs/rules/no-else-return)

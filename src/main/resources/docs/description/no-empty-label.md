@@ -3,8 +3,8 @@ This error occurs when a label is used to mark a statement that is not an iterat
 The following patterns are considered problems:
 
 ```
-/*eslint no-empty-label: 2*/ labeled: /*error Unexpected label "labeled"*/ var x = 10;
-
+labeled:    /*error Unexpected label "labeled"*/
+var x = 10;
 ```
 
 [Source](http://eslint.org/docs/rules/no-empty-label)
