@@ -24,7 +24,7 @@
     "timeToFix": 5,
     "parameters": [
       {
-        "name": "disallowAssignment",
+        "name": "prohibitAssignment",
         "description": "Cases where you want the assignment to be prohibited [except-parens, always]"
       }
     ]

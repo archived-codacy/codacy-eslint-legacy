@@ -23,7 +23,7 @@
       "category": "CodeStyle",
       "parameters": [
         {
-          "name": "disallowAssignment",
+          "name": "prohibitAssignment",
           "default": "except-parens"
         }
       ]
@@ -186,7 +186,7 @@
       "category": "ErrorProne",
       "parameters": [
         {
-          "name": "complexity",
+          "name": "threshold",
           "default": 3
         }
       ]
