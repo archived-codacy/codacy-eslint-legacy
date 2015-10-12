@@ -23,7 +23,7 @@
       "category": "CodeStyle",
       "parameters": [
         {
-          "name": "ProhibitAssignment",
+          "name": "prohibitAssignment",
           "default": "except-parens"
         }
       ]
