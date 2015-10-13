@@ -292,123 +292,57 @@
     {
       "patternId": "no-fallthrough",
       "level": "Warning",
-      "category": "CodeStyle",
-      "parameters": [
-        {
-          "name": "TODO-ParamName",
-          "default": "TODO-DefaultValue"
-        }
-      ]
+      "category": "ErrorProne"
     },
     {
       "patternId": "no-floating-decimal",
       "level": "Warning",
-      "category": "CodeStyle",
-      "parameters": [
-        {
-          "name": "TODO-ParamName",
-          "default": "TODO-DefaultValue"
-        }
-      ]
+      "category": "ErrorProne"
     },
     {
       "patternId": "no-implicit-coercion",
-      "level": "Warning",
-      "category": "CodeStyle",
-      "parameters": [
-        {
-          "name": "TODO-ParamName",
-          "default": "TODO-DefaultValue"
-        }
-      ]
+      "level": "Info",
+      "category": "CodeStyle"
     },
     {
       "patternId": "no-implied-eval",
       "level": "Warning",
-      "category": "CodeStyle",
-      "parameters": [
-        {
-          "name": "TODO-ParamName",
-          "default": "TODO-DefaultValue"
-        }
-      ]
+      "category": "CodeStyle"
     },
     {
       "patternId": "no-invalid-this",
-      "level": "Warning",
-      "category": "CodeStyle",
-      "parameters": [
-        {
-          "name": "TODO-ParamName",
-          "default": "TODO-DefaultValue"
-        }
-      ]
+      "level": "Error",
+      "category": "ErrorProne"
     },
     {
       "patternId": "no-iterator",
       "level": "Warning",
-      "category": "CodeStyle",
-      "parameters": [
-        {
-          "name": "TODO-ParamName",
-          "default": "TODO-DefaultValue"
-        }
-      ]
+      "category": "Compatibility"
     },
     {
       "patternId": "no-labels",
       "level": "Warning",
-      "category": "CodeStyle",
-      "parameters": [
-        {
-          "name": "TODO-ParamName",
-          "default": "TODO-DefaultValue"
-        }
-      ]
+      "category": "ErrorProne"
     },
     {
       "patternId": "no-lone-blocks",
-      "level": "Warning",
-      "category": "CodeStyle",
-      "parameters": [
-        {
-          "name": "TODO-ParamName",
-          "default": "TODO-DefaultValue"
-        }
-      ]
+      "level": "Info",
+      "category": "UnusedCode"
     },
     {
       "patternId": "no-loop-func",
-      "level": "Warning",
-      "category": "CodeStyle",
-      "parameters": [
-        {
-          "name": "TODO-ParamName",
-          "default": "TODO-DefaultValue"
-        }
-      ]
+      "level": "Error",
+      "category": "ErrorProne"
     },
     {
       "patternId": "no-multi-spaces",
-      "level": "Warning",
-      "category": "CodeStyle",
-      "parameters": [
-        {
-          "name": "TODO-ParamName",
-          "default": "TODO-DefaultValue"
-        }
-      ]
+      "level": "Info",
+      "category": "CodeStyle"
     },
     {
       "patternId": "no-multi-str",
       "level": "Warning",
-      "category": "CodeStyle",
-      "parameters": [
-        {
-          "name": "TODO-ParamName",
-          "default": "TODO-DefaultValue"
-        }
-      ]
+      "category": "Compatibility"
     },
     {
       "patternId": "no-native-reassign",

@@ -2,9 +2,11 @@ The __iterator__ property was a SpiderMonkey extension to JavaScript that could 
 You should use ECMAScript 6 iterators and generators instead.
 This rule is aimed at preventing errors that may arise from using the __iterator__ property, which is not implemented in several browsers. As such, it will warn whenever it encounters the __iterator__ property.
 
+The following patterns are considered problems:
+
 ```
 Foo.prototype.__iterator__ = function() {
-return new FooIterator(this);
+	return new FooIterator(this);
 }
 
 ```

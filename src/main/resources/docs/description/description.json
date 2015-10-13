@@ -337,135 +337,69 @@
   },
   {
     "patternId": "no-fallthrough",
-    "title": "Prohibit Case Statement Fallthrough",
-    "description": "The switch statement in JavaScript is one of the more error-prone constructs of the language thanks in part to the ability to \"fall through\" from one case to the next. For example:",
-    "timeToFix": 5,
-    "parameters": [
-      {
-        "name": "TODO-ParamName",
-        "description": "TODO-Description"
-      }
-    ]
+    "title": "Prohibit Switch-Case Fallthrough",
+    "description": "Prohibits the usage of cases without breaks (break, return or throw)",
+    "timeToFix": 15
   },
   {
     "patternId": "no-floating-decimal",
     "title": "Prohibit Floating Decimals",
-    "description": "Float values in JavaScript contain a decimal point, and there is no requirement that the decimal point be preceded or followed by a number. For example, the following are all valid JavaScript numbers:",
-    "timeToFix": 5,
-    "parameters": [
-      {
-        "name": "TODO-ParamName",
-        "description": "TODO-Description"
-      }
-    ]
+    "description": "Prohibits the usage of decimal point when not preceded or followed by a number",
+    "timeToFix": 10
   },
   {
     "patternId": "no-implicit-coercion",
-    "title": "Prohibit the type conversion with shorter notations.",
-    "description": "In JavaScript, there are a lot of different ways to convert value types. Some of them might be hard to read and understand.",
-    "timeToFix": 5,
-    "parameters": [
-      {
-        "name": "TODO-ParamName",
-        "description": "TODO-Description"
-      }
-    ]
+    "title": "Prohibit implicit type conversion",
+    "description": "Prohibits type conversions that are implicitly made, making them hard to understand",
+    "timeToFix": 10
   },
   {
     "patternId": "no-implied-eval",
     "title": "Prohibit Implied eval()",
-    "description": "It's considered a good practice to avoid using eval() in JavaScript. There are security and performance implications involved with doing so, which is why many linters (including ESLint) recommend Prohibiting eval(). However, there are some other ways to pass a string and have it interpreted as JavaScript code that have similar concerns.",
-    "timeToFix": 5,
-    "parameters": [
-      {
-        "name": "TODO-ParamName",
-        "description": "TODO-Description"
-      }
-    ]
+    "description": "Prohibits using eval(), even implicitly. There are security and performance implications",
+    "timeToFix": 15
   },
   {
     "patternId": "no-invalid-this",
-    "title": "Prohibit this keywords outside of classes or class-like objects.",
-    "description": "Under the strict mode, this keywords outside of classes or class-like objects might be undefined and raise a TypeError.",
-    "timeToFix": 5,
-    "parameters": [
-      {
-        "name": "TODO-ParamName",
-        "description": "TODO-Description"
-      }
-    ]
+    "title": "Prohibit ´this´ outside class",
+    "description": "this keyword outside of class or class-like objects might be undefined and raise a TypeError.",
+    "timeToFix": 15
   },
   {
     "patternId": "no-iterator",
     "title": "Prohibit Iterator",
-    "description": "The __iterator__ property was a SpiderMonkey extension to JavaScript that could be used to create custom iterators that are compatible with JavaScript's for in and for each constructs. However, this property is now obsolete, so it should not be used. Here's an example of how this used to work:",
-    "timeToFix": 5,
-    "parameters": [
-      {
-        "name": "TODO-ParamName",
-        "description": "TODO-Description"
-      }
-    ]
+    "description": "Prohibits the __iterator__ property, it is obsolete",
+    "timeToFix": 20
   },
   {
     "patternId": "no-labels",
     "title": "Prohibit Labeled Statements",
-    "description": "Labeled statements in JavaScript are used in conjunction with break and continue to control flow around multiple loops. For example:",
-    "timeToFix": 5,
-    "parameters": [
-      {
-        "name": "TODO-ParamName",
-        "description": "TODO-Description"
-      }
-    ]
+    "description": "Prohibits labeled statements and jumps to it like break and continue to control flow around multiple loops.",
+    "timeToFix": 30
   },
   {
     "patternId": "no-lone-blocks",
-    "title": "Prohibit Unnecessary Nested Blocks",
-    "description": "In JavaScript, prior to ES6, standalone code blocks delimited by curly braces do not create a new scope and have no use. For example, these curly braces do nothing to foo:",
-    "timeToFix": 5,
-    "parameters": [
-      {
-        "name": "TODO-ParamName",
-        "description": "TODO-Description"
-      }
-    ]
+    "title": "Prohibit unnecessary Nested Blocks",
+    "description": "In JavaScript, prior to ES6, standalone code blocks delimited by curly braces do not create a new scope and have no use.",
+    "timeToFix": 10
   },
   {
     "patternId": "no-loop-func",
     "title": "Prohibit Functions in Loops",
-    "description": "Writing functions within loops tends to result in errors due to the way the function creates a closure around the loop. For example:",
-    "timeToFix": 5,
-    "parameters": [
-      {
-        "name": "TODO-ParamName",
-        "description": "TODO-Description"
-      }
-    ]
+    "description": "Prohibits writing functions within loops, tends to result in errors.",
+    "timeToFix": 30
   },
   {
     "patternId": "no-multi-spaces",
     "title": "Prohibit multiple spaces",
-    "description": "Multiple spaces in a row that are not used for indentation are typically mistakes. For example:",
-    "timeToFix": 5,
-    "parameters": [
-      {
-        "name": "TODO-ParamName",
-        "description": "TODO-Description"
-      }
-    ]
+    "description": "Prohibits multiple spaces in a row that are not used for indentation",
+    "timeToFix": 5
   },
   {
     "patternId": "no-multi-str",
     "title": "Prohibit Multiline Strings",
     "description": "It's possible to create multiline strings in JavaScript by using a slash before a newline, such as:",
-    "timeToFix": 5,
-    "parameters": [
-      {
-        "name": "TODO-ParamName",
-        "description": "TODO-Description"
-      }
-    ]
+    "timeToFix": 10
   },
   {
     "patternId": "no-native-reassign",
