@@ -3,8 +3,7 @@ The native objects reported by this rule are the builtin variables from globals.
 The following patterns are considered problems:
 
 ```
-String = "hello world";
-
+String = new Object(); /*error String is a read-only native object.*/
 ```
 
 [Source](http://eslint.org/docs/rules/no-native-reassign)
