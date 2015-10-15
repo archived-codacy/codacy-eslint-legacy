@@ -388,22 +388,34 @@
     {
       "patternId": "no-process-env",
       "level": "Warning",
-      "category": "CodeStyle"
+      "category": "Compatibility"
     },
     {
       "patternId": "no-proto",
       "level": "Warning",
-      "category": "CodeStyle"
+      "category": "Compatibility"
     },
     {
       "patternId": "no-redeclare",
       "level": "Warning",
-      "category": "CodeStyle"
+      "category": "ErrorProne",
+      "parameters": [
+        {
+          "name": "builtinGlobals",
+          "default": false
+        }
+      ]
     },
     {
       "patternId": "no-return-assign",
       "level": "Warning",
-      "category": "CodeStyle"
+      "category": "ErrorProne",
+      "parameters": [
+        {
+          "name": "unnamedParam",
+          "default": "always"
+        }
+      ]
     },
     {
       "patternId": "no-script-url",

@@ -3,9 +3,9 @@ This rule is aimed at discouraging use of process.env to avoid global dependenci
 The following patterns are considered problems:
 
 ```
-/*eslint no-process-env: 2*/ if(process.env.NODE_ENV === "development") {
-/*error Unexpected use of process.env.*/ //... }
-
+if(process.env.NODE_ENV === "development") { /*error Unexpected use of process.env.*/
+    //...
+}
 ```
 
 [Source](http://eslint.org/docs/rules/no-process-env)

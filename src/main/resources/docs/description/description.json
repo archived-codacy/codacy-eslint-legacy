@@ -452,26 +452,38 @@
   {
     "patternId": "no-process-env",
     "title": "Prohibit process.env",
-    "description": "The process.env object in Node.js is used to store deployment/configuration parameters. Littering it through out a project could lead to maintenance issues as it's another kind of global dependency. As such, it could lead to merge conflicts in a multi-user setup and deployment issues in a multi-server setup. Instead, one of the best practices is to define all those parameters in a single configuration/settings file which could be accessed throughout the project.",
-    "timeToFix": 5
+    "description": "Prohibits the usage of process.env to avoid global dependencies.",
+    "timeToFix": 40
   },
   {
     "patternId": "no-proto",
-    "title": "Prohibit Use of __proto__",
-    "description": "__proto__ property has been deprecated as of ECMAScript 3.1 and shouldn't be used in the code. Use getPrototypeOf method instead.",
-    "timeToFix": 5
+    "title": "Prohibit use of __proto__",
+    "description": "Prohibits the usage __proto__ property (has been deprecated), use getPrototypeOf.",
+    "timeToFix": 10
   },
   {
     "patternId": "no-redeclare",
     "title": "Prohibit Redeclaring Variables",
-    "description": "In JavaScript, it's possible to redeclare the same variable name using var. This can lead to confusion as to where the variable is actually declared and initialized.",
-    "timeToFix": 5
+    "description": "Prohibits that you redeclare a variable, using a var with a name that is already defined",
+    "timeToFix": 15,
+    "parameters": [
+      {
+        "name": "builtinGlobals",
+        "description": "When set to true, lets you apply this pattern to built-in global variables [true, false]"
+      }
+    ]
   },
   {
     "patternId": "no-return-assign",
     "title": "Prohibit Assignment in return Statement",
-    "description": "One of the interesting, and sometimes confusing, aspects of JavaScript is that assignment can happen at almost any point. Because of this, an errant equals sign can end up causing assignment when the true intent was to do a comparison. This is especially true when using a return statement. For example:",
-    "timeToFix": 5
+    "description": "Prohibits assignments in a return statement (it's usually a comparison typo)",
+    "timeToFix": 15,
+    "parameters": [
+      {
+        "name": "unnamedParam",
+        "description": "Specifies when the assignment is disallowed [except-parens, always]"
+      }
+    ]
   },
   {
     "patternId": "no-script-url",
