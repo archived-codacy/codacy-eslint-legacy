@@ -357,22 +357,22 @@
     {
       "patternId": "no-new-wrappers",
       "level": "Warning",
-      "category": "CodeStyle"
+      "category": "ErrorProne"
     },
     {
       "patternId": "no-new",
       "level": "Warning",
-      "category": "CodeStyle"
+      "category": "ErrorProne"
     },
     {
       "patternId": "no-octal-escape",
       "level": "Warning",
-      "category": "CodeStyle"
+      "category": "ErrorProne"
     },
     {
       "patternId": "no-octal",
       "level": "Warning",
-      "category": "CodeStyle"
+      "category": "ErrorProne"
     },
     {
       "patternId": "no-param-reassign",

@@ -416,26 +416,26 @@
   {
     "patternId": "no-new-wrappers",
     "title": "Prohibit Primitive Wrapper Instances",
-    "description": "There are three primitive types in JavaScript that have wrapper objects: string, number, and boolean. These are represented by the constructors String, Number, and Boolean, respectively. The primitive wrapper types are used whenever one of these primitive values is read, providing them with object-like capabilities such as methods. Behind the scenes, an object of the associated wrapper type is created and then destroyed, which is why you can call methods on primitive values, such as:",
-    "timeToFix": 5
+    "description": "Prohibits creating unnecessary objects that function as wrappers like String, Number and Boolean",
+    "timeToFix": 10
   },
   {
     "patternId": "no-new",
     "title": "Prohibit new For Side Effects",
-    "description": "The goal of using new with a constructor is typically to create an object of a particular type and store that object in a variable, such as:",
-    "timeToFix": 5
+    "description": "Prohibit creating objects with new and not using them.",
+    "timeToFix": 20
   },
   {
     "patternId": "no-octal-escape",
     "title": "Prohibit Octal Escapes",
-    "description": "As of version 5 of the ECMAScript specification, octal escape sequences are a deprecated feature and should not be used. It is recommended that Unicode escapes be used instead.",
-    "timeToFix": 5
+    "description": "Octal escape sequences are a deprecated feature, use Unicode escapes instead.",
+    "timeToFix": 15
   },
   {
     "patternId": "no-octal",
     "title": "Prohibit Octal Literals",
-    "description": "Octal literals are numerals that begin with a leading zero, such as:",
-    "timeToFix": 5
+    "description": "Prohibits the usage of octal literals, i.e numerals that begin with a leading zero",
+    "timeToFix": 15
   },
   {
     "patternId": "no-param-reassign",

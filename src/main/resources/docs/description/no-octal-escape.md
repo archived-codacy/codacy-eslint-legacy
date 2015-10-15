@@ -3,7 +3,7 @@ The rule is aimed at preventing the use of a deprecated JavaScript feature, the 
 The following patterns are considered problems:
 
 ```
-var foo = "Copyright \251";
+var foo = "Copyright \251" /*error Don't use octal: '\251'. Use '\u....' instead.*/
 
 ```
 
