@@ -12,7 +12,7 @@
       "category": "CodeStyle",
       "parameters": [
         {
-          "name": "commaStyle",
+          "name": "unnamedParam",
           "default": "never"
         }
       ]
@@ -23,7 +23,7 @@
       "category": "CodeStyle",
       "parameters": [
         {
-          "name": "prohibitAssignment",
+          "name": "unnamedParam",
           "default": "except-parens"
         }
       ]
@@ -89,7 +89,7 @@
       "category": "UnusedCode",
       "parameters": [
         {
-          "name": "unnecessaryParens",
+          "name": "unnamedParam",
           "default": "all"
         }
       ]
@@ -110,7 +110,7 @@
       "category": "CodeStyle",
       "parameters": [
         {
-          "name": "checkType",
+          "name": "unnamedParam",
           "default": "functions"
         }
       ]
@@ -186,7 +186,7 @@
       "category": "ErrorProne",
       "parameters": [
         {
-          "name": "threshold",
+          "name": "unnamedParam",
           "default": 3
         }
       ]
@@ -202,7 +202,7 @@
       "category": "CodeStyle",
       "parameters": [
         {
-          "name": "bracesConvention",
+          "name": "unnamedParam",
           "default": "all"
         }
       ]
@@ -223,7 +223,7 @@
       "category": "CodeStyle",
       "parameters": [
         {
-          "name": "dotConvention",
+          "name": "unnamedParam",
           "default": "property"
         }
       ]
@@ -234,7 +234,7 @@
       "category": "ErrorProne",
       "parameters": [
         {
-          "name": "equalityStyle",
+          "name": "unnamedParam",
           "default": "smart"
         }
       ]
@@ -377,7 +377,13 @@
     {
       "patternId": "no-param-reassign",
       "level": "Warning",
-      "category": "CodeStyle"
+      "category": "ErrorProne",
+      "parameters": [
+        {
+          "name": "props",
+          "default": false
+        }
+      ]
     },
     {
       "patternId": "no-process-env",
@@ -795,7 +801,7 @@
       "category": "CodeStyle",
       "parameters": [
         {
-          "name": "quotesStyle",
+          "name": "unnamedParam",
           "default": "double"
         }
       ]

@@ -3,7 +3,30 @@ This rule aims to prevent unintended behavior caused by overwriting function par
 This rule takes one option, an object, with a property "props".
 
 ```
-http://eslint.org/docs/rules/no-param-reassign
+function foo(bar) {
+    bar = 13;       /*error Assignment to function parameter 'bar'.*/
+}
+
+function foo(bar) {
+    bar++;          /*error Assignment to function parameter 'bar'.*/
+}
+```
+
+The default of the property "props" is false, and only prohibits the reassignment to parameters.
+If you set "props" to true, the following will also be a problem:
+
+```
+function foo(bar) {
+    bar.prop = "value"; /*error Assignment to function parameter 'bar'.*/
+}
+
+function foo(bar) {
+    delete bar.aaa;     /*error Assignment to function parameter 'bar'.*/
+}
+
+function foo(bar) {
+    bar.aaa++;          /*error Assignment to function parameter 'bar'.*/
+}
 ```
 
 [Source](http://eslint.org/docs/rules/no-param-reassign)

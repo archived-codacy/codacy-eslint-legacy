@@ -12,7 +12,7 @@
     "timeToFix": 5,
     "parameters": [
       {
-        "name": "commaStyle",
+        "name": "unnamedParam",
         "description": "The style of trailing commas [never, always, always-multiline]"
       }
     ]
@@ -24,7 +24,7 @@
     "timeToFix": 5,
     "parameters": [
       {
-        "name": "prohibitAssignment",
+        "name": "unnamedParam",
         "description": "Cases where you want the assignment to be prohibited [except-parens, always]"
       }
     ]
@@ -102,7 +102,7 @@
     "timeToFix": 10,
     "parameters": [
       {
-        "name": "unnecessaryParens",
+        "name": "unnamedParam",
         "description": "Cases where will report unnecessary parentheses[all, functions]"
       }
     ]
@@ -126,7 +126,7 @@
     "timeToFix": 30,
     "parameters": [
       {
-        "name": "checkType",
+        "name": "unnamedParam",
         "description": "Specifies if the pattern only applies to functions or to both functions and variables [functions, both]"
       }
     ]
@@ -216,7 +216,7 @@
     "timeToFix": 40,
     "parameters": [
       {
-        "name": "threshold",
+        "name": "unnamedParam",
         "description": "The maximum cyclomatic complexity you want to allow"
       }
     ]
@@ -234,7 +234,7 @@
     "timeToFix": 10,
     "parameters": [
       {
-        "name": "bracesConvention",
+        "name": "unnamedParam",
         "description": "The convention used by this pattern [all, multi, multi-line, multi-or-nest]"
       }
     ]
@@ -258,7 +258,7 @@
     "timeToFix": 5,
     "parameters": [
       {
-        "name": "dotConvention",
+        "name": "unnamedParam",
         "description": "Specifies where you prefer the dot [property, object]"
       }
     ]
@@ -270,7 +270,7 @@
     "timeToFix": 5,
     "parameters": [
       {
-        "name": "equalityStyle",
+        "name": "unnamedParam",
         "description": "The style of equality to follow [smart, allow-null]"
       }
     ]
@@ -440,8 +440,14 @@
   {
     "patternId": "no-param-reassign",
     "title": "Prohibit Reassignment of Function Parameters",
-    "description": "Assignment to variables declared as function parameters can be misleading and lead to confusing behavior, as modifying function parameters will also mutate the arguments object. Often, assignment to function parameters is unintended and indicative of a mistake or programmer error.",
-    "timeToFix": 5
+    "description": "Assignment to variables declared as function parameters can be misleading and lead to confusing behavior.",
+    "timeToFix": 15,
+    "parameters": [
+      {
+        "name": "props",
+        "description": "Specifies if props reassignment should be also prohibit [true, false]"
+      }
+    ]
   },
   {
     "patternId": "no-process-env",
@@ -942,7 +948,7 @@
     "timeToFix": 5,
     "parameters": [
       {
-        "name": "quotesStyle",
+        "name": "unnamedParam",
         "description": "The quoting style you prefer [single, double]"
       }
     ]

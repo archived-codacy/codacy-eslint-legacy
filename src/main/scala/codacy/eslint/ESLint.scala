@@ -41,8 +41,20 @@ object ESLint extends Tool {
     }
   }
 
+  def isUnnamedParameter(parameterName: String): Boolean = {
+    parameterName == "unnamedParam"
+  }
+
   def parameterToConfig(parameter: ParameterDef): String = {
-    Json.stringify(parameter.value)
+    val parameterName = parameter.name.value
+    val parameterValue = Json.stringify(parameter.value)
+    
+    if(isUnnamedParameter(parameterName))
+      parameterValue
+    else {
+      s"""{"$parameterName":$parameterValue}"""
+    }
+      
   }
 
   def patternToConfig(pattern: PatternDef): String = {

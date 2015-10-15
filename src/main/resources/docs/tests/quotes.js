@@ -1,4 +1,4 @@
-//#Patterns: quotes : {"quotes":"double"}
+//#Patterns: quotes : {"unnamedParam":"double"}
 function main() {
   //#Info: quotes
   return 'Hello, World!';

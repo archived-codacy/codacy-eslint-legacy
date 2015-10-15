@@ -1,4 +1,4 @@
-//#Patterns: curly : {"bracesConvention": "all"}
+//#Patterns: curly : {"unnamedParam": "all"}
 
 //#Info: curly
 if (foo) foo++;
