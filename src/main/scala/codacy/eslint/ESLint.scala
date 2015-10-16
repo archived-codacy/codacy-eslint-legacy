@@ -45,25 +45,48 @@ object ESLint extends Tool {
     parameterName == "unnamedParam"
   }
 
-  def parameterToConfig(parameter: ParameterDef): String = {
+  def hasUnnamedParameters(parameters: Seq[ParameterDef]): Boolean = {
+    parameters.exists(param => isUnnamedParameter(param.name.value))
+  }
+
+  def unnamedParameterToConfig(parameter: ParameterDef): String = {
+    Json.stringify(parameter.value)
+  }
+
+  def namedParameterToConfig(parameter: ParameterDef): String = {
     val parameterName = parameter.name.value
     val parameterValue = Json.stringify(parameter.value)
-    
-    if(isUnnamedParameter(parameterName))
-      parameterValue
-    else {
-      s"""{"$parameterName":$parameterValue}"""
+
+    s""""$parameterName":$parameterValue"""
+  }
+
+  def generateNamedParameters(parameters: Seq[ParameterDef]): String = {
+    val params = parameters.map(namedParameterToConfig).mkString(",")
+
+    s"""{$params}"""
+  }
+
+  def generateUnnamedParameters(parameters: Seq[ParameterDef]): String = {
+    parameters.map(unnamedParameterToConfig).mkString(",")
+  }
+
+  def generateParameters(parameters: Seq[ParameterDef]) = {
+    if (hasUnnamedParameters(parameters)) {
+      generateUnnamedParameters(parameters)
     }
-      
+    else {
+      generateNamedParameters(parameters)
+    }
   }
 
   def patternToConfig(pattern: PatternDef): String = {
     val patternId = pattern.patternId.value
     val warnLevel = 1
     val paramConfig = pattern.parameters.fold("") {
-      params =>
-        val comma = if(params.nonEmpty) "," else ""
-        s"""$comma${params.toSeq.map(parameterToConfig).mkString(",")}"""
+      case params if params.nonEmpty =>
+        val parameters = generateParameters(params.toSeq)
+        s""",$parameters"""
+      case _ => ""
     }
 
     s""""$patternId":[$warnLevel$paramConfig]"""
@@ -71,8 +94,8 @@ object ESLint extends Tool {
 
   def writeConfigFile(patternsToLint: Seq[PatternDef]): String = {
     val rules = patternsToLint.map(patternToConfig)
-    val env = Seq(""""es6":true""",""""node":true""",""""browser":true""")
-    val ecmaFeatures = Seq(""""jsx":true""")
+    val env = Seq( """"es6":true""", """"node":true""", """"browser":true""")
+    val ecmaFeatures = Seq( """"jsx":true""")
 
     val content = s"""{"rules":{${rules.mkString(",")}},"env":{${env.mkString(",")}},"ecmaFeatures":{${ecmaFeatures.mkString(",")}}}"""
 
@@ -93,7 +116,7 @@ object ESLint extends Tool {
               val line = ResultLine((message \ "line").asOpt[Int].getOrElse(1))
 
               val fileError = FileError(path, Some(ErrorMessage(msg)))
-              val issue = Issue(path,ResultMessage(msg), patternId, line)
+              val issue = Issue(path, ResultMessage(msg), patternId, line)
 
               Seq(fileError, issue)
             }
@@ -107,7 +130,7 @@ object ESLint extends Tool {
     ).getOrElse(Seq())
   }
 
-  def resultFromToolResult(toolResult: JsArray)(implicit basePath:String): Seq[Result] = {
+  def resultFromToolResult(toolResult: JsArray)(implicit basePath: String): Seq[Result] = {
     toolResult.value.flatMap {
       fileResult =>
         (fileResult \ "filePath").asOpt[String].map {
