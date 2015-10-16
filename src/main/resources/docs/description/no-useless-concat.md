@@ -3,12 +3,9 @@ This rule aims to flag the concenation of 2 literals when they could be combined
 The following patterns are considered problems:
 
 ```
-/*eslint no-useless-concat: 2*/ /*eslint-env es6*/ // these are the same as "10" var a = `some` + `string`;
-/*error Unexpected string concatenation of literals.*/ var a = '1' + '0';
-/*error Unexpected string concatenation of literals.*/ var a = '1' + `0`;
-/*error Unexpected string concatenation of literals.*/ var a = `1` + '0';
-/*error Unexpected string concatenation of literals.*/ var a = `1` + `0`;
-/*error Unexpected string concatenation of literals.*/
+var a = `some` + `string`; /*error Unexpected string concatenation of literals.*/
+var a = '1' + '0';         /*error Unexpected string concatenation of literals.*/
+var a = '1' + `0`;         /*error Unexpected string concatenation of literals.*/
 ```
 
 [Source](http://eslint.org/docs/rules/no-useless-concat)

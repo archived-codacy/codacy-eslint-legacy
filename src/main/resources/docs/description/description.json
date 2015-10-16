@@ -527,14 +527,14 @@
   },
   {
     "patternId": "no-useless-call",
-    "title": "Prohibit unnecessary .call() and .apply().",
-    "description": "The function invocation can be written by Function.prototype.call() and Function.prototype.apply(). But Function.prototype.call() and Function.prototype.apply() are slower than the normal function invocation.",
-    "timeToFix": 5
+    "title": "Prohibit .call() and .apply().",
+    "description": "Prohibits function invocation written by Function.prototype.call() and Function.prototype.apply()",
+    "timeToFix": 10
   },
   {
     "patternId": "no-useless-concat",
-    "title": "Prohibit unncessary concatenation of strings",
-    "description": "It is unncessary to concatenate two strings together when they are on the same line since they could be combined into a single string (\"a\" + \"b\" -> \"ab\").",
+    "title": "Prohibit unnecessary Concatenation",
+    "description": "Prohibits to concatenate two strings together when they are on the same line since they could be combined into a single string.",
     "timeToFix": 5
   },
   {

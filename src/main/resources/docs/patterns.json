@@ -454,12 +454,12 @@
     },
     {
       "patternId": "no-useless-call",
-      "level": "Warning",
-      "category": "CodeStyle"
+      "level": "Info",
+      "category": "UnusedCode"
     },
     {
       "patternId": "no-useless-concat",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
