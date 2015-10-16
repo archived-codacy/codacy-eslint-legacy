@@ -277,7 +277,7 @@
     {
       "patternId": "no-eval",
       "level": "Warning",
-      "category": "ErrorProne"
+      "category": "Security"
     },
     {
       "patternId": "no-extend-native",
@@ -420,27 +420,37 @@
     {
       "patternId": "no-script-url",
       "level": "Warning",
-      "category": "CodeStyle"
+      "category": "Security"
     },
     {
       "patternId": "no-self-compare",
       "level": "Warning",
-      "category": "CodeStyle"
+      "category": "UnusedCode"
     },
     {
       "patternId": "no-sequences",
-      "level": "Warning",
-      "category": "CodeStyle"
+      "level": "Error",
+      "category": "ErrorProne"
     },
     {
       "patternId": "no-throw-literal",
       "level": "Warning",
-      "category": "CodeStyle"
+      "category": "ErrorProne"
     },
     {
       "patternId": "no-unused-expressions",
-      "level": "Warning",
-      "category": "CodeStyle"
+      "level": "Info",
+      "category": "UnusedCode",
+      "parameters": [
+        {
+          "name": "allowShortCircuit",
+          "default": false
+        },
+        {
+          "name": "allowTernary",
+          "default": false
+        }
+      ]
     },
     {
       "patternId": "no-useless-call",

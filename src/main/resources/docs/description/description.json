@@ -488,32 +488,42 @@
   {
     "patternId": "no-script-url",
     "title": "Prohibit Script URLs",
-    "description": "Using javascript: URLs is considered by some as a form of eval. Code passed in javascript: URLs has to be parsed and evaluated by the browser in the same way that eval is processed.",
-    "timeToFix": 5
+    "description": "Prohibits using return of a script as URL, you have to parse it first",
+    "timeToFix": 15
   },
   {
     "patternId": "no-self-compare",
     "title": "Prohibit Self Compare",
-    "description": "Comparing a variable against itself is usually an error, either an typo or refactoring error. It is confusing to the reader and may potentially introduce a runtime error.",
-    "timeToFix": 5
+    "description": "Prohibits comparing a variable against itself, is usually an error or a typo",
+    "timeToFix": 15
   },
   {
     "patternId": "no-sequences",
-    "title": "Prohibit Use of the Comma Operator",
-    "description": "The comma operator includes multiple expressions where only one is expected. It evaluates each operand from left to right and returns the value of the last operand. However, this frequently obscures side effects, and its use is often an accident. Here are some examples of its use:",
-    "timeToFix": 5
+    "title": "Prohibit Comma Operator",
+    "description": "Prohibits the comma operator when includes multiple expressions where only one is expected.",
+    "timeToFix": 15
   },
   {
     "patternId": "no-throw-literal",
-    "title": "Restrict what can be thrown as an exception",
-    "description": "It is considered good practice to only throw the Error object itself or an object using the Error object as base objects for user-defined exceptions. The fundamental benefit of Error objects is that they automatically keep track of where they were built and originated.",
-    "timeToFix": 5
+    "title": "Enforce throw Error Object",
+    "description": "Enforces that when you throw an object, it has to be the Error object itself",
+    "timeToFix": 10
   },
   {
     "patternId": "no-unused-expressions",
     "title": "Prohibit Unused Expressions",
-    "description": "Unused expressions are those expressions that evaluate to a value but are never used. For example:",
-    "timeToFix": 5
+    "description": "Prohibits that you have expressions that evaluate to a value but are never used.",
+    "timeToFix": 5,
+    "parameters": [
+      {
+        "name": "allowShortCircuit",
+        "description": "When set to true allows short circuit evaluations [true, false]"
+      },
+      {
+        "name": "allowTernary",
+        "description": "When set to true allows the use of ternary operators [true, false]"
+      }
+    ]
   },
   {
     "patternId": "no-useless-call",

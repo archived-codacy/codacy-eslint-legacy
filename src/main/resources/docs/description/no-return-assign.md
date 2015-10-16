@@ -11,8 +11,8 @@ Because of this ambiguity, it's considered a best practice to not use assignment
 
 The rule takes one option, a string, which must contain one of the following values:
 
-* except-parens (default): Disallow assignments unless they are enclosed in parentheses.
-* always: Disallow all assignments.
+* except-parens: Disallow assignments unless they are enclosed in parentheses.
+* always(default): Disallow all assignments.
 
 With except-parens as an option you can do:
 
