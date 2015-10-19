@@ -1,3 +1,4 @@
+[![Codacy Badge](https://api.codacy.com/project/badge/c477c894abe34e608640d6ed95c807f0)](https://www.codacy.com/app/Codacy/codacy-eslint)
 [![Build Status](https://circleci.com/gh/codacy/codacy-eslint.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/codacy/codacy-eslint)
 
 create the docker: sbt docker:publishLocal
