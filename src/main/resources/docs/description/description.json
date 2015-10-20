@@ -539,9 +539,9 @@
   },
   {
     "patternId": "no-void",
-    "title": "Prohibit use of the void operator.",
-    "description": "The void operator takes an operand and returns undefined: void expression will evaluate expression and return undefined. It can be used to ignore any side effects expression may produce:",
-    "timeToFix": 5
+    "title": "Prohibit void operator",
+    "description": "Prohibits the use of void operator to obtain undefined",
+    "timeToFix": 10
   },
   {
     "patternId": "no-warning-comments",
