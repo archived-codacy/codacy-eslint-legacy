@@ -464,32 +464,32 @@
     },
     {
       "patternId": "no-void",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "no-warning-comments",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "no-with",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "radix",
       "level": "Warning",
-      "category": "CodeStyle"
+      "category": "ErrorProne"
     },
     {
       "patternId": "vars-on-top",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "wrap-iife",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
@@ -499,18 +499,18 @@
     },
     {
       "patternId": "strict",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "init-declarations",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "no-catch-shadow",
       "level": "Warning",
-      "category": "CodeStyle"
+      "category": "ErrorProne"
     },
     {
       "patternId": "no-delete-var",
@@ -525,7 +525,7 @@
     {
       "patternId": "no-shadow-restricted-names",
       "level": "Warning",
-      "category": "CodeStyle"
+      "category": "ErrorProne"
     },
     {
       "patternId": "no-shadow",
@@ -550,7 +550,7 @@
     {
       "patternId": "no-unused-vars",
       "level": "Warning",
-      "category": "CodeStyle"
+      "category": "ErrorProne"
     },
     {
       "patternId": "no-use-before-define",
@@ -560,7 +560,7 @@
     {
       "patternId": "callback-return",
       "level": "Warning",
-      "category": "CodeStyle"
+      "category": "ErrorProne"
     },
     {
       "patternId": "global-require",
@@ -570,7 +570,7 @@
     {
       "patternId": "handle-callback-err",
       "level": "Warning",
-      "category": "CodeStyle"
+      "category": "ErrorProne"
     },
     {
       "patternId": "no-mixed-requires",
@@ -585,12 +585,12 @@
     {
       "patternId": "no-path-concat",
       "level": "Warning",
-      "category": "CodeStyle"
+      "category": "ErrorProne"
     },
     {
       "patternId": "no-process-exit",
       "level": "Warning",
-      "category": "CodeStyle"
+      "category": "ErrorProne"
     },
     {
       "patternId": "no-restricted-modules",
@@ -600,7 +600,7 @@
     {
       "patternId": "no-sync",
       "level": "Warning",
-      "category": "CodeStyle"
+      "category": "ErrorProne"
     },
     {
       "patternId": "array-bracket-spacing",
@@ -614,28 +614,28 @@
     },
     {
       "patternId": "brace-style",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "camelcase",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "comma-spacing",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "comma-style",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "computed-property-spacing",
       "level": "Warning",
-      "category": "CodeStyle"
+      "category": "ErrorProne"
     },
     {
       "patternId": "consistent-this",
@@ -645,21 +645,21 @@
     {
       "patternId": "eol-last",
       "level": "Warning",
-      "category": "CodeStyle"
+      "category": "ErrorProne"
     },
     {
       "patternId": "func-names",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "func-style",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "id-length",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
@@ -669,7 +669,7 @@
     },
     {
       "patternId": "indent",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
@@ -679,12 +679,12 @@
     },
     {
       "patternId": "key-spacing",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "lines-around-comment",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
@@ -704,37 +704,37 @@
     },
     {
       "patternId": "new-parens",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "newline-after-var",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "no-array-constructor",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "no-continue",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "no-inline-comments",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "no-lonely-if",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "no-mixed-spaces-and-tabs",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
@@ -744,42 +744,42 @@
     },
     {
       "patternId": "no-nested-ternary",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "no-negated-condition",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "no-new-object",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "no-restricted-syntax",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "no-spaced-func",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "no-ternary",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "no-trailing-spaces",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "no-underscore-dangle",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
