@@ -784,37 +784,37 @@
     },
     {
       "patternId": "no-unneeded-ternary",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "object-curly-spacing",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "one-var",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "operator-assignment",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "operator-linebreak",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "padded-blocks",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "quote-props",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
@@ -830,62 +830,62 @@
     },
     {
       "patternId": "require-jsdoc",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "semi-spacing",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "semi",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "sort-vars",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "space-after-keywords",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "space-before-keywords",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "space-before-blocks",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "space-before-function-paren",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "space-in-parens",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "space-infix-ops",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "space-return-throw-case",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "space-unary-ops",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {

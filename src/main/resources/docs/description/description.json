@@ -912,55 +912,55 @@
   {
     "patternId": "no-trailing-spaces",
     "title": "Prohibit trailing spaces at the end of lines",
-    "description": "Sometimes in the course of editing files, you can end up with extra whitespace at the end of lines. These whitespace differences can be picked up by source control systems and flagged as diffs, causing frustration for developers.",
+    "description": "Sometimes in the course of editing files, you can end up with extra whitespace at the end of lines. This rule cleans the extra space.",
     "timeToFix": 5
   },
   {
     "patternId": "no-underscore-dangle",
     "title": "Prohibit Dangling Underscores in Identifiers",
-    "description": "As far as naming conventions for identifiers go, dangling underscores may be the most polarizing in JavaScript. Dangling underscores are underscores at either the beginning or end of an identifier.",
+    "description": "As far as naming conventions for identifiers go, dangling underscores may be the most polarizing in JavaScript.",
     "timeToFix": 5
   },
   {
     "patternId": "no-unneeded-ternary",
     "title": "Prohibit conditional expressions that can be expressed with simpler constructs",
-    "description": "It's a common mistake in JavaScript to use a conditional expression to select between two Boolean values instead of using ! to convert the test to a Boolean.",
+    "description": "use ! to convert the test to a Boolean.",
     "timeToFix": 10
   },
   {
     "patternId": "object-curly-spacing",
     "title": "Prohibit or enforce spaces inside of curly braces in objects.",
-    "description": "While formatting preferences are very personal, a number of style guides require or Prohibit spaces between curly braces in the following situations:",
-    "timeToFix": 5
+    "description": "Prohibit spaces between curly braces.",
+    "timeToFix": 10
   },
   {
     "patternId": "one-var",
     "title": "Require or Prohibit One Variable Declaration per Scope",
-    "description": "Variables can be declared at any point in JavaScript code using var, let, or const. There are many styles and preferences related to the declaration of variables, and one of those is deciding on how many variable declarations should be allowed in a single function.",
+    "description": "Variables can be declared at any point in JavaScript code using var, let, or const. This rule allows you to use only one var per scope.",
     "timeToFix": 5
   },
   {
     "patternId": "operator-assignment",
     "title": "Operator Assignment Shorthand",
-    "description": "JavaScript provides shorthand operators that combine variable assignment and some simple mathematical operations. For example, x = x + 4 can be shortened to x += 4. The supported shorthand forms are as follows:",
+    "description": "JavaScript provides shorthand operators that combine variable assignment and some simple mathematical operations. For example, x = x + 4 can be shortened to x += 4. ",
     "timeToFix": 5
   },
   {
     "patternId": "operator-linebreak",
     "title": "Operator Linebreak",
-    "description": "When a statement is too long to fit on a single line, line breaks are generally inserted next to the operators separating expressions. The first style coming to mind would be to place the operator at the end of the line, following the english punctuation rules.",
+    "description": "When a statement is too long to fit on a single line, line breaks are generally inserted next to the operators separating expressions.",
     "timeToFix": 5
   },
   {
     "patternId": "padded-blocks",
     "title": "Enforce padding within blocks",
-    "description": "Some style guides require block statements to start and end with blank lines. The goal is to improve readability by visually separating the block content and the surrounding code.",
+    "description": "The goal of this pattern is to improve readability by visually separating the block content and the surrounding code.",
     "timeToFix": 5
   },
   {
     "patternId": "quote-props",
     "title": "Quoting Style for Property Names",
-    "description": "Object literal property names can be defined in two ways: using literals or using strings. For example, these two objects are equivalent:",
+    "description": "Object literal property names can be defined in two ways: using literals or using strings.",
     "timeToFix": 5
   },
   {
@@ -978,25 +978,25 @@
   {
     "patternId": "require-jsdoc",
     "title": "Require JSDoc comment",
-    "description": "This rule generates warnings for nodes which do not have JSDoc comments. It considered a good practice to document the behavior of different nodes to help engineers understand the functionality of the node. Supported nodes:",
+    "description": "This rule generates warnings for nodes which do not have JSDoc comments.",
     "timeToFix": 5
   },
   {
     "patternId": "semi-spacing",
     "title": "Enforce spacing before and after semicolons",
     "description": "JavaScript allows you to place unnecessary spaces before or after a semicolon.",
-    "timeToFix": 5
+    "timeToFix": 10
   },
   {
     "patternId": "semi",
     "title": "Enforce or Prohibit Semicolons",
-    "description": "JavaScript is unique amongst the C-like languages in that it doesn't require semicolons at the end of each statement. In many cases, the JavaScript engine can determine that a semicolon should be in a certain spot and will automatically add it. This feature is known as automatic semicolon insertion (ASI) and is considered one of the more controversial features of JavaScript. For example, the following lines are both valid:",
-    "timeToFix": 5
+    "description": "Enforce or Prohibit Semicolons and the end of each statement.",
+    "timeToFix": 10
   },
   {
     "patternId": "sort-vars",
     "title": "Variable Sorting",
-    "description": "When declaring multiple variables within the same block, some developers prefer to sort variable names alphabetically to be able to find necessary variable easier at the later time. Others feel that it adds complexity and becomes burden to maintain.",
+    "description": "Enforce the sorting of variables during declaration.",
     "timeToFix": 5
   },
   {
@@ -1009,31 +1009,31 @@
     "patternId": "space-before-keywords",
     "title": "Require or Prohibit spaces before keywords",
     "description": "Some styleguides require or Prohibit spaces preceding certain keywords.",
-    "timeToFix": 5
+    "timeToFix": 10
   },
   {
     "patternId": "space-before-blocks",
     "title": "Require Or Prohibit Space Before Blocks",
-    "description": "Consistency is an important part of any style guide. While it is a personal preference where to put the opening brace of blocks, it should be consistent across a whole project. Having an inconsistent style distracts the reader from seeing the important parts of the code.",
-    "timeToFix": 5
+    "description": "Require or Prohibit consistency in the spacing before blocks.",
+    "timeToFix": 10
   },
   {
     "patternId": "space-before-function-paren",
     "title": "Require or Prohibit a space before function parenthesis",
-    "description": "When formatting a function, whitespace is allowed between the function name or function keyword and the opening paren. Named functions also require a space between the function keyword and the function name, but anonymous functions require no whitespace. For example:",
+    "description": "When formatting a function, whitespace is allowed between the function name or function keyword and the opening paren.",
     "timeToFix": 5
   },
   {
     "patternId": "space-in-parens",
     "title": "Prohibit or enforce spaces inside of parentheses",
-    "description": "Some style guides require or Prohibit spaces inside of parentheses:",
+    "description": "Some style guides require or Prohibit spaces inside of parentheses.",
     "timeToFix": 5
   },
   {
     "patternId": "space-infix-ops",
     "title": "Require Spaces Around Infix Operators",
-    "description": "While formatting preferences are very personal, a number of style guides require spaces around operators, such as:",
-    "timeToFix": 5
+    "description": "Some style guides require spaces around operators.",
+    "timeToFix": 10
   },
   {
     "patternId": "space-return-throw-case",
