@@ -655,7 +655,13 @@
     "patternId": "callback-return",
     "title": "Enforce Return After Callback",
     "description": "The callback pattern is at the heart of most I/O and event-driven programming in JavaScript.",
-    "timeToFix": 5
+    "timeToFix": 5,
+    "parameters": [
+      {
+        "name": "unnamedParam",
+        "description": "The style of callback acepted [callback, cb, next]"
+      }
+    ]
   },
   {
     "patternId": "global-require",
@@ -715,7 +721,13 @@
     "patternId": "block-spacing",
     "title": "Prohibit or enforce spaces inside of single line blocks.",
     "description": "This rule is for spacing style within single line blocks.",
-    "timeToFix": 15
+    "timeToFix": 15,
+    "parameters": [
+        {
+          "name": "unnamedParam",
+          "description": "Enforces or prohibits spaces within single block lines[always, never]"
+        }
+        ]
   },
   {
     "patternId": "brace-style",
@@ -727,7 +739,13 @@
     "patternId": "camelcase",
     "title": "Require Camelcase",
     "description": "When it comes to naming variables, styleguides generally fall into one of two camps: camelcase (variableName) and underscores (variable_name). This rule focuses on using the camelcase approach.",
-    "timeToFix": 5
+    "timeToFix": 5,
+    "parameters": [
+      {
+        "name": "properties",
+        "description": "The style of variables camelCase [always, never]"
+      }
+    ]
   },
   {
     "patternId": "comma-spacing",
@@ -1044,43 +1062,58 @@
   {
     "patternId": "space-unary-ops",
     "title": "Require or Prohibit spaces before/after unary operators",
-    "description": "Some styleguides require or Prohibit spaces before or after unary operators. This is mainly a stylistic issue, however, some JavaScript expressions can be written without spacing which makes it harder to read and maintain.",
+    "description": "This is mainly a stylistic issue, however, some JavaScript expressions can be written without spacing which makes it harder to read and maintain.",
     "timeToFix": 5
   },
   {
     "patternId": "spaced-comment",
     "title": "Requires or Prohibits a whitespace (space or tab) beginning a comment",
-    "description": "Some style guides require or Prohibit a whitespace immediately after the initial // or /* of a comment. Whitespace after the // or /* makes it easier to read text in comments. On the other hand, commenting out code is easier without having to put a whitespace right after the // or /*.",
-    "timeToFix": 5
+    "description": "Some style guides require or Prohibit a whitespace immediately after the initial // or /* of a comment.",
+    "timeToFix": 10
   },
   {
     "patternId": "wrap-regex",
     "title": "Require Regex Literals to be Wrapped",
-    "description": "When a regular expression is used in certain situations, it can end up looking like a division operator. For example:",
+    "description": "When a regular expression is used in certain situations, it can end up looking like a division operator.",
     "timeToFix": 5
   },
   {
     "patternId": "arrow-parens",
     "title": "Require parens in arrow function arguments",
-    "description": "Arrow functions can omit parentheses when they have exactly one parameter. In all other cases the parameter(s) must be wrapped in parentheses. This rule enforces the consistent use of parentheses in arrow functions.",
-    "timeToFix": 5
+    "description": "Enforces the consistent use of parentheses in arrow functions.",
+    "parameters": [
+      {
+        "name": "unnamedParam",
+        "description": "Enforces the use of arrow parens [always, as-needed]"
+      }
+    ]
   },
   {
     "patternId": "arrow-spacing",
     "title": "Require space before/after arrow function's arrow",
     "description": "This rule normalize style of spacing before/after an arrow function's arrow(=>).",
-    "timeToFix": 5
+    "timeToFix": 5,
+    "parameters": [
+        {
+          "name": "before",
+          "description": "Enforces spaces before arrow parenses"
+        },
+        {
+          "name": "after",
+           "description": "Enforces spaces after arrow parenses"
+        }
+    ]
   },
   {
     "patternId": "constructor-super",
     "title": "Verify calls of super() in constructors",
-    "description": "Constructors of derived classes must call super(). Constructors of non derived classes must not call super(). If this is not observed, the javascript engine will raise a runtime error.",
+    "description": "Constructors of derived classes must call super().",
     "timeToFix": 5
   },
   {
     "patternId": "generator-star-spacing",
     "title": "Enforce spacing around the * in generator functions",
-    "description": "Generators are a new type of function in ECMAScript 6 that can return multiple values over time. These special functions are indicated by placing an * after the function keyword.",
+    "description": "Generators are a new type of function in ECMAScript 6 that can return multiple values over time.",
     "timeToFix": 5
   },
   {
@@ -1092,14 +1125,14 @@
   {
     "patternId": "no-const-assign",
     "title": "Prohibit modifying variables that are declared using const",
-    "description": "We cannot modify variables that are declared using const keyword. It will raise a runtime error.",
+    "description": "We cannot modify variables that are declared using const keyword.",
     "timeToFix": 5
   },
   {
     "patternId": "no-dupe-class-members",
     "title": "Prohibit duplicate name in class members",
-    "description": "If there are declarations of the same name in class members, the last declaration overwrites other declarations silently. It can cause unexpected behaviors.",
-    "timeToFix": 5
+    "description": "If there are declarations of the same name in class members, the last declaration overwrites other declarations.",
+    "timeToFix": 10
   },
   {
     "patternId": "no-this-before-super",
@@ -1110,19 +1143,19 @@
   {
     "patternId": "no-var",
     "title": "require let or const instead of var",
-    "description": "ECMAScript 6 allows programmers to create variables with block scope instead of function scope using the let and const keywords. Block scope is common in many other programming languages and helps programmers avoid mistakes such as:",
+    "description": "ECMAScript 6 allows programmers to create variables with block scope instead of function scope using the let and const keywords.",
     "timeToFix": 5
   },
   {
     "patternId": "object-shorthand",
     "title": "Require Object Literal Shorthand Syntax",
-    "description": "EcmaScript 6 provides a concise form for defining object literal methods and properties. This syntax can make defining complex object literals much cleaner.",
-    "timeToFix": 5
+    "description":"This syntax can make defining complex object literals much cleaner.",
+    "timeToFix": 10
   },
   {
     "patternId": "prefer-arrow-callback",
     "title": "Suggest using arrow functions as callbacks.",
-    "description": "Arrow functions are suited to callbacks, because:",
+    "description": "Arrow functions are suited to callbacks.",
     "timeToFix": 5
   },
   {
@@ -1140,19 +1173,19 @@
   {
     "patternId": "prefer-reflect",
     "title": "Suggest using Reflect methods where applicable",
-    "description": "The ES6 Reflect API comes with a handful of methods which somewhat deprecate methods on old constructors:",
+    "description": "The ES6 Reflect API comes with a handful of methods which deprecate methods on old constructors.",
     "timeToFix": 5
   },
   {
     "patternId": "prefer-template",
     "title": "Suggest using template literals instead of string concatenation.",
     "description": "In ES2015 (ES6), we can use template literals instead of string concatenation.",
-    "timeToFix": 5
+    "timeToFix": 10
   },
   {
     "patternId": "require-yield",
     "title": "Prohibit generator functions that do not have yield",
     "description": "This rule generates warnings for generator functions that do not have the yield keyword.",
-    "timeToFix": 5
+    "timeToFix": 10
   }
 ]

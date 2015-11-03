@@ -187,7 +187,7 @@
       "parameters": [
         {
           "name": "unnamedParam",
-          "default": 3
+          "default": ""
         }
       ]
     },
@@ -610,7 +610,14 @@
     {
       "patternId": "block-spacing",
       "level": "Warning",
-      "category": "CodeStyle"
+      "category": "CodeStyle",
+       "description": "Enforces spaces before arrow parenses",
+        "parameters": [
+        {
+          "name": "unnamedParam",
+          "default": "always"
+        }
+        ]
     },
     {
       "patternId": "brace-style",
@@ -890,23 +897,34 @@
     },
     {
       "patternId": "spaced-comment",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "wrap-regex",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "arrow-parens",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
+      
     },
     {
       "patternId": "arrow-spacing",
-      "level": "Warning",
-      "category": "CodeStyle"
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "before",
+          "default": true
+        },
+        {
+          "name": "after",
+          "default": true
+        }
+      ]
     },
     {
       "patternId": "constructor-super",
@@ -915,7 +933,7 @@
     },
     {
       "patternId": "generator-star-spacing",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
@@ -940,37 +958,37 @@
     },
     {
       "patternId": "no-var",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "object-shorthand",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "prefer-arrow-callback",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "prefer-const",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "prefer-spread",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "prefer-reflect",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "prefer-template",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
