@@ -1,4 +1,10 @@
 //#Patterns: brace-style
 
-//#Warn: brace-style
-if (foo) { bar(); } else { baz(); }
+
+//#Info: brace-style
+if (foo) { 
+bar(); 
+} 
+else { 
+baz(); 
+}

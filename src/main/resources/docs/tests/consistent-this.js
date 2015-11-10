@@ -1,4 +1,9 @@
 //#Patterns: consistent-this
-//#Warn: consistent-this
 
-var self = this; jQuery('li').click(function (event) { // here, "this" is the HTMLElement where the click event occurred self.setFoo(42); });
+//#Warn: consistent-this
+var self;
+function f() {
+    self = this;
+}
+
+var self = this;

@@ -3,9 +3,17 @@ Adding the second bar in the above example is optional. If you leave off the fun
 The following patterns are considered problems:
 
 ```
-Foo.prototype.bar = function bar() {
-}
-;
+//Bad:
+Foo.prototype.bar = function() {};
+(function() {
+    // ...
+}())
+
+//Good:
+Foo.prototype.bar = function bar() {};
+(function bar() {
+    // ...
+}())
 
 ```
 

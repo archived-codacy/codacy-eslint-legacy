@@ -1,5 +1,4 @@
 //#Patterns: arrow-parens
-//#Info: arrow-parens
-/*eslint-env es6*/ 
 
-// Bad a => {} // Good (a) => {}
+//#Info: arrow-parens
+//Bad a => {} Good (a) => {}

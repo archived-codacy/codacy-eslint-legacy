@@ -3,7 +3,21 @@ Unlike string literals in JavaScript, string literals within JSX attributes can�
 This rule takes one argument. If it is "prefer-double" then the rule enforces the usage of double quotes for all JSX attribute values which doesn’t contain a double quote. If "prefer-single" is configured then the rule enforces the usage of single quotes for all JSX attribute values which doesn’t contain a single quote.
 
 ```
-http://eslint.org/docs/rules/jsx-quotes
+//Bad with "prefer-single":
+<a b="c" />
+//Good with "prefer-single":
+<a b='c' />
+<a b="'" />
+
+//Bad with "prefer-double":
+<a b='c' />
+//Good with "prefer-double":
+<a b="c" />
+<a b='"' />
+
+
+
+
 ```
 
 [Source](http://eslint.org/docs/rules/jsx-quotes)

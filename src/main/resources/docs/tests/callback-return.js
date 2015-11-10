@@ -1,13 +1,13 @@
 //#Patterns: callback-return
 
-//#Warn: callback-return
-function foo() {
+
+//Warn: callback-return
+function foo(callback) {
     if (err) {
-        callback(err); /*error Expected return with your callback function.*/
+        setTimeout(callback, 0); // this is bad, but WILL NOT warn
     }
     callback();
 }
-
 
 function foo() {
     if (err) {

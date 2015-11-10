@@ -6,10 +6,10 @@ This rule aims to bring consistency to variable initializations and declarations
 var foo = 1;
 var bar;
 if (foo) {
-bar = 1;
+	bar = 1;
 }
 else {
-bar = 2;
+	bar = 2;
 }
 
 ```

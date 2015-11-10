@@ -3,14 +3,50 @@ This rule will warn when spacing in properties does not match the specified opti
 Use the beforeColon, afterColon and mode options to enforce having one space or zero spaces on each side, using true or false, respectively. The default is no whitespace between the key and the colon and one space between the colon and the value.
 
 ```
-// DEFAULT /*eslint key-spacing: [2, {
-"beforeColon": false, "afterColon": true}
-]*/ var obj = {
-"foo": (42) }
-;
-foo = {
-thisLineWouldBeTooLong: soUseAnotherLine }
-;
+
+//Good with "beforeColon" false and "afterColon" true
+var obj = { "foo": (42) };
+
+foo = { thisLineWouldBeTooLong:
+    soUseAnotherLine };
+
+//Bad with allign with "align": "value" 
+var obj = {
+    a: value,
+    bcde:  42,
+    fg :   foo()
+};
+
+//Good with allign with "align": "value"
+var obj = {
+    a:    value,
+    bcde: 42,
+
+    fg: foo(),
+    h:  function() {
+        return this.a;
+    },
+    ijkl: 'Non-consecutive lines form a new group'
+};
+
+var obj = { a: "foo", longPropertyName: "bar" };
+
+//Bad with allign with "align": "Colon" 
+var obj = {
+    one:   1,
+    "two": 2,
+    three:  3 
+};
+
+//Good with allign with "align": "Colon"
+var obj = {
+    foobar   : 42,
+    bat      : (2 * 2),
+    "default": fn(),
+
+    fn : function() {},
+    abc: value
+};
 
 ```
 

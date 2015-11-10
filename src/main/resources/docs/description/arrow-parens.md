@@ -3,7 +3,8 @@ This rule enforces parentheses around arrow function parameters regardless of ar
 Following this style will help you find arrow functions (=>) which may be mistakenly included in a condition when a comparison such as >= was the intent.
 
 ```
-/*eslint-env es6*/ // Bad a => {
+/*eslint-env es6*/ 
+// Bad a => {
 }
 // Good (a) => {
 }

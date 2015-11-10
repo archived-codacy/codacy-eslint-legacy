@@ -3,7 +3,10 @@ This rule looks for any underscores (_) located within the source code. It ignor
 This rule accepts a single options argument with the following defaults:
 
 ```
-http://eslint.org/docs/rules/camelcase
+Bad:
+var my_favorite_color = "#112C85";
+Good:
+var myFavoriteColor  = "#112C85";
 ```
 
 [Source](http://eslint.org/docs/rules/camelcase)

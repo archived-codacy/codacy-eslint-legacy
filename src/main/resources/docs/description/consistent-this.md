@@ -3,11 +3,17 @@ There are many commonly used aliases for this such as self, that or me. It is de
 This rule designates a variable as the chosen alias for this. It then enforces two things:
 
 ```
+Bad:
+	var self = 42;   /*error Designated alias 'self' is not assigned to 'this'.*/
+	var that = this; /*error Unexpected alias 'that' for 'this'.*/
+
+Good:
 var self = this;
-jQuery('li').click(function (event) {
-// here, "this" is the HTMLElement where the click event occurred self.setFoo(42);
-}
-);
+	jQuery('li').click(function (event) {
+	// here, "this" is the HTMLElement where the click event occurred 
+	self.setFoo(42);
+	};
+Bad:
 
 ```
 

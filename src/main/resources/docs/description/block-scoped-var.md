@@ -3,12 +3,21 @@ This rule aims to reduce the usage of variables outside of their binding context
 The following patterns are considered problems:
 
 ```
+Bad:
 function doSomething() {
     if (true) {
         var build = true;
     }
-
     console.log(build);
+}
+
+Good:
+function doSomething() {
+    if (true) {
+        var build = true;  
+    } else {
+        var build = false; 
+    }
 }
 ```
 

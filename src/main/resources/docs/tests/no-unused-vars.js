@@ -1,4 +1,0 @@
-//#Patterns: no-unused-vars
-//#Warn: no-unused-vars
-
-/*eslint no-unused-vars: 2*/ /*global some_unsed_var */ /*error "some_unsed_var" is defined but never used*/ //It checks variables you have defined as global some_unsed_var = 42; var x; /*error "x" is defined but never used*/ var y = 10; /*error "y" is defined but never used*/ y = 5; // By default, unused arguments cause warnings. (function(foo) { /*error "foo" is defined but never used*/ return 5; })(); // Unused recursive functions also cause warnings. function fact(n) { /*error "fact" is defined but never used*/ if (n < 2) return 1; return n * fact(n - 1); }

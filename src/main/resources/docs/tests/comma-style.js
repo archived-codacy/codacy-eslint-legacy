@@ -3,8 +3,4 @@
 
 //#Info: comma-style
 var foo = 1
-  , bar = 2; 
-
-
-var foo = 1,
-    bar = 2;
+  , bar = 2;

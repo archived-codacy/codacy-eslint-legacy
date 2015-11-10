@@ -3,7 +3,8 @@ Fixable: This rule is automatically fixable using the --fix flag on the command 
 This rule takes an object argument with before and after properties, each with a Boolean value.
 
 ```
-/*eslint-env es6*/ // {
+/*eslint-env es6*/ // 
+{
 "before": true, "after": true }
 (a) => {
 }
