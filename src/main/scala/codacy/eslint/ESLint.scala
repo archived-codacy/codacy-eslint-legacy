@@ -2,9 +2,8 @@ package codacy.eslint
 
 import java.nio.file.Path
 import codacy.dockerApi._
-import codacy.dockerApi.utils.CommandRunner
+import codacy.dockerApi.utils.{FileHelper, ToolHelper, CommandRunner}
 import play.api.libs.json._
-import seedtools.{FileHelper, ToolHelper}
 import scala.util.Try
 
 import play.api.libs.functional.syntax._
@@ -28,8 +27,12 @@ object ESLint extends Tool {
           paths.map(_.toString).toSeq
       }
 
-      val patternsToLint = ToolHelper.getPatternsToLint(conf)
-      val configuration = Seq("-c", writeConfigFile(patternsToLint))
+      val patternsToLintOpt = ToolHelper.getPatternsToLint(conf)
+      val configuration =
+        patternsToLintOpt.fold(Seq[String]()) {
+          patternsToLint =>
+            Seq("-c", writeConfigFile(patternsToLint))
+        }
 
       val command = Seq("eslint", "-f", "json") ++ configuration ++ filesToLint
 
