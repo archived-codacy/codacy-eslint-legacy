@@ -1,8 +1,8 @@
 //#Patterns: padded-blocks
-//#Issue: {"severity": "Warn", "line": 10, "patternId": "padded-blocks"}
-//#Issue: {"severity": "Warn", "line": 12, "patternId": "padded-blocks"}
-//#Issue: {"severity": "Warn", "line": 17, "patternId": "padded-blocks"}
-//#Issue: {"severity": "Warn", "line": 19, "patternId": "padded-blocks"}
+//#Issue: {"severity": "Info", "line": 8, "patternId": "padded-blocks"}
+//#Issue: {"severity": "Info", "line": 10, "patternId": "padded-blocks"}
+//#Issue: {"severity": "Info", "line": 15, "patternId": "padded-blocks"}
+//#Issue: {"severity": "Info", "line": 17, "patternId": "padded-blocks"}
 
 if (a)
 {                

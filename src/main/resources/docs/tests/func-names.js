@@ -1,6 +1,6 @@
 //#Patterns: func-names
 
-//#Warn: func-names
+//#Info: func-names
 Foo.prototype.bar = function(){
 	var boo = 1;
 }

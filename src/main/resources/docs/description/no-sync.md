@@ -4,6 +4,12 @@ In Node.js, most I/O is done through asynchronous methods. However, there are of
 //Bad:
 fs.existsSync(somePath);
 var contents = fs.readFileSync(somePath).toString();
+//Good:
+obj.sync();
+
+async(function() {
+    // ...
+});
 ```
 
 [Source](http://eslint.org/docs/rules/no-sync)

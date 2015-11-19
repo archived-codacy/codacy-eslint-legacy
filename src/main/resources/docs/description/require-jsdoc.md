@@ -1,11 +1,26 @@
-This rule generates warnings for nodes which do not have JSDoc comments. It considered a good practice to document the behavior of different nodes to help engineers understand the functionality of the node. Supported nodes:
-The following patterns are considered problems:
-The following patterns are not considered problems:
+This rule generates warnings for nodes which do not have JSDoc comments. It considered a good practice to document the behavior of different nodes to help engineers understand the functionality of the node.
 
 ```
-/*eslint require-jsdoc: 2*/ function foo() {
-/*error Missing JSDoc comment.*/ return 10;
+//Bad:
+function foo() {
+    return 10;
 }
+
+//Good:
+/**
+* It returns 10
+*/
+function foo() {
+    return 10;
+}
+
+/**
+* It returns 10
+*/
+var foo = function() {
+    return 10;
+}
+
 
 ```
 

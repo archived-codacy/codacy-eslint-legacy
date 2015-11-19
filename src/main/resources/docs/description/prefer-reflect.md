@@ -3,7 +3,17 @@ The prefer-reflect rule will flag usage of any older method, suggesting to inste
 The exceptions option allows you to pass an array of methods names you'd like to continue to use in the old style.
 
 ```
-http://eslint.org/docs/rules/prefer-reflect
+//Bad:
+foo.apply(undefined, args);
+foo.apply(null, args);
+obj.foo.apply(obj, args);
+obj.foo.apply(other, args);
+
+//Good:
+Reflect.apply(undefined, args);
+Reflect.apply(null, args);
+Reflect.apply(obj.foo, obj, args);
+Reflect.apply(obj.foo, other, args);
 ```
 
 [Source](http://eslint.org/docs/rules/prefer-reflect)

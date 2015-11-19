@@ -3,7 +3,7 @@ Disallowing usage of specific node modules can be useful if you want to control 
 ```
 //with no-restricted-modules: [2, "fs"]
 
-//this is bad:
+//this is considered bad:
 var fs = require('fs');
 
 ```

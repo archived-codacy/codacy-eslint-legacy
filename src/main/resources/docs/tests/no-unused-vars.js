@@ -1,8 +1,7 @@
 //#Patterns: no-unused-vars
 
-
-var x;
 //#Warn: no-unused-vars
+var x;
 
 var y = 10;           
 y = 5;

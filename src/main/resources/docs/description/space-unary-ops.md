@@ -3,7 +3,17 @@ Fixable: This rule is automatically fixable using the --fix flag on the command 
 This rule enforces consistency regarding the spaces after words unary operators and after/before nonwords unary operators.
 
 ```
-http://eslint.org/docs/rules/space-unary-ops
+//Bad:
+typeof!foo;
+void{foo:0};
+new[foo][0];
+
+//Good:
+delete foo.bar;
+new Foo;
+void 0;
+
+
 ```
 
 [Source](http://eslint.org/docs/rules/space-unary-ops)

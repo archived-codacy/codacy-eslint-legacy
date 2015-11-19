@@ -1,8 +1,7 @@
-ECMAScript 6 allows programmers to create variables with block scope instead of function scope using the let and const keywords. Block scope is common in many other programming languages and helps programmers avoid mistakes such as:
-This rule is aimed at discouraging the use of var and encouraging the use of const or let instead.
-The following patterns are considered problems:
+ECMAScript 6 allows programmers to create variables with block scope instead of function scope using the let and const keywords. Block scope is common in many other programming languages and helps programmers avoid mistakes. This rule is aimed at discouraging the use of var and encouraging the use of const or let instead.
 
 ```
+//Bad:
 var count = people.length;
 var enoughFood = count > sandwiches.length;
 if (enoughFood) {
