@@ -3,7 +3,13 @@ This rule is aimed at helping to distinguish regular functions from constructor 
 The following patterns are considered problems:
 
 ```
+//Bad:
+var friend = new person();
+var colleague = Person();
+
+//Good:
 var friend = new Person();
+var colleague = person();
 
 ```
 

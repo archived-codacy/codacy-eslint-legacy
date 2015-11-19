@@ -3,18 +3,33 @@ This rule is aimed at increasing code clarity by discouraging deeply nesting cal
 There is no default max depth for this rule. You must configure the depth as an option by using the second argument in your configuration. For example, this sets the rule as an error (code is 2) with a maximum depth of 3:
 
 ```
+//Bad:
 foo(function () {
-bar(function () {
-baz(function() {
-qux(function () {
+	bar(function () {
+		baz(function() {
+			qux(function () {
+			}
+			);
+		}
+		);
+	}
+	);
 }
 );
+
+//Good:
+foo(handleFoo);
+function handleFoo (){
+    bar(handleBar);
 }
-);
+function handleBar() {
+    baz(handleBaz);
 }
-);
+function handleBaz() {
+    qux(handleQux);
 }
-);
+function handleQux() {
+}
 
 ```
 

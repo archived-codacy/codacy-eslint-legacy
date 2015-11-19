@@ -2,9 +2,11 @@
 
 
 //#Info: brace-style
-if (foo) { 
-bar(); 
+if (foo)
+{ 
+	bar(); 
 } 
+//#Info: brace-style
 else { 
-baz(); 
+	baz(); 
 }

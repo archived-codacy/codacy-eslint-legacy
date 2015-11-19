@@ -3,6 +3,7 @@ This pattern is most likely an error and should be avoided.
 The rule is aimed at preventing the use of a constant expression in a condition. As such, it warns whenever it sees a constant expression inside a condition expression.
 
 ```
+
 if (false) {
 doSomethingUnfinished();
 }

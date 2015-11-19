@@ -3,11 +3,12 @@ In the following example the 3rd case label uses again the literal 1 that has al
 This inspection reports any duplicated case labels on JavaScript switch statements.
 
 ```
+//Bad:
 var a = 1;
 switch (a) {
 	case 1: break;
 	case 2: break;
-	case 1: // duplicate literal 1 break;
+	case 1:
 	default: break;
 }
 

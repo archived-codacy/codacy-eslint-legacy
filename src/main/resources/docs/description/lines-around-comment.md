@@ -4,7 +4,9 @@ By default an empty line is required above a block comment, such as in the follo
 
 ```
 var x = 0;
-/** * The vertical position. */ var y = 10;
+
+/** * The vertical position. */ 
+var y = 10;
 
 ```
 

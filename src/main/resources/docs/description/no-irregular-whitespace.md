@@ -1,12 +1,5 @@
-Invalid or irregular whitespace causes issues with ECMAScript 5 parsers and also makes code harder to debug in a similar nature to mixed tabs and spaces.
-Various whitespace characters can be inputted by programmers by mistake for example from copying or keyboard shortcuts. Pressing Alt + Space on OS X adds in a non breaking space character for example.
+Invalid or irregular whitespace causes issues with ECMAScript 5 parsers and also makes code harder to debug in a similar nature to mixed tabs and spaces. Various whitespace characters can be inputted by programmers by mistake for example from copying or keyboard shortcuts. Pressing Alt + Space on OS X adds in a non breaking space character for example.
 Known issues these spaces cause:
-
-* Zero Width Space
-  * Is NOT considered a separator for tokens and is often parsed as an Unexpected token ILLEGAL
-Is NOT shown in modern browsers making code repository software expected to resolve the visualisation
-* Line Separator
-  * Is NOT a valid character within JSON which would cause parse errors
 
 With this rule enabled the following characters will cause warnings outside of strings:
 
@@ -37,34 +30,5 @@ With this rule enabled the following characters will cause warnings outside of s
 \u3000 - Ideographic Space
 ```
 
-The following examples are considered problems:
-
-```
-/*eslint no-irregular-whitespace: 2*/
-
-function thing() /*<NBSP>*/{ /*error Irregular whitespace not allowed*/
-  return 'test';
-}
-
-function thing( /*<NBSP>*/){ /*error Irregular whitespace not allowed*/
-  return 'test';
-}
-
-function thing /*<NBSP>*/(){ /*error Irregular whitespace not allowed*/
-  return 'test';
-}
-
-function thing᠎/*<MVS>*/(){   /*error Irregular whitespace not allowed*/
-  return 'test';
-}
-
-function thing() {
-  return 'test'; /*<ENSP>*/  /*error Irregular whitespace not allowed*/
-}
-
-function thing() {
-  return 'test'; /*<NBSP>*/  /*error Irregular whitespace not allowed*/
-}
-```
 
 [Source](http://eslint.org/docs/rules/no-irregular-whitespace)

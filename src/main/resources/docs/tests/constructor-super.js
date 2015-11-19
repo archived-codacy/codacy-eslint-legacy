@@ -1,10 +1,11 @@
 //#Patterns: constructor-super
 
 
-//#Warn: constructor-super
-class A extends null {
+
+class A {
     constructor() {
-        super();      
+	//#Warn: constructor-super
+        super();       
     }
 }
 

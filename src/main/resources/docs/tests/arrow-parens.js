@@ -1,4 +1,9 @@
 //#Patterns: arrow-parens
 
 //#Info: arrow-parens
-//Bad a => {} Good (a) => {}
+if (a => 2) {
+}
+
+
+if (a >= 2) {
+}

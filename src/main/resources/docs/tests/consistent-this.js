@@ -1,7 +1,10 @@
-//#Patterns: consistent-this
+//#Patterns: consistent-this : {"unnamedParam" : "self"}
 
+
+var self; 
 //#Warn: consistent-this
-var self;
+var bar = this;
+
 function f() {
     self = this;
 }

@@ -1,25 +1,18 @@
-This error is raised to highlight a potential error.
+This error is raised to highlight a potential error. Commonly, when a developer intends to write
 
-Commonly, when a developer intends to write
 ```
 if(!(a in b)) {
     // do something
 }
 ```
 
-they will instead write
+//they will instead write
+
 ```
-if(!a in b) {       /*error The `in` expression's left operand is negated*/
+if(!a in b) { 
     // do something
 }
 ```
 
-If one intended the original behaviour, the left operand should be explicitly coerced to a string like below.
-
-```
-if(('' + !a) in b) {
-    // do something
-}
-```
 
 [Source](http://eslint.org/docs/rules/no-negated-in-lhs)

@@ -3,7 +3,15 @@ This rule is aimed at catching debugging code that should be removed and popup U
 The following patterns are considered problems:
 
 ```
+//Bad:
 alert("here!");
+confirm("Are you sure?");
+prompt("What's your name?", "John Doe");
+
+//Good:
+customAlert("Something happened!");
+customConfirm("Are you sure?");
+customPrompt("Who are you?");
 
 ```
 

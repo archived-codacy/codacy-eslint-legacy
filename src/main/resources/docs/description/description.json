@@ -241,7 +241,7 @@
   },
   {
     "patternId": "default-case",
-    "title": "Enforce Default in Switch",
+    "title": "Enforce default case in switch",
     "description": "Enforces that you have a default case in your switch statements",
     "timeToFix": 15
   },
@@ -552,19 +552,19 @@
   {
     "patternId": "no-with",
     "title": "No with Statements",
-    "description": "The with statement is potentially problematic because it adds members of an object to the current scope, making it impossible to tell what a variable inside the block actually refers to. Additionally, the with statement cannot be used in strict mode.",
+    "description": "Prohibits the use of the with statement",
     "timeToFix": 5
   },
   {
     "patternId": "radix",
     "title": "Require Radix Parameter",
-    "description": "When using the parseInt() function it is common to omit the second argument, the radix, and let the function try to determine from the first argument what type of number it is.",
+    "description": "Enforces the use of the of radix parameter in the parseInt() function.",
     "timeToFix": 5
   },
   {
     "patternId": "vars-on-top",
     "title": "Require Variable Declarations to be at the top of their scope",
-    "description": "Variables Declaration are required to be on the top of their scope or top of the program. By default JavaScript interpreter moves the vars are always moved (“hoisted”) to the top.",
+    "description": "Enforces variables Declaration are required to be on the top of their scope or top of the program.",
     "timeToFix": 5
   },
   {
@@ -576,25 +576,25 @@
   {
     "patternId": "yoda",
     "title": "Require or Prohibit Yoda Conditions",
-    "description": "Yoda conditions are so named because the literal value of the condition comes first while the variable comes second.",
+    "description": "Require or Prohibits variable declaration which literal value of the condition comes first while the variable comes second.",
     "timeToFix": 5
   },
   {
     "patternId": "strict",
     "title": "Strict Mode",
-    "description": "A Use Strict Directive at the beginning of a script or function body enables strict mode semantics.",
+    "description": "Prohibits/Enforces strict mode troughout the code.",
     "timeToFix": 5
   },
   {
     "patternId": "init-declarations",
     "title": "Enforce/Prohibit Variable Initializations",
-    "description": "Variables can be assigned during declaration,or afterwards using an assignment statement. This pattern enforces coherense when assigning variables",
+    "description": "Enforces/Prohibits that values can be assigned during in variable declaration.",
     "timeToFix": 10
   },
   {
     "patternId": "no-catch-shadow",
     "title": "Prohibit Shadowing of Variables Inside of catch",
-    "description": "his rule prevents the use of variables in the catch clause parameter with the same name as a variable in the outer scope.",
+    "description": "This rule prevents the use of variables in the catch clause parameter with the same name as a variable in the outer scope.",
     "timeToFix": 10
   },
   {
@@ -606,79 +606,73 @@
   {
     "patternId": "no-label-var",
     "title": "Prohibit Labels That Are Variables Names",
-    "description": "This rule aims to create clearer code by Prohibiting the bad practice of creating a label that shares a name with a variable that is in scope.",
+    "description": "Prohibits the use of labels that shares a name with a variable in that is in scope.",
     "timeToFix": 10
   },
   {
     "patternId": "no-shadow-restricted-names",
     "title": "Prohibit Shadowing of Restricted Names",
-    "description": "ES5 §15.1.1 Value Properties of the Global Object (NaN, Infinity, undefined) as well as strict mode restricted identifiers eval and arguments are considered to be restricted names in JavaScript. Defining them to mean something else can have unintended consequences and confuse others reading the code.",
+    "description": "Prohibits Defining restricted name(NaN,null..) to mean something else.",
     "timeToFix": 5
   },
   {
     "patternId": "no-shadow",
     "title": "Prohibit Shadowing",
-    "description": "Shadowing is the process by which a local variable shares the same name as a variable in its containing scope.",
+    "description": "Prohibits the use of local variables that share the name with variables in the global scope.",
     "timeToFix": 10
   },
   {
     "patternId": "no-undef-init",
     "title": "Prohibit Initializing to undefined",
-    "description": "In JavaScript, a variable that is declared and not initialized to any value automatically gets the value of undefined.",
+    "description": "Prohibit initializing variables to undefined.",
     "timeToFix": 10
   },
   {
     "patternId": "no-undef",
     "title": "Prohibit Undeclared Variables",
-    "description": "Any reference to an undeclared variable causes a warning, unless the variable is explicitly mentioned in a /*global ...*/ comment. This rule provides compatibility with JSHint's and JSLint's treatment of global variables.",
+    "description": "Prohibits reference to an undeclared variable.",
     "timeToFix": 5
   },
   {
     "patternId": "no-undefined",
-    "title": "Prohibit Use of undefined Variable",
-    "description": "The undefined variable is unique in JavaScript because it is actually a property of the global object. ECMAScript 3 is possible to overwrite the value of undefined while ECMAScript 5 Prohibits overwriting undefined. It's still possible to shadow undefined.",
+    "title": "Prohibit Use of undefined variable",
+    "description": "Prohibits using  restricted name undefined in variables.",
     "timeToFix": 5
   },
   {
     "patternId": "no-unused-vars",
     "title": "Prohibit Unused Variables",
-    "description": "Variables that are declared and not used anywhere in the code are most likely an error due to incomplete refactoring. Such variables take up space in the code and can lead to confusion by readers.",
+    "description": "Prohibit Unused Variables",
     "timeToFix": 10
   },
   {
     "patternId": "no-use-before-define",
-    "title": "Prohibit Early Use",
-    "description": "In JavaScript, prior to ES6, variable and function declarations are hoisted to the top of a scope, so it's possible to use identifiers before their formal declarations in code. This can be confusing.",
+    "title": "Prohibit the use of variables before defining.",
+    "description": "Prohibit the use of variables before defining them.",
     "timeToFix": 10
   },
   {
     "patternId": "callback-return",
     "title": "Enforce Return After Callback",
-    "description": "The callback pattern is at the heart of most I/O and event-driven programming in JavaScript.",
-    "timeToFix": 5,
-    "parameters": [
-      {
-        "name": "unnamedParam",
-        "description": "The style of callback acepted [callback, cb, next]"
-      }
-    ]
+    "description": "This rule prevents callback to happen multiple times",
+    "timeToFix": 10
   },
   {
     "patternId": "global-require",
     "title": "Prohibit require() outside of the top-level module scope.",
-    "description": "Needs to declare module's dependencies at the beginning of a module these dependencies in other parts of the code may make them harder to spot and could lead to poor maintenence.",
+    "description": "Enforces declaring module's dependencies at the beginning of a module.",
     "timeToFix": 5
   },
   {
     "patternId": "handle-callback-err",
     "title": "Enforce Callback Error Handling",
-    "description": "In node, a common pattern for dealing with asynchronous behavior is called the callback pattern. This pattern expects an Error object or null as the first argument of the callback, forgetting to handle these errors can lead to some really strange behavior in your application.",
+    "description": "Enforces you to handle the errors that come from a callback.",
     "timeToFix": 10
   },
   {
     "patternId": "no-mixed-requires",
     "title": "Prohibit Mixed Requires",
-    "description": "In the Node.JS community it is often customary to separate the required modules from other variable declarations, sometimes also grouping them by their type. This rule helps you enforce this convention.",
+    "description": "Prohibits the mixing required modules and other variable declarations.",
     "timeToFix": 5
   },
   {
@@ -690,31 +684,31 @@
   {
     "patternId": "no-path-concat",
     "title": "Prohibit string concatenation when using _dirname and _filename",
-    "description": "In Node.js, the __dirname and __filename global variables contain the directory path and the file path of the currently executing script file, respectively. Sometimes, developers try to use these variables to create paths to other files.",
+    "description": "Prohibits the use of __dirname and __filname in Node.Js for string concatenation.",
     "timeToFix": 10
   },
   {
     "patternId": "no-process-exit",
     "title": "Prohibit process.exit()",
-    "description": "Prohibits process.exit() method in Node.js this is used to immediately stop the Node.js process and exit. This is dangerous and can cause the application to suddenly stop",
+    "description": "Prohibits process.exit() method in Node.js.",
     "timeToFix": 5
   },
   {
     "patternId": "no-restricted-modules",
     "title": "Prohibit Node modules",
-    "description": "Prohibiting usage of specific node modules can be useful if you want to control the available methods that a developer can use to implement a feature.",
+    "description": "Prohibits the use of specificified node modules.",
     "timeToFix": 5
   },
   {
     "patternId": "no-sync",
     "title": "Prohibit Synchronous Methods",
-    "description": "There are often synchronous versions of the asynchronous methods. Synchronous operations are considered bad practice in most cases and should be avoided.",
+    "description": "Prohibits the use of synchronous methods consider using the asynchronous ones.",
     "timeToFix": 10
   },
   {
     "patternId": "array-bracket-spacing",
     "title": "Prohibit or enforce spaces inside of brackets.",
-    "description": "A number of style guides require or Prohibit spaces between array brackets. This rule applies to both array literals and destructuring assignment (EcmaScript 6) using arrays.",
+    "description": "Prohibit/Enforces the use of spaces between array brackets.",
     "timeToFix": 5
   },
   {
@@ -732,14 +726,14 @@
   {
     "patternId": "brace-style",
     "title": "Require Brace Style",
-    "description": "Brace style is closely related to indent style in programming and describes the placement of curly braces relative to their control statement and body.",
-    "timeToFix": 5
+    "description": "Enforces a style in placement of curly braces relative to their control statement and body.",
+    "timeToFix": 15
   },
   {
     "patternId": "camelcase",
     "title": "Require Camelcase",
-    "description": "When it comes to naming variables, styleguides generally fall into one of two camps: camelcase (variableName) and underscores (variable_name). This rule focuses on using the camelcase approach.",
-    "timeToFix": 5,
+    "description": "Enforces the use of camelCase on variables.",
+    "timeToFix": 15,
     "parameters": [
       {
         "name": "properties",
@@ -751,25 +745,31 @@
     "patternId": "comma-spacing",
     "title": "Enforces spacing around commas",
     "description": "Spacing around commas improve readability of a list of items.",
-    "timeToFix": 5
+    "timeToFix": 10
   },
   {
     "patternId": "comma-style",
-    "title": "Comma style",
-    "description": "Comma Style rule enforces comma styles for a list of things separated by commas. There are two comma styles primarily in JavaScript. The standard one in which commas are placed at the end of the line. And Comma-First, in which, commas are placed at the start of the next line after the list item.",
+    "title": "Enforces comma style that you prefer",
+    "description": "This rule is aimed at enforcing a particular comma style in JavaScript.",
     "timeToFix": 5
   },
   {
     "patternId": "computed-property-spacing",
     "title": "Prohibit or enforce spaces inside of computed properties.",
-    "description": "While formatting preferences are very personal, a number of style guides require or Prohibit spaces between computed properties.",
+    "description": "Require or Prohibit spaces between computed properties.",
     "timeToFix": 5
   },
   {
     "patternId": "consistent-this",
-    "title": "Require Consistent This",
-    "description": "It is often necessary to capture the current execution context in order to make it available subsequently. A prominent example of this are jQuery callbacks.",
-    "timeToFix": 10
+    "title": "Require Consistent this",
+    "description": "Enforces a consistent name for 'this' variable.",
+    "timeToFix": 10,
+    "parameters": [
+        {
+          "name": "unnamedParam",
+          "description": "This rule designates a variable as the chosen alias for this."
+        }
+    ]
   },
   {
     "patternId": "eol-last",
@@ -780,127 +780,127 @@
   {
     "patternId": "func-names",
     "title": "Require Function Expressions to have a Name",
-    "description": "A pattern that's becoming more common is to give function expressions names to aid in debugging.",
-    "timeToFix": 5
+    "description": "Enforces the namming of functions expressions.",
+    "timeToFix": 10
   },
   {
     "patternId": "func-style",
     "title": "Enforce Function Style",
-    "description": "There are two ways of defining functions in JavaScript: function declarations and function expressions. Declarations have the function keyword first, followed by a name, followed by its arguments and the function body.",
-    "timeToFix": 5
+    "description": "With this rule function declarations must have the function keyword first, followed by a name, followed by its arguments and the function body.",
+    "timeToFix": 10
   },
   {
     "patternId": "id-length",
     "title": "Limit minimum and maximum length for identifiers",
-    "description": "Very short identifier names like e, x, _t or very long ones like hashGeneratorResultOutputContainerObject usually make the code harder to read and potentially less maintainable. To prevent this, one may enforce a minimum and/or maximum identifier length. (usually min 2-chars)",
-    "timeToFix": 5
+    "description": "Enforces a minimum and/or maximum variable identifier length. (usually min 2-chars)",
+    "timeToFix": 10
   },
   {
     "patternId": "id-match",
     "title": "Require IDs to match a pattern",
-    "description": "Naming things consistently in a project is an often underestimated aspect of code creation. When done right, it can save your team hours of unnecessary head scratching and misdirections. This rule allows you to precisely define and enforce the variables and function names on your team should use. No more limiting yourself to camelCase, snake_case, PascalCase or oHungarianNotation. Id-match has all your needs covered!",
-    "timeToFix": 5
+    "description": "This rule allows you to precisely define and enforce the variables and function names your team should use.",
+    "timeToFix": 15
   },
   {
     "patternId": "indent",
-    "title": "Validate Indentation",
+    "title": "Enforce Indentation standard",
     "description": "This option validates a specific tab width for your code in block statements.",
     "timeToFix": 10
   },
   {
     "patternId": "jsx-quotes",
     "title": "Enforce JSX Quote Style",
-    "description": "JSX attribute values can contain string literals, which are delimited with single or double quotes.",
+    "description": "Enforces the same type of quotes throughout the code",
     "timeToFix": 10
   },
   {
     "patternId": "key-spacing",
     "title": "Enforce Property Spacing",
-    "description": "This rule enforces spacing around the colon in object literal properties. It can verify each property individually, or it can ensure vertical alignment of groups of properties in an object literal.",
-    "timeToFix": 10
+    "description": "Enforces spacing around the colon in object literal properties and ensures vertical alignment of values in an object literal",
+    "timeToFix": 15
   },
   {
     "patternId": "lines-around-comment",
     "title": "Enforce empty lines around comments",
-    "description": "Many style guides require empty lines before or after comments. The primary goal of these rules is to make the comments easier to read and improve readability of the code.",
+    "description": "Requires empty space around comments.",
     "timeToFix": 10
   },
   {
     "patternId": "linebreak-style",
     "title": "Prohibit mixing CRLF and LF linebreaks",
-    "description": "When developing with a lot of people all having different editors, VCS applications and operating systems it may occur that different line endings are written by either of the mentioned.",
+    "description": "Enforces the same style of linebreak throughout the code.",
     "timeToFix": 5
   },
   {
     "patternId": "max-nested-callbacks",
     "title": "Set Maximum Depth of Nested Callbacks",
-    "description": "A program of any complexity will most likely need to manage several asynchronous operations at various levels of concurrency. A common pitfall that is easy to fall into is nesting callbacks, which makes code more difficult to read the deeper the callbacks are nested.",
+    "description": "Enforces a maximum number of nested callbacks.",
     "timeToFix": 10
   },
   {
     "patternId": "new-cap",
     "title": "Require Constructors to Use Initial Caps",
-    "description": "Native JavaScript functions begin with an uppercase letter to distinguish those functions that are to be used as constructors from functions that are not. Many style guides recommend following this pattern to more easily determine which functions are to be used as constructors.",
+    "description": "Enforces constructors to begin with uppercase letter.",
     "timeToFix": 10
   },
   {
     "patternId": "new-parens",
     "title": "Require Parens for Constructors",
-    "description": "JavaScript allows the omission of parentheses when invoking a function via the new keyword and the constructor has no arguments. However, some coders believe that omitting the parentheses is inconsistent with the rest of the language and thus makes code less clear.",
+    "description": "Enforces the use of parentheses when invoking a constructor even if there are no arguments.",
     "timeToFix": 10
   },
   {
     "patternId": "newline-after-var",
-    "title": "Require or Prohibit an empty newline after variable declarations",
-    "description": "As of today there is no consistency in separating variable declarations from the rest of the code. Some developers leave an empty line between var statements",
+    "title": "Require or Prohibit an empty newline after variable declarations.",
+    "description": "Enforces/Prohibits an empty line between var statements.",
     "timeToFix": 5
   },
   {
     "patternId": "no-array-constructor",
     "title": "Prohibit creation of dense arrays using the Array constructor",
-    "description": "Use of the Array constructor to construct a new array is generally discouraged in favour of array literal notation because of the single-argument pitfall and because the Array global may be redefined.",
+    "description": "Prohibits the creating of arrays with multiple dimensions.",
     "timeToFix": 10
   },
   {
     "patternId": "no-continue",
-    "title": "Prohibit continue",
-    "description": "The continue statement terminates execution of the statements in the current iteration of the current or labeled loop, and continues execution of the loop with the next iteration. When used incorrectly it makes code less testable, less readable and less maintainable. ",
-    "timeToFix": 5
+    "title": "Prohibit continue.",
+    "description": "Prohibits the use of continue in the current or labeled loop.",
+    "timeToFix": 10
   },
   {
     "patternId": "no-inline-comments",
-    "title": "Prohibits comments after code. Comments must come on their own lines",
-    "description": "Some style guides Prohibit a comments on the same line as code. If there are comments immediately following code, it can make it harder to read the code.",
-    "timeToFix": 5
+    "title": "Prohibits comments after code. Comments must come on their own lines.",
+    "description": "Prohibits comments in the same line as codes.",
+    "timeToFix": 10
   },
   {
     "patternId": "no-lonely-if",
-    "title": "Prohibit if as the Only Statement in an else Block",
-    "description": "If an if statement is the only statement in the else block of a parent if statement, it is often clearer to combine the two to using else if form.",
+    "title": "Prohibit if as the Only Statement in an else Block.",
+    "description": "Prohibits the use of as the the only statement in the else block it is better to combine the else if block.",
     "timeToFix": 15
   },
   {
     "patternId": "no-mixed-spaces-and-tabs",
     "title": "Prohibit mixed spaces and tabs for indentation",
-    "description": "Most code conventions require either tabs or spaces be used for indentation. As such, it's usually an error if a single line of code is indented with both tabs and spaces.",
+    "description": "Prohibits mixes of tabs and spaces for idententation.",
     "timeToFix": 5
   },
   {
     "patternId": "no-multiple-empty-lines",
     "title": "Prohibits multiple blank lines",
-    "description": "Some developers prefer to have multiple blank lines removed, while others feel that it helps improve readability. Whitespace is useful for separating logical sections of code, but excess whitespace takes up more of the screen.",
+    "description": "Prohibits multiple blank lines in the code.",
     "timeToFix": 10
   },
   {
     "patternId": "no-nested-ternary",
     "title": "Prohibit Nested Ternaries",
-    "description": "Nesting ternary expressions makes code unclear. The no-nested-ternary rule Prohibits the use of nested ternary expressions.",
-    "timeToFix": 5
+    "description": "Prohibits the use of nested ternary expressions.",
+    "timeToFix": 10
   },
   {
     "patternId": "no-negated-condition",
     "title": "Prohibit use of negated expressions in conditions",
-    "description": "Checks against the use of a negated expression in an if condition when the else branch is not empty or in a ternary operator. Negated conditions are more difficult to understand. Code can be made more readable by inverting the condition instead.",
+    "description": "Negated conditions are more difficult to understand.",
     "timeToFix": 5
   },
   {
@@ -912,31 +912,31 @@
   {
     "patternId": "no-restricted-syntax",
     "title": "Prohibit certain syntax",
-    "description": "Some code bases prefer to not use certain features of JavaScript that are identified on the parsed AST such as FunctionExpression or WithStatement. This is implemented to warn on any AST node type that is passed to it.",
+    "description": "This pattern prohibits the use of expression such as FunctionExpression or WithStatement.",
     "timeToFix": 5
   },
   {
     "patternId": "no-spaced-func",
     "title": "Prohibit Spaces in Function Calls",
-    "description": "While it's possible to have whitespace between the name of a function and the parentheses that execute it, such patterns tend to look more like errors.",
+    "description": "Prohibits spaces between the name of a functions and the parentheses that execute it.",
     "timeToFix": 5
   },
   {
     "patternId": "no-ternary",
     "title": "Prohibit Ternary Operators",
-    "description": "The ternary operator is used to conditionally assign a value to a variable. Some believe that the use of ternary operators leads to unclear code.",
-    "timeToFix": 5
+    "description": "The ternary operator is used to conditionally assign a value to a variable.",
+    "timeToFix": 10
   },
   {
     "patternId": "no-trailing-spaces",
     "title": "Prohibit trailing spaces at the end of lines",
-    "description": "Sometimes in the course of editing files, you can end up with extra whitespace at the end of lines. This rule cleans the extra space.",
-    "timeToFix": 5
+    "description": "This rule cleans the extra space in the end of lines.",
+    "timeToFix": 10
   },
   {
     "patternId": "no-underscore-dangle",
     "title": "Prohibit Dangling Underscores in Identifiers",
-    "description": "As far as naming conventions for identifiers go, dangling underscores may be the most polarizing in JavaScript.",
+    "description": "Prohibits the use of underscores at the beggining or end of a variable name.",
     "timeToFix": 5
   },
   {
@@ -954,38 +954,38 @@
   {
     "patternId": "one-var",
     "title": "Require or Prohibit One Variable Declaration per Scope",
-    "description": "Variables can be declared at any point in JavaScript code using var, let, or const. This rule allows you to use only one var per scope.",
-    "timeToFix": 5
+    "description": "This rule Enforces/Prohibits you to use only one var per scope.",
+    "timeToFix": 10
   },
   {
     "patternId": "operator-assignment",
     "title": "Operator Assignment Shorthand",
-    "description": "JavaScript provides shorthand operators that combine variable assignment and some simple mathematical operations. For example, x = x + 4 can be shortened to x += 4. ",
+    "description": "Requires to use operator Shorthand. Example:x = x + 4 can be shortened to x += 4. ",
     "timeToFix": 5
   },
   {
     "patternId": "operator-linebreak",
     "title": "Operator Linebreak",
-    "description": "When a statement is too long to fit on a single line, line breaks are generally inserted next to the operators separating expressions.",
-    "timeToFix": 5
+    "description": "This rule enforces linebreaks to happen in the operators.",
+    "timeToFix": 10
   },
   {
     "patternId": "padded-blocks",
     "title": "Enforce padding within blocks",
-    "description": "The goal of this pattern is to improve readability by visually separating the block content and the surrounding code.",
-    "timeToFix": 5
+    "description": "Enforces separating the block content and the surrounding code.",
+    "timeToFix": 10
   },
   {
     "patternId": "quote-props",
     "title": "Quoting Style for Property Names",
-    "description": "Object literal property names can be defined in two ways: using literals or using strings.",
-    "timeToFix": 5
+    "description": "This rule enforces you to quote with literals or strings.",
+    "timeToFix": 10
   },
   {
     "patternId": "quotes",
     "title": "Quotes Style",
     "description": "Enforce coherent quotes style",
-    "timeToFix": 5,
+    "timeToFix": 10,
     "parameters": [
       {
         "name": "unnamedParam",
@@ -997,7 +997,7 @@
     "patternId": "require-jsdoc",
     "title": "Require JSDoc comment",
     "description": "This rule generates warnings for nodes which do not have JSDoc comments.",
-    "timeToFix": 5
+    "timeToFix": 10
   },
   {
     "patternId": "semi-spacing",
@@ -1020,131 +1020,121 @@
   {
     "patternId": "space-after-keywords",
     "title": "Require or Prohibit spaces following keywords",
-    "description": "Some style guides will require or Prohibit spaces following the certain keywords.",
+    "description": "Require or Prohibit spaces following keywords.",
     "timeToFix": 5
   },
   {
     "patternId": "space-before-keywords",
     "title": "Require or Prohibit spaces before keywords",
-    "description": "Some styleguides require or Prohibit spaces preceding certain keywords.",
+    "description": "Require or Prohibit spaces preceding certain keywords.",
     "timeToFix": 10
   },
   {
     "patternId": "space-before-blocks",
     "title": "Require Or Prohibit Space Before Blocks",
-    "description": "Require or Prohibit consistency in the spacing before blocks.",
+    "description": "Require/Prohibit in the spacing before blocks.",
     "timeToFix": 10
   },
   {
     "patternId": "space-before-function-paren",
     "title": "Require or Prohibit a space before function parenthesis",
     "description": "When formatting a function, whitespace is allowed between the function name or function keyword and the opening paren.",
-    "timeToFix": 5
+    "timeToFix": 10
   },
   {
     "patternId": "space-in-parens",
     "title": "Prohibit or enforce spaces inside of parentheses",
-    "description": "Some style guides require or Prohibit spaces inside of parentheses.",
+    "description": "Enforces/Prohibit spaces inside of parentheses.",
     "timeToFix": 5
   },
   {
     "patternId": "space-infix-ops",
     "title": "Require Spaces Around Infix Operators",
-    "description": "Some style guides require spaces around operators.",
+    "description": "Enforces spaces around operators.",
     "timeToFix": 10
   },
   {
     "patternId": "space-return-throw-case",
     "title": "Require spaces following return, throw, and case",
-    "description": "Require spaces following return, throw, and case.",
+    "description": "Enforces spaces following return, throw, and case.",
     "timeToFix": 5
   },
   {
     "patternId": "space-unary-ops",
     "title": "Require or Prohibit spaces before/after unary operators",
-    "description": "This is mainly a stylistic issue, however, some JavaScript expressions can be written without spacing which makes it harder to read and maintain.",
+    "description": "Enforces/Prohibits spaces before/after unary operators.",
     "timeToFix": 5
   },
   {
     "patternId": "spaced-comment",
     "title": "Requires or Prohibits a whitespace (space or tab) beginning a comment",
-    "description": "Some style guides require or Prohibit a whitespace immediately after the initial // or /* of a comment.",
-    "timeToFix": 10
+    "description": "Enforces/Prohibit a whitespace immediately after the initial // or /* of a comment.",
+    "timeToFix": 5
   },
   {
     "patternId": "wrap-regex",
     "title": "Require Regex Literals to be Wrapped",
-    "description": "When a regular expression is used in certain situations, it can end up looking like a division operator.",
-    "timeToFix": 5
+    "description": "Enforces parentheses around slash operator.",
+    "timeToFix": 10
   },
   {
     "patternId": "arrow-parens",
-    "title": "Require parens in arrow function arguments",
+    "title": "Require parentheses in arrow function arguments",
     "description": "Enforces the consistent use of parentheses in arrow functions.",
     "parameters": [
       {
         "name": "unnamedParam",
-        "description": "Enforces the use of arrow parens [always, as-needed]"
+        "description": "Specifies when the parentheses are necessary [always, as-needed]"
       }
     ]
   },
   {
     "patternId": "arrow-spacing",
     "title": "Require space before/after arrow function's arrow",
-    "description": "This rule normalize style of spacing before/after an arrow function's arrow(=>).",
-    "timeToFix": 5,
-    "parameters": [
-        {
-          "name": "before",
-          "description": "Enforces spaces before arrow parenses"
-        },
-        {
-          "name": "after",
-           "description": "Enforces spaces after arrow parenses"
-        }
-    ]
+    "description": "Enforces spaces around the arrow function.",
+    "timeToFix": 5
   },
   {
     "patternId": "constructor-super",
     "title": "Verify calls of super() in constructors",
-    "description": "Constructors of derived classes must call super().",
+    "description": "This rule checks for super in constructors of derived classes.",
     "timeToFix": 5
   },
   {
     "patternId": "generator-star-spacing",
-    "title": "Enforce spacing around the * in generator functions",
-    "description": "Generators are a new type of function in ECMAScript 6 that can return multiple values over time.",
+    "title": "Require spacing around the * in generator functions.",
+    "description": "Enforces spacing around *.",
     "timeToFix": 5
   },
   {
     "patternId": "no-class-assign",
-    "title": "Prohibit modifying variables of class declarations",
-    "description": "ClassDeclaration creates a variable, and we can modify the variable.",
-    "timeToFix": 5
+    "title": "Prohibit modifying variables of class declarations.",
+    "description": "Prohibits modifying the value of a class.",
+    "timeToFix": 10
   },
   {
     "patternId": "no-const-assign",
     "title": "Prohibit modifying variables that are declared using const",
-    "description": "We cannot modify variables that are declared using const keyword.",
+    "description": "Prohibits changes in variables that are declared using const keyword.",
     "timeToFix": 5
   },
   {
     "patternId": "no-dupe-class-members",
     "title": "Prohibit duplicate name in class members",
-    "description": "If there are declarations of the same name in class members, the last declaration overwrites other declarations.",
+    "description": "Prohibits declarations of the same name in class members.",
     "timeToFix": 10
   },
   {
     "patternId": "no-this-before-super",
     "title": "Prohibit use of this/super before calling super() in constructors.",
     "description": "In the constructor of derived classes, if this/super are used before super() calls, it raises a reference error.",
-    "timeToFix": 5
+    "timeToFix": 10
   },
   {
     "patternId": "no-var",
     "title": "require let or const instead of var",
-    "description": "ECMAScript 6 allows programmers to create variables with block scope instead of function scope using the let and const keywords.",
-    "timeToFix": 5
+    "description": "Enforces the use of let or const instead of var.",
+    "timeToFix": 10
   },
   {
     "patternId": "object-shorthand",

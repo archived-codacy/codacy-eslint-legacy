@@ -1,15 +1,16 @@
 //#Patterns: callback-return
 
 
-//Warn: callback-return
-function foo(callback) {
+
+function foo() {
     if (err) {
-        setTimeout(callback, 0); // this is bad, but WILL NOT warn
+	//#Warn: callback-return
+        callback(err);
     }
     callback();
 }
 
-function foo() {
+function bar() {
     if (err) {
         return callback(err);
     }

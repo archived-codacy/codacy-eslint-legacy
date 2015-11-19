@@ -1,6 +1,5 @@
 Require regex literals to escape division operators.
 This is used to disambiguate the division operator to not confuse users.
-The following patterns are considered problems:
 
 ```
 //Bad - A regular expression literal can be confused with '/='

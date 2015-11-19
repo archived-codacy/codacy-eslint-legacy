@@ -1,19 +1,23 @@
 If there are declarations of the same name in class members, the last declaration overwrites other declarations silently. It can cause unexpected behaviors.
 This rule is aimed to flag the use of duplicate names in class members.
-The following patterns are considered problems:
 
 ```
-/*eslint-env es6*/ class Foo {
-bar() {
-console.log("hello");
+//Bad:
+class Foo {
+  bar() { }
+  bar() { }
 }
-bar() {
-console.log("goodbye");
+class Foo {
+  bar() { }
+  get bar() { }      /*error Duplicate name "bar".*/
 }
+
+//Good:
+class Foo {
+  bar() { }
+  qux() { }
 }
-var foo = new Foo();
-foo.bar();
-// goodbye
+
 ```
 
 [Source](http://eslint.org/docs/rules/no-dupe-class-members)

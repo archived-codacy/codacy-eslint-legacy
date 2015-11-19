@@ -1,8 +1,6 @@
 //#Patterns: arrow-spacing
 
-
-
-
+var a;
+var b;
 //#Info: arrow-spacing
-{ "before": true, "after": true } 
-(a) => {} 
+a =>b; 
