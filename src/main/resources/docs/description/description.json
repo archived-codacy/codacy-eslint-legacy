@@ -697,7 +697,13 @@
     "patternId": "no-restricted-modules",
     "title": "Prohibit Node modules",
     "description": "Prohibits the use of specificified node modules.",
-    "timeToFix": 5
+    "timeToFix": 5,
+    "parameters": [
+      {
+        "name": "unnamedParamList",
+        "description": "The modules you want to disallow ex: [\"fs\", \"os\"]"
+      }
+    ]
   },
   {
     "patternId": "no-sync",
@@ -935,7 +941,13 @@
     "patternId": "no-restricted-syntax",
     "title": "Prohibit certain syntax",
     "description": "This pattern prohibits the use of expression such as FunctionExpression or WithStatement.",
-    "timeToFix": 5
+    "timeToFix": 5,
+    "parameters": [
+      {
+        "name": "unnamedParamList",
+        "description": "The features you want to disallow ex: [\"FunctionExpression\", \"WithStatement\"]"
+      }
+    ]
   },
   {
     "patternId": "no-spaced-func",

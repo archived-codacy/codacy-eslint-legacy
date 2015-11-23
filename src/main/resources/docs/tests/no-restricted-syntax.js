@@ -1,4 +1,4 @@
-//#Patterns: no-restricted-syntax : {"unnamedParam": "FunctionExpression"}
+//#Patterns: no-restricted-syntax
 
 //#Info: no-restricted-syntax
 var doSomething = function () {};

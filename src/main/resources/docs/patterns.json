@@ -595,7 +595,13 @@
     {
       "patternId": "no-restricted-modules",
       "level": "Warning",
-      "category": "CodeStyle"
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "unnamedParamList",
+          "default": ["fs", "os"]
+        }
+      ]
     },
     {
       "patternId": "no-sync",
@@ -801,7 +807,13 @@
     {
       "patternId": "no-restricted-syntax",
       "level": "Info",
-      "category": "CodeStyle"
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "unnamedParamList",
+          "default": ["FunctionExpression", "WithStatement"]
+        }
+      ]
     },
     {
       "patternId": "no-spaced-func",
