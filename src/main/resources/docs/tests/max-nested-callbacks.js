@@ -1,9 +1,9 @@
-//#Patterns: max-nested-callbacks
+//#Patterns: max-nested-callbacks {"unnamedParam": 3}
 
-//#Warn: max-nested-callbacks
 foo(function () {
     bar(function () {
         baz(function() {
+            //#Warn: max-nested-callbacks
             qux(function () {
 
             });

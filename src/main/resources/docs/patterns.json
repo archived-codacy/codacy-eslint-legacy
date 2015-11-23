@@ -122,8 +122,8 @@
     },
     {
       "patternId": "no-irregular-whitespace",
-      "level": "Error",
-      "category": "ErrorProne"
+      "level": "Info",
+      "category": "CodeStyle"
     },
     {
       "patternId": "no-negated-in-lhs",
@@ -187,7 +187,7 @@
       "parameters": [
         {
           "name": "unnamedParam",
-          "default": ""
+          "default": 4
         }
       ]
     },
@@ -611,13 +611,13 @@
       "patternId": "block-spacing",
       "level": "Warning",
       "category": "CodeStyle",
-       "description": "Enforces spaces before arrow parenses",
-        "parameters": [
+      "description": "Enforces spaces before arrow parenses",
+      "parameters": [
         {
           "name": "unnamedParam",
           "default": "always"
         }
-        ]
+      ]
     },
     {
       "patternId": "brace-style",
@@ -629,11 +629,11 @@
       "level": "Info",
       "category": "CodeStyle",
       "parameters": [
-      {
-        "name": "properties",
-        "default": "always"
-      }
-	]
+        {
+          "name": "properties",
+          "default": "always"
+        }
+      ]
     },
     {
       "patternId": "comma-spacing",
@@ -663,8 +663,8 @@
     },
     {
       "patternId": "eol-last",
-      "level": "Warning",
-      "category": "ErrorProne"
+      "level": "Info",
+      "category": "CodeStyle"
     },
     {
       "patternId": "func-names",
@@ -684,7 +684,17 @@
     {
       "patternId": "id-match",
       "level": "Warning",
-      "category": "CodeStyle"
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "unnamedParam",
+          "default": "^[a-z]+([A-Z][a-z]+)*$"
+        },
+        {
+          "name": "properties",
+          "default": false
+        }
+      ]
     },
     {
       "patternId": "indent",
@@ -694,7 +704,13 @@
     {
       "patternId": "jsx-quotes",
       "level": "Warning",
-      "category": "CodeStyle"
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "unnamedParam",
+          "default": "prefer-double"
+        }
+      ]
     },
     {
       "patternId": "key-spacing",
@@ -708,13 +724,19 @@
     },
     {
       "patternId": "linebreak-style",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "max-nested-callbacks",
       "level": "Warning",
-      "category": "CodeStyle"
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "unnamedParam",
+          "default": 5
+        }
+      ]
     },
     {
       "patternId": "new-cap",
@@ -758,7 +780,7 @@
     },
     {
       "patternId": "no-multiple-empty-lines",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
@@ -910,7 +932,13 @@
     {
       "patternId": "spaced-comment",
       "level": "Info",
-      "category": "CodeStyle"
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "unnamedParam",
+          "default": "always"
+        }
+      ]
     },
     {
       "patternId": "wrap-regex",
@@ -924,7 +952,7 @@
       "parameters": [
         {
           "name": "unnamedParam",
-          "default":"always"
+          "default": "always"
         }
       ]
     },

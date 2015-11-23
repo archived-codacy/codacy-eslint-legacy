@@ -717,11 +717,11 @@
     "description": "This rule is for spacing style within single line blocks.",
     "timeToFix": 15,
     "parameters": [
-        {
-          "name": "unnamedParam",
-          "description": "Enforces or prohibits spaces within single block lines[always, never]"
-        }
-        ]
+      {
+        "name": "unnamedParam",
+        "description": "Enforces or prohibits spaces within single block lines[always, never]"
+      }
+    ]
   },
   {
     "patternId": "brace-style",
@@ -765,10 +765,10 @@
     "description": "Enforces a consistent name for 'this' variable.",
     "timeToFix": 10,
     "parameters": [
-        {
-          "name": "unnamedParam",
-          "description": "This rule designates a variable as the chosen alias for this."
-        }
+      {
+        "name": "unnamedParam",
+        "description": "This rule designates a variable as the chosen alias for this."
+      }
     ]
   },
   {
@@ -799,7 +799,17 @@
     "patternId": "id-match",
     "title": "Require IDs to match a pattern",
     "description": "This rule allows you to precisely define and enforce the variables and function names your team should use.",
-    "timeToFix": 15
+    "timeToFix": 15,
+    "parameters": [
+      {
+        "name": "unnamedParam",
+        "description": "Regex that specifies the allowed name convention"
+      },
+      {
+        "name": "properties",
+        "description": "Specifies whether this pattern will be applied to property names or ignore them [true, false]"
+      }
+    ]
   },
   {
     "patternId": "indent",
@@ -811,7 +821,13 @@
     "patternId": "jsx-quotes",
     "title": "Enforce JSX Quote Style",
     "description": "Enforces the same type of quotes throughout the code",
-    "timeToFix": 10
+    "timeToFix": 10,
+    "parameters": [
+      {
+        "name": "unnamedParam",
+        "description": "The quoting style you prefer [prefer-single, prefer-double]"
+      }
+    ]
   },
   {
     "patternId": "key-spacing",
@@ -835,7 +851,13 @@
     "patternId": "max-nested-callbacks",
     "title": "Set Maximum Depth of Nested Callbacks",
     "description": "Enforces a maximum number of nested callbacks.",
-    "timeToFix": 10
+    "timeToFix": 10,
+    "parameters": [
+      {
+        "name": "unnamedParam",
+        "description": "The max depth of nesting"
+      }
+    ]
   },
   {
     "patternId": "new-cap",
@@ -1069,7 +1091,13 @@
     "patternId": "spaced-comment",
     "title": "Requires or Prohibits a whitespace (space or tab) beginning a comment",
     "description": "Enforces/Prohibit a whitespace immediately after the initial // or /* of a comment.",
-    "timeToFix": 5
+    "timeToFix": 5,
+    "parameters": [
+      {
+        "name": "unnamedParam",
+        "description": "When set to always, you need to have a white space immediately after the initial // or /* [always, never]"
+      }
+    ]
   },
   {
     "patternId": "wrap-regex",
@@ -1139,7 +1167,7 @@
   {
     "patternId": "object-shorthand",
     "title": "Require Object Literal Shorthand Syntax",
-    "description":"This syntax can make defining complex object literals much cleaner.",
+    "description": "This syntax can make defining complex object literals much cleaner.",
     "timeToFix": 10
   },
   {

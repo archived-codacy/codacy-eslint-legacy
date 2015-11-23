@@ -1,12 +1,15 @@
 //#Patterns: no-mixed-spaces-and-tabs
 
 function add(x, y){
-	//#Info: no-mixed-spaces-and-tabs	
+//#Info: no-mixed-spaces-and-tabs
 		 	return x + y;
 }
-function main() {
-	//#Info: no-mixed-spaces-and-tabs
-	 	 y = 7;         
+
+function sub(x, y){
+  return x - y;
 }
 
-var x = 5,
+function main() {
+//#Info: no-mixed-spaces-and-tabs
+	 	 y = 7;         
+}

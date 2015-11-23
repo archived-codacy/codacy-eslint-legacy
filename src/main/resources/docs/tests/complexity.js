@@ -1,12 +1,12 @@
-//#Patterns: complexity
+//#Patterns: complexity {"unnamedParam": 2}
  
 
-function a(x) {               
+//#Warn: complexity
+function a(x) {
     if (true) {
         return x;
     } else if (false) {
         return x+1;
-//#Warn: complexity
     } else {
         return 4;
     }

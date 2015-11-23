@@ -1,14 +1,18 @@
 //#Patterns: no-invalid-this
 
-//#Err: no-invalid-this
+"use strict";
+
 (function() {
-    this.a = 0;      
+    //#Err: no-invalid-this
+    this.a = 0;
+    //#Err: no-invalid-this
     baz(() => this);  
 })();
 
 function foo() {
     //#Err: no-invalid-this
     this.a = 0;
+    //#Err: no-invalid-this
     baz(() => this);
 }
 

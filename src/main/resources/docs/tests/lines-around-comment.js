@@ -1,12 +1,13 @@
 //#Patterns: lines-around-comment
+//#Issue: {"severity": "Info", "line": 12, "patternId": "lines-around-comment"}
 
 var x = 0;
-//#Info: lines-around-comment
-/** * The vertical position. */ 
+
+/**
+ * The vertical position.
+ */
 var y = 10;
 
-var z = 0;
- 
-/** * The vertical position. */ 
-
-var l = 10;
+var x = 0;
+/* the vertical position */
+var y = 10;

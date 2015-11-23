@@ -1,9 +1,9 @@
 //#Patterns: no-unused-vars
 
-//#Warn: no-unused-vars
 var x;
 
-var y = 10;           
+//#Warn: no-unused-vars
+var y = 10;
 y = 5;
 
 //#Warn: no-unused-vars
@@ -17,6 +17,4 @@ function fact(n) {
     return n * fact(n - 1);
 }
 
-
-var x = 10;
 alert(x);

@@ -1,6 +1,7 @@
 //#Patterns: no-warning-comments
+//#Issue: {"severity": "Info", "line": 5, "patternId": "no-warning-comments"}
 
-//#Info: no-warning-comments
-// TODO: this                          
-//#Info: no-warning-comments
-// Even this: FIXME                     
+
+// TODO: this
+
+// Normal comment
