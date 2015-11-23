@@ -49,12 +49,26 @@ object ESLint extends Tool {
     parameterName == "unnamedParam"
   }
 
+  def isUnnamedListParameter(parameterName: String): Boolean = {
+    parameterName == "unnamedParamList"
+  }
+
+  def isNamedParameter(parameterName: String): Boolean = {
+    !isUnnamedParameter(parameterName) && !isUnnamedListParameter(parameterName)
+  }
+
   def hasUnnamedParameters(parameters: Seq[ParameterDef]): Boolean = {
     parameters.exists(param => isUnnamedParameter(param.name.value))
   }
 
-  def unnamedParameterToConfig(parameter: ParameterDef): String = {
-    Json.stringify(parameter.value)
+  def unnamedParameterToConfig(parameter: ParameterDef): Seq[String] = {
+    Seq(Json.stringify(parameter.value))
+  }
+
+  def unnamedListParameterToConfig(parameter: ParameterDef): Seq[String] = {
+    parameter.value.asOpt[Seq[JsValue]].fold(Seq.empty[String]) {
+      params => params.map(param => Json.stringify(param))
+    }
   }
 
   def namedParameterToConfig(parameter: ParameterDef): String = {
@@ -66,16 +80,18 @@ object ESLint extends Tool {
 
   def generateNamedParameters(parameters: Seq[ParameterDef]): Seq[String] = {
     parameters.collect {
-      case param if !isUnnamedParameter(param.name.value) =>
+      case param if isNamedParameter(param.name.value) =>
         namedParameterToConfig(param)
     }
   }
 
   def generateUnnamedParameters(parameters: Seq[ParameterDef]): Seq[String] = {
     parameters.collect {
+      case param if isUnnamedListParameter(param.name.value) =>
+        unnamedListParameterToConfig(param)
       case param if isUnnamedParameter(param.name.value) =>
         unnamedParameterToConfig(param)
-    }
+    }.flatten
   }
 
   def generateParameters(parameters: Seq[ParameterDef]) = {
@@ -83,11 +99,11 @@ object ESLint extends Tool {
     val namedParam = generateNamedParameters(parameters)
 
     val separator =
-      if(unnamedParam.nonEmpty && namedParam.nonEmpty) "," else ""
+      if (unnamedParam.nonEmpty && namedParam.nonEmpty) "," else ""
 
     val unnamedParamString = unnamedParam.mkString(",")
     val namedParamString =
-      if(namedParam.nonEmpty) s"""{${namedParam.mkString(",")}}""" else ""
+      if (namedParam.nonEmpty) s"""{${namedParam.mkString(",")}}""" else ""
 
     unnamedParamString + separator + namedParamString
   }
