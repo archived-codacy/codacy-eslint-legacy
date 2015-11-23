@@ -3,7 +3,7 @@ This rule is aimed at increasing code readability and maintainability by enforci
 It allows the programmers to silently by-pass this check by using "quoted" property names or calculated property access to allow potential server-side data requirements.
 
 ```
-//default is minimum 2-chars ({min: 2}) 	
+//default is minimum 2-chars ({min: 2})
 //Bad:
 var x = 5;
 

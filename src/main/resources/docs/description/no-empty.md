@@ -4,7 +4,15 @@ This rule is aimed at eliminating empty block statements. While not technically 
 A block will not be considered a warning if it contains a comment line.
 
 ```
+//Bad:
 if (foo) {
+}
+while (foo) {
+}
+
+//Good
+:if (foo) {
+    // instructions
 }
 
 ```

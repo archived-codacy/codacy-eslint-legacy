@@ -17,11 +17,11 @@ This option will enforce === and !== in your code with one exception - it permit
 ```
 //Smart:
 //Good:
-	typeof foo == 'undefined'
-	'hello' != 'world'
-	0 == 0
-	true == true
-	foo == null
+	typeof foo === 'undefined'
+	'hello' !== 'world'
+	0 === 0
+	true === true
+	foo === null
 //Bad:
 	a == b 
 	foo == true

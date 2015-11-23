@@ -3,6 +3,7 @@ But the modification is a mistake in most cases.
 This rule is aimed to flag modifying variables of class declarations.
 
 ```
+//Bad:
 class A {
 }
 A = 0;

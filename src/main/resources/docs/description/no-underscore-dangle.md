@@ -5,7 +5,7 @@ There is actually a long history of using dangling underscores to indicate "priv
 //Bad:
 var foo_;
 var __proto__ = {};
-foo._bar();    
+foo._bar(); 
 
 ```
 

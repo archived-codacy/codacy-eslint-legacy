@@ -13,8 +13,8 @@ typeof (a);
 (function(){} ? a() : b())
 (/^a$/).test(x);
 
-//Bad with functions:
-((function foo() {}))();  
+//Bad with argument functions:
+((function foo() {}))();
 
 ```
 

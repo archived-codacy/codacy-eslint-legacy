@@ -3,6 +3,7 @@ Under non ES2015 environment, it might be ignored merely.
 This rule is aimed to flag modifying variables that are declared using const keyword.
 
 ```
+//Bad:
 const a = 0;
 a = 1;
 

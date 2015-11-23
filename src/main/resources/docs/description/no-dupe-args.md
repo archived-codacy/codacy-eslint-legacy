@@ -4,7 +4,7 @@ This rule prevents having duplicate param names.
 ```
 //Bad:
 function foo(a, b, a) {
-console.log("which a is it?", a);
+	console.log("which a is it?", a);
 }
 
 ```

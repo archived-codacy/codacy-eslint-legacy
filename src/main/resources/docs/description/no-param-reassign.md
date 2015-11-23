@@ -3,7 +3,7 @@ Assignment to variables declared as function parameters can be misleading and le
 ```
 //Bad:
 function foo(bar) {
-    bar = 13;      
+    bar = 13;
 }
 
 

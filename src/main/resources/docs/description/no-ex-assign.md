@@ -7,6 +7,7 @@ try {
 } catch (e) {
 	e = 10;
 }
+
 //Good:
 try {
     // code

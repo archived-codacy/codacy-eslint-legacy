@@ -6,6 +6,7 @@ Many versioning systems (like git and subversion) can automatically ensure the c
 //Bad:
  	var a = 'a', // \r\n /*error Expected linebreaks to be 'LF' but found 'CRLF'.*/ 
 	b = 'b';// \n
+
 //Good:
 var a = 'a', // \n
     b = 'b'; // \n
