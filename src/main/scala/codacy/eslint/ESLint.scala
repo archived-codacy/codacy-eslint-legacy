@@ -29,9 +29,10 @@ object ESLint extends Tool {
 
       val patternsToLintOpt = ToolHelper.getPatternsToLint(conf)
       val configuration =
-        patternsToLintOpt.fold(Seq[String]()) {
-          patternsToLint =>
+        patternsToLintOpt.fold(Seq.empty[String]) {
+          case patternsToLint if patternsToLint.nonEmpty =>
             Seq("-c", writeConfigFile(patternsToLint))
+          case _ => Seq.empty[String]
         }
 
       val command = Seq("eslint", "-f", "json") ++ configuration ++ filesToLint
@@ -63,23 +64,32 @@ object ESLint extends Tool {
     s""""$parameterName":$parameterValue"""
   }
 
-  def generateNamedParameters(parameters: Seq[ParameterDef]): String = {
-    val params = parameters.map(namedParameterToConfig).mkString(",")
-
-    s"""{$params}"""
+  def generateNamedParameters(parameters: Seq[ParameterDef]): Seq[String] = {
+    parameters.collect {
+      case param if !isUnnamedParameter(param.name.value) =>
+        namedParameterToConfig(param)
+    }
   }
 
-  def generateUnnamedParameters(parameters: Seq[ParameterDef]): String = {
-    parameters.map(unnamedParameterToConfig).mkString(",")
+  def generateUnnamedParameters(parameters: Seq[ParameterDef]): Seq[String] = {
+    parameters.collect {
+      case param if isUnnamedParameter(param.name.value) =>
+        unnamedParameterToConfig(param)
+    }
   }
 
   def generateParameters(parameters: Seq[ParameterDef]) = {
-    if (hasUnnamedParameters(parameters)) {
-      generateUnnamedParameters(parameters)
-    }
-    else {
-      generateNamedParameters(parameters)
-    }
+    val unnamedParam = generateUnnamedParameters(parameters)
+    val namedParam = generateNamedParameters(parameters)
+
+    val separator =
+      if(unnamedParam.nonEmpty && namedParam.nonEmpty) "," else ""
+
+    val unnamedParamString = unnamedParam.mkString(",")
+    val namedParamString =
+      if(namedParam.nonEmpty) s"""{${namedParam.mkString(",")}}""" else ""
+
+    unnamedParamString + separator + namedParamString
   }
 
   def patternToConfig(pattern: PatternDef): String = {
@@ -101,6 +111,10 @@ object ESLint extends Tool {
     val ecmaFeatures = Seq( """"jsx":true""")
 
     val content = s"""{"rules":{${rules.mkString(",")}},"env":{${env.mkString(",")}},"ecmaFeatures":{${ecmaFeatures.mkString(",")}}}"""
+
+    println("\n\nConfig File Content:\n\n")
+    println(content)
+    println("\n\n////End Config File Content////\n\n")
 
     FileHelper.createTmpFile(content, "config", ".json").toString
   }
