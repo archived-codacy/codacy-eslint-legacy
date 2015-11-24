@@ -1,12 +1,12 @@
-Generators are a new type of function in ECMAScript 6 that can return multiple values over time. These special functions are indicated by placing an * after the function keyword.
-Here is an example of a generator function:
-This is also valid:
-
+Generators are a new type of function in ECMAScript 6 that can return multiple values over time. These special functions are indicated by placing an * after the function keyword. This rule enforces a space before and/or after the "*" keyword.
+Example:
 ```
-/*eslint-env es6*/ function* generator() {
-yield "44";
-yield "55";
-}
+//Enforced with "before" = true and "after" = false
+function *generator() {}
+var anonymous = function *() {};
+var shorthand = { *generator() {} };
+
+//Good wtih
 
 ```
 

@@ -3,10 +3,13 @@ Some consider this to be a bad practice as it was an undocumented feature of Jav
 This rule is aimed at preventing the use of multiline strings.
 
 ```
-/*error Multiline support is limited to browsers supporting ES5 only.*/
-
+//Bad:
 var x = "Line 1 \
          Line 2";
+
+//Good:
+var x = "Line 1\n" +
+        "Line 2";
 ```
 
 [Source](http://eslint.org/docs/rules/no-multi-str)

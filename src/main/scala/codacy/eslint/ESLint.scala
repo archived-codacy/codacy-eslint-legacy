@@ -2,9 +2,8 @@ package codacy.eslint
 
 import java.nio.file.Path
 import codacy.dockerApi._
-import codacy.dockerApi.utils.CommandRunner
+import codacy.dockerApi.utils.{FileHelper, ToolHelper, CommandRunner}
 import play.api.libs.json._
-import seedtools.{FileHelper, ToolHelper}
 import scala.util.Try
 
 import play.api.libs.functional.syntax._
@@ -28,8 +27,13 @@ object ESLint extends Tool {
           paths.map(_.toString).toSeq
       }
 
-      val patternsToLint = ToolHelper.getPatternsToLint(conf)
-      val configuration = Seq("-c", writeConfigFile(patternsToLint))
+      val patternsToLintOpt = ToolHelper.getPatternsToLint(conf)
+      val configuration =
+        patternsToLintOpt.fold(Seq.empty[String]) {
+          case patternsToLint if patternsToLint.nonEmpty =>
+            Seq("-c", writeConfigFile(patternsToLint))
+          case _ => Seq.empty[String]
+        }
 
       val command = Seq("eslint", "-f", "json") ++ configuration ++ filesToLint
 
@@ -45,12 +49,26 @@ object ESLint extends Tool {
     parameterName == "unnamedParam"
   }
 
+  def isUnnamedListParameter(parameterName: String): Boolean = {
+    parameterName == "unnamedParamList"
+  }
+
+  def isNamedParameter(parameterName: String): Boolean = {
+    !isUnnamedParameter(parameterName) && !isUnnamedListParameter(parameterName)
+  }
+
   def hasUnnamedParameters(parameters: Seq[ParameterDef]): Boolean = {
     parameters.exists(param => isUnnamedParameter(param.name.value))
   }
 
-  def unnamedParameterToConfig(parameter: ParameterDef): String = {
-    Json.stringify(parameter.value)
+  def unnamedParameterToConfig(parameter: ParameterDef): Seq[String] = {
+    Seq(Json.stringify(parameter.value))
+  }
+
+  def unnamedListParameterToConfig(parameter: ParameterDef): Seq[String] = {
+    parameter.value.asOpt[Seq[JsValue]].fold(Seq.empty[String]) {
+      params => params.map(param => Json.stringify(param))
+    }
   }
 
   def namedParameterToConfig(parameter: ParameterDef): String = {
@@ -60,23 +78,34 @@ object ESLint extends Tool {
     s""""$parameterName":$parameterValue"""
   }
 
-  def generateNamedParameters(parameters: Seq[ParameterDef]): String = {
-    val params = parameters.map(namedParameterToConfig).mkString(",")
-
-    s"""{$params}"""
+  def generateNamedParameters(parameters: Seq[ParameterDef]): Seq[String] = {
+    parameters.collect {
+      case param if isNamedParameter(param.name.value) =>
+        namedParameterToConfig(param)
+    }
   }
 
-  def generateUnnamedParameters(parameters: Seq[ParameterDef]): String = {
-    parameters.map(unnamedParameterToConfig).mkString(",")
+  def generateUnnamedParameters(parameters: Seq[ParameterDef]): Seq[String] = {
+    parameters.collect {
+      case param if isUnnamedListParameter(param.name.value) =>
+        unnamedListParameterToConfig(param)
+      case param if isUnnamedParameter(param.name.value) =>
+        unnamedParameterToConfig(param)
+    }.flatten
   }
 
   def generateParameters(parameters: Seq[ParameterDef]) = {
-    if (hasUnnamedParameters(parameters)) {
-      generateUnnamedParameters(parameters)
-    }
-    else {
-      generateNamedParameters(parameters)
-    }
+    val unnamedParam = generateUnnamedParameters(parameters)
+    val namedParam = generateNamedParameters(parameters)
+
+    val separator =
+      if (unnamedParam.nonEmpty && namedParam.nonEmpty) "," else ""
+
+    val unnamedParamString = unnamedParam.mkString(",")
+    val namedParamString =
+      if (namedParam.nonEmpty) s"""{${namedParam.mkString(",")}}""" else ""
+
+    unnamedParamString + separator + namedParamString
   }
 
   def patternToConfig(pattern: PatternDef): String = {
@@ -98,6 +127,10 @@ object ESLint extends Tool {
     val ecmaFeatures = Seq( """"jsx":true""")
 
     val content = s"""{"rules":{${rules.mkString(",")}},"env":{${env.mkString(",")}},"ecmaFeatures":{${ecmaFeatures.mkString(",")}}}"""
+
+    println("\n\nConfig File Content:\n\n")
+    println(content)
+    println("\n\n////End Config File Content////\n\n")
 
     FileHelper.createTmpFile(content, "config", ".json").toString
   }

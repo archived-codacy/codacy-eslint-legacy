@@ -3,14 +3,18 @@ This rule aims to prevent errors from likely typos by ensuring that when the res
 The following patterns are considered problems:
 
 ```
-/*eslint valid-typeof: 2*/
+//Bad:
+typeof foo === "strnig"
+typeof foo == "undefimed"
+typeof bar != "nunber"
+typeof bar !== "fucntion"
 
-typeof foo === "strnig"   /*error Invalid typeof comparison value*/
-typeof foo == "undefimed" /*error Invalid typeof comparison value*/
-typeof bar != "nunber"    /*error Invalid typeof comparison value*/
-typeof bar !== "fucntion" /*error Invalid typeof comparison value*/
+//Good:
+typeof foo === "string"
+typeof foo == "undefined"
+typeof bar != "number"
+typeof bar !== "function"
+
 ```
-
-You may want to turn this rule off if you will be using the typeof operator on host objects.
 
 [Source](http://eslint.org/docs/rules/valid-typeof)

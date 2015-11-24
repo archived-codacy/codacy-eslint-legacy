@@ -3,10 +3,14 @@ This rule is aimed at ensuring all regular expressions don't use control charact
 The following patterns are considered problems:
 
 ```
-/*eslint no-control-regex: 2*/ 
+//Bad:
 var pattern1 = /\\x1f/;
 var pattern2 = new RegExp("\x1f");
-/*error Unexpected control character in regular expression.*/
+
+//Good:
+var pattern1 = /\\x20/;
+var pattern2 = new RegExp("\x20");
+
 ```
 
 [Source](http://eslint.org/docs/rules/no-control-regex)

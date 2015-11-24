@@ -122,8 +122,8 @@
     },
     {
       "patternId": "no-irregular-whitespace",
-      "level": "Error",
-      "category": "ErrorProne"
+      "level": "Info",
+      "category": "CodeStyle"
     },
     {
       "patternId": "no-negated-in-lhs",
@@ -187,7 +187,7 @@
       "parameters": [
         {
           "name": "unnamedParam",
-          "default": 3
+          "default": 4
         }
       ]
     },
@@ -464,32 +464,32 @@
     },
     {
       "patternId": "no-void",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "no-warning-comments",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "no-with",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "radix",
       "level": "Warning",
-      "category": "CodeStyle"
+      "category": "ErrorProne"
     },
     {
       "patternId": "vars-on-top",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "wrap-iife",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
@@ -499,18 +499,18 @@
     },
     {
       "patternId": "strict",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "init-declarations",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "no-catch-shadow",
       "level": "Warning",
-      "category": "CodeStyle"
+      "category": "ErrorProne"
     },
     {
       "patternId": "no-delete-var",
@@ -525,7 +525,7 @@
     {
       "patternId": "no-shadow-restricted-names",
       "level": "Warning",
-      "category": "CodeStyle"
+      "category": "ErrorProne"
     },
     {
       "patternId": "no-shadow",
@@ -550,7 +550,7 @@
     {
       "patternId": "no-unused-vars",
       "level": "Warning",
-      "category": "CodeStyle"
+      "category": "ErrorProne"
     },
     {
       "patternId": "no-use-before-define",
@@ -560,7 +560,7 @@
     {
       "patternId": "callback-return",
       "level": "Warning",
-      "category": "CodeStyle"
+      "category": "ErrorProne"
     },
     {
       "patternId": "global-require",
@@ -570,7 +570,7 @@
     {
       "patternId": "handle-callback-err",
       "level": "Warning",
-      "category": "CodeStyle"
+      "category": "ErrorProne"
     },
     {
       "patternId": "no-mixed-requires",
@@ -585,22 +585,28 @@
     {
       "patternId": "no-path-concat",
       "level": "Warning",
-      "category": "CodeStyle"
+      "category": "ErrorProne"
     },
     {
       "patternId": "no-process-exit",
       "level": "Warning",
-      "category": "CodeStyle"
+      "category": "ErrorProne"
     },
     {
       "patternId": "no-restricted-modules",
       "level": "Warning",
-      "category": "CodeStyle"
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "unnamedParamList",
+          "default": ["fs", "os"]
+        }
+      ]
     },
     {
       "patternId": "no-sync",
       "level": "Warning",
-      "category": "CodeStyle"
+      "category": "ErrorProne"
     },
     {
       "patternId": "array-bracket-spacing",
@@ -610,92 +616,133 @@
     {
       "patternId": "block-spacing",
       "level": "Warning",
-      "category": "CodeStyle"
+      "category": "CodeStyle",
+      "description": "Enforces spaces before arrow parenses",
+      "parameters": [
+        {
+          "name": "unnamedParam",
+          "default": "always"
+        }
+      ]
     },
     {
       "patternId": "brace-style",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "camelcase",
-      "level": "Warning",
-      "category": "CodeStyle"
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "properties",
+          "default": "always"
+        }
+      ]
     },
     {
       "patternId": "comma-spacing",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "comma-style",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "computed-property-spacing",
       "level": "Warning",
-      "category": "CodeStyle"
+      "category": "ErrorProne"
     },
     {
       "patternId": "consistent-this",
       "level": "Warning",
-      "category": "CodeStyle"
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "unnamedParam",
+          "default": "self"
+        }
+      ]
     },
     {
       "patternId": "eol-last",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "func-names",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "func-style",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "id-length",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "id-match",
       "level": "Warning",
-      "category": "CodeStyle"
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "unnamedParam",
+          "default": "^[a-z]+([A-Z][a-z]+)*$"
+        },
+        {
+          "name": "properties",
+          "default": false
+        }
+      ]
     },
     {
       "patternId": "indent",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "jsx-quotes",
       "level": "Warning",
-      "category": "CodeStyle"
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "unnamedParam",
+          "default": "prefer-double"
+        }
+      ]
     },
     {
       "patternId": "key-spacing",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "lines-around-comment",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "linebreak-style",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "max-nested-callbacks",
       "level": "Warning",
-      "category": "CodeStyle"
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "unnamedParam",
+          "default": 5
+        }
+      ]
     },
     {
       "patternId": "new-cap",
@@ -704,117 +751,123 @@
     },
     {
       "patternId": "new-parens",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "newline-after-var",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "no-array-constructor",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "no-continue",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "no-inline-comments",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "no-lonely-if",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "no-mixed-spaces-and-tabs",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "no-multiple-empty-lines",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "no-nested-ternary",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "no-negated-condition",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "no-new-object",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "no-restricted-syntax",
-      "level": "Warning",
-      "category": "CodeStyle"
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "unnamedParamList",
+          "default": ["FunctionExpression", "WithStatement"]
+        }
+      ]
     },
     {
       "patternId": "no-spaced-func",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "no-ternary",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "no-trailing-spaces",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "no-underscore-dangle",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "no-unneeded-ternary",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "object-curly-spacing",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "one-var",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "operator-assignment",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "operator-linebreak",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "padded-blocks",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "quote-props",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
@@ -830,82 +883,94 @@
     },
     {
       "patternId": "require-jsdoc",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "semi-spacing",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "semi",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "sort-vars",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "space-after-keywords",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "space-before-keywords",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "space-before-blocks",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "space-before-function-paren",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "space-in-parens",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "space-infix-ops",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "space-return-throw-case",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "space-unary-ops",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "spaced-comment",
-      "level": "Warning",
-      "category": "CodeStyle"
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "unnamedParam",
+          "default": "always"
+        }
+      ]
     },
     {
       "patternId": "wrap-regex",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "arrow-parens",
-      "level": "Warning",
-      "category": "CodeStyle"
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "unnamedParam",
+          "default": "always"
+        }
+      ]
     },
     {
       "patternId": "arrow-spacing",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
@@ -915,7 +980,7 @@
     },
     {
       "patternId": "generator-star-spacing",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
@@ -940,37 +1005,37 @@
     },
     {
       "patternId": "no-var",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "object-shorthand",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "prefer-arrow-callback",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "prefer-const",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "prefer-spread",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "prefer-reflect",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {
       "patternId": "prefer-template",
-      "level": "Warning",
+      "level": "Info",
       "category": "CodeStyle"
     },
     {

@@ -3,7 +3,8 @@ But the modification is a mistake in most cases.
 This rule is aimed to flag modifying variables of class declarations.
 
 ```
-/*eslint-env es6*/ class A {
+//Bad:
+class A {
 }
 A = 0;
 

@@ -15,7 +15,7 @@ resolvers ++= Seq(
 
 libraryDependencies ++= Seq(
   "com.typesafe.play" %% "play-json" % "2.3.8",
-  "com.codacy" %% "codacy-engine-scala-seed" % "1.4.0"
+  "com.codacy" %% "codacy-engine-scala-seed" % "2.6.14"
 )
 
 enablePlugins(JavaAppPackaging)
@@ -28,7 +28,7 @@ organization := "com.codacy"
 
 val installAll =
   s"""apk update && apk add bash curl nodejs python &&
-     |npm install -g eslint@1.6.0""".stripMargin.replaceAll(System.lineSeparator(), " ")
+     |npm install -g eslint@1.10.1""".stripMargin.replaceAll(System.lineSeparator(), " ")
 
 mappings in Universal <++= (resourceDirectory in Compile) map { (resourceDir: File) =>
   val src = resourceDir / "docs"

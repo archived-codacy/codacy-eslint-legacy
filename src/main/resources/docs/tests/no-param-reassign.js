@@ -2,10 +2,10 @@
 
   function foo2(bar2) {
     //#Warn: no-param-reassign
-    bar2 = 13;       /*error Assignment to function parameter 'bar'.*/
+    bar2 = 13; 
   }
 
   function foo(bar) {
-    bar.prop = "value"; /* only a error if props = true*/
+    bar.prop = "value";
   }
 

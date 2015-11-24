@@ -3,6 +3,7 @@ This rule is aimed at eliminating debugger references from your JavaScript. As s
 If your code is still very much in development and don't want to worry about stripping about debugger statements, then turn this rule off. You'll generally want to turn it back on when testing code prior to deployment.
 
 ```
+//command that raises warning:
 debugger;
 
 ```

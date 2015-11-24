@@ -3,29 +3,32 @@ This rule checks this/super keywords in constructors, then reports those that ar
 This rule is aimed to flag this/super keywords before super() callings.
 
 ```
-/*eslint no-this-before-super: 2*/ /*eslint-env es6*/ class A extends B {
-constructor() {
-this.a = 0;
-/*error "this" is not allowed before super()*/ super();
-}
+//Bad:
+class A extends B {
+	constructor() {
+		this.foo();
+		super();
+	}
 }
 class A extends B {
-constructor() {
-this.foo();
-/*error "this" is not allowed before super()*/ super();
+	constructor() {
+		super.foo();
+	}
 }
+
+//Good:
+class A {
+    constructor() {
+        this.a = 0;
+    }
 }
+
 class A extends B {
-constructor() {
-super.foo();
-/*error "super" is not allowed before super()*/ super();
-}
-}
-class A extends B {
-constructor() {
-super(this.foo());
-/*error "this" is not allowed before super()*/ }
-}
+    constructor() {
+        super();
+        this.a = 0;
+    }
+
 
 ```
 

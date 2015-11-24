@@ -1,19 +1,19 @@
-The function invocation can be written by Function.prototype.call() and Function.prototype.apply(). But Function.prototype.call() and Function.prototype.apply() are slower than the normal function invocation.
-This rule is aimed to flag usage of Function.prototype.call() and Function.prototype.apply() that can be replaced with the normal function invocation.
-The following patterns are considered problems:
+The function invocation can be written by Function.prototype.call() and Function.prototype.apply(). But Function.prototype.call() and Function.prototype.apply() are slower than the normal function invocation.This rule is aimed to flag usage of Function.prototype.call() and Function.prototype.apply() that can be replaced with the normal function invocation.
+
 
 ```
-// These are same as `foo(1, 2, 3);`
-foo.call(undefined, 1, 2, 3);     /*error unnecessary ".call()".*/
-foo.apply(undefined, [1, 2, 3]);  /*error unnecessary ".apply()".*/
-foo.call(null, 1, 2, 3);          /*error unnecessary ".call()".*/
-foo.apply(null, [1, 2, 3]);       /*error unnecessary ".apply()".*/
+//Bad:
+foo.call(undefined, 1, 2, 3);
+foo.apply(undefined, [1, 2, 3]);
+foo.call(null, 1, 2, 3);
+foo.apply(null, [1, 2, 3]);
 
-// These are same as `obj.foo(1, 2, 3);`
-obj.foo.call(obj, 1, 2, 3);       /*error unnecessary ".call()".*/
-obj.foo.apply(obj, [1, 2, 3]);    /*error unnecessary ".apply()".*/
+//Good:
+foo.call(obj, 1, 2, 3);
+foo.apply(obj, [1, 2, 3]);
+obj.foo.call(null, 1, 2, 3);
+
 ```
-
 For more information and known limitations follow the link.
 
 [Source](http://eslint.org/docs/rules/no-useless-call)

@@ -1,8 +1,10 @@
-The require function is used to include modules that exist in separate files, such as:
-Some modules return a constructor which can potentially lead to code such as:
-Unfortunately, this introduces a high potential for confusion since the code author likely meant to write:
+The require function is used to include modules that exist in separate files.This rule aims to eliminate use of the new require expression. As such, it warns whenever new require is found in code.
 
 ```
+//Bad:
+var appHeader = new require('app-header');
+
+//Good:
 var appHeader = require('app-header');
 
 ```

@@ -3,7 +3,14 @@ Some developers find that placing operators at the beginning of the line makes t
 The operator-linebreak rule is aimed at enforcing a particular operator line break style. As such, it warns whenever it sees a binary operator or assignment that does not adhere to a particular style: either placing linebreaks after or before the operators.
 
 ```
-var fullHeight = borderTop + innerHeight + borderBottom;
+//Bad:
+var fullHeight = borderTop + 
+		innerHeight 
+		+ borderBottom;
+//Good:
+var fullHeight = borderTop + 
+		 innerHeight +
+		 borderBottom;
 
 ```
 

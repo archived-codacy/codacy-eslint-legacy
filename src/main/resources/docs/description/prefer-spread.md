@@ -3,8 +3,16 @@ In ES2015, one can use the spread operator to call variadic functions.
 This rule is aimed to flag usage of Function.prototype.apply() that can be replaced with the spread operator.
 
 ```
-var args = [1, 2, 3, 4];
-Math.max.apply(Math, args);
+//Bad:
+foo.apply(undefined, args);
+foo.apply(null, args);
+obj.foo.apply(obj, args);
+
+//Good:
+foo.apply(obj, args);
+obj.foo.apply(null, args);
+obj.foo.apply(otherObj, args);
+
 
 ```
 

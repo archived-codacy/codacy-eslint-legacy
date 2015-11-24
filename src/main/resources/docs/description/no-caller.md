@@ -3,8 +3,22 @@ This rule is aimed at discouraging the use of deprecated and sub-optimal code, b
 The following patterns are considered problems:
 
 ```
-function foo() {
-var callee = arguments.callee;
+
+//Bad:
+function foo(n) {
+    if (n <= 0) {
+        return;
+    }
+    arguments.callee(n - 1); 
+}
+
+//Good:
+function foo(n) {
+    if (n <= 0) {
+        return;
+    }
+
+    foo(n - 1);
 }
 
 ```

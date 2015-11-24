@@ -1,11 +1,7 @@
-Under the strict mode, this keywords outside of classes or class-like objects might be undefined and raise a TypeError.
-This rule aims to flag usage of this keywords outside of classes or class-like objects.
-Basically this rule checks whether or not a function which are containing this keywords is a constructor or a method.
-
+Under the strict mode, this keywords outside of classes or class-like objects might be undefined and raise a TypeError.This rule aims to flag usage of this keywords outside of classes or class-like objects. Basically this rule checks whether or not a function which are containing this keywords is a constructor or a method. 
 This rule judges from following conditions whether or not the function is a constructor:
 * The name of the function starts with uppercase.
 * The function is a constructor of ES2015 Classes.
-
 This rule judges from following conditions whether or not the function is a method:
 * The function is on an object literal.
 * The function assigns to a property.
@@ -19,55 +15,28 @@ And this rule allows this keywords in functions below:
 Otherwise are considered problems.
 
 ```
-this.a = 0;            /*error Unexpected `this`.*/
-baz(() => this);       /*error Unexpected `this`.*/
+
+//Bad:
+this.a = 0;
+baz(() => this); 
 
 (function() {
-    this.a = 0;        /*error Unexpected `this`.*/
-    baz(() => this);   /*error Unexpected `this`.*/
+    this.a = 0;
+    baz(() => this);
 })();
 
-function foo() {
-    this.a = 0;        /*error Unexpected `this`.*/
-    baz(() => this);   /*error Unexpected `this`.*/
+//Good:
+function Foo() {
+    this.a = 0;
+    baz(() => this);
 }
-
-var foo = function() {
-    this.a = 0;        /*error Unexpected `this`.*/
-    baz(() => this);   /*error Unexpected `this`.*/
-};
-
-foo(function() {
-    this.a = 0;        /*error Unexpected `this`.*/
-    baz(() => this);   /*error Unexpected `this`.*/
-});
-
-obj.foo = () => {
-    // `this` of arrow functions is the outer scope's.
-    this.a = 0;        /*error Unexpected `this`.*/
-};
-
-var obj = {
-    aaa: function() {
-        return function foo() {
-            // There is in a method `aaa`, but `foo` is not a method.
-            this.a = 0;      /*error Unexpected `this`.*/
-            baz(() => this); /*error Unexpected `this`.*/
-        };
-    }
-};
 
 class Foo {
-    static foo() {
-        this.a = 0;      /*error Unexpected `this`.*/
-        baz(() => this); /*error Unexpected `this`.*/
+    constructor() {
+        this.a = 0;
+        baz(() => this);
     }
 }
-
-foo.forEach(function() {
-    this.a = 0;          /*error Unexpected `this`.*/
-    baz(() => this);     /*error Unexpected `this`.*/
-});
 ```
 
 [Source](http://eslint.org/docs/rules/no-invalid-this)

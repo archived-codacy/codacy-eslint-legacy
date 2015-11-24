@@ -3,12 +3,22 @@ This rule is aimed at highlighting an unnecessary block of code following an if 
 The following patterns are considered problems:
 
 ```
+//Bad:
 function foo() {
     if (x) {
         return y;
     } else {
         return z;
     }
+}
+
+//Good:
+function foo() {
+    if (x) {
+        return y;
+    } 
+    return z;
+    
 }
 ```
 

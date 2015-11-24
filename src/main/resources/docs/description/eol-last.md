@@ -3,9 +3,15 @@ Prior to v0.16.0 this rule also enforced that there was only a single line at th
 Fixable: This rule is automatically fixable using the --fix flag on the command line.
 
 ```
-/*eslint eol-last: 2*/ function doSmth() {
+//Bad:
+function doSmth() {
 var foo = 2;
 }
+//Good:
+function doSmth() {
+  var foo = 2;
+}
+// spaces here
 
 ```
 

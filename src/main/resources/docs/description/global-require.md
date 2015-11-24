@@ -3,7 +3,27 @@ In addition to maintainability issues there are also performance implications. r
 This rule disallow require() outside of the top-level module scope.
 
 ```
-http://eslint.org/docs/rules/global-require
+//Bad:
+
+function readFile(filename, callback) {
+    var fs = require('fs');
+    fs.readFile(filename, callback)
+}
+if (DEBUG) { require('debug'); }
+
+function getModule(name) { return require(name); }
+
+//Good:
+require('x');
+var y = require('y');
+var z;
+z = require('z').initialize();
+
+var fs = require('fs');
+function readFile(filename, callback) {
+    fs.readFile(filename, callback)
+}
+
 ```
 
 [Source](http://eslint.org/docs/rules/global-require)

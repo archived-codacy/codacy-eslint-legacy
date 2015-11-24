@@ -3,21 +3,20 @@ This rule checks whether or not there is a valid super() call.
 This rule is aimed to flag invalid/missing super() calls.
 
 ```
-/*eslint constructor-super: 2*/ /*eslint-env es6*/ class A {
+class A {
 constructor() {
-super();
-/*error unexpected `super()`.*/ }
+	super(); /*error unexpected `super()`.*/ 
+	}
 }
 class A extends null {
-constructor() {
-super();
-/*error unexpected `super()`.*/ }
+	constructor() {
+		super();	/*error unexpected `super()`.*/ }
+	}
 }
 class A extends B {
-constructor() {
+	constructor() { }
+	/*error this constructor requires `super()`.*/ }
 }
-/*error this constructor requires `super()`.*/ }
-
 ```
 
 [Source](http://eslint.org/docs/rules/constructor-super)

@@ -3,10 +3,16 @@ This rule is aimed at preventing unexpected behavior that could arise from using
 The following patterns are considered problems:
 
 ```
+//Bad:
 for (key in foo) {
-	doSomething(key);
+    doSomething(key);
 }
-
+//Good:
+for (key in foo) {
+    if ({}.hasOwnProperty.call(foo, key)) {
+        doSomething(key);
+    }
+}
 ```
 
 [Source](http://eslint.org/docs/rules/guard-for-in)

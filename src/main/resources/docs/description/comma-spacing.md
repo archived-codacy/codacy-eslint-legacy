@@ -3,7 +3,10 @@ This rule aims to enforce spacing around a comma. As such, it warns whenever it 
 The rule takes one option, an object, which has two keys before and after having boolean values true or false. If before is true, space is enforced before commas and if it's false, space is disallowed before commas. If after is true, space is enforced after commas and if it's false, space is disallowed after commas. The default is {"before": false, "after": true}.
 
 ```
+//by default:
+//Good:
 var foo = 1, bar = 2;
+//Bad:
 var foo = 1 ,bar = 2;
 
 ```

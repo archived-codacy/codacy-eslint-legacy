@@ -3,12 +3,21 @@ To prevent calling the callback multiple times it is important to return anytime
 This rule is aimed at ensuring that callbacks used outside of the main function block are always part-of or immediately preceding a return statement. This rules decides what is a callback based on the name of the function being called. By default the rule treats cb, callback, and next as callbacks.
 
 ```
+//Bad:
 function doSomething(err, callback) {
-if (err) {
-return callback(err);
-}
-callback();
-}
+	if (err) {
+		callback(err);
+	}
+		callback();
+	}
+
+//Good:
+function doSomething(err, callback) {
+	if (err) {
+		return callback(err);
+	}
+		callback();
+	}
 
 ```
 

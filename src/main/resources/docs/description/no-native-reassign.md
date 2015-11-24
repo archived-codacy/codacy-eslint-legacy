@@ -1,9 +1,11 @@
-Reports an error when they encounter an attempt to assign a value to built-in native object.
-The native objects reported by this rule are the builtin variables from globals.
-The following patterns are considered problems:
+Reports an error when they encounter an attempt to assign a value to built-in native object. The native objects reported by this rule are the builtin variables from globals.
 
 ```
-String = new Object(); /*error String is a read-only native object.*/
+//Bad:
+String = new Object();
+
+//Good:
+String ab = new Object();
 ```
 
 [Source](http://eslint.org/docs/rules/no-native-reassign)

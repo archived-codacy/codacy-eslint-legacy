@@ -3,8 +3,18 @@ The linebreaks (new lines) used in windows operating system are usually carriage
 Many versioning systems (like git and subversion) can automatically ensure the correct ending. However to cover all contingencies you can activate this rule.
 
 ```
-/*eslint linebreak-style: 2*/ var a = 'a', // \r\n /*error Expected linebreaks to be 'LF' but found 'CRLF'.*/ b = 'b';
+//Bad:
+ 	var a = 'a', // \r\n /*error Expected linebreaks to be 'LF' but found 'CRLF'.*/ 
+	b = 'b';// \n
+
+//Good:
+var a = 'a', // \n
+    b = 'b'; // \n
 // \n
+function foo(params) {// \n
+    // do stuff \n
+}// \n
+
 ```
 
 [Source](http://eslint.org/docs/rules/linebreak-style)

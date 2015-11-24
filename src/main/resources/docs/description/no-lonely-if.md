@@ -1,13 +1,20 @@
-If an if statement is the only statement in the else block of a parent if statement, it is often clearer to combine the two to using else if form.
-should be rewritten as
-This rule warns when an if statement's else block contains only another if statement.
+If an if statement is the only statement in the else block of a parent if statement, it is often clearer to combine the two to using else if form. This rule warns when an if statement's else block contains only another if statement.
 
 ```
-if (foo) {
-// ... }
-else {
-if (bar) {
-// ... }
+//Bad:
+if (condition) {
+ 
+} else {
+    if (anotherCondition) {
+        // ...
+    }
+}
+
+//Good:
+if (condition) {
+    // ...
+} else if (anotherCondition) {
+    // ...
 }
 
 ```

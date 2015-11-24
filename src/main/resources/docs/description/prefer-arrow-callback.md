@@ -1,17 +1,15 @@
-Arrow functions are suited to callbacks, because:
-This rule is aimed to flag usage of function expressions in an argument list.
-The following patterns are considered problems:
+Arrow functions are suited to callbacks. This rule is aimed to flag usage of function expressions in an argument list.
 
 ```
-/*eslint prefer-arrow-callback: 2*/ foo(function(a) {
-return a;
-}
-);
-/*error Unexpected function expression.*/ foo(function() {
-return this.a;
-}
-.bind(this));
-/*error Unexpected function expression.*/
+//Bad:
+foo(function(a) { return a; });
+foo(function() { return this.a; }.bind(this));
+
+//Good:
+foo(a => a);
+foo(function*() { yield; });
+var foo = function foo(a) { return a; };
+
 ```
 
 [Source](http://eslint.org/docs/rules/prefer-arrow-callback)

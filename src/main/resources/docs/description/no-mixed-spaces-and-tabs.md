@@ -3,7 +3,13 @@ The no-mixed-spaces-and-tabs rule is aimed at flagging any lines of code that ar
 This option suppresses warnings about mixed tabs and spaces when the latter are used for alignment only. This technique is called SmartTabs. The option is turned off by default.
 
 ```
-http://eslint.org/docs/rules/no-mixed-spaces-and-tabs
+//Bad:
+function add(x, y) {
+// --->..return x + y;
+
+      return x + y;    /*error Mixed spaces and tabs.*/
+}
+
 ```
 
 [Source](http://eslint.org/docs/rules/no-mixed-spaces-and-tabs)

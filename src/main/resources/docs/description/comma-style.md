@@ -3,7 +3,13 @@ One of the justifications for using Comma-First is that it helps tracking missin
 This rule is aimed at enforcing a particular comma style in JavaScript. As such, it warns whenever it sees a variable declaration, object property and array element that does not adhere to a particular comma style. It doesn't support cases where there are line breaks before and after comma (lone commas) with in declarations, properties and elements. It also avoids single line declaration cases.
 
 ```
-http://eslint.org/docs/rules/comma-style
+//Bad:
+var foo = 1
+  , bar = 2; 
+
+//Good 
+var foo = 1,
+    bar = 2; 
 ```
 
 [Source](http://eslint.org/docs/rules/comma-style)
