@@ -128,10 +128,6 @@ object ESLint extends Tool {
 
     val content = s"""{"rules":{${rules.mkString(",")}},"env":{${env.mkString(",")}},"ecmaFeatures":{${ecmaFeatures.mkString(",")}}}"""
 
-    println("\n\nConfig File Content:\n\n")
-    println(content)
-    println("\n\n////End Config File Content////\n\n")
-
     FileHelper.createTmpFile(content, "config", ".json").toString
   }
 
