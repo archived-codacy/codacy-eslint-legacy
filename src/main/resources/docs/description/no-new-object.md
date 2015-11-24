@@ -5,7 +5,7 @@ The Object constructor is used to create new generic objects in JavaScript. Howe
 var myObject = new Object();
 
 //Good:
-var myObject = new CustomObject();
+var myObject = {};
 
 ```
 

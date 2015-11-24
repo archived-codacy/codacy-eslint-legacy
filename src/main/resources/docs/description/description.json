@@ -527,7 +527,7 @@
   },
   {
     "patternId": "no-useless-call",
-    "title": "Prohibit .call() and .apply().",
+    "title": "Prohibit .call() and .apply()",
     "description": "Prohibits function invocation written by Function.prototype.call() and Function.prototype.apply()",
     "timeToFix": 10
   },
@@ -563,7 +563,7 @@
   },
   {
     "patternId": "vars-on-top",
-    "title": "Require Variable Declarations to be at the top of their scope",
+    "title": "Require Variable Declarations at top",
     "description": "Enforces variables Declaration are required to be on the top of their scope or top of the program.",
     "timeToFix": 5
   },
@@ -575,25 +575,43 @@
   },
   {
     "patternId": "yoda",
-    "title": "Require or Prohibit Yoda Conditions",
+    "title": "Require/Prohibit Yoda Conditions",
     "description": "Require or Prohibits variable declaration which literal value of the condition comes first while the variable comes second.",
-    "timeToFix": 5
+    "timeToFix": 5,
+    "parameters": [
+      {
+        "name": "unnamedParam",
+        "description": "Specifies if the literal should always come first, or never come first [always, never]"
+      }
+    ]
   },
   {
     "patternId": "strict",
-    "title": "Strict Mode",
-    "description": "Prohibits/Enforces strict mode troughout the code.",
-    "timeToFix": 5
+    "title": "Prohibit Strict Mode",
+    "description": "Prohibits strict mode in a given scope",
+    "timeToFix": 5,
+    "parameters": [
+      {
+        "name": "unnamedParam",
+        "description": "The scope where the strict mode is allowed [never, function, global]"
+      }
+    ]
   },
   {
     "patternId": "init-declarations",
     "title": "Enforce/Prohibit Variable Initializations",
-    "description": "Enforces/Prohibits that values can be assigned during in variable declaration.",
-    "timeToFix": 10
+    "description": "Enforces or prohibits values to be assigned during the variable declaration.",
+    "timeToFix": 10,
+    "parameters": [
+      {
+        "name": "unnamedParam",
+        "description": "Specifies when the variables must be initialized [always, never]"
+      }
+    ]
   },
   {
     "patternId": "no-catch-shadow",
-    "title": "Prohibit Shadowing of Variables Inside of catch",
+    "title": "Prohibit Shadowing Inside Catch",
     "description": "This rule prevents the use of variables in the catch clause parameter with the same name as a variable in the outer scope.",
     "timeToFix": 10
   },
@@ -647,7 +665,7 @@
   },
   {
     "patternId": "no-use-before-define",
-    "title": "Prohibit the use of variables before defining.",
+    "title": "Prohibit the use of variables before defining",
     "description": "Prohibit the use of variables before defining them.",
     "timeToFix": 10
   },
@@ -659,7 +677,7 @@
   },
   {
     "patternId": "global-require",
-    "title": "Prohibit require() outside of the top-level module scope.",
+    "title": "Prohibit require() outside of the top-level module scope",
     "description": "Enforces declaring module's dependencies at the beginning of a module.",
     "timeToFix": 5
   },
@@ -683,7 +701,7 @@
   },
   {
     "patternId": "no-path-concat",
-    "title": "Prohibit string concatenation when using _dirname and _filename",
+    "title": "Prohibit concatenation with _dirname and _filename",
     "description": "Prohibits the use of __dirname and __filname in Node.Js for string concatenation.",
     "timeToFix": 10
   },
@@ -713,37 +731,43 @@
   },
   {
     "patternId": "array-bracket-spacing",
-    "title": "Prohibit or enforce spaces inside of brackets.",
-    "description": "Prohibit/Enforces the use of spaces between array brackets.",
-    "timeToFix": 5
+    "title": "Enforce/Prohibit spaces inside of brackets",
+    "description": "Enforces or prohibits the use of spaces between array brackets.",
+    "timeToFix": 5,
+    "parameters": [
+      {
+        "name": "unnamedParam",
+        "description": "The bracket spacing style to apply [always, never]"
+      }
+    ]
   },
   {
     "patternId": "block-spacing",
-    "title": "Prohibit or enforce spaces inside of single line blocks.",
+    "title": "Enforce/Prohibit spaces inside of single line blocks",
     "description": "This rule is for spacing style within single line blocks.",
     "timeToFix": 15,
     "parameters": [
       {
         "name": "unnamedParam",
-        "description": "Enforces or prohibits spaces within single block lines[always, never]"
+        "description": "Enforces or prohibits spaces within single block lines [always, never]"
       }
     ]
   },
   {
     "patternId": "brace-style",
-    "title": "Require Brace Style",
+    "title": "Enforce Brace Style",
     "description": "Enforces a style in placement of curly braces relative to their control statement and body.",
     "timeToFix": 15
   },
   {
     "patternId": "camelcase",
-    "title": "Require Camelcase",
+    "title": "Enforce camelCase",
     "description": "Enforces the use of camelCase on variables.",
     "timeToFix": 15,
     "parameters": [
       {
         "name": "properties",
-        "description": "The style of variables camelCase [always, never]"
+        "description": "Specifies if this pattern should always check for property names [always, never]"
       }
     ]
   },
@@ -755,15 +779,27 @@
   },
   {
     "patternId": "comma-style",
-    "title": "Enforces comma style that you prefer",
+    "title": "Enforces comma style",
     "description": "This rule is aimed at enforcing a particular comma style in JavaScript.",
-    "timeToFix": 5
+    "timeToFix": 5,
+    "parameters": [
+      {
+        "name": "unnamedParam",
+        "description": "The placement of the comma in the line [first, last]"
+      }
+    ]
   },
   {
     "patternId": "computed-property-spacing",
-    "title": "Prohibit or enforce spaces inside of computed properties.",
-    "description": "Require or Prohibit spaces between computed properties.",
-    "timeToFix": 5
+    "title": "Enforce/Prohibit spaces in computed properties",
+    "description": "Requires or prohibits spaces between computed properties.",
+    "timeToFix": 5,
+    "parameters": [
+      {
+        "name": "unnamedParam",
+        "description": "Specifies if you always need a space inside computed properties [always, never]"
+      }
+    ]
   },
   {
     "patternId": "consistent-this",
@@ -779,14 +815,14 @@
   },
   {
     "patternId": "eol-last",
-    "title": "Require file to end with single newline",
-    "description": "This rule enforces newlines for all non-empty programs.",
+    "title": "Require file to end in newline",
+    "description": "This rule enforces files to end in newline for all non-empty programs.",
     "timeToFix": 15
   },
   {
     "patternId": "func-names",
-    "title": "Require Function Expressions to have a Name",
-    "description": "Enforces the namming of functions expressions.",
+    "title": "Require Function Expressions to have Name",
+    "description": "Enforces the naming of functions expressions.",
     "timeToFix": 10
   },
   {
@@ -797,9 +833,27 @@
   },
   {
     "patternId": "id-length",
-    "title": "Limit minimum and maximum length for identifiers",
-    "description": "Enforces a minimum and/or maximum variable identifier length. (usually min 2-chars)",
-    "timeToFix": 10
+    "title": "Enforce identifiers limit length",
+    "description": "Enforces a minimum and/or maximum variable identifier length.",
+    "timeToFix": 10,
+    "parameters": [
+      {
+        "name": "min",
+        "description": "The minimum number of characters an identifier name should be (after prefix/suffix stripped)"
+      },
+      {
+        "name": "max",
+        "description": "The maximum number of characters an identifier name should be (after prefix/suffix stripped)"
+      },
+      {
+        "name": "properties",
+        "description": "Specifies if this pattern should always check for property names [always, never]"
+      },
+      {
+        "name": "exceptions",
+        "description": "An array of identifier names that the rule should not apply to. Ex: [\"x\", \"y\"]"
+      }
+    ]
   },
   {
     "patternId": "id-match",
@@ -873,51 +927,67 @@
   },
   {
     "patternId": "new-parens",
-    "title": "Require Parens for Constructors",
+    "title": "Require Parentheses for Constructors",
     "description": "Enforces the use of parentheses when invoking a constructor even if there are no arguments.",
     "timeToFix": 10
   },
   {
     "patternId": "newline-after-var",
-    "title": "Require or Prohibit an empty newline after variable declarations.",
-    "description": "Enforces/Prohibits an empty line between var statements.",
-    "timeToFix": 5
+    "title": "Enforce/Prohibit newline after declarations",
+    "description": "Enforces or prohibits an empty line after var, let and const statements.",
+    "timeToFix": 5,
+    "parameters": [
+      {
+        "name": "unnamedParam",
+        "description": "Specifies if you should always or never have a space after declarations [always, never]"
+      }
+    ]
   },
   {
     "patternId": "no-array-constructor",
-    "title": "Prohibit creation of dense arrays using the Array constructor",
-    "description": "Prohibits the creating of arrays with multiple dimensions.",
+    "title": "Prohibit Array constructor",
+    "description": "Prohibits the usage of the Array constructor to create new Arrays.",
     "timeToFix": 10
   },
   {
     "patternId": "no-continue",
-    "title": "Prohibit continue.",
+    "title": "Prohibit continue",
     "description": "Prohibits the use of continue in the current or labeled loop.",
     "timeToFix": 10
   },
   {
     "patternId": "no-inline-comments",
-    "title": "Prohibits comments after code. Comments must come on their own lines.",
-    "description": "Prohibits comments in the same line as codes.",
-    "timeToFix": 10
+    "title": "Prohibit inline comments",
+    "description": "Prohibits comments in the same line as code.",
+    "timeToFix": 5
   },
   {
     "patternId": "no-lonely-if",
-    "title": "Prohibit if as the Only Statement in an else Block.",
-    "description": "Prohibits the use of as the the only statement in the else block it is better to combine the else if block.",
-    "timeToFix": 15
+    "title": "Prohibit lonely if",
+    "description": "Prohibits the use of 'if' as the the only statement in the else block. Use 'else if' instead.",
+    "timeToFix": 10
   },
   {
     "patternId": "no-mixed-spaces-and-tabs",
-    "title": "Prohibit mixed spaces and tabs for indentation",
-    "description": "Prohibits mixes of tabs and spaces for idententation.",
+    "title": "Prohibit mixed spaces and tabs",
+    "description": "Prohibits the mixing of tabs and spaces for indentation.",
     "timeToFix": 5
   },
   {
     "patternId": "no-multiple-empty-lines",
-    "title": "Prohibits multiple blank lines",
-    "description": "Prohibits multiple blank lines in the code.",
-    "timeToFix": 10
+    "title": "Prohibit multiple blank lines",
+    "description": "Prohibits multiple consecutive blank lines in the code.",
+    "timeToFix": 10,
+    "parameters": [
+      {
+        "name": "max",
+        "description": "The maximum number of consecutive blank lines"
+      },
+      {
+        "name": "maxEOF",
+        "description": "The maximum number of consecutive blank lines at the end of the file"
+      }
+    ]
   },
   {
     "patternId": "no-nested-ternary",
@@ -927,20 +997,20 @@
   },
   {
     "patternId": "no-negated-condition",
-    "title": "Prohibit use of negated expressions in conditions",
-    "description": "Negated conditions are more difficult to understand.",
+    "title": "Prohibit negated expressions in conditions",
+    "description": "Prohibits the use of a negated expression in an 'if' condition when the else branch is not empty",
     "timeToFix": 5
   },
   {
     "patternId": "no-new-object",
-    "title": "Prohibit the use of the Object constructor",
-    "description": "The Object constructor is used to create new generic objects in JavaScript.",
+    "title": "Prohibit Object constructor",
+    "description": "Prohibits the use of the Object constructor to create new generic objects.",
     "timeToFix": 5
   },
   {
     "patternId": "no-restricted-syntax",
     "title": "Prohibit certain syntax",
-    "description": "This pattern prohibits the use of expression such as FunctionExpression or WithStatement.",
+    "description": "This pattern prohibits the specified features, such as FunctionExpression or WithStatement.",
     "timeToFix": 5,
     "parameters": [
       {
@@ -970,38 +1040,56 @@
   {
     "patternId": "no-underscore-dangle",
     "title": "Prohibit Dangling Underscores in Identifiers",
-    "description": "Prohibits the use of underscores at the beggining or end of a variable name.",
+    "description": "Prohibits the use of underscores at the beginning or end of a variable name.",
     "timeToFix": 5
   },
   {
     "patternId": "no-unneeded-ternary",
-    "title": "Prohibit conditional expressions that can be expressed with simpler constructs",
-    "description": "use ! to convert the test to a Boolean.",
+    "title": "Prohibit unnecessary ternary",
+    "description": "Prohibits unnecessary ternary operators to select between boolean values.",
     "timeToFix": 10
   },
   {
     "patternId": "object-curly-spacing",
-    "title": "Prohibit or enforce spaces inside of curly braces in objects.",
-    "description": "Prohibit spaces between curly braces.",
-    "timeToFix": 10
+    "title": "Enforce/Prohibit spaces in curly braces",
+    "description": "Enforces or prohibits spaces between curly braces.",
+    "timeToFix": 10,
+    "parameters": [
+      {
+        "name": "unnamedParam",
+        "description": "Specifies if you always want a space inside of curly braces [always, never]"
+      }
+    ]
   },
   {
     "patternId": "one-var",
-    "title": "Require or Prohibit One Variable Declaration per Scope",
-    "description": "This rule Enforces/Prohibits you to use only one var per scope.",
-    "timeToFix": 10
+    "title": "Enforce/Prohibit Variable Declaration Style",
+    "description": "This rule Enforces/Prohibits you to declare your variables using one 'var', or one 'var' for each variable",
+    "timeToFix": 10,
+    "parameters": [
+      {
+        "name": "unnamedParam",
+        "description": "Specifies if you always need to declare your variables using just one 'var' [always, never]"
+      }
+    ]
   },
   {
     "patternId": "operator-assignment",
-    "title": "Operator Assignment Shorthand",
-    "description": "Requires to use operator Shorthand. Example:x = x + 4 can be shortened to x += 4. ",
+    "title": "Enforce Assignment Shorthand",
+    "description": "Enforces the usage of assignment shorthand operator when possible, ex: x += y instead of x = x + y",
     "timeToFix": 5
   },
   {
     "patternId": "operator-linebreak",
-    "title": "Operator Linebreak",
-    "description": "This rule enforces linebreaks to happen in the operators.",
-    "timeToFix": 10
+    "title": "Operator Linebreak Style",
+    "description": "This rule enforces a coherent linebreak style.",
+    "timeToFix": 10,
+    "parameters": [
+      {
+        "name": "unnamedParam",
+        "description": "Specifies where the linebreak operator should be placed [after, before, none]"
+      }
+    ]
   },
   {
     "patternId": "padded-blocks",
@@ -1041,9 +1129,15 @@
   },
   {
     "patternId": "semi",
-    "title": "Enforce or Prohibit Semicolons",
-    "description": "Enforce or Prohibit Semicolons and the end of each statement.",
-    "timeToFix": 10
+    "title": "Enforce/Prohibit Semicolons",
+    "description": "Enforces or prohibits semicolons at the end of each statement.",
+    "timeToFix": 10,
+    "parameters": [
+      {
+        "name": "unnamedParam",
+        "description": "Specifies if you always want semicolons at the end of statements [always, never]"
+      }
+    ]
   },
   {
     "patternId": "sort-vars",
@@ -1053,33 +1147,63 @@
   },
   {
     "patternId": "space-after-keywords",
-    "title": "Require or Prohibit spaces following keywords",
-    "description": "Require or Prohibit spaces following keywords.",
-    "timeToFix": 5
+    "title": "Require/Prohibit spaces following keywords",
+    "description": "Requires or prohibits spaces following keywords.",
+    "timeToFix": 5,
+    "parameters": [
+      {
+        "name": "unnamedParam",
+        "description": "Specifies that you always need (or never) to have at least one space after keywords [always/never]"
+      }
+    ]
   },
   {
     "patternId": "space-before-keywords",
-    "title": "Require or Prohibit spaces before keywords",
-    "description": "Require or Prohibit spaces preceding certain keywords.",
-    "timeToFix": 10
+    "title": "Require/Prohibit spaces before keywords",
+    "description": "Requires or prohibits spaces preceding certain keywords.",
+    "timeToFix": 10,
+    "parameters": [
+      {
+        "name": "unnamedParam",
+        "description": "Specifies that you always need (or never) to have at least one space before keywords [always/never]"
+      }
+    ]
   },
   {
     "patternId": "space-before-blocks",
-    "title": "Require Or Prohibit Space Before Blocks",
-    "description": "Require/Prohibit in the spacing before blocks.",
-    "timeToFix": 10
+    "title": "Require/Prohibit Space Before Blocks",
+    "description": "Requires or prohibits in the spacing before blocks.",
+    "timeToFix": 10,
+    "parameters": [
+      {
+        "name": "unnamedParam",
+        "description": "Specifies that you always need (or never) to have at least one space before a block [always/never]"
+      }
+    ]
   },
   {
     "patternId": "space-before-function-paren",
-    "title": "Require or Prohibit a space before function parenthesis",
-    "description": "When formatting a function, whitespace is allowed between the function name or function keyword and the opening paren.",
-    "timeToFix": 10
+    "title": "Require/Prohibit a space before function parenthesis",
+    "description": "When formatting a function, whitespace is allowed/disallowed between the function name or function keyword and the opening paren.",
+    "timeToFix": 10,
+    "parameters": [
+      {
+        "name": "unnamedParam",
+        "description": "Specifies that you always need (or never) to have at least one space before function parenthesis [always/never]"
+      }
+    ]
   },
   {
     "patternId": "space-in-parens",
-    "title": "Prohibit or enforce spaces inside of parentheses",
-    "description": "Enforces/Prohibit spaces inside of parentheses.",
-    "timeToFix": 5
+    "title": "Require/Prohibit spaces inside parentheses",
+    "description": "Enforces or prohibit spaces inside of parentheses.",
+    "timeToFix": 5,
+    "parameters": [
+      {
+        "name": "unnamedParam",
+        "description": "Specifies that you always need (or never) to have at least one space inside of parentheses [always/never]"
+      }
+    ]
   },
   {
     "patternId": "space-infix-ops",
@@ -1097,11 +1221,21 @@
     "patternId": "space-unary-ops",
     "title": "Require or Prohibit spaces before/after unary operators",
     "description": "Enforces/Prohibits spaces before/after unary operators.",
-    "timeToFix": 5
+    "timeToFix": 5,
+    "parameters": [
+      {
+        "name": "words",
+        "description": "When set to true, unary words such as new, delete or void must have spaces before and after it [true, false]"
+      },
+      {
+        "name": "nonwords",
+        "description": "When set to true, unary operators such as -, +, ++ or !! must have spaces before and after it [true, false]"
+      }
+    ]
   },
   {
     "patternId": "spaced-comment",
-    "title": "Requires or Prohibits a whitespace (space or tab) beginning a comment",
+    "title": "Require/Prohibit whitespace at beginning of a comment",
     "description": "Enforces/Prohibit a whitespace immediately after the initial // or /* of a comment.",
     "timeToFix": 5,
     "parameters": [
@@ -1130,7 +1264,7 @@
   },
   {
     "patternId": "arrow-spacing",
-    "title": "Require space before/after arrow function's arrow",
+    "title": "Require space around arrow function's",
     "description": "Enforces spaces around the arrow function.",
     "timeToFix": 5
   },
@@ -1142,19 +1276,29 @@
   },
   {
     "patternId": "generator-star-spacing",
-    "title": "Require spacing around the * in generator functions.",
-    "description": "Enforces spacing around *.",
-    "timeToFix": 5
+    "title": "Enforce spacing around *",
+    "description": "Enforces spacing around * in generator functions.",
+    "timeToFix": 5,
+    "parameters": [
+      {
+        "name": "before",
+        "description": "When set to true, enforce space before * [true, false]"
+      },
+      {
+        "name": "after",
+        "description": "When set to true, enforce space after * [true, false]"
+      }
+    ]
   },
   {
     "patternId": "no-class-assign",
-    "title": "Prohibit modifying variables of class declarations.",
-    "description": "Prohibits modifying the value of a class.",
+    "title": "Prohibit modifying class declarations",
+    "description": "Prohibits modifying variables of class declarations.",
     "timeToFix": 10
   },
   {
     "patternId": "no-const-assign",
-    "title": "Prohibit modifying variables that are declared using const",
+    "title": "Prohibit modifying const",
     "description": "Prohibits changes in variables that are declared using const keyword.",
     "timeToFix": 5
   },
@@ -1166,55 +1310,55 @@
   },
   {
     "patternId": "no-this-before-super",
-    "title": "Prohibit use of this/super before calling super() in constructors.",
+    "title": "Prohibit 'this' before 'super()'",
     "description": "In the constructor of derived classes, if this/super are used before super() calls, it raises a reference error.",
     "timeToFix": 10
   },
   {
     "patternId": "no-var",
-    "title": "require let or const instead of var",
-    "description": "Enforces the use of let or const instead of var.",
+    "title": "Enforce 'let' or 'const'",
+    "description": "Enforces the use of 'let' or 'const' instead of 'var'.",
     "timeToFix": 10
   },
   {
     "patternId": "object-shorthand",
-    "title": "Require Object Literal Shorthand Syntax",
-    "description": "This syntax can make defining complex object literals much cleaner.",
+    "title": "Enforce Object Literal Shorthand Syntax",
+    "description": "This syntax (ES6) can make defining complex object literals much cleaner.",
     "timeToFix": 10
   },
   {
     "patternId": "prefer-arrow-callback",
-    "title": "Suggest using arrow functions as callbacks.",
-    "description": "Arrow functions are suited to callbacks.",
+    "title": "Enforce arrow function as callback",
+    "description": "Enforce the usage of arrow functions as callback.",
     "timeToFix": 5
   },
   {
     "patternId": "prefer-const",
-    "title": "Suggest using const",
-    "description": "If a variable is never modified, using the const declaration is better.",
+    "title": "Enforce using const",
+    "description": "Enforce the usage of 'const' instead of 'var' if a variable is never modified.",
     "timeToFix": 5
   },
   {
     "patternId": "prefer-spread",
-    "title": "Suggest using the spread operator instead of .apply().",
-    "description": "Before ES2015, one must use Function.prototype.apply() to call variadic functions.",
+    "title": "Enforce spread operator",
+    "description": "In ES2015, you should use the spread operator instead of Function.prototype.apply() to call variadic functions.",
     "timeToFix": 5
   },
   {
     "patternId": "prefer-reflect",
-    "title": "Suggest using Reflect methods where applicable",
+    "title": "Enforce Reflect methods where applicable (ES6)",
     "description": "The ES6 Reflect API comes with a handful of methods which deprecate methods on old constructors.",
     "timeToFix": 5
   },
   {
     "patternId": "prefer-template",
-    "title": "Suggest using template literals instead of string concatenation.",
+    "title": "Enforce template literals (ES6)",
     "description": "In ES2015 (ES6), we can use template literals instead of string concatenation.",
     "timeToFix": 10
   },
   {
     "patternId": "require-yield",
-    "title": "Prohibit generator functions that do not have yield",
+    "title": "Prohibit generator functions without 'yield'",
     "description": "This rule generates warnings for generator functions that do not have the yield keyword.",
     "timeToFix": 10
   }
