@@ -568,7 +568,17 @@
     {
       "patternId": "no-unused-vars",
       "level": "Warning",
-      "category": "ErrorProne"
+      "category": "ErrorProne",
+      "parameters": [
+        {
+          "name": "vars",
+          "default": "all"
+        },
+        {
+          "name": "args",
+          "default": "after-used"
+        }
+      ]
     },
     {
       "patternId": "no-use-before-define",
