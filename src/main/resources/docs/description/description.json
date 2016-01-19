@@ -661,7 +661,17 @@
     "patternId": "no-unused-vars",
     "title": "Prohibit Unused Variables",
     "description": "Prohibit Unused Variables",
-    "timeToFix": 10
+    "timeToFix": 10,
+    "parameters": [
+      {
+        "name": "vars",
+        "description": "Specifies the scope, when set to \"all\" checks include global scope [all, local]"
+      },
+      {
+        "name": "args",
+        "description": "Specifies which arguments must be used, when set to \"all\" all named arguments must be used[all, after-used, none]"
+      }
+    ]
   },
   {
     "patternId": "no-use-before-define",
