@@ -2,8 +2,12 @@
 
 
 if (a) {
-//#Info: indent
+
+//ok
   b=c;
+
+//#Info: indent
+    b=c;
 //#Info: indent
 function foo(d) {  
 //#Info: indent
