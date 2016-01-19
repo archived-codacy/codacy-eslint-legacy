@@ -885,7 +885,13 @@
     "patternId": "indent",
     "title": "Enforce Indentation standard",
     "description": "This option validates a specific tab width for your code in block statements.",
-    "timeToFix": 10
+    "timeToFix": 10,
+    "parameters": [
+      {
+        "name": "unnamedParam",
+        "description": "Specifies the number of spaces for indentation (or you can write \"tab\" instead)"
+      }
+    ]
   },
   {
     "patternId": "jsx-quotes",

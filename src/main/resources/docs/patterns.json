@@ -769,7 +769,13 @@
     {
       "patternId": "indent",
       "level": "Info",
-      "category": "CodeStyle"
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "unnamedParam",
+          "default": 2
+        }
+      ]
     },
     {
       "patternId": "jsx-quotes",
