@@ -1,11 +1,5 @@
 [
   {
-    "patternId": "fatal",
-    "title": "Fatal Errors",
-    "description": "Prohibits code that will not run, like code with syntax errors",
-    "timeToFix": 10
-  },
-  {
     "patternId": "comma-dangle",
     "title": "Enforce Dangling Commas",
     "description": "Enforces consistent use of trailing commas in object and array literals",
