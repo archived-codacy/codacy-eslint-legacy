@@ -2,11 +2,6 @@
   "name": "eslint",
   "patterns": [
     {
-      "patternId": "fatal",
-      "level": "Error",
-      "category": "ErrorProne"
-    },
-    {
       "patternId": "comma-dangle",
       "level": "Warning",
       "category": "CodeStyle",
