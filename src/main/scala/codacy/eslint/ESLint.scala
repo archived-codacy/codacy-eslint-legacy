@@ -20,22 +20,22 @@ object WarnResult {
 
 object ESLint extends Tool {
 
-  override def apply(path: Path, conf: Option[Seq[PatternDef]], files: Option[Set[Path]])(implicit spec: Spec): Try[Iterable[Result]] = {
+  override def apply(path: Path, conf: Option[List[PatternDef]], files: Option[Set[Path]])(implicit spec: Spec): Try[List[Result]] = {
     Try {
-      val filesToLint: Seq[String] = files.fold(Seq(path.toString)) {
+      val filesToLint: List[String] = files.fold(List(path.toString)) {
         paths =>
-          paths.map(_.toString).toSeq
+          paths.map(_.toString).toList
       }
 
       val patternsToLintOpt = ToolHelper.getPatternsToLint(conf)
       val configuration =
-        patternsToLintOpt.fold(Seq.empty[String]) {
+        patternsToLintOpt.fold(List.empty[String]) {
           case patternsToLint if patternsToLint.nonEmpty =>
-            Seq("-c", writeConfigFile(patternsToLint))
-          case _ => Seq.empty[String]
+            List("-c", writeConfigFile(patternsToLint))
+          case _ => List.empty[String]
         }
 
-      val command = Seq("eslint", "-f", "json") ++ configuration ++ filesToLint
+      val command = List("eslint", "-f", "json") ++ configuration ++ filesToLint
 
       CommandRunner.exec(command) match {
         case Right(resultFromTool) =>
@@ -57,16 +57,16 @@ object ESLint extends Tool {
     !isUnnamedParameter(parameterName) && !isUnnamedListParameter(parameterName)
   }
 
-  def hasUnnamedParameters(parameters: Seq[ParameterDef]): Boolean = {
+  def hasUnnamedParameters(parameters: List[ParameterDef]): Boolean = {
     parameters.exists(param => isUnnamedParameter(param.name.value))
   }
 
-  def unnamedParameterToConfig(parameter: ParameterDef): Seq[String] = {
-    Seq(Json.stringify(parameter.value))
+  def unnamedParameterToConfig(parameter: ParameterDef): List[String] = {
+    List(Json.stringify(parameter.value))
   }
 
-  def unnamedListParameterToConfig(parameter: ParameterDef): Seq[String] = {
-    parameter.value.asOpt[Seq[JsValue]].fold(Seq.empty[String]) {
+  def unnamedListParameterToConfig(parameter: ParameterDef): List[String] = {
+    parameter.value.asOpt[List[JsValue]].fold(List.empty[String]) {
       params => params.map(param => Json.stringify(param))
     }
   }
@@ -78,14 +78,14 @@ object ESLint extends Tool {
     s""""$parameterName":$parameterValue"""
   }
 
-  def generateNamedParameters(parameters: Seq[ParameterDef]): Seq[String] = {
+  def generateNamedParameters(parameters: List[ParameterDef]): List[String] = {
     parameters.collect {
       case param if isNamedParameter(param.name.value) =>
         namedParameterToConfig(param)
     }
   }
 
-  def generateUnnamedParameters(parameters: Seq[ParameterDef]): Seq[String] = {
+  def generateUnnamedParameters(parameters: List[ParameterDef]): List[String] = {
     parameters.collect {
       case param if isUnnamedListParameter(param.name.value) =>
         unnamedListParameterToConfig(param)
@@ -94,7 +94,7 @@ object ESLint extends Tool {
     }.flatten
   }
 
-  def generateParameters(parameters: Seq[ParameterDef]) = {
+  def generateParameters(parameters: List[ParameterDef]) = {
     val unnamedParam = generateUnnamedParameters(parameters)
     val namedParam = generateNamedParameters(parameters)
 
@@ -113,7 +113,7 @@ object ESLint extends Tool {
     val warnLevel = 1
     val paramConfig = pattern.parameters.fold("") {
       case params if params.nonEmpty =>
-        val parameters = generateParameters(params.toSeq)
+        val parameters = generateParameters(params.toList)
         s""",$parameters"""
       case _ => ""
     }
@@ -121,17 +121,17 @@ object ESLint extends Tool {
     s""""$patternId":[$warnLevel$paramConfig]"""
   }
 
-  def writeConfigFile(patternsToLint: Seq[PatternDef]): String = {
+  def writeConfigFile(patternsToLint: List[PatternDef]): String = {
     val rules = patternsToLint.map(patternToConfig)
-    val env = Seq( """"es6":true""", """"node":true""", """"browser":true""")
-    val ecmaFeatures = Seq( """"jsx":true""")
+    val env = List( """"es6":true""", """"node":true""", """"browser":true""")
+    val ecmaFeatures = List( """"jsx":true""")
 
     val content = s"""{"rules":{${rules.mkString(",")}},"env":{${env.mkString(",")}},"ecmaFeatures":{${ecmaFeatures.mkString(",")}}}"""
 
     FileHelper.createTmpFile(content, "config", ".json").toString
   }
 
-  def extractIssuesAndErrors(filePath: String, messages: Option[JsArray])(implicit basePath: String): Seq[Result] = {
+  def extractIssuesAndErrors(filePath: String, messages: Option[JsArray])(implicit basePath: String): List[Result] = {
 
     messages.map(
       messagesArr =>
@@ -150,26 +150,26 @@ object ESLint extends Tool {
                   Issue(SourcePath(FileHelper.stripPath(filePath, basePath)), ResultMessage(warn.message), PatternId(warn.ruleId), ResultLine(warn.line.asOpt[Int].getOrElse(1)))
               }
             }
-        }
-    ).getOrElse(Seq())
+        }.toList
+    ).getOrElse(List.empty)
   }
 
-  def resultFromToolResult(toolResult: JsArray)(implicit basePath: String): Seq[Result] = {
+  def resultFromToolResult(toolResult: JsArray)(implicit basePath: String): List[Result] = {
     toolResult.value.flatMap {
       fileResult =>
         (fileResult \ "filePath").asOpt[String].map {
           case filePath =>
             val messages = (fileResult \ "messages").asOpt[JsArray]
             extractIssuesAndErrors(filePath, messages)
-        }.getOrElse(Seq())
-    }
+        }.getOrElse(List.empty)
+    }.toList
   }
 
-  def parseToolResult(resultFromTool: Seq[String], path: Path): Iterable[Result] = {
+  def parseToolResult(resultFromTool: List[String], path: Path): List[Result] = {
     implicit val basePath = path.toString
 
     val jsonParsed = Json.parse(resultFromTool.mkString)
-    jsonParsed.asOpt[JsArray].fold(Seq[Result]())(resultFromToolResult)
+    jsonParsed.asOpt[JsArray].fold(List.empty[Result])(resultFromToolResult)
   }
 
 }
