@@ -9,7 +9,7 @@ var arr = [ 'foo', 'bar' ];
 var [ x, y ] = z;
 var arr = [ 'foo', 'bar'];
 
-//With never the are Good:
+//With never these are Good:
 var arr = ['foo', 'bar'];
 var [x, y] = z;
 var arr = ['foo', 'bar'];
