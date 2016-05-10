@@ -485,7 +485,13 @@
     {
       "patternId": "wrap-iife",
       "level": "Info",
-      "category": "CodeStyle"
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "unnamedParam",
+          "default": "outside"
+        }
+      ]
     },
     {
       "patternId": "yoda",

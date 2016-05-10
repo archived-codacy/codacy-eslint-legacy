@@ -565,7 +565,13 @@
     "patternId": "wrap-iife",
     "title": "Require IIFEs to be Wrapped",
     "description": "Require immediate function invocation to be wrapped in parentheses.",
-    "timeToFix": 5
+    "timeToFix": 5,
+    "parameters": [
+      {
+        "name": "unnamedParam",
+        "description": "Wrapping style to enforce [outside, inside, any]"
+      }
+    ]
   },
   {
     "patternId": "yoda",
