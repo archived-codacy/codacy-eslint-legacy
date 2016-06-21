@@ -1,12 +1,15 @@
 package codacy.eslint
 
+import java.nio.charset.CodingErrorAction
 import java.nio.file.Path
-import codacy.dockerApi._
-import codacy.dockerApi.utils.{FileHelper, ToolHelper, CommandRunner}
-import play.api.libs.json._
-import scala.util.Try
 
+import codacy.dockerApi._
+import codacy.dockerApi.utils.{CommandRunner, FileHelper, ToolHelper}
 import play.api.libs.functional.syntax._
+import play.api.libs.json._
+
+import scala.io.{Codec, Source}
+import scala.util.{Failure, Properties, Success, Try}
 
 case class WarnResult(ruleId: String, message: String, line: JsValue)
 
@@ -15,7 +18,7 @@ object WarnResult {
     (__ \ "ruleId").read[String] and
       (__ \ "message").read[String] and
       (__ \ "line").read[JsValue]
-    )(WarnResult.apply _)
+    ) (WarnResult.apply _)
 }
 
 object ESLint extends Tool {
@@ -27,6 +30,8 @@ object ESLint extends Tool {
           paths.map(_.toString).toList
       }
 
+      val outputFile = FileHelper.createTmpFile("", "codacy-eslint", ".json")
+
       val patternsToLintOpt = ToolHelper.getPatternsToLint(conf)
       val configuration =
         patternsToLintOpt.fold(List.empty[String]) {
@@ -35,14 +40,15 @@ object ESLint extends Tool {
           case _ => List.empty[String]
         }
 
-      val command = List("eslint", "-f", "json") ++ configuration ++ filesToLint
+      val command = List("eslint", "-f", "json", "-o", s"${outputFile.toFile.getCanonicalPath}") ++ configuration ++ filesToLint
 
       CommandRunner.exec(command) match {
         case Right(resultFromTool) =>
-          parseToolResult(resultFromTool.stdout, path)
-        case Left(failure) => throw failure
+          parseToolResult(path, outputFile)
+        case Left(e) =>
+          Failure(e)
       }
-    }
+    }.flatten
   }
 
   def isUnnamedParameter(parameterName: String): Boolean = {
@@ -132,7 +138,6 @@ object ESLint extends Tool {
   }
 
   def extractIssuesAndErrors(filePath: String, messages: Option[JsArray])(implicit basePath: String): List[Result] = {
-
     messages.map(
       messagesArr =>
         messagesArr.value.flatMap {
@@ -147,29 +152,54 @@ object ESLint extends Tool {
             else {
               message.asOpt[WarnResult].map {
                 warn =>
-                  Issue(SourcePath(FileHelper.stripPath(filePath, basePath)), ResultMessage(warn.message), PatternId(warn.ruleId), ResultLine(warn.line.asOpt[Int].getOrElse(1)))
+                  Issue(SourcePath(FileHelper.stripPath(filePath, basePath)), ResultMessage(warn.message),
+                    PatternId(warn.ruleId), ResultLine(warn.line.asOpt[Int].getOrElse(1)))
               }
             }
         }.toList
     ).getOrElse(List.empty)
   }
 
-  def resultFromToolResult(toolResult: JsArray)(implicit basePath: String): List[Result] = {
-    toolResult.value.flatMap {
-      fileResult =>
-        (fileResult \ "filePath").asOpt[String].map {
-          case filePath =>
-            val messages = (fileResult \ "messages").asOpt[JsArray]
-            extractIssuesAndErrors(filePath, messages)
-        }.getOrElse(List.empty)
-    }.toList
+  def resultFromToolResult(toolResults: Seq[JsValue])(implicit basePath: String): List[Result] = {
+    toolResults.toList.flatMap { fileResult =>
+      (fileResult \ "filePath").asOpt[String].map {
+        case filePath =>
+          val messages = (fileResult \ "messages").asOpt[JsArray]
+          extractIssuesAndErrors(filePath, messages)
+      }.getOrElse(List.empty)
+    }
   }
 
-  def parseToolResult(resultFromTool: List[String], path: Path): List[Result] = {
-    implicit val basePath = path.toString
+  def parseToolResult(path: Path, outputFile: Path): Try[List[Result]] = {
+    readFile(outputFile).flatMap { contents =>
+      val contentsStr = contents.mkString(Properties.lineSeparator)
+      val jsonParsed = Json.parse(contentsStr)
 
-    val jsonParsed = Json.parse(resultFromTool.mkString)
-    jsonParsed.asOpt[JsArray].fold(List.empty[Result])(resultFromToolResult)
+      jsonParsed match {
+        case JsArray(fileResults) => Success(resultFromToolResult(fileResults)(path.toString))
+        case _ => Failure(new Exception(
+          s"""
+             |ESLint output is not an array of files
+             |stdout: $contentsStr
+          """.stripMargin
+        ))
+      }
+    }
+  }
+
+  def readFile(path: Path): Try[List[String]] = {
+    implicit val codec = Codec("UTF-8")
+    codec.onMalformedInput(CodingErrorAction.IGNORE)
+    codec.onUnmappableCharacter(CodingErrorAction.IGNORE)
+
+    val contents = Try {
+      val buff = Source.fromFile(path.toFile)
+      val conts = buff.getLines().toList
+      buff.close()
+      conts
+    }
+
+    contents
   }
 
 }
