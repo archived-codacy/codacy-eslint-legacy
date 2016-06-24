@@ -11,12 +11,17 @@ machine:
 dependencies:
   override:
     - sbt "set version in Docker := \"latest\"" "set name := \"$CIRCLE_PROJECT_REPONAME\"" docker:publishLocal
+  cache_directories:
+    - "~/.ivy2"
+    - "~/.m2"
+    - "~/.sbt"
 
 test:
   pre:
-    - git clone https://github.com/codacy/codacy-plugins-test.git
+    - (cd $HOME && git clone https://github.com/codacy/codacy-plugins-test.git -b update-how-we-mount-configs)
   override:
-    - (cd codacy-plugins-test; sbt "run-main codacy.plugins.DockerTest all $CIRCLE_PROJECT_REPONAME:latest")
+    - (cd $HOME/codacy-plugins-test && sbt -Dcodacy.tests.ignore.descriptions=true "run-main codacy.plugins.DockerTest json $CIRCLE_PROJECT_REPONAME:latest")
+    - (cd $HOME/codacy-plugins-test && sbt -Dcodacy.tests.noremove=true "run-main codacy.plugins.DockerTest pattern $CIRCLE_PROJECT_REPONAME:latest")
 
 deployment:
   hub:

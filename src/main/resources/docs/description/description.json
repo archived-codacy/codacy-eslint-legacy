@@ -300,12 +300,6 @@
     "timeToFix": 15
   },
   {
-    "patternId": "no-empty-label",
-    "title": "Prohibit empty labels",
-    "description": "Prohibits labels when they're used to mark a statement that are not an iteration or switch",
-    "timeToFix": 5
-  },
-  {
     "patternId": "no-eq-null",
     "title": "Prohibit Null Comparisons ==",
     "description": "Prohibits comparing null with == or !=, use === or !== instead",
@@ -1162,30 +1156,6 @@
     "timeToFix": 5
   },
   {
-    "patternId": "space-after-keywords",
-    "title": "Require/Prohibit spaces following keywords",
-    "description": "Requires or prohibits spaces following keywords.",
-    "timeToFix": 5,
-    "parameters": [
-      {
-        "name": "unnamedParam",
-        "description": "Specifies that you always need (or never) to have at least one space after keywords [always/never]"
-      }
-    ]
-  },
-  {
-    "patternId": "space-before-keywords",
-    "title": "Require/Prohibit spaces before keywords",
-    "description": "Requires or prohibits spaces preceding certain keywords.",
-    "timeToFix": 10,
-    "parameters": [
-      {
-        "name": "unnamedParam",
-        "description": "Specifies that you always need (or never) to have at least one space before keywords [always/never]"
-      }
-    ]
-  },
-  {
     "patternId": "space-before-blocks",
     "title": "Require/Prohibit Space Before Blocks",
     "description": "Requires or prohibits in the spacing before blocks.",
@@ -1226,12 +1196,6 @@
     "title": "Require Spaces Around Infix Operators",
     "description": "Enforces spaces around operators.",
     "timeToFix": 10
-  },
-  {
-    "patternId": "space-return-throw-case",
-    "title": "Require spaces following return, throw, and case",
-    "description": "Enforces spaces following return, throw, and case.",
-    "timeToFix": 5
   },
   {
     "patternId": "space-unary-ops",

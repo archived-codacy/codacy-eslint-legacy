@@ -28,7 +28,9 @@ organization := "com.codacy"
 
 val installAll =
   s"""apk update && apk add bash curl nodejs python &&
-     |npm install -g eslint@1.10.1""".stripMargin.replaceAll(System.lineSeparator(), " ")
+     |npm install -g eslint@2.13.1 &&
+     |npm install -g eslint-plugin-react@5.2.2 &&
+     |npm install -g eslint-plugin-angular@1.1.1""".stripMargin.replaceAll(System.lineSeparator(), " ")
 
 mappings in Universal <++= (resourceDirectory in Compile) map { (resourceDir: File) =>
   val src = resourceDir / "docs"
