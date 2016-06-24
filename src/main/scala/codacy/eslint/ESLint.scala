@@ -40,104 +40,62 @@ object ESLint extends Tool {
           case _ => List.empty[String]
         }
 
-      val command = List("eslint", "-f", "json", "-o", s"${outputFile.toFile.getCanonicalPath}") ++ configuration ++ filesToLint
+      val command = List("eslint", "--no-eslintrc",
+        "--plugin", "react",
+        "--plugin", "angular",
+        "-f", "json",
+        "-o", s"${outputFile.toFile.getCanonicalPath}") ++ configuration ++ filesToLint
 
       CommandRunner.exec(command) match {
         case Right(resultFromTool) =>
-          parseToolResult(path, outputFile)
+          parseToolResult(path, outputFile) match {
+            case s@Success(_) => s
+            case Failure(e) =>
+              val msg =
+                s"""
+                   |ESLint exited with code ${resultFromTool.exitCode}
+                   |message: ${e.getMessage}
+                   |stdout: ${resultFromTool.stdout.mkString(Properties.lineSeparator)}
+                   |stderr: ${resultFromTool.stderr.mkString(Properties.lineSeparator)}
+                """.stripMargin
+              Failure(new Exception(msg))
+          }
+
         case Left(e) =>
           Failure(e)
       }
     }.flatten
   }
 
-  def isUnnamedParameter(parameterName: String): Boolean = {
-    parameterName == "unnamedParam"
-  }
+  private def parseToolResult(path: Path, outputFile: Path): Try[List[Result]] = {
+    readFile(outputFile).flatMap { contents =>
+      val contentsStr = contents.mkString(Properties.lineSeparator)
+      val jsonParsed = Try(Json.parse(contentsStr))
 
-  def isUnnamedListParameter(parameterName: String): Boolean = {
-    parameterName == "unnamedParamList"
-  }
-
-  def isNamedParameter(parameterName: String): Boolean = {
-    !isUnnamedParameter(parameterName) && !isUnnamedListParameter(parameterName)
-  }
-
-  def hasUnnamedParameters(parameters: List[ParameterDef]): Boolean = {
-    parameters.exists(param => isUnnamedParameter(param.name.value))
-  }
-
-  def unnamedParameterToConfig(parameter: ParameterDef): List[String] = {
-    List(Json.stringify(parameter.value))
-  }
-
-  def unnamedListParameterToConfig(parameter: ParameterDef): List[String] = {
-    parameter.value.asOpt[List[JsValue]].fold(List.empty[String]) {
-      params => params.map(param => Json.stringify(param))
+      jsonParsed match {
+        case Success(JsArray(fileResults)) => Success(resultFromToolResult(fileResults)(path.toString))
+        case Success(_) => Failure(new Exception(
+          s"""
+             |ESLint output is not an array of files
+             |stdout: $contentsStr
+          """.stripMargin
+        ))
+        case Failure(e) => Failure(e)
+      }
     }
   }
 
-  def namedParameterToConfig(parameter: ParameterDef): String = {
-    val parameterName = parameter.name.value
-    val parameterValue = Json.stringify(parameter.value)
-
-    s""""$parameterName":$parameterValue"""
-  }
-
-  def generateNamedParameters(parameters: List[ParameterDef]): List[String] = {
-    parameters.collect {
-      case param if isNamedParameter(param.name.value) =>
-        namedParameterToConfig(param)
+  private def resultFromToolResult(toolResults: Seq[JsValue])(implicit basePath: String): List[Result] = {
+    toolResults.toList.flatMap { fileResult =>
+      (fileResult \ "filePath").asOpt[String].map {
+        case filePath =>
+          val messages = (fileResult \ "messages").asOpt[JsArray]
+          extractIssuesAndErrors(filePath, messages)
+      }.getOrElse(List.empty)
     }
   }
 
-  def generateUnnamedParameters(parameters: List[ParameterDef]): List[String] = {
-    parameters.collect {
-      case param if isUnnamedListParameter(param.name.value) =>
-        unnamedListParameterToConfig(param)
-      case param if isUnnamedParameter(param.name.value) =>
-        unnamedParameterToConfig(param)
-    }.flatten
-  }
-
-  def generateParameters(parameters: List[ParameterDef]) = {
-    val unnamedParam = generateUnnamedParameters(parameters)
-    val namedParam = generateNamedParameters(parameters)
-
-    val separator =
-      if (unnamedParam.nonEmpty && namedParam.nonEmpty) "," else ""
-
-    val unnamedParamString = unnamedParam.mkString(",")
-    val namedParamString =
-      if (namedParam.nonEmpty) s"""{${namedParam.mkString(",")}}""" else ""
-
-    unnamedParamString + separator + namedParamString
-  }
-
-  def patternToConfig(pattern: PatternDef): String = {
-    val patternId = pattern.patternId.value
-    val warnLevel = 1
-    val paramConfig = pattern.parameters.fold("") {
-      case params if params.nonEmpty =>
-        val parameters = generateParameters(params.toList)
-        s""",$parameters"""
-      case _ => ""
-    }
-
-    s""""$patternId":[$warnLevel$paramConfig]"""
-  }
-
-  def writeConfigFile(patternsToLint: List[PatternDef]): String = {
-    val rules = patternsToLint.map(patternToConfig)
-    val env = List( """"es6":true""", """"node":true""", """"browser":true""")
-    val ecmaFeatures = List( """"jsx":true""")
-
-    val content = s"""{"rules":{${rules.mkString(",")}},"env":{${env.mkString(",")}},"ecmaFeatures":{${ecmaFeatures.mkString(",")}}}"""
-
-    FileHelper.createTmpFile(content, "config", ".json").toString
-  }
-
-  def extractIssuesAndErrors(filePath: String, messages: Option[JsArray])(implicit basePath: String): List[Result] = {
+  private def extractIssuesAndErrors(filePath: String, messages: Option[JsArray])(implicit basePath: String): List[Result] = {
     messages.map(
       messagesArr =>
         messagesArr.value.flatMap {
@@ -160,34 +118,108 @@ object ESLint extends Tool {
     ).getOrElse(List.empty)
   }
 
-  def resultFromToolResult(toolResults: Seq[JsValue])(implicit basePath: String): List[Result] = {
-    toolResults.toList.flatMap { fileResult =>
-      (fileResult \ "filePath").asOpt[String].map {
-        case filePath =>
-          val messages = (fileResult \ "messages").asOpt[JsArray]
-          extractIssuesAndErrors(filePath, messages)
-      }.getOrElse(List.empty)
+  private def writeConfigFile(patternsToLint: List[PatternDef]): String = {
+    val rules = patternsToLint.map(patternToConfig)
+
+    val content =
+      s"""{
+          |  "rules": {${rules.mkString(",")}},
+          |  "env": {
+          |    "es6": true,
+          |    "node": true,
+          |    "browser": true,
+          |    "commonjs": true,
+          |    "jquery": true,
+          |    "phantomjs": true,
+          |    "jasmine": true,
+          |    "mocha": true,
+          |    "amd": true,
+          |    "worker": true,
+          |    "qunit": true
+          |  },
+          |  "parserOptions": {
+          |    "ecmaVersion": 6,
+          |    "ecmaFeatures": {
+          |      "jsx": true
+          |    }
+          |  }
+          |}
+          |""".stripMargin
+
+    FileHelper.createTmpFile(content, "config", ".json").toString
+  }
+
+  private def patternToConfig(pattern: PatternDef): String = {
+    val patternId = pattern.patternId.value
+    val warnLevel = 1
+    val paramConfig = pattern.parameters.fold("") {
+      case params if params.nonEmpty =>
+        val parameters = generateParameters(params.toList)
+        s""",$parameters"""
+      case _ => ""
+    }
+
+    s""""$patternId":[$warnLevel$paramConfig]"""
+  }
+
+  private def generateParameters(parameters: List[ParameterDef]): String = {
+    val unnamedParam = generateUnnamedParameters(parameters)
+    val namedParam = generateNamedParameters(parameters)
+
+    val separator = if (unnamedParam.nonEmpty && namedParam.nonEmpty) "," else ""
+
+    val unnamedParamString = unnamedParam.mkString(",")
+    val namedParamString = if (namedParam.nonEmpty) s"""{${namedParam.mkString(",")}}""" else ""
+
+    unnamedParamString + separator + namedParamString
+  }
+
+  private def generateNamedParameters(parameters: List[ParameterDef]): List[String] = {
+    parameters.collect {
+      case param if isNamedParameter(param.name.value) =>
+        namedParameterToConfig(param)
     }
   }
 
-  def parseToolResult(path: Path, outputFile: Path): Try[List[Result]] = {
-    readFile(outputFile).flatMap { contents =>
-      val contentsStr = contents.mkString(Properties.lineSeparator)
-      val jsonParsed = Json.parse(contentsStr)
+  private def namedParameterToConfig(parameter: ParameterDef): String = {
+    val parameterName = parameter.name.value
+    val parameterValue = Json.stringify(parameter.value)
 
-      jsonParsed match {
-        case JsArray(fileResults) => Success(resultFromToolResult(fileResults)(path.toString))
-        case _ => Failure(new Exception(
-          s"""
-             |ESLint output is not an array of files
-             |stdout: $contentsStr
-          """.stripMargin
-        ))
-      }
+    s""""$parameterName":$parameterValue"""
+  }
+
+  private def generateUnnamedParameters(parameters: List[ParameterDef]): List[String] = {
+    parameters.collect {
+      case param if isUnnamedListParameter(param.name.value) =>
+        unnamedListParameterToConfig(param)
+      case param if isUnnamedParameter(param.name.value) =>
+        unnamedParameterToConfig(param)
+    }.flatten
+  }
+
+  private def unnamedParameterToConfig(parameter: ParameterDef): List[String] = {
+    List(Json.stringify(parameter.value))
+  }
+
+  private def unnamedListParameterToConfig(parameter: ParameterDef): List[String] = {
+    parameter.value.asOpt[List[JsValue]].fold(List.empty[String]) {
+      params => params.map(param => Json.stringify(param))
     }
   }
 
-  def readFile(path: Path): Try[List[String]] = {
+  private def isUnnamedParameter(parameterName: String): Boolean = {
+    parameterName == "unnamedParam"
+  }
+
+  private def isUnnamedListParameter(parameterName: String): Boolean = {
+    parameterName == "unnamedParamList"
+  }
+
+  private def isNamedParameter(parameterName: String): Boolean = {
+    !isUnnamedParameter(parameterName) && !isUnnamedListParameter(parameterName)
+  }
+
+  private def readFile(path: Path): Try[List[String]] = {
     implicit val codec = Codec("UTF-8")
     codec.onMalformedInput(CodingErrorAction.IGNORE)
     codec.onUnmappableCharacter(CodingErrorAction.IGNORE)

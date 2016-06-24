@@ -1,13 +1,15 @@
 //#Patterns: no-extra-bind
 
+// useless bind
+var boundGetName = (function getName() {
+  return "ESLint";
 //#Info: no-extra-bind
-var x = function () {   
-    (function () {
-      this.foo();
-    }());
+}).bind({ name: "ESLint" });
 
-}.bind(bar);
+console.log(boundGetName());
 
-var x = function () {
-    this.foo();
-}.bind(bar); 
+var boundGetName = (function getName() {
+  return this.name;
+}).bind({ name: "ESLint" });
+
+console.log(boundGetName());

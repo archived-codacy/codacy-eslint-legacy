@@ -1,8 +1,19 @@
 //#Patterns: no-fallthrough
 
+//#Issue: {"severity": "Warn", "line": 8, "patternId": "no-fallthrough"}
 
-switch(foo) { 
-	//#Warn: no-fallthrough
-	case 1: doSomething(); 
-	case 2: doSomethingElse(); 
+switch(foo) {
+  case 1:
+    doSomething();
+  case 2:
+    doSomethingElse();
+}
+
+switch(foo) {
+  case 1:
+    doSomething();
+    break;
+
+  case 2:
+    doSomethingElse();
 }

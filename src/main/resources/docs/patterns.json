@@ -260,11 +260,6 @@
       "category": "CodeStyle"
     },
     {
-      "patternId": "no-empty-label",
-      "level": "Info",
-      "category": "UnusedCode"
-    },
-    {
       "patternId": "no-eq-null",
       "level": "Warning",
       "category": "ErrorProne"
@@ -628,7 +623,10 @@
       "parameters": [
         {
           "name": "unnamedParamList",
-          "default": ["fs", "os"]
+          "default": [
+            "fs",
+            "os"
+          ]
         }
       ]
     },
@@ -898,7 +896,10 @@
       "parameters": [
         {
           "name": "unnamedParamList",
-          "default": ["FunctionExpression", "WithStatement"]
+          "default": [
+            "FunctionExpression",
+            "WithStatement"
+          ]
         }
       ]
     },
@@ -1013,28 +1014,6 @@
       "category": "CodeStyle"
     },
     {
-      "patternId": "space-after-keywords",
-      "level": "Info",
-      "category": "CodeStyle",
-      "parameters": [
-        {
-          "name": "unnamedParam",
-          "default": "always"
-        }
-      ]
-    },
-    {
-      "patternId": "space-before-keywords",
-      "level": "Info",
-      "category": "CodeStyle",
-      "parameters": [
-        {
-          "name": "unnamedParam",
-          "default": "always"
-        }
-      ]
-    },
-    {
       "patternId": "space-before-blocks",
       "level": "Info",
       "category": "CodeStyle",
@@ -1069,11 +1048,6 @@
     },
     {
       "patternId": "space-infix-ops",
-      "level": "Info",
-      "category": "CodeStyle"
-    },
-    {
-      "patternId": "space-return-throw-case",
       "level": "Info",
       "category": "CodeStyle"
     },
@@ -1201,6 +1175,231 @@
     },
     {
       "patternId": "require-yield",
+      "level": "Warning",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "no-prototype-builtins",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "no-unsafe-finally",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "array-callback-return",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "no-case-declarations",
+      "level": "Warning",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "no-empty-function",
+      "level": "Warning",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "no-empty-pattern",
+      "level": "Warning",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "no-extra-label",
+      "level": "Warning",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "no-implicit-globals",
+      "level": "Warning",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "no-magic-numbers",
+      "level": "Warning",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "no-self-assign",
+      "level": "Warning",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "no-unmodified-loop-condition",
+      "level": "Warning",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "no-unused-labels",
+      "level": "Warning",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "no-useless-escape",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "no-restricted-globals",
+      "level": "Warning",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "id-blacklist",
+      "level": "Warning",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "keyword-spacing",
+      "level": "Warning",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "max-depth",
+      "level": "Warning",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "max-len",
+      "level": "Warning",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "max-lines",
+      "level": "Warning",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "max-params",
+      "level": "Warning",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "max-statements",
+      "level": "Warning",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "max-statements-per-line",
+      "level": "Warning",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "newline-before-return",
+      "level": "Warning",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "newline-per-chained-call",
+      "level": "Warning",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "no-bitwise",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "no-mixed-operators",
+      "level": "Warning",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "no-plusplus",
+      "level": "Warning",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "no-whitespace-before-property",
+      "level": "Warning",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "object-curly-newline",
+      "level": "Warning",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "object-property-newline",
+      "level": "Warning",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "one-var-declaration-per-line",
+      "level": "Warning",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "unicode-bom",
+      "level": "Warning",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "arrow-body-style",
+      "level": "Warning",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "no-confusing-arrow",
+      "level": "Warning",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "no-duplicate-imports",
+      "level": "Warning",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "no-new-symbol",
+      "level": "Warning",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "no-restricted-imports",
+      "level": "Warning",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "no-useless-computed-key",
+      "level": "Warning",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "no-useless-constructor",
+      "level": "Warning",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "no-useless-rename",
+      "level": "Warning",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "prefer-rest-params",
+      "level": "Warning",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "rest-spread-spacing",
+      "level": "Warning",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "sort-imports",
+      "level": "Warning",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "template-curly-spacing",
+      "level": "Warning",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "yield-star-spacing",
       "level": "Warning",
       "category": "CodeStyle"
     }
