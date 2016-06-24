@@ -20,16 +20,16 @@ dependencies:
     - "~/codacy-plugins-test/target"
     - "~/codacy-plugins-test/project/target"
     - "~/codacy-plugins-test/project/project"
-    - "~/codacy-eslint/target"
-    - "~/codacy-eslint/project/target"
-    - "~/codacy-eslint/project/project"
+    - "~/$CIRCLE_PROJECT_REPONAME/target"
+    - "~/$CIRCLE_PROJECT_REPONAME/project/target"
+    - "~/$CIRCLE_PROJECT_REPONAME/project/project"
 
 test:
   pre:
     - (cd $HOME/codacy-plugins-test; git fetch --all; git reset --hard origin/master)
   override:
     - (cd $HOME/codacy-plugins-test && sbt -Dcodacy.tests.ignore.descriptions=true "run-main codacy.plugins.DockerTest json $CIRCLE_PROJECT_REPONAME:latest")
-    - (cd $HOME/codacy-plugins-test && sbt -Dcodacy.tests.noremove=true "run-main codacy.plugins.DockerTest pattern $CIRCLE_PROJECT_REPONAME:latest")
+    - (cd $HOME/codacy-plugins-test && sbt -Dcodacy.tests.noremove=true -Dcodacy.tests.threads=8 "run-main codacy.plugins.DockerTest pattern $CIRCLE_PROJECT_REPONAME:latest")
 
 deployment:
   hub:
