@@ -15,7 +15,8 @@ resolvers ++= Seq(
 
 libraryDependencies ++= Seq(
   "com.typesafe.play" %% "play-json" % "2.3.8",
-  "com.codacy" %% "codacy-engine-scala-seed" % "2.6.31"
+  "com.codacy" %% "codacy-engine-scala-seed" % "2.6.31" withSources(),
+  "org.scala-lang.modules" %% "scala-xml" % "1.0.4" withSources()
 )
 
 enablePlugins(JavaAppPackaging)
@@ -28,18 +29,18 @@ organization := "com.codacy"
 
 val installAll =
   s"""apk update && apk add bash curl nodejs python &&
-     |npm install -g eslint@2.13.1 &&
-     |npm install -g eslint-plugin-react@5.2.2 &&
-     |npm install -g eslint-plugin-angular@1.1.1""".stripMargin.replaceAll(System.lineSeparator(), " ")
+      |npm install -g eslint@2.13.1 &&
+      |npm install -g eslint-plugin-react@5.2.2 &&
+      |npm install -g eslint-plugin-angular@1.1.1""".stripMargin.replaceAll(System.lineSeparator(), " ")
 
 mappings in Universal <++= (resourceDirectory in Compile) map { (resourceDir: File) =>
   val src = resourceDir / "docs"
   val dest = "/docs"
 
   for {
-      path <- (src ***).get
-      if !path.isDirectory
-    } yield path -> path.toString.replaceFirst(src.toString, dest)
+    path <- (src ***).get
+    if !path.isDirectory
+  } yield path -> path.toString.replaceFirst(src.toString, dest)
 }
 
 
