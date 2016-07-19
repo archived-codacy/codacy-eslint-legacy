@@ -2,28 +2,21 @@ package codacy.eslint
 
 import java.nio.file.Path
 
+import better.files._
 import codacy.dockerApi.utils.{CommandRunner, FileHelper, ToolHelper}
 import codacy.dockerApi.{PatternId, ResultLine, ResultMessage, SourcePath, _}
-import play.api.libs.functional.syntax._
 import play.api.libs.json._
 
 import scala.util.{Failure, Properties, Success, Try}
 import scala.xml.{Elem, XML}
 
-case class WarnResult(ruleId: String, message: String, line: JsValue)
-
-object WarnResult {
-  implicit val warnReads = (
-    (__ \ "ruleId").read[String] and
-      (__ \ "message").read[String] and
-      (__ \ "line").read[JsValue]
-    ) (WarnResult.apply _)
-}
-
 object ESLint extends Tool {
+
+  val configFile = File(DockerEnvironment.sourcePath) / ".eslintrc"
 
   override def apply(path: Path, conf: Option[List[PatternDef]], files: Option[Set[Path]])(implicit spec: Spec): Try[List[Result]] = {
     Try {
+
       val filesToLint: List[String] = files.fold(List(path.toString)) {
         paths =>
           paths.map(_.toString).toList
@@ -32,14 +25,21 @@ object ESLint extends Tool {
       val outputFile = FileHelper.createTmpFile("", "codacy-eslint-output", ".xml")
 
       val patternsToLintOpt = ToolHelper.getPatternsToLint(conf)
-      val configuration =
-        patternsToLintOpt.fold(List.empty[String]) {
-          case patternsToLint if patternsToLint.nonEmpty =>
-            List("-c", writeConfigFile(patternsToLint))
-          case _ => List.empty[String]
-        }
 
-      val command = List("eslint", "--no-eslintrc",
+
+      val configuration: List[String] = {
+        if (configFile.isRegularFile) List.empty
+        else{
+          patternsToLintOpt.fold(List.empty[String]) {
+            case patternsToLint if patternsToLint.nonEmpty =>
+              List("-c", writeConfigFile(patternsToLint))
+            case _ => List.empty[String]
+          }
+        }
+      }
+
+      val command = List("eslint",
+        "--no-eslintrc",
         "--plugin", "react",
         "--plugin", "angular",
         "-f", "checkstyle",
