@@ -4,7 +4,7 @@ name := """codacy-engine-eslint"""
 
 version := "1.0-SNAPSHOT"
 
-val languageVersion = "2.11.7"
+val languageVersion = "2.11.8"
 
 scalaVersion := languageVersion
 
@@ -16,7 +16,8 @@ resolvers ++= Seq(
 libraryDependencies ++= Seq(
   "com.typesafe.play" %% "play-json" % "2.3.8",
   "com.codacy" %% "codacy-engine-scala-seed" % "2.6.31" withSources(),
-  "org.scala-lang.modules" %% "scala-xml" % "1.0.4" withSources()
+  "org.scala-lang.modules" %% "scala-xml" % "1.0.4" withSources(),
+  "com.github.pathikrit" %% "better-files" % "2.16.0" withSources()
 )
 
 enablePlugins(JavaAppPackaging)
