@@ -39,9 +39,10 @@ object ESLint extends Tool {
           case _ => List.empty[String]
         }
 
-      val command = List("eslint", "--no-eslintrc",
-        "-f", "checkstyle",
-        "-o", s"${outputFile.toFile.getCanonicalPath}") ++ configuration ++ filesToLint
+      val command = List("eslint") ++
+        (if (conf.nonEmpty) Some("--no-eslintrc") else None) ++
+        List("-f", "checkstyle",
+          "-o", s"${outputFile.toFile.getCanonicalPath}") ++ configuration ++ filesToLint
 
       CommandRunner.exec(command) match {
         case Right(resultFromTool) =>
