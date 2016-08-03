@@ -40,8 +40,6 @@ object ESLint extends Tool {
         }
 
       val command = List("eslint", "--no-eslintrc",
-        "--plugin", "react",
-        "--plugin", "angular",
         "-f", "checkstyle",
         "-o", s"${outputFile.toFile.getCanonicalPath}") ++ configuration ++ filesToLint
 
@@ -89,7 +87,7 @@ object ESLint extends Tool {
           error =>
             val line = (error \@ "line").toInt
             val message = error \@ "message"
-            val patternId = (error \@ "source").stripPrefix("eslint.rules.")
+            val patternId = (error \@ "source").stripPrefix("eslint.rules.").replace("/", "_")
             Issue(SourcePath(filename), ResultMessage(message), PatternId(patternId), ResultLine(line))
         }
     }.toList
@@ -100,7 +98,6 @@ object ESLint extends Tool {
 
     val content =
       s"""{
-          |  "rules": {${rules.mkString(",")}},
           |  "env": {
           |    "es6": true,
           |    "node": true,
@@ -119,15 +116,25 @@ object ESLint extends Tool {
           |    "ecmaFeatures": {
           |      "jsx": true
           |    }
-          |  }
-          |}
-          |""".stripMargin
+          |  },
+          |  "plugins": [
+          |    "react",
+          |    "babel",
+          |    "mocha",
+          |    "standard",
+          |    "promise",
+          |    "jsx-a11y",
+          |    "import",
+          |    "angular"
+          |  ],
+          |  "rules": {${rules.mkString(",")}}
+          |}""".stripMargin
 
     FileHelper.createTmpFile(content, "config", ".json").toString
   }
 
   private def patternToConfig(pattern: PatternDef): String = {
-    val patternId = pattern.patternId.value
+    val patternId = pattern.patternId.value.replace("_", "/")
     val warnLevel = 1
     val paramConfig = pattern.parameters.fold("") {
       case params if params.nonEmpty =>
