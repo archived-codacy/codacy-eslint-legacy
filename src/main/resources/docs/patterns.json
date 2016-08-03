@@ -1402,6 +1402,961 @@
       "patternId": "yield-star-spacing",
       "level": "Warning",
       "category": "CodeStyle"
+    },
+    {
+      "patternId": "generator-star",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "global-strict",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "multiline-ternary",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "no-arrow-condition",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "no-comma-dangle",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "no-empty-class",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "no-empty-label",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "no-extra-strict",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "no-reserved-keys",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "no-space-before-semi",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "no-tabs",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "no-wrap-func",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "space-after-function-name",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "space-after-keywords",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "space-before-function-parentheses",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "space-before-keywords",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "space-in-brackets",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "space-return-throw-case",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "space-unary-word-ops",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "spaced-line-comment",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "react_display-name",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "react_forbid-prop-types",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "react_jsx-boolean-value",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "react_jsx-closing-bracket-location",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "react_jsx-curly-spacing",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "react_jsx-equals-spacing",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "react_jsx-filename-extension",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "react_jsx-first-prop-new-line",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "react_jsx-handler-names",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "react_jsx-indent-props",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "react_jsx-indent",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "react_jsx-key",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "react_jsx-max-props-per-line",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "react_jsx-no-bind",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "react_jsx-no-comment-textnodes",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "react_jsx-no-duplicate-props",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "react_jsx-no-literals",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "react_jsx-no-target-blank",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "react_jsx-no-undef",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "react_jsx-pascal-case",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "react_jsx-sort-props",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "react_jsx-space-before-closing",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "react_jsx-uses-react",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "react_jsx-uses-vars",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "react_jsx-wrap-multilines",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "react_no-danger",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "react_no-deprecated",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "react_no-did-mount-set-state",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "react_no-did-update-set-state",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "react_no-direct-mutation-state",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "react_no-find-dom-node",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "react_no-is-mounted",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "react_no-multi-comp",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "react_no-render-return-value",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "react_no-set-state",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "react_no-string-refs",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "react_no-unknown-property",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "react_prefer-es6-class",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "react_prefer-stateless-function",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "react_prop-types",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "react_react-in-jsx-scope",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "react_require-extension",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "react_require-optimization",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "react_require-render-return",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "react_self-closing-comp",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "react_sort-comp",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "react_sort-prop-types",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "babel_array-bracket-spacing",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "babel_arrow-parens",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "babel_flow-object-type",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "babel_func-params-comma-dangle",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "babel_generator-star-spacing",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "babel_new-cap",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "babel_no-await-in-loop",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "babel_object-curly-spacing",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "babel_object-shorthand",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "mocha_no-exclusive-tests",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "mocha_no-skipped-tests",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "mocha_no-pending-tests",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "mocha_handle-done-callback",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "mocha_no-synchronous-tests",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "mocha_no-global-tests",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "mocha_valid-test-description",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "mocha_valid-suite-description",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "mocha_no-sibling-hooks",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "mocha_no-mocha-arrows",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "mocha_no-hooks",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "standard_array-bracket-even-spacing",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "standard_computed-property-even-spacing",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "standard_object-curly-even-spacing",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "promise_param-names",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "promise_always-return",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "promise_always-catch",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "promise_catch-or-return",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "promise_no-native",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "jsx-a11y_aria-props",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "jsx-a11y_aria-proptypes",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "jsx-a11y_aria-role",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "jsx-a11y_aria-unsupported-elements",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "jsx-a11y_heading-has-content",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "jsx-a11y_href-no-hash",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "jsx-a11y_html-has-lang",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "jsx-a11y_img-has-alt",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "jsx-a11y_img-redundant-alt",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "jsx-a11y_label-has-for",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "jsx-a11y_lang",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "jsx-a11y_mouse-events-have-key-events",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "jsx-a11y_no-access-key",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "jsx-a11y_no-marquee",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "jsx-a11y_no-onchange",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "jsx-a11y_onclick-has-focus",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "jsx-a11y_onclick-has-role",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "jsx-a11y_role-has-required-aria-props",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "jsx-a11y_role-supports-aria-props",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "jsx-a11y_scope",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "jsx-a11y_tabindex-no-positive",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "import_default",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "import_export",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "import_extensions",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "import_imports-first",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "import_named",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "import_namespace",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "import_newline-after-import",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "import_no-amd",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "import_no-commonjs",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "import_no-deprecated",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "import_no-duplicates",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "import_no-extraneous-dependencies",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "import_no-mutable-exports",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "import_no-named-as-default-member",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "import_no-named-as-default",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "import_no-namespace",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "import_no-nodejs-modules",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "import_no-restricted-paths",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "import_no-unresolved",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "import_order",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "import_prefer-default-export",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_angularelement",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_component-limit",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_component-name",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_controller-as-route",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_controller-as-vm",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_controller-as",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_controller-name",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_deferred",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_definedundefined",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_di-order",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_di-unused",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_di",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_directive-name",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_directive-restrict",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_document-service",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_dumb-inject",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_empty-controller",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_file-name",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_filter-name",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_foreach",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_function-type",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_interval-service",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_json-functions",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_log",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_module-dependency-order",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_module-getter",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_module-name",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_module-setter",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_no-angular-mock",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_no-controller",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_no-cookiestore",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_no-directive-replace",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_no-http-callback",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_no-inline-template",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_no-jquery-angularelement",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_no-private-call",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_no-run-logic",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_no-service-method",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_no-services",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_on-destroy",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_on-watch",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_one-dependency-per-line",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_prefer-component",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_rest-service",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_service-name",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_timeout-service",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_typecheck-array",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_typecheck-date",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_typecheck-function",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_typecheck-number",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_typecheck-object",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_typecheck-string",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_watchers-execution",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_window-service",
+      "level": "Info",
+      "category": "CodeStyle"
     }
   ]
 }
