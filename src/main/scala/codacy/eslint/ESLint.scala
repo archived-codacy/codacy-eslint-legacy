@@ -44,7 +44,7 @@ object ESLint extends Tool {
         List("-f", "checkstyle", "--ext", ".js", "--ext", ".jsx",
           "-o", s"${outputFile.toFile.getCanonicalPath}") ++ configuration ++ filesToLint
 
-      CommandRunner.exec(command) match {
+      CommandRunner.exec(command, Some(path.toFile)) match {
         case Right(resultFromTool) =>
           parseToolResult(path, outputFile) match {
             case s@Success(_) => s
