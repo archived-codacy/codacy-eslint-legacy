@@ -44,13 +44,14 @@ object ESLint extends Tool {
         List("-f", "checkstyle", "--ext", ".js", "--ext", ".jsx",
           "-o", s"${outputFile.toFile.getCanonicalPath}") ++ configuration ++ filesToLint
 
-      CommandRunner.exec(command) match {
+      CommandRunner.exec(command, Some(path.toFile)) match {
         case Right(resultFromTool) =>
           parseToolResult(path, outputFile) match {
             case s@Success(_) => s
             case Failure(e) =>
               val msg =
                 s"""
+                   |${e.getStackTrace.mkString(System.lineSeparator)}
                    |ESLint exited with code ${resultFromTool.exitCode}
                    |message: ${e.getMessage}
                    |stdout: ${resultFromTool.stdout.mkString(Properties.lineSeparator)}
@@ -84,12 +85,15 @@ object ESLint extends Tool {
     (outputXml \ "file").flatMap {
       file =>
         val filename = file \@ "name"
-        (file \ "error").map {
+        (file \ "error").flatMap {
           error =>
-            val line = (error \@ "line").toInt
-            val message = error \@ "message"
-            val patternId = (error \@ "source").stripPrefix("eslint.rules.").replace("/", "_")
-            Issue(SourcePath(filename), ResultMessage(message), PatternId(patternId), ResultLine(line))
+            val source = (error \@ "source").stripPrefix("eslint.rules.").replace("/", "_")
+            Option(source).collect {
+              case patternId if patternId.nonEmpty =>
+                val line = (error \@ "line").toInt
+                val message = error \@ "message"
+                Issue(SourcePath(filename), ResultMessage(message), PatternId(patternId), ResultLine(line))
+            }
         }
     }.toList
   }

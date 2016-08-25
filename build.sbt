@@ -39,6 +39,8 @@ val installAll =
       |npm install -g eslint-plugin-import@1.12.0 &&
       |npm install -g eslint-plugin-angular@1.3.1 &&
       |npm install -g eslint-config-standard@5.3.5 &&
+      |npm install -g eslint-plugin-flowtype@2.11.1 &&
+      |npm install -g eslint-plugin-meteor@4.0.0 &&
       |npm install -g eslint-config-airbnb@10.0.0 &&
       |npm install -g eslint-config-airbnb-base@5.0.1""".stripMargin.replaceAll(System.lineSeparator(), " ")
 

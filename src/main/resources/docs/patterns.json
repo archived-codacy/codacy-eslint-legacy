@@ -2357,6 +2357,121 @@
       "patternId": "angular_window-service",
       "level": "Info",
       "category": "CodeStyle"
+    },
+    {
+      "patternId": "flowtype_define-flow-type",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "flowtype_require-parameter-type",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "flowtype_require-return-type",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "flowtype_require-valid-file-annotation",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "flowtype_space-after-type-colon",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "flowtype_space-before-type-colon",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "flowtype_space-before-generic-bracket",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "flowtype_union-intersection-spacing",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "flowtype_generic-spacing",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "flowtype_type-id-match",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "flowtype_use-flow-type",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "flowtype_valid-syntax",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "meteor_no-zero-timeout",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "meteor_no-session",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "meteor_prefer-session-equals",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "meteor_audit-argument-checks",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "meteor_template-names",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "meteor_no-template-lifecycle-assignments",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "meteor_eventmap-params",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "meteor_prefix-eventmap-selectors",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "meteor_scope-dom-lookups",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "meteor_no-dom-lookup-on-created",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "meteor_no-template-parent-data",
+      "level": "Info",
+      "category": "CodeStyle"
     }
   ]
 }
