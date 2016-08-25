@@ -2417,6 +2417,61 @@
       "patternId": "flowtype_valid-syntax",
       "level": "Info",
       "category": "CodeStyle"
+    },
+    {
+      "patternId": "meteor_no-zero-timeout",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "meteor_no-session",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "meteor_prefer-session-equals",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "meteor_audit-argument-checks",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "meteor_template-names",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "meteor_no-template-lifecycle-assignments",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "meteor_eventmap-params",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "meteor_prefix-eventmap-selectors",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "meteor_scope-dom-lookups",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "meteor_no-dom-lookup-on-created",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "meteor_no-template-parent-data",
+      "level": "Info",
+      "category": "CodeStyle"
     }
   ]
 }
