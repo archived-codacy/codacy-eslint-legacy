@@ -43,6 +43,7 @@ val installAll =
       |npm install -g eslint-plugin-meteor@4.0.0 &&
       |npm install -g eslint-config-airbnb@10.0.0 &&
       |npm install -g eslint-config-angular@0.5.0 &&
+      |npm install -g eslint-config-google@0.7.0 &&
       |npm install -g eslint-config-airbnb-base@5.0.1""".stripMargin.replaceAll(System.lineSeparator(), " ")
 
 mappings in Universal <++= (resourceDirectory in Compile) map { (resourceDir: File) =>
