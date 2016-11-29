@@ -28,7 +28,7 @@ organization := "com.codacy"
 
 val installAll =
   s"""apk update && apk add bash curl nodejs python &&
-      |npm install -g eslint@3.6.0 &&
+      |npm install -g eslint@3.11.1 &&
       |npm install -g babel-eslint@6.1.2 &&
       |npm install -g eslint-plugin-react@6.0.0 &&
       |npm install -g eslint-plugin-babel@3.3.0 &&
