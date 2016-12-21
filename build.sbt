@@ -44,7 +44,7 @@ val installAll =
       |npm install -g eslint-config-airbnb@10.0.0 &&
       |npm install -g eslint-config-angular@0.5.0 &&
       |npm install -g eslint-config-google@0.7.0 &&
-      |npm install -g eslint-config-simplifield@4.3.0 &&
+      |npm install -g eslint-config-simplifield@4.4.0 &&
       |npm install -g eslint-plugin-mongodb@0.2.4 &&
       |npm install -g eslint-plugin-node@3.0.4 &&
       |npm install -g eslint-config-airbnb-base@5.0.1""".stripMargin.replaceAll(System.lineSeparator(), " ")
