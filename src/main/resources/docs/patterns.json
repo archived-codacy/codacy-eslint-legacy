@@ -2074,11 +2074,6 @@
       "category": "CodeStyle"
     },
     {
-      "patternId": "import_no-unresolved",
-      "level": "Info",
-      "category": "CodeStyle"
-    },
-    {
       "patternId": "import_order",
       "level": "Info",
       "category": "CodeStyle"
