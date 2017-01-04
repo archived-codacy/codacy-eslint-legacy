@@ -67,8 +67,10 @@ object ESLint extends Tool {
   }
 
   private def parseToolResult(path: Path, outputFile: Path): Try[List[Result]] = {
-    val xmlParsed = Try(XML.loadFile(outputFile.toFile))
-    xmlParsed.map(parseToolResult)
+    Try {
+      val xmlParsed = XML.loadFile(outputFile.toFile)
+      parseToolResult(xmlParsed)
+    }
   }
 
   private def parseToolResult(outputXml: Elem): List[Result] = {
