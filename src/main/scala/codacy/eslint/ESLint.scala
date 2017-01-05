@@ -22,6 +22,11 @@ object WarnResult {
 
 object ESLint extends Tool {
 
+  lazy val blacklist = Set(
+    "import_no-unresolved",
+    "node_no-missing-require"
+  )
+
   override def apply(path: Path, conf: Option[List[PatternDef]], files: Option[Set[Path]])(implicit spec: Spec): Try[List[Result]] = {
     Try {
       val filesToLint: List[String] = files.fold(List(path.toString)) {
@@ -67,8 +72,17 @@ object ESLint extends Tool {
   }
 
   private def parseToolResult(path: Path, outputFile: Path): Try[List[Result]] = {
-    val xmlParsed = Try(XML.loadFile(outputFile.toFile))
-    xmlParsed.map(parseToolResult)
+    def blacklisted(result: Result): Boolean = {
+      result match {
+        case issue: Issue => blacklist.contains(issue.patternId.value)
+        case _ => false
+      }
+    }
+
+    Try {
+      val xmlParsed = XML.loadFile(outputFile.toFile)
+      parseToolResult(xmlParsed).filterNot(blacklisted)
+    }
   }
 
   private def parseToolResult(outputXml: Elem): List[Result] = {
