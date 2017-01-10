@@ -45,6 +45,7 @@ val installAll =
      |npm install -g eslint-config-angular@0.5.0 &&
      |npm install -g eslint-plugin-vue@1.0.0 &&
      |npm install -g eslint-config-vue@2.0.1 &&
+     |npm install -g eslint-plugin-html@1.7.0 &&
      |npm install -g eslint-config-google@0.7.0 &&
      |npm install -g eslint-config-simplifield@4.4.0 &&
      |npm install -g eslint-plugin-mongodb@0.2.4 &&
