@@ -1341,5 +1341,77 @@
     "title": "Prohibit generator functions without 'yield'",
     "description": "This rule generates warnings for generator functions that do not have the yield keyword.",
     "timeToFix": 10
+  },
+  {
+    "patternId": "detect-unsafe-regex",
+    "title": "Prohibit Unsafe Regular Expression",
+    "description": "Prohibits Unsafe Regular Expression (new RegExp).",
+    "timeToFix": 15
+  },
+  {
+    "patternId": "detect-buffer-noassert",
+    "title": "Prohibit Buffer with noAssert",
+    "description": "Prohibits buffer read / write calls that use noAssert set to true.",
+    "timeToFix": 15
+  },
+  {
+    "patternId": "detect-child-process",
+    "title": "Prohibit instances of child_process",
+    "description": "Prohibits instances of child_process.",
+    "timeToFix": 30
+  },
+  {
+    "patternId": "detect-disable-mustache-escape",
+    "title": "Prohibit no Markup escaping in Mustache",
+    "description": "Prohibits having disabled Markup escaping in Mustache.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "detect-eval-with-expression",
+    "title": "Prohibit eval with expression",
+    "description": "Prohibits eval statement with non Literal argument types.",
+    "timeToFix": 15
+  },
+  {
+    "patternId": "detect-no-csrf-before-method-override",
+    "title": "Prohibit CSRF middleware before methodOverride",
+    "description": "Prohibits express.csrf() middleware before express.methodOverride().",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "detect-non-literal-fs-filename",
+    "title": "Prohibit calls to fs functions with expression",
+    "description": "Prohibits calls to fs functions that take a non Literal value as the filename parameter.",
+    "timeToFix": 15
+  },
+  {
+    "patternId": "detect-non-literal-regexp",
+    "title": "Prohibit RegExp's with expression",
+    "description": "Prohibits RegExp's created from non-literal strings.",
+    "timeToFix": 15
+  },
+  {
+    "patternId": "detect-non-literal-require",
+    "title": "Prohibit calls to require with expression",
+    "description": "Prohibits calls to require with non-literal argument.",
+    "timeToFix": 15
+  },
+  {
+    "patternId": "detect-object-injection",
+    "title": "Prohibit instances of var[var]",
+    "description": "Prohibits instances of var[var].",
+    "timeToFix": 15
+  },
+  {
+    "patternId": "detect-possible-timing-attacks",
+    "title": "Prohibit potential hot spot string comparisons",
+    "description": "Prohibits potential hot spot string comparisons of passwords, secrets and hashes.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "detect-pseudoRandomBytes",
+    "title": "Prohibit crypto.pseudoRandomBytes",
+    "description": "Prohibits crypto.pseudoRandomBytes since it's not cryptographically strong.",
+    "timeToFix": 5
   }
 ]

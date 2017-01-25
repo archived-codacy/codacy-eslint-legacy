@@ -144,6 +144,7 @@ object ESLint extends Tool {
           |    "promise",
           |    "jsx-a11y",
           |    "import",
+          |    "security",
           |    "angular"
           |  ],
           |  "rules": {${rules.mkString(",")}}

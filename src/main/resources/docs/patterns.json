@@ -2467,6 +2467,66 @@
       "patternId": "meteor_no-template-parent-data",
       "level": "Info",
       "category": "CodeStyle"
+    },
+    {
+      "patternId": "detect-unsafe-regex",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "detect-buffer-noassert",
+      "level": "Error",
+      "category": "Security"
+    },
+    {
+      "patternId": "detect-child-process",
+      "level": "Error",
+      "category": "Security"
+    },
+    {
+      "patternId": "detect-disable-mustache-escape",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "detect-eval-with-expression",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "detect-no-csrf-before-method-override",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "detect-non-literal-fs-filename",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "detect-non-literal-regexp",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "detect-non-literal-require",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "detect-object-injection",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "detect-possible-timing-attacks",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "detect-pseudoRandomBytes",
+      "level": "Warning",
+      "category": "Security"
     }
   ]
 }
