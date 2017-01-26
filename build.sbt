@@ -28,7 +28,7 @@ organization := "com.codacy"
 
 val installAll =
   s"""apk update && apk add bash curl nodejs python &&
-     |npm install -g eslint@3.12.2 &&
+     |npm install -g eslint@3.14.0 &&
      |npm install -g babel-eslint@6.1.2 &&
      |npm install -g eslint-plugin-react@6.0.0 &&
      |npm install -g eslint-plugin-babel@3.3.0 &&
@@ -46,14 +46,16 @@ val installAll =
      |npm install -g eslint-plugin-vue@1.0.0 &&
      |npm install -g eslint-config-vue@2.0.1 &&
      |npm install -g eslint-plugin-html@1.7.0 &&
-     |npm install -g eslint-config-google@0.7.0 &&
+     |npm install -g eslint-config-google@0.7.1 &&
      |npm install -g eslint-config-simplifield@4.4.0 &&
      |npm install -g eslint-plugin-mongodb@0.2.4 &&
-     |npm install -g eslint-plugin-node@3.0.4 &&
+     |npm install -g eslint-plugin-node@3.0.5 &&
      |npm install -g eslint-config-airbnb-base@5.0.1 &&
      |npm install -g eslint-config-apiconnect@2.0.1 &&
      |npm install -g eslint-config-loopback@7.0.1 &&
      |npm install -g eslint-config-strongloop@2.1.0 &&
+     |npm install -g eslint-plugin-security@1.2.0 &&
+     |npm install -g eslint-config-nodesecurity@1.3.1 &&
      |npm install -g eslint-config-es5@0.5.0""".stripMargin.replaceAll(System.lineSeparator(), " ")
 
 mappings in Universal <++= (resourceDirectory in Compile) map { (resourceDir: File) =>
