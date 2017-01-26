@@ -10,16 +10,6 @@ import play.api.libs.json._
 import scala.util.{Failure, Properties, Success, Try}
 import scala.xml.{Elem, XML}
 
-case class WarnResult(ruleId: String, message: String, line: JsValue)
-
-object WarnResult {
-  implicit val warnReads = (
-    (__ \ "ruleId").read[String] and
-      (__ \ "message").read[String] and
-      (__ \ "line").read[JsValue]
-    ) (WarnResult.apply _)
-}
-
 object ESLint extends Tool {
 
   lazy val blacklist = Set(

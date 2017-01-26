@@ -2469,62 +2469,62 @@
       "category": "CodeStyle"
     },
     {
-      "patternId": "detect-unsafe-regex",
+      "patternId": "security_detect-unsafe-regex",
       "level": "Warning",
       "category": "Security"
     },
     {
-      "patternId": "detect-buffer-noassert",
+      "patternId": "security_detect-buffer-noassert",
       "level": "Error",
       "category": "Security"
     },
     {
-      "patternId": "detect-child-process",
+      "patternId": "security_detect-child-process",
       "level": "Error",
       "category": "Security"
     },
     {
-      "patternId": "detect-disable-mustache-escape",
+      "patternId": "security_detect-disable-mustache-escape",
       "level": "Warning",
       "category": "Security"
     },
     {
-      "patternId": "detect-eval-with-expression",
+      "patternId": "security_detect-eval-with-expression",
       "level": "Warning",
       "category": "Security"
     },
     {
-      "patternId": "detect-no-csrf-before-method-override",
+      "patternId": "security_detect-no-csrf-before-method-override",
       "level": "Warning",
       "category": "Security"
     },
     {
-      "patternId": "detect-non-literal-fs-filename",
+      "patternId": "security_detect-non-literal-fs-filename",
       "level": "Warning",
       "category": "Security"
     },
     {
-      "patternId": "detect-non-literal-regexp",
+      "patternId": "security_detect-non-literal-regexp",
       "level": "Warning",
       "category": "Security"
     },
     {
-      "patternId": "detect-non-literal-require",
+      "patternId": "security_detect-non-literal-require",
       "level": "Warning",
       "category": "Security"
     },
     {
-      "patternId": "detect-object-injection",
+      "patternId": "security_detect-object-injection",
       "level": "Warning",
       "category": "Security"
     },
     {
-      "patternId": "detect-possible-timing-attacks",
+      "patternId": "security_detect-possible-timing-attacks",
       "level": "Warning",
       "category": "Security"
     },
     {
-      "patternId": "detect-pseudoRandomBytes",
+      "patternId": "security_detect-pseudoRandomBytes",
       "level": "Warning",
       "category": "Security"
     }
