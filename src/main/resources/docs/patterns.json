@@ -2527,6 +2527,441 @@
       "patternId": "security_detect-pseudoRandomBytes",
       "level": "Warning",
       "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_accidental_assignment",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_assign_to_hostname",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_assign_to_href",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_assign_to_location",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_assign_to_mozAudioChannel",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_assign_to_mozAudioChannelType",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_assign_to_onmessage",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_assign_to_pathname",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_assign_to_protocol",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_assign_to_search",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_assign_to_src",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_call_Function",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_call_addEventListener",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_call_addEventListener_cellbroadcastmsgchanged",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_call_addEventListener_deviceproximity",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_call_addEventListener_message",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_call_addEventListener_moznetworkdownload",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_call_addEventListener_moznetworkupload",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_call_connect",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_call_eval",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_call_execScript",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_call_generateCRMFRequest",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_call_getDeviceStorage_apps",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_call_getDeviceStorage_crashes",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_call_getDeviceStorage_music",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_call_getDeviceStorage_pictures",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_call_getDeviceStorage_sdcard",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_call_getDeviceStorage_videos",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_call_hide",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_call_mozSetMessageHandler",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_call_mozSetMessageHandler_activity",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_call_mozSetMessageHandler_wappush_received",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_call_open_attention",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_call_open_remote",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_call_parseFromString",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_call_setAttribute_mozapp",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_call_setAttribute_mozbrowser",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_call_setImmediate",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_call_setInterval",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_call_setMessageHandler_connect",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_call_setTimeout",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_call_write",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_call_writeln",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_identifier_indexedDB",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_identifier_localStorage",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_identifier_sessionStorage",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_new_Function",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_new_MozActivity",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_new_MozSpeakerManager",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_new_Notification",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_object_mozSystem",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_property_addIdleObserver",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_property_createContextualFragment",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_property_geolocation",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_property_getDataStores",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_property_getDeviceStorage",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_property_getUserMedia",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_property_indexedDB",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_property_lastKnownHomeNetwork",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_property_lastKnownNetwork",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_property_localStorage",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_property_mgmt",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_property_mozAlarms",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_property_mozBluetooth",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_property_mozCameras",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_property_mozCellBroadcast",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_property_mozContacts",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_property_mozDownloadManager",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_property_mozFMRadio",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_property_mozInputMethod",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_property_mozKeyboard",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_property_mozMobileConnection",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_property_mozMobileConnections",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_property_mozMobileMessage",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_property_mozNetworkStats",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_property_mozNfc",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_property_mozNotification",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_property_mozPermissionSettings",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_property_mozPhoneNumberService",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_property_mozPower",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_property_mozSettings",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_property_mozTCPSocket",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_property_mozTelephony",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_property_mozTime",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_property_mozVoicemail",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_property_mozWifiManager",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
+      "patternId": "scanjs-rules_property_sessionStorage",
+      "level": "Warning",
+      "category": "Security"
     }
   ]
 }

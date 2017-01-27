@@ -56,7 +56,8 @@ val installAll =
      |npm install -g eslint-config-strongloop@2.1.0 &&
      |npm install -g eslint-plugin-security@1.2.0 &&
      |npm install -g eslint-config-nodesecurity@1.3.1 &&
-     |npm install -g eslint-config-es5@0.5.0""".stripMargin.replaceAll(System.lineSeparator(), " ")
+     |npm install -g eslint-config-es5@0.5.0 &&
+     |npm install -g eslint-plugin-scanjs-rules@0.1.4""".stripMargin.replaceAll(System.lineSeparator(), " ")
 
 mappings in Universal <++= (resourceDirectory in Compile) map { (resourceDir: File) =>
   val src = resourceDir / "docs"
