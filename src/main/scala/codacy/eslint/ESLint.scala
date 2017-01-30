@@ -142,7 +142,8 @@ object ESLint extends Tool {
           |    "mongodb",
           |    "node",
           |    "security",
-          |    "scanjs-rules"
+          |    "scanjs-rules",
+          |    "no-unsafe-innerhtml"
           |  ],
           |  "rules": {${rules.mkString(",")}}
           |}""".stripMargin

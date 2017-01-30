@@ -2962,6 +2962,11 @@
       "patternId": "scanjs-rules_property_sessionStorage",
       "level": "Warning",
       "category": "Security"
+    },
+    {
+      "patternId": "no-unsafe-innerhtml_no-unsafe-innerhtml",
+      "level": "Warning",
+      "category": "Security"
     }
   ]
 }
