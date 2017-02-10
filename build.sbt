@@ -27,7 +27,7 @@ version in Docker := "1.0"
 organization := "com.codacy"
 
 val installAll =
-  s"""apk update && apk add bash curl nodejs python &&
+  s"""apk update && apk add bash curl nodejs &&
      |npm install -g eslint@3.14.0 &&
      |npm install -g babel-eslint@6.1.2 &&
      |npm install -g eslint-plugin-react@6.0.0 &&
@@ -56,7 +56,9 @@ val installAll =
      |npm install -g eslint-config-strongloop@2.1.0 &&
      |npm install -g eslint-plugin-security@1.2.0 &&
      |npm install -g eslint-config-nodesecurity@1.3.1 &&
-     |npm install -g eslint-config-es5@0.5.0""".stripMargin.replaceAll(System.lineSeparator(), " ")
+     |npm install -g eslint-config-es5@0.5.0 &&
+     |rm -rf /tmp/* &&
+     |rm -rf /var/cache/apk/*""".stripMargin.replaceAll(System.lineSeparator(), " ")
 
 mappings in Universal <++= (resourceDirectory in Compile) map { (resourceDir: File) =>
   val src = resourceDir / "docs"
@@ -76,7 +78,7 @@ daemonUser in Docker := dockerUser
 
 daemonGroup in Docker := dockerGroup
 
-dockerBaseImage := "frolvlad/alpine-oraclejdk8"
+dockerBaseImage := "develar/java"
 
 dockerCommands := dockerCommands.value.flatMap {
   case cmd@Cmd("WORKDIR", _) => List(cmd,
