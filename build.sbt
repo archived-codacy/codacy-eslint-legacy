@@ -57,6 +57,9 @@ val installAll =
      |npm install -g eslint-plugin-security@1.2.0 &&
      |npm install -g eslint-config-nodesecurity@1.3.1 &&
      |npm install -g eslint-config-es5@0.5.0 &&
+     |npm install -g eslint-plugin-scanjs-rules@0.1.4 &&
+     |npm install -g eslint-plugin-no-unsafe-innerhtml@1.0.15 &&
+     |npm install -g eslint-config-secure@0.2.1 &&
      |rm -rf /tmp/* &&
      |rm -rf /var/cache/apk/*""".stripMargin.replaceAll(System.lineSeparator(), " ")
 

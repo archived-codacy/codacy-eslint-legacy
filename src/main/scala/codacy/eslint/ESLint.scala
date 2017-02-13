@@ -134,8 +134,16 @@ object ESLint extends Tool {
           |    "promise",
           |    "jsx-a11y",
           |    "import",
+          |    "angular",
+          |    "flowtype",
+          |    "meteor",
+          |    "vue",
+          |    "html",
+          |    "mongodb",
+          |    "node",
           |    "security",
-          |    "angular"
+          |    "scanjs-rules",
+          |    "no-unsafe-innerhtml"
           |  ],
           |  "rules": {${rules.mkString(",")}}
           |}""".stripMargin
@@ -144,7 +152,7 @@ object ESLint extends Tool {
   }
 
   private def patternToConfig(pattern: PatternDef): String = {
-    val patternId = pattern.patternId.value.replace("_", "/")
+    val patternId = pattern.patternId.value.replaceFirst("_", "/")
     val warnLevel = 1
     val paramConfig = pattern.parameters.fold("") {
       case params if params.nonEmpty =>
