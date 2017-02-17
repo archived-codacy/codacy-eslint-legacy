@@ -32,7 +32,7 @@ val installAll =
      |npm install -g babel-eslint@6.1.2 &&
      |npm install -g eslint-plugin-react@6.0.0 &&
      |npm install -g eslint-plugin-babel@3.3.0 &&
-     |npm install -g eslint-plugin-mocha@4.3.0 &&
+     |npm install -g eslint-plugin-mocha@4.8.0 &&
      |npm install -g eslint-plugin-standard@2.0.0 &&
      |npm install -g eslint-plugin-promise@2.0.0 &&
      |npm install -g eslint-plugin-jsx-a11y@2.0.1 &&
@@ -60,6 +60,9 @@ val installAll =
      |npm install -g eslint-plugin-scanjs-rules@0.1.4 &&
      |npm install -g eslint-plugin-no-unsafe-innerhtml@1.0.15 &&
      |npm install -g eslint-config-secure@0.2.1 &&
+     |npm install -g eslint-config-secure@0.2.1 &&
+     |npm install -g eslint-plugin-lodash@2.3.5 &&
+     |npm install -g eslint-plugin-lodash-fp@2.1.3 &&
      |rm -rf /tmp/* &&
      |rm -rf /var/cache/apk/*""".stripMargin.replaceAll(System.lineSeparator(), " ")
 
