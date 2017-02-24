@@ -30,7 +30,7 @@ val installAll =
   s"""apk update && apk add bash curl nodejs &&
      |npm install -g eslint@3.14.0 &&
      |npm install -g babel-eslint@6.1.2 &&
-     |npm install -g eslint-plugin-react@6.0.0 &&
+     |npm install -g eslint-plugin-react@6.10.0 &&
      |npm install -g eslint-plugin-babel@3.3.0 &&
      |npm install -g eslint-plugin-mocha@4.8.0 &&
      |npm install -g eslint-plugin-standard@2.0.0 &&
