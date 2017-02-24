@@ -2689,7 +2689,7 @@
       "category": "Security"
     },
     {
-      "patternId": "scanjs-rules_call_open_remote",
+      "patternId": "scanjs-rules_call_open_remote=true",
       "level": "Warning",
       "category": "Security"
     },
