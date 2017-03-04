@@ -62,6 +62,7 @@ val installAll =
      |npm install -g eslint-config-secure@0.2.1 &&
      |npm install -g eslint-plugin-lodash@2.3.5 &&
      |npm install -g eslint-plugin-lodash-fp@2.1.3 &&
+     |npm install -g eslint-plugin-backbone@2.0.2 &&
      |rm -rf /tmp/* &&
      |rm -rf /var/cache/apk/*""".stripMargin.replaceAll(System.lineSeparator(), " ")
 
