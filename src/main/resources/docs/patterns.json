@@ -2529,6 +2529,11 @@
       "category": "Security"
     },
     {
+      "patternId": "scanjs-rules_accidental_assignment",
+      "level": "Warning",
+      "category": "Security"
+    },
+    {
       "patternId": "scanjs-rules_assign_to_hostname",
       "level": "Warning",
       "category": "Security"
