@@ -34,7 +34,7 @@ val installAll =
      |npm install -g eslint-plugin-babel@3.3.0 &&
      |npm install -g eslint-plugin-mocha@4.8.0 &&
      |npm install -g eslint-plugin-standard@2.1.1 &&
-     |npm install -g eslint-plugin-promise@2.0.0 &&
+     |npm install -g eslint-plugin-promise@3.5.0 &&
      |npm install -g eslint-plugin-jsx-a11y@2.0.1 &&
      |npm install -g eslint-plugin-import@1.12.0 &&
      |npm install -g eslint-plugin-angular@1.3.1 &&
