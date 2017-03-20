@@ -27,7 +27,9 @@ version in Docker := "1.0"
 organization := "com.codacy"
 
 val installAll =
-  s"""apk update && apk add bash curl nodejs &&
+  s"""echo "http://dl-cdn.alpinelinux.org/alpine/v3.5/main" >> /etc/apk/repositories &&
+     |echo "http://dl-cdn.alpinelinux.org/alpine/v3.5/community" >> /etc/apk/repositories &&
+     |apk update && apk add bash curl nodejs-current &&
      |npm install -g eslint@3.14.0 &&
      |npm install -g babel-eslint@6.1.2 &&
      |npm install -g eslint-plugin-react@6.10.0 &&
