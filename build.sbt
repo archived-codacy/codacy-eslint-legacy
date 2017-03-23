@@ -39,6 +39,7 @@ val installAll =
      |npm install -g eslint-plugin-promise@3.5.0 &&
      |npm install -g eslint-plugin-jsx-a11y@2.0.1 &&
      |npm install -g eslint-plugin-import@1.12.0 &&
+     |npm install -g eslint-import-resolver-webpack@0.8.1 &&
      |npm install -g eslint-plugin-angular@1.3.1 &&
      |npm install -g eslint-config-standard@7.0.1 &&
      |npm install -g eslint-plugin-flowtype@2.11.1 &&
