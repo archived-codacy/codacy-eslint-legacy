@@ -1413,5 +1413,524 @@
     "title": "Prohibit crypto.pseudoRandomBytes",
     "description": "Prohibits crypto.pseudoRandomBytes since it's not cryptographically strong.",
     "timeToFix": 5
+  },
+
+  {
+    "patternId": "scanjs-rules_accidental_assignment",
+    "title": "Checks for assignments in condition tests.",
+    "description": "Unintended use of AssignmentExpression in If Statement.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "scanjs-rules_assign_to_hostname",
+    "title": "Assign to hostname",
+    "description": "Assignments to the document's location may lead to spoofing and unexpected redirects.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "scanjs-rules_assign_to_href",
+    "title": "Assign to href",
+    "description": "Assignments to the document's location may lead to spoofing and unexpected redirects. Furthermore, it can cause Cross-Site Scripting, when javascipt: URIs are used.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "scanjs-rules_assign_to_location",
+    "title": "Assign to location",
+    "description": "Assignments to the document's location may lead to spoofing and unexpected redirects. Furthermore, it can cause Cross-Site Scripting, when javascipt: URIs are used",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "scanjs-rules_assign_to_mozAudioChannel",
+    "title": "Assign to mozAudioChannel",
+    "description": "This function is only available to higher privileged Firefox OS applications.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "scanjs-rules_assign_to_mozAudioChannelType",
+    "title": "Assign to mozAudioChannelType",
+    "description": "This function is only available to higher privileged Firefox OS applications.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "scanjs-rules_assign_to_onmessage",
+    "title": "Assign to onmessage",
+    "description": "Check to make sure message handler validates to protect against malicious cross-origin message.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "scanjs-rules_assign_to_pathname",
+    "title": "Assign to pathname",
+    "description": "Assignments to the document's location may lead to spoofing and unexpected redirects.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "scanjs-rules_assign_to_protocol",
+    "title": "Assign to protocol",
+    "description": "Assignments to the document's location may lead to spoofing and unexpected redirects.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "scanjs-rules_assign_to_search",
+    "title": "Assign to search",
+    "description": "Assignments to the document's location may lead to spoofing and unexpected redirects.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "scanjs-rules_assign_to_src",
+    "title": "Assign to src",
+    "description": "Assignments to the document's location may lead to spoofing and unexpected redirects. It may also lead to script execution, depending on the affected HTML Tag (i.e. object)",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "scanjs-rules_call_Function",
+    "title": "Call function",
+    "description": "Controlling of the first argument to Function(...) results in direct script execution.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "scanjs-rules_call_addEventListener",
+    "title": "Call addEventListener",
+    "description": "Certain events (like message) may cause untrusted third party data.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "scanjs-rules_call_addEventListener_cellbroadcastmsgchanged",
+    "title": "Cellbroadcast permission",
+    "description": "Usage of sensitive API",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "scanjs-rules_call_addEventListener_deviceproximity",
+    "title": "Background sensors permission",
+    "description": "This exercises the proximity API to check whether the phone is close to something (i.e. held to the ear).",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "scanjs-rules_call_addEventListener_message",
+    "title": "Message handler",
+    "description": "Check to make sure message handler validates to protect against malicious cross-origin message.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "scanjs-rules_call_addEventListener_moznetworkdownload",
+    "title": "network-events permission",
+    "description": "Usage of sensitive API",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "scanjs-rules_call_addEventListener_moznetworkupload",
+    "title": "network-events permission",
+    "description": "Usage of sensitive API",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "scanjs-rules_call_connect",
+    "title": "Make InterAppCommunication",
+    "description": "",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "scanjs-rules_call_eval",
+    "title": "Call eval",
+    "description": "Controlling of the first argument to eval(...) results in direct script execution.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "scanjs-rules_call_execScript",
+    "title": "Call execScript",
+    "description": "Using execScript with user input leads to Cross Site Scripting (Internet Explorer only)",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "scanjs-rules_call_generateCRMFRequest",
+    "title": "Call generateCRMFRequest",
+    "description": "Due to a bug in Firefox, this function may be used as an obfuscated way to call execute scripts from strings (like eval). This may lead to Cross-Site-Scripting.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "scanjs-rules_call_getDeviceStorage_apps",
+    "title": "device-storage: apps permission",
+    "description": "Usage of sensitive API",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "scanjs-rules_call_getDeviceStorage_crashes",
+    "title": "device-storage:crashes permission",
+    "description": "Usage of sensitive API",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "scanjs-rules_call_getDeviceStorage_music",
+    "title": "device-storage:music permission",
+    "description": "Usage of sensitive API",
+    "timeToFix": 5
+  },
+
+  {
+    "patternId": "scanjs-rules_call_getDeviceStorage_pictures",
+    "title": "device-storage:pictures permission",
+    "description": "Usage of sensitive API",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "scanjs-rules_call_getDeviceStorage_sdcard",
+    "title": "device-storage:sdcard permission",
+    "description": "Usage of sensitive API",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "scanjs-rules_call_getDeviceStorage_videos",
+    "title": "device-storage:videos permission",
+    "description": "Usage of sensitive API",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "scanjs-rules_call_hide",
+    "title": "Input manage permission",
+    "description": "Usage of sensitive API",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "scanjs-rules_call_mozSetMessageHandler",
+    "title": "handle system message",
+    "description": "This function allows registering message handlers for Web Activities.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "scanjs-rules_call_mozSetMessageHandler_activity",
+    "title": "handle mozActivity",
+    "description": "This function allows registering message handlers for Web Activities.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "scanjs-rules_call_mozSetMessageHandler_wappush_received",
+    "title": "wappush permission",
+    "description": "This specifies a handler for WAP Push notifications. In general, mozSetMessageHandler allows handling WebActivities. The origin of the activity and its data might be untrusted.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "scanjs-rules_call_open_attention",
+    "title": "attention permission",
+    "description": "Attention popups fill the whole display. URLs pointing to javascript: and data: protocols can lead to XSS. Popups can also confuse and misdirect users.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "scanjs-rules_call_open_remote",
+    "title": "open-remote-window permission",
+    "description": "",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "scanjs-rules_call_parseFromString",
+    "title": "Usage parseFromString",
+    "description": "This function creates a DOM from strings. Depending on their source it is likely important to sanitize it before an insertion into the DOM happens",
+    "timeToFix": 5
+  },
+
+  {
+    "patternId": "scanjs-rules_call_setAttribute_mozapp",
+    "title": "embed-apps permission",
+    "description": "Usage of sensitive API",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "scanjs-rules_call_setAttribute_mozbrowser",
+    "title": "Browser permission",
+    "description": "This function is only available to higher privileged Firefox OS applications. MozBrowser frames have specific, elevated permissions.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "scanjs-rules_call_setImmediate",
+    "title": "Call setImmediate",
+    "description": "Calling setImmediate with a first argument as string (or string concatenation) with user input may lead to XSS",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "scanjs-rules_call_setInterval",
+    "title": "Call setInterval",
+    "description": "Calling setInterval with a first argument as string (or string concatenation) with user input may lead to XSS",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "scanjs-rules_call_setMessageHandler_connect",
+    "title": "Receive InterAppCommunication",
+    "description": "This function sets a handler for inter app communication messages. In general, mozSetMessageHandler allows handling WebActivities. The origin of the activity and its data might be untrusted.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "scanjs-rules_call_setTimeout",
+    "title": "Call setTimeout",
+    "description": "Calling setTimeout with a first argument as string (or string concatenation) with user input may lead to XSS",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "scanjs-rules_call_write",
+    "title": "Call document.write",
+    "description": "Writing user specified HTML to the DOM may lead to Cross-Site Scripting",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "scanjs-rules_call_writeln",
+    "title": "Call document.writeln",
+    "description": "Writing user specified HTML to the DOM may lead to Cross-Site Scripting",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "scanjs-rules_identifier_indexedDB",
+    "title": "IndexedDB",
+    "description": "Client-side data storage.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "scanjs-rules_identifier_localStorage",
+    "title": "Local Storage",
+    "description": "Client-side data storage.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "scanjs-rules_identifier_sessionStorage",
+    "title": "Session Storage",
+    "description": "Client-side data storage.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "scanjs-rules_new_Function",
+    "title": "new Function()",
+    "description": "Controlling of the first argument to Function(...) results in direct script execution.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "scanjs-rules_new_MozActivity",
+    "title": "new MozActivity()",
+    "description": "This function creates new Web Activities and can transfer data from one app to another",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "scanjs-rules_new_MozSpeakerManager",
+    "title": "speaker-control permission",
+    "description": "Usage of sensitive API",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "scanjs-rules_new_Notification",
+    "title": "desktop-notification permission",
+    "description": "This function generate notifications from the app. It is only available to higher privileged Firefox OS applications.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "scanjs-rules_object_mozSystem",
+    "title": "mozSystem object",
+    "description": "XMLHttpRequests of type system may contact and read data from third party origins",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "scanjs-rules_property_addIdleObserver",
+    "title": "Idle permission",
+    "description": "This function is only available to higher privileged Firefox OS applications.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "scanjs-rules_property_createContextualFragment",
+    "title": "",
+    "description": "",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "scanjs-rules_property_geolocation",
+    "title": "geolocation permission",
+    "description": "This function gives access to information about the user's location.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "scanjs-rules_property_getDataStores",
+    "title": "Access datastore",
+    "description": "This API allows access to datastores that may be used to serve or retrieve data from third party apps",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "scanjs-rules_property_getDeviceStorage",
+    "title": "Usage of getDeviceStorage",
+    "description": "Usage of sensitive API",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "scanjs-rules_property_getUserMedia",
+    "title": "video-capture permission",
+    "description": "This function allows prompting for audio and video recording.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "scanjs-rules_property_lastKnownHomeNetwork",
+    "title": "mobile network permission",
+    "description": "Usage of sensitive API",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "scanjs-rules_property_lastKnownNetwork",
+    "title": "mobile network permission",
+    "description": "Usage of sensitive API",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "scanjs-rules_property_localStorage",
+    "title": "Local Storage",
+    "description": "Client-side data storage.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "scanjs-rules_property_mgmt",
+    "title": "Webapps manage",
+    "description": "This function is only available to higher privileged Firefox OS applications. It allows managing the phone's app.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "scanjs-rules_property_mozAlarms",
+    "title": "alarms permission",
+    "description": "This function is only available to higher privileged Firefox OS applications and allows setting and editing alarms. Frequent alarms might prevent power saving and drain the battery.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "scanjs-rules_property_mozBluetooth",
+    "title": "bluetooth permission",
+    "description": "This function is only available to higher privileged Firefox OS applications.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "scanjs-rules_property_mozCameras",
+    "title": "camera permission",
+    "description": "This function allows reading and modifying camera settings and is only available to higher privileged Firefox OS application.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "scanjs-rules_property_mozCellBroadcast",
+    "title": "Usage pf cell broadcasts",
+    "description": "Usage of sensitive API",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "scanjs-rules_property_mozContacts",
+    "title": "Usage of mozContacts",
+    "description": "This function allows reading and modifying the phone's contacts. It is only available to higher privileged Firefox OS applications.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "scanjs-rules_property_mozDownloadManager",
+    "title": "Usage of mozDownloadManager",
+    "description": "Usage of sensitive API",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "scanjs-rules_property_mozFMRadio",
+    "title": "Usage of mozFMRadio",
+    "description": "This function is only available to higher privileged Firefox OS applications.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "scanjs-rules_property_mozInputMethod",
+    "title": "Usage of mozInputMethod",
+    "description": "Usage of sensitive API",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "scanjs-rules_property_mozKeyboard",
+    "title": "Usage of mozKeyboard",
+    "description": "Usage of sensitive API",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "scanjs-rules_property_mozMobileConnection",
+    "title": "Usage of mozMobileConnection",
+    "description": "Usage of sensitive API",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "scanjs-rules_property_mozMobileConnections",
+    "title": "Usage of mozMobileConnections",
+    "description": "Usage of sensitive API",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "scanjs-rules_property_mozMobileMessage",
+    "title": "Usage of mozMobileMessage",
+    "description": "Usage of sensitive API",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "scanjs-rules_property_mozNetworkStats",
+    "title": "Usage of mozNetworkStats",
+    "description": "Usage of sensitive API",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "scanjs-rules_property_mozNfc",
+    "title": "Usage of mozNfc",
+    "description": "Usage of sensitive API",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "scanjs-rules_property_mozNotification",
+    "title": "Usage of mozNotification",
+    "description": "Usage of sensitive API",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "scanjs-rules_property_mozPermissionSettings",
+    "title": "Usage of mozPermissionSettings",
+    "description": "This function is only available to higher privileged Firefox OS applications. It allows managing and revoking apps permissions.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "scanjs-rules_property_mozPhoneNumberService",
+    "title": "Usage of mozPhoneNumberService",
+    "description": "Usage of sensitive API",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "scanjs-rules_property_mozPower",
+    "title": "Usage of mozPower",
+    "description": "This function is only available to higher privileged Firefox OS applications. It allows access to power management features.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "scanjs-rules_property_mozSettings",
+    "title": "Usage of mozSettings",
+    "description": "This function is only available to higher privileged Firefox OS applications. It allows access to the phone's settings",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "scanjs-rules_property_mozTCPSocket",
+    "title": "Usage of mozTCPSocket",
+    "description": "This function allows creating connections and communicating with remote servers.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "scanjs-rules_property_mozTelephony",
+    "title": "Usage of mozTelephony",
+    "description": "Usage of sensitive API",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "scanjs-rules_property_mozTime",
+    "title": "Time permission",
+    "description": "This function is only available to higher privileged Firefox OS applications.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "scanjs-rules_property_mozVoicemail",
+    "title": "Usage of mozVoicemail",
+    "description": "This function is only available to higher privileged Firefox OS applications. It allows controlling the phone's Voicemail features.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "scanjs-rules_property_mozWifiManager",
+    "title": "Usage of mozWifiManager",
+    "description": "This function is only available to higher privileged Firefox OS applications. It allows managing the Wifi features of the phone.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "scanjs-rules_property_sessionStorage",
+    "title": "Session storage",
+    "description": "Client-side data storage.",
+    "timeToFix": 5
   }
 ]
