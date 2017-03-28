@@ -66,6 +66,8 @@ val installAll =
      |npm install -g eslint-plugin-lodash@2.3.5 &&
      |npm install -g eslint-plugin-lodash-fp@2.1.3 &&
      |npm install -g eslint-plugin-backbone@2.0.2 &&
+     |npm install -g eslint-config-signavio@1.4.3 &&
+     |npm install -g eslint-config-signavio-test@1.2.2 &&
      |rm -rf /tmp/* &&
      |rm -rf /var/cache/apk/*""".stripMargin.replaceAll(System.lineSeparator(), " ")
 
