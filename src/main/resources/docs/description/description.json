@@ -1414,7 +1414,6 @@
     "description": "Prohibits crypto.pseudoRandomBytes since it's not cryptographically strong.",
     "timeToFix": 5
   },
-
   {
     "patternId": "scanjs-rules_accidental_assignment",
     "title": "Checks for assignments in condition tests.",
