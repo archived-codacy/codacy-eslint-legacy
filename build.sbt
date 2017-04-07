@@ -30,7 +30,7 @@ val installAll =
   s"""echo "http://dl-cdn.alpinelinux.org/alpine/v3.5/main" >> /etc/apk/repositories &&
      |echo "http://dl-cdn.alpinelinux.org/alpine/v3.5/community" >> /etc/apk/repositories &&
      |apk update && apk add bash curl nodejs-current &&
-     |npm install -g eslint@3.14.0 &&
+     |npm install -g eslint@3.19.0 &&
      |npm install -g babel-eslint@6.1.2 &&
      |npm install -g eslint-plugin-react@6.10.0 &&
      |npm install -g eslint-plugin-babel@3.3.0 &&
@@ -50,7 +50,7 @@ val installAll =
      |npm install -g eslint-config-vue@2.0.1 &&
      |npm install -g eslint-plugin-html@1.7.0 &&
      |npm install -g eslint-config-google@0.7.1 &&
-     |npm install -g eslint-config-simplifield@4.4.0 &&
+     |npm install -g eslint-config-simplifield@5.1.1 &&
      |npm install -g eslint-plugin-mongodb@0.2.4 &&
      |npm install -g eslint-plugin-node@3.0.5 &&
      |npm install -g eslint-config-airbnb-base@5.0.1 &&
