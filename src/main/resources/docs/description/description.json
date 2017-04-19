@@ -1730,8 +1730,8 @@
   },
   {
     "patternId": "scanjs-rules_property_createContextualFragment",
-    "title": "",
-    "description": "",
+    "title": "Create contextual fragment",
+    "description": "Writing user specified HTML to the DOM may lead to Cross-Site Scripting",
     "timeToFix": 5
   },
   {
