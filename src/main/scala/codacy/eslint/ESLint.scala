@@ -7,6 +7,7 @@ import codacy.dockerApi.{PatternId, ResultLine, ResultMessage, SourcePath, _}
 import play.api.libs.functional.syntax._
 import play.api.libs.json._
 
+import scala.io.Source
 import scala.util.{Failure, Properties, Success, Try}
 import scala.xml.{Elem, XML}
 
@@ -127,23 +128,26 @@ object ESLint extends Tool {
           |    }
           |  },
           |  "plugins": [
-          |    "react",
-          |    "babel",
-          |    "mocha",
-          |    "standard",
-          |    "promise",
-          |    "jsx-a11y",
-          |    "import",
           |    "angular",
+          |    "babel",
+          |    "backbone",
           |    "flowtype",
-          |    "meteor",
-          |    "vue",
           |    "html",
+          |    "import",
+          |    "jsx-a11y",
+          |    "lodash",
+          |    "lodash-fp",
+          |    "meteor",
+          |    "mocha",
           |    "mongodb",
+          |    "no-unsafe-innerhtml",
           |    "node",
-          |    "security",
+          |    "promise",
+          |    "react",
           |    "scanjs-rules",
-          |    "no-unsafe-innerhtml"
+          |    "security",
+          |    "standard",
+          |    "vue"
           |  ],
           |  "rules": {${rules.mkString(",")}}
           |}""".stripMargin

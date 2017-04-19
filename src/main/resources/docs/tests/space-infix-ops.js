@@ -5,11 +5,11 @@ a+b
 //#Info: space-infix-ops
 a+ b
 //#Info: space-infix-ops
-a +b                  
+a +b
 //#Info: space-infix-ops
-a?b:c                
+a?b:c
 //#Info: space-infix-ops
-const a={b:1};
+const foo={b:1};
 
 a + b
 
@@ -17,4 +17,4 @@ a       + b
 
 a ? b : c
 
-const a = {b:1};
+const bar = {b:1};

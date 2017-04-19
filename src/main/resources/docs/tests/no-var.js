@@ -1,20 +1,20 @@
 //#Patterns: no-var
 
 //#Info: no-var
-var count = people.length;
+var countFoo = people.length;
 //#Info: no-var 
 var enoughFood = count > sandwiches.length; 
 if (enoughFood) { 
 	//#Info: no-var
-	var count = sandwiches.length; 
+	var countBar = sandwiches.length;
 	console.log("We have " + count + " sandwiches for everyone. Plenty for all!"); 
 } 
 console.log("We have " + count + " people and " + sandwiches.length + " sandwiches!");
 
 //#Info: no-var
-var x = "y";
+var foo = "y";
 //#Info: no-var
-var CONFIG = {};
+var fooCONFIG = {};
 
-let x = "y";
-const CONFIG = {};
+let bar = "y";
+const barCONFIG = {};
