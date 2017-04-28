@@ -15,6 +15,13 @@ object ESLint extends Tool {
 
   lazy val blacklist = Set(
     "import_no-unresolved",
+    "import_no-extraneous-dependencies",
+    "import_no-named-as-default",
+    "import_namespace",
+    "import_named",
+    "import_no-absolute-path",
+    "import_no-duplicates",
+    "import_no-named-as-default-member",
     "node_no-missing-require"
   )
 
