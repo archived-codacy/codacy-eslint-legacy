@@ -36,6 +36,7 @@ val installAll =
      |npm install -g eslint-config-airbnb-base@11.1.3 &&
      |npm install -g eslint-config-angular@0.5.0 &&
      |npm install -g eslint-config-apiconnect@2.0.1 &&
+     |npm install -g eslint-config-dbk@1.2.0 &&
      |npm install -g eslint-config-es5@0.5.0 &&
      |npm install -g eslint-config-google@0.7.1 &&
      |npm install -g eslint-config-loopback@8.0.0 &&
