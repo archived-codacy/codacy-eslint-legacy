@@ -6,11 +6,11 @@ if (a) {
 //ok
   b=c;
 
-//#Info: indent
+  //#Info: indent
     b=c;
-//#Info: indent
+  //#Info: indent
 function foo(d) {  
-//#Info: indent
+    //#Info: indent
        e=f;        
-} 
+  }
 }
