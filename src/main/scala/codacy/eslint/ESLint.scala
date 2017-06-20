@@ -4,10 +4,8 @@ import java.nio.file.Path
 
 import codacy.dockerApi.utils.{CommandRunner, FileHelper, ToolHelper}
 import codacy.dockerApi.{PatternId, ResultLine, ResultMessage, SourcePath, _}
-import play.api.libs.functional.syntax._
 import play.api.libs.json._
 
-import scala.io.Source
 import scala.util.{Failure, Properties, Success, Try}
 import scala.xml.{Elem, XML}
 
@@ -115,49 +113,50 @@ object ESLint extends Tool {
 
     val content =
       s"""{
-          |  "env": {
-          |    "es6": true,
-          |    "node": true,
-          |    "browser": true,
-          |    "commonjs": true,
-          |    "jquery": true,
-          |    "phantomjs": true,
-          |    "jasmine": true,
-          |    "mocha": true,
-          |    "amd": true,
-          |    "worker": true,
-          |    "qunit": true
-          |  },
-          |  "parserOptions": {
-          |    "ecmaVersion": 6,
-          |    "ecmaFeatures": {
-          |      "jsx": true
-          |    }
-          |  },
-          |  "plugins": [
-          |    "angular",
-          |    "babel",
-          |    "backbone",
-          |    "flowtype",
-          |    "html",
-          |    "import",
-          |    "jsx-a11y",
-          |    "lodash",
-          |    "lodash-fp",
-          |    "meteor",
-          |    "mocha",
-          |    "mongodb",
-          |    "no-unsafe-innerhtml",
-          |    "node",
-          |    "promise",
-          |    "react",
-          |    "scanjs-rules",
-          |    "security",
-          |    "standard",
-          |    "vue"
-          |  ],
-          |  "rules": {${rules.mkString(",")}}
-          |}""".stripMargin
+         |  "env": {
+         |    "es6": true,
+         |    "node": true,
+         |    "browser": true,
+         |    "commonjs": true,
+         |    "jquery": true,
+         |    "phantomjs": true,
+         |    "jasmine": true,
+         |    "mocha": true,
+         |    "amd": true,
+         |    "worker": true,
+         |    "qunit": true
+         |  },
+         |  "parser": "babel-eslint",
+         |  "parserOptions": {
+         |    "ecmaVersion": "2017",
+         |    "ecmaFeatures": {
+         |      "jsx": true
+         |    }
+         |  },
+         |  "plugins": [
+         |    "angular",
+         |    "babel",
+         |    "backbone",
+         |    "flowtype",
+         |    "html",
+         |    "import",
+         |    "jsx-a11y",
+         |    "lodash",
+         |    "lodash-fp",
+         |    "meteor",
+         |    "mocha",
+         |    "mongodb",
+         |    "no-unsafe-innerhtml",
+         |    "node",
+         |    "promise",
+         |    "react",
+         |    "scanjs-rules",
+         |    "security",
+         |    "standard",
+         |    "vue"
+         |  ],
+         |  "rules": {${rules.mkString(",")}}
+         |}""".stripMargin
 
     FileHelper.createTmpFile(content, "config", ".json").toString
   }
