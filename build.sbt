@@ -72,6 +72,9 @@ val installAll =
      |npm install -g eslint-plugin-security@1.4.0 &&
      |npm install -g eslint-plugin-standard@3.0.1 &&
      |npm install -g eslint-plugin-vue@2.1.0 &&
+     |npm install -g eslint-config-xo@0.18.2 &&
+     |npm install -g eslint-config-xo-react@0.12.0 &&
+     |npm install -g eslint-config-xo-space@0.16.0 &&
      |rm -rf /tmp/* &&
      |rm -rf /var/cache/apk/*""".stripMargin.replaceAll(System.lineSeparator(), " ")
 
