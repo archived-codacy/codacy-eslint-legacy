@@ -1,4 +1,6 @@
 import com.typesafe.sbt.packager.docker.{Cmd, ExecCmd}
+import scala.util.parsing.json.JSON
+import scala.io.Source
 
 name := """codacy-engine-eslint"""
 
@@ -26,11 +28,17 @@ version in Docker := "1.0"
 
 organization := "com.codacy"
 
+val filename = "src/main/resources/docs/patterns.json"
+
+val toolMap = JSON.parseFull(Source.fromFile(filename).getLines().mkString).get.asInstanceOf[Map[String,String]]
+
+val eslintVersion = toolMap("version")
+
 val installAll =
   s"""echo "http://dl-cdn.alpinelinux.org/alpine/v3.5/main" >> /etc/apk/repositories &&
      |echo "http://dl-cdn.alpinelinux.org/alpine/v3.5/community" >> /etc/apk/repositories &&
      |apk update && apk add bash curl nodejs-current &&
-     |npm install -g eslint@4.0.0 &&
+     |npm install -g eslint@${eslintVersion} &&
      |npm install -g babel-eslint@7.2.3 &&
      |npm install -g eslint-config-airbnb@15.0.1 &&
      |npm install -g eslint-config-airbnb-base@11.2.0 &&

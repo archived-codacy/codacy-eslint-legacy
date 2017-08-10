@@ -1,5 +1,6 @@
 {
   "name": "eslint",
+  "version": "4.0.0",
   "patterns": [
     {
       "patternId": "comma-dangle",
