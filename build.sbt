@@ -28,19 +28,21 @@ version in Docker := "1.0"
 
 organization := "com.codacy"
 
-val filename = "src/main/resources/docs/patterns.json"
+lazy val toolVersion = TaskKey[String]("Retrieve the version of the underlying tool from patterns.json")
 
-val toolMap = JSON.parseFull(Source.fromFile(filename).getLines().mkString).get.asInstanceOf[Map[String,String]]
+toolVersion := {
+  val jsonFile = (resourceDirectory in Compile).value / "docs" / "patterns.json"
+  val toolMap = JSON.parseFull(Source.fromFile(jsonFile).getLines().mkString)
+    .getOrElse(throw new Exception("patterns.json is not a valid json"))
+    .asInstanceOf[Map[String, String]]
+  toolMap.getOrElse[String]("version", throw new Exception("Failed to retrieve 'version' from patterns.json"))
+}
 
-val defaultVersion = "4.0.0"
-
-val eslintVersion = toolMap.getOrElse("version", defaultVersion)
-
-val installAll =
+def installAll (toolVersion: String) =
   s"""echo "http://dl-cdn.alpinelinux.org/alpine/v3.5/main" >> /etc/apk/repositories &&
      |echo "http://dl-cdn.alpinelinux.org/alpine/v3.5/community" >> /etc/apk/repositories &&
      |apk update && apk add bash curl nodejs-current &&
-     |npm install -g eslint@$eslintVersion &&
+     |npm install -g eslint@$toolVersion &&
      |npm install -g babel-eslint@7.2.3 &&
      |npm install -g eslint-config-airbnb@15.0.1 &&
      |npm install -g eslint-config-airbnb-base@11.2.0 &&
@@ -108,14 +110,16 @@ daemonGroup in Docker := dockerGroup
 
 dockerBaseImage := "develar/java"
 
-dockerCommands := dockerCommands.value.flatMap {
-  case cmd@Cmd("WORKDIR", _) => List(cmd,
-    Cmd("RUN", installAll)
-  )
-  case cmd@(Cmd("ADD", "opt /opt")) => List(cmd,
-    Cmd("RUN", "mv /opt/docker/docs /docs"),
-    Cmd("RUN", "adduser -u 2004 -D docker"),
-    ExecCmd("RUN", Seq("chown", "-R", s"$dockerUser:$dockerGroup", "/docs"): _*)
-  )
-  case other => List(other)
+dockerCommands := {
+  dockerCommands.dependsOn(toolVersion).value.flatMap {
+    case cmd@Cmd("WORKDIR", _) => List(cmd,
+      Cmd("RUN", installAll(toolVersion.value))
+    )
+    case cmd@(Cmd("ADD", "opt /opt")) => List(cmd,
+      Cmd("RUN", "mv /opt/docker/docs /docs"),
+      Cmd("RUN", "adduser -u 2004 -D docker"),
+      ExecCmd("RUN", Seq("chown", "-R", s"$dockerUser:$dockerGroup", "/docs"): _*)
+    )
+    case other => List(other)
+  }
 }
