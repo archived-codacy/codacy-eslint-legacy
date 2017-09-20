@@ -4,11 +4,11 @@
 "use strict";
 
 var bar = function() {
+    //#Info: strict
     "use strict";
     return;
 };
 
-//#Info: strict
 var bar = function() {
     return;
 };
