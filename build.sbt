@@ -76,6 +76,7 @@ def installAll (toolVersion: String) =
      |npm install -g eslint-plugin-no-unsafe-innerhtml@1.0.16 &&
      |npm install -g eslint-plugin-promise@3.5.0 &&
      |npm install -g eslint-plugin-security@1.4.0 &&
+     |npm install -g eslint-plugin-sorting@0.3.0 &&
      |npm install -g eslint-plugin-standard@3.0.1 &&
      |npm install -g eslint-plugin-vue@2.1.0 &&
      |npm install -g eslint-config-xo@0.18.2 &&
