@@ -150,7 +150,6 @@ object ESLint extends Tool {
          |    "node",
          |    "promise",
          |    "react",
-         |    "scanjs-rules",
          |    "security",
          |    "standard",
          |    "vue"

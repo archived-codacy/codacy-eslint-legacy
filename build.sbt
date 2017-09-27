@@ -90,7 +90,6 @@ def installAll (toolVersion: String) =
      |npm install -g eslint-plugin-lodash@2.4.5 &&
      |npm install -g eslint-plugin-meteor@4.1.4 &&
      |npm install -g eslint-plugin-node@5.1.1 &&
-     |npm install -g eslint-plugin-scanjs-rules@0.2.1 &&
      |npm install -g eslint-plugin-no-only-tests@2.0.0 &&
      |rm -rf /tmp/* &&
      |rm -rf /var/cache/apk/*""".stripMargin.replaceAll(System.lineSeparator(), " ")
