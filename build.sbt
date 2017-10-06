@@ -60,6 +60,7 @@ def installAll (toolVersion: String) =
      |npm install -g eslint-config-es6@1.10.3 &&
      |npm install -g eslint-config-loopback@8.0.0 &&
      |npm install -g eslint-config-nodesecurity@1.3.1 &&
+     |npm install -g eslint-config-prettier@2.6.0 &&
      |npm install -g eslint-config-secure@0.2.1 &&
      |npm install -g eslint-config-standard@10.2.1 &&
      |npm install -g eslint-config-strongloop@2.1.0 &&
