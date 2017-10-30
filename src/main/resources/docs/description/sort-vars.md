@@ -7,7 +7,7 @@ var a, B, c;
 var a, A;
 
 //Good:
-ar A, a;
+var A, a;
 var B, a, c;
 ```
 
