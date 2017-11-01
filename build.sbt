@@ -39,9 +39,7 @@ toolVersion := {
 }
 
 def installAll (toolVersion: String) =
-  s"""echo "http://dl-cdn.alpinelinux.org/alpine/v3.5/main" >> /etc/apk/repositories &&
-     |echo "http://dl-cdn.alpinelinux.org/alpine/v3.5/community" >> /etc/apk/repositories &&
-     |apk update && apk add bash curl nodejs-current &&
+  s"""apk update && apk add bash curl nodejs-current-npm &&
      |npm install -g npm@5 &&
      |npm install -g eslint@$toolVersion &&
      |npm install -g babel-eslint@8.0.0 &&
@@ -115,16 +113,17 @@ daemonUser in Docker := dockerUser
 
 daemonGroup in Docker := dockerGroup
 
-dockerBaseImage := "develar/java"
+dockerBaseImage := "openjdk:8-jre-alpine"
 
 dockerCommands := {
   dockerCommands.dependsOn(toolVersion).value.flatMap {
     case cmd@Cmd("WORKDIR", _) => List(cmd,
       Cmd("RUN", installAll(toolVersion.value))
     )
-    case cmd@(Cmd("ADD", "opt /opt")) => List(cmd,
-      Cmd("RUN", "mv /opt/docker/docs /docs"),
+    case cmd@(Cmd("ADD", _)) => List(
       Cmd("RUN", "adduser -u 2004 -D docker"),
+      cmd,
+      Cmd("RUN", "mv /opt/docker/docs /docs"),
       ExecCmd("RUN", Seq("chown", "-R", s"$dockerUser:$dockerGroup", "/docs"): _*)
     )
     case other => List(other)
