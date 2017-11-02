@@ -6,6 +6,7 @@ import codacy.dockerApi.utils.{CommandRunner, FileHelper, ToolHelper}
 import codacy.dockerApi.{PatternId, ResultLine, ResultMessage, SourcePath, _}
 import play.api.libs.json._
 
+import scala.io.Source
 import scala.util.{Failure, Properties, Success, Try}
 import scala.xml.{Elem, XML}
 
@@ -78,6 +79,14 @@ object ESLint extends Tool {
     Try {
       val xmlParsed = XML.loadFile(outputFile.toFile)
       parseToolResult(xmlParsed).filterNot(blacklisted)
+    } match {
+      case s@Success(_) => s
+      case Failure(e) =>
+        Failure(new Exception(
+          s"""Message: ${e.getMessage}
+             |FileContents:
+             |${Source.fromFile(outputFile.toFile).getLines().mkString("\n")}
+          """.stripMargin, e))
     }
   }
 
