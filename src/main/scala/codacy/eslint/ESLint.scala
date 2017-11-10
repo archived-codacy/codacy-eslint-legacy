@@ -2,13 +2,14 @@ package codacy.eslint
 
 import java.nio.file.Path
 
+import codacy.XML
 import codacy.dockerApi.utils.{CommandRunner, FileHelper, ToolHelper}
 import codacy.dockerApi.{PatternId, ResultLine, ResultMessage, SourcePath, _}
 import play.api.libs.json._
 
 import scala.io.Source
 import scala.util.{Failure, Properties, Success, Try}
-import scala.xml.{Elem, XML}
+import scala.xml.Elem
 
 object ESLint extends Tool {
 
@@ -48,7 +49,7 @@ object ESLint extends Tool {
 
       CommandRunner.exec(command, Some(path.toFile)) match {
         case Right(resultFromTool) =>
-          parseToolResult(path, outputFile) match {
+          parseToolResult(outputFile) match {
             case s@Success(_) => s
             case Failure(e) =>
               val msg =
@@ -68,7 +69,7 @@ object ESLint extends Tool {
     }.flatten
   }
 
-  private def parseToolResult(path: Path, outputFile: Path): Try[List[Result]] = {
+  private def parseToolResult(outputFile: Path): Try[List[Result]] = {
     def blacklisted(result: Result): Boolean = {
       result match {
         case issue: Issue => blacklist.contains(issue.patternId.value)
