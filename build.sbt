@@ -45,8 +45,8 @@ def installAll (toolVersion: String) =
      |npm install -g npm@5 &&
      |npm install -g eslint@$toolVersion &&
      |npm install -g babel-eslint@8.0.0 &&
-     |npm install -g eslint-config-airbnb@15.1.0 &&
-     |npm install -g eslint-config-airbnb-base@12.0.0 &&
+     |npm install -g eslint-config-airbnb@16.1.0 &&
+     |npm install -g eslint-config-airbnb-base@12.1.0 &&
      |npm install -g eslint-plugin-import@2.7.0 &&
      |npm install -g eslint-plugin-jsx-a11y@5.1.1 &&
      |npm install -g eslint-plugin-react@7.2.1 &&
