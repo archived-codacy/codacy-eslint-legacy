@@ -14,14 +14,7 @@ import scala.xml.Elem
 object ESLint extends Tool {
 
   lazy val blacklist = Set(
-    "import_no-unresolved",
-    "import_no-extraneous-dependencies",
-    "import_no-named-as-default",
-    "import_namespace",
-    "import_named",
-    "import_no-absolute-path",
-    "import_no-duplicates",
-    "import_no-named-as-default-member",
+    "import_",
     "node_no-missing-require"
   )
 
@@ -72,7 +65,7 @@ object ESLint extends Tool {
   private def parseToolResult(outputFile: Path): Try[List[Result]] = {
     def blacklisted(result: Result): Boolean = {
       result match {
-        case issue: Issue => blacklist.contains(issue.patternId.value)
+        case issue: Issue => blacklist.exists(b => issue.patternId.value.startsWith(b))
         case _ => false
       }
     }
