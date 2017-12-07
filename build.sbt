@@ -69,7 +69,7 @@ def installAll (toolVersion: String) =
      |npm install -g eslint-config-google@0.9.1 &&
      |npm install -g eslint-config-signavio@3.1.2 &&
      |npm install -g eslint-config-signavio-test@2.0.0 &&
-     |npm install -g eslint-config-simplifield@6.0.0 &&
+     |npm install -g eslint-config-simplifield@7.0.1 &&
      |npm install -g eslint-plugin-drupal@0.3.1 &&
      |npm install -g eslint-plugin-lodash-fp@2.1.3 &&
      |npm install -g eslint-plugin-mocha@4.11.0 &&
