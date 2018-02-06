@@ -60,7 +60,6 @@ def installAll(toolVersion: String) =
      |npm install -g eslint-config-es6@1.10.3 &&
      |npm install -g eslint-config-loopback@8.0.0 &&
      |npm install -g eslint-config-nodesecurity@1.3.1 &&
-     |npm install -g eslint-config-prettier@2.6.0 &&
      |npm install -g eslint-config-secure@0.2.1 &&
      |npm install -g eslint-plugin-node@5.1.1 &&
      |npm install -g eslint-plugin-promise@3.5.0 &&
@@ -73,6 +72,8 @@ def installAll(toolVersion: String) =
      |npm install -g eslint-config-dbk@2.0.0 &&
      |npm install -g eslint-config-google@0.9.1 &&
      |npm install -g prettier@1.7.0 &&
+     |npm install -g eslint-plugin-prettier@2.6.0 &&
+     |npm install -g eslint-config-prettier@2.9.0 &&
      |npm install -g eslint-config-signavio-test@2.0.0 &&
      |npm install -g eslint-config-signavio@3.2.0 &&
      |npm install -g eslint-config-simplifield@7.0.1 &&
