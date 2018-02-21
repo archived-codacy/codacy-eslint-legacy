@@ -99,6 +99,7 @@ def installAll(toolVersion: String) =
      |npm install -g eslint-plugin-no-unsanitized@2.0.1 &&
      |npm install -g eslint-config-rallycoding@3.2.0 &&
      |npm install -g eslint-config-react-app@2.1.0 &&
+     |npm install -g eslint-plugin-jasmine@2.9.1 &&
      |rm -rf /tmp/* &&
      |rm -rf /var/cache/apk/*""".stripMargin.replaceAll(System.lineSeparator(), " ")
 
