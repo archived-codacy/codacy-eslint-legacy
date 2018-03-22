@@ -43,12 +43,13 @@ def installAll(toolVersion: String) =
   s"""apk update &&
      |apk add bash curl nodejs-npm &&
      |npm install -g npm@5 &&
-     |npm install -g eslint@4.13.1 &&
+     |npm install -g eslint@${toolVersion} &&
      |npm install -g babel-eslint@8.0.3 &&
      |npm install -g eslint-plugin-import@2.7.0 &&
      |npm install -g eslint-plugin-jsx-a11y@5.1.1 &&
      |npm install -g eslint-plugin-react@7.2.1 &&
      |npm install -g webpack@3.6.0 &&
+     |npm install -g eslint-plugin-jest@21.15.0 &&
      |npm install -g eslint-import-resolver-webpack@0.8.3 &&
      |npm install -g eslint-import-resolver-node@0.3.1 &&
      |npm install -g eslint-config-airbnb-base@12.0.0 &&
@@ -60,7 +61,6 @@ def installAll(toolVersion: String) =
      |npm install -g eslint-config-es6@1.10.3 &&
      |npm install -g eslint-config-loopback@8.0.0 &&
      |npm install -g eslint-config-nodesecurity@1.3.1 &&
-     |npm install -g eslint-config-secure@0.2.1 &&
      |npm install -g eslint-plugin-node@5.1.1 &&
      |npm install -g eslint-plugin-promise@3.5.0 &&
      |npm install -g eslint-plugin-standard@3.0.1 &&
@@ -84,6 +84,7 @@ def installAll(toolVersion: String) =
      |npm install -g eslint-plugin-chai-expect@1.1.1 &&
      |npm install -g eslint-plugin-mongodb@0.2.4 &&
      |npm install -g eslint-plugin-no-unsafe-innerhtml@1.0.16 &&
+     |npm install -g eslint-plugin-hapi@4.1.0 &&
      |npm install -g eslint-plugin-security@1.4.0 &&
      |npm install -g eslint-plugin-sorting@0.3.0 &&
      |npm install -g eslint-config-xo@0.18.2 &&
@@ -97,10 +98,10 @@ def installAll(toolVersion: String) =
      |npm install -g eslint-plugin-lodash@2.4.5 &&
      |npm install -g eslint-plugin-meteor@4.1.4 &&
      |npm install -g eslint-plugin-no-only-tests@2.0.0 &&
-     |npm install -g eslint-plugin-no-unsanitized@2.0.1 &&
+     |npm install -g eslint-plugin-no-unsanitized@3.0.0 &&
      |npm install -g eslint-config-rallycoding@3.2.0 &&
      |npm install -g eslint-config-react-app@2.1.0 &&
-     |npm install -g eslint-plugin-jasmine@2.9.1 &&
+     |npm install -g eslint-plugin-jasmine@2.9.3 &&
      |rm -rf /tmp/* &&
      |rm -rf /var/cache/apk/*""".stripMargin.replaceAll(System.lineSeparator(), " ")
 
