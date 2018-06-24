@@ -1,33 +1,38 @@
 package codacy.eslint
 
+import java.io.{File, FileInputStream}
 import java.nio.file.Path
 
 import codacy.XML
-import codacy.dockerApi.utils.{CommandRunner, FileHelper, ToolHelper}
-import codacy.dockerApi.{PatternId, ResultLine, ResultMessage, SourcePath, _}
+import com.codacy.plugins.api.results.Result.Issue
+import com.codacy.plugins.api.results.{Parameter, Pattern, Result, Tool}
+import com.codacy.plugins.api.{Options, Source}
+import com.codacy.tools.scala.seed.utils.ToolHelper._
+import com.codacy.tools.scala.seed.utils.{CommandRunner, FileHelper}
 import play.api.libs.json._
 
-import scala.io.Source
 import scala.util.{Failure, Properties, Success, Try}
-import scala.xml.Elem
+import scala.xml.{Elem, InputSource}
 
 object ESLint extends Tool {
 
-  lazy val blacklist = Set(
-    "import_",
-    "node_no-missing-require"
-  )
+  private val blacklist = Set("import_", "node_no-missing-require")
 
-  override def apply(path: Path, conf: Option[List[PatternDef]], files: Option[Set[Path]])(implicit spec: Spec): Try[List[Result]] = {
+  override def apply(
+    source: Source.Directory,
+    conf: Option[List[Pattern.Definition]],
+    files: Option[Set[Source.File]],
+    options: Map[Options.Key, Options.Value]
+  )(implicit specification: Tool.Specification): Try[List[Result]] = {
     Try {
-      val filesToLint: List[String] = files.fold(List(path.toString)) {
-        paths =>
-          paths.map(_.toString).toList
+      val filesToLint: List[String] = files.fold(List(source.path)) { paths =>
+        paths.map(_.toString).toList
       }
 
-      val outputFile = FileHelper.createTmpFile("", "codacy-eslint-output", ".xml")
+      val outputFile =
+        FileHelper.createTmpFile("", "codacy-eslint-output", ".xml")
 
-      val patternsToLintOpt = ToolHelper.getPatternsToLint(conf)
+      val patternsToLintOpt = conf.withDefaultParameters
       val configuration =
         patternsToLintOpt.fold(List.empty[String]) {
           case patternsToLint if patternsToLint.nonEmpty =>
@@ -37,13 +42,12 @@ object ESLint extends Tool {
 
       val command = List("eslint") ++
         (if (conf.nonEmpty) Some("--no-eslintrc") else None) ++
-        List("-f", "checkstyle", "--ext", ".js", "--ext", ".jsx",
-          "-o", s"${outputFile.toFile.getCanonicalPath}") ++ configuration ++ filesToLint
+        List("-f", "checkstyle", "--ext", ".js", "--ext", ".jsx", "-o", s"${outputFile.toFile.getCanonicalPath}") ++ configuration ++ filesToLint
 
-      CommandRunner.exec(command, Some(path.toFile)) match {
+      CommandRunner.exec(command, Some(new File(source.path))) match {
         case Right(resultFromTool) =>
           parseToolResult(outputFile) match {
-            case s@Success(_) => s
+            case s @ Success(_) => s
             case Failure(e) =>
               val msg =
                 s"""
@@ -65,21 +69,21 @@ object ESLint extends Tool {
   private def parseToolResult(outputFile: Path): Try[List[Result]] = {
     def blacklisted(result: Result): Boolean = {
       result match {
-        case issue: Issue => blacklist.exists(b => issue.patternId.value.startsWith(b))
+        case issue: Issue =>
+          blacklist.exists(b => issue.patternId.value.startsWith(b))
         case _ => false
       }
     }
 
     Try {
-      val xmlParsed = XML.loadFile(outputFile.toFile)
+      val xmlParsed = XML.loadXML(new InputSource(new FileInputStream(outputFile.toFile)), XML.parser)
       parseToolResult(xmlParsed).filterNot(blacklisted)
     } match {
-      case s@Success(_) => s
+      case s @ Success(_) => s
       case Failure(e) =>
-        Failure(new Exception(
-          s"""Message: ${e.getMessage}
+        Failure(new Exception(s"""Message: ${e.getMessage}
              |FileContents:
-             |${Source.fromFile(outputFile.toFile).getLines().mkString("\n")}
+             |${scala.io.Source.fromFile(outputFile.toFile).getLines().mkString("\n")}
           """.stripMargin, e))
     }
   }
@@ -95,23 +99,22 @@ object ESLint extends Tool {
      * </file>
      */
 
-    (outputXml \ "file").flatMap {
-      file =>
-        val filename = file \@ "name"
-        (file \ "error").flatMap {
-          error =>
-            val source = (error \@ "source").stripPrefix("eslint.rules.").replace("/", "_")
-            Option(source).collect {
-              case patternId if patternId.nonEmpty =>
-                val line = (error \@ "line").toInt
-                val message = error \@ "message"
-                Issue(SourcePath(filename), ResultMessage(message), PatternId(patternId), ResultLine(line))
-            }
+    (outputXml \ "file").flatMap { file =>
+      val filename = file \@ "name"
+      (file \ "error").flatMap { error =>
+        val source =
+          (error \@ "source").stripPrefix("eslint.rules.").replace("/", "_")
+        Option(source).collect {
+          case patternId if patternId.nonEmpty =>
+            val line = (error \@ "line").toInt
+            val message = error \@ "message"
+            Issue(Source.File(filename), Result.Message(message), Pattern.Id(patternId), Source.Line(line))
         }
+      }
     }.toList
   }
 
-  private def writeConfigFile(patternsToLint: List[PatternDef]): String = {
+  private def writeConfigFile(patternsToLint: List[Pattern.Definition]): String = {
     val rules = patternsToLint.map(patternToConfig)
 
     val content =
@@ -163,7 +166,7 @@ object ESLint extends Tool {
     FileHelper.createTmpFile(content, "config", ".json").toString
   }
 
-  private def patternToConfig(pattern: PatternDef): String = {
+  private def patternToConfig(pattern: Pattern.Definition): String = {
     val patternId = pattern.patternId.value.replaceFirst("_", "/")
     val warnLevel = 1
     val paramConfig = pattern.parameters.fold("") {
@@ -176,33 +179,35 @@ object ESLint extends Tool {
     s""""$patternId":[$warnLevel$paramConfig]"""
   }
 
-  private def generateParameters(parameters: List[ParameterDef]): String = {
+  private def generateParameters(parameters: List[Parameter.Definition]): String = {
     val unnamedParam = generateUnnamedParameters(parameters)
     val namedParam = generateNamedParameters(parameters)
 
-    val separator = if (unnamedParam.nonEmpty && namedParam.nonEmpty) "," else ""
+    val separator =
+      if (unnamedParam.nonEmpty && namedParam.nonEmpty) "," else ""
 
     val unnamedParamString = unnamedParam.mkString(",")
-    val namedParamString = if (namedParam.nonEmpty) s"""{${namedParam.mkString(",")}}""" else ""
+    val namedParamString =
+      if (namedParam.nonEmpty) s"""{${namedParam.mkString(",")}}""" else ""
 
     unnamedParamString + separator + namedParamString
   }
 
-  private def generateNamedParameters(parameters: List[ParameterDef]): List[String] = {
+  private def generateNamedParameters(parameters: List[Parameter.Definition]): List[String] = {
     parameters.collect {
       case param if isNamedParameter(param.name.value) =>
         namedParameterToConfig(param)
     }
   }
 
-  private def namedParameterToConfig(parameter: ParameterDef): String = {
+  private def namedParameterToConfig(parameter: Parameter.Definition): String = {
     val parameterName = parameter.name.value
     val parameterValue = Json.stringify(parameter.value)
 
     s""""$parameterName":$parameterValue"""
   }
 
-  private def generateUnnamedParameters(parameters: List[ParameterDef]): List[String] = {
+  private def generateUnnamedParameters(parameters: List[Parameter.Definition]): List[String] = {
     parameters.collect {
       case param if isUnnamedListParameter(param.name.value) =>
         unnamedListParameterToConfig(param)
@@ -211,13 +216,13 @@ object ESLint extends Tool {
     }.flatten
   }
 
-  private def unnamedParameterToConfig(parameter: ParameterDef): List[String] = {
+  private def unnamedParameterToConfig(parameter: Parameter.Definition): List[String] = {
     List(Json.stringify(parameter.value))
   }
 
-  private def unnamedListParameterToConfig(parameter: ParameterDef): List[String] = {
-    parameter.value.asOpt[List[JsValue]].fold(List.empty[String]) {
-      params => params.map(param => Json.stringify(param))
+  private def unnamedListParameterToConfig(parameter: Parameter.Definition): List[String] = {
+    parameter.value.asOpt[List[JsValue]].fold(List.empty[String]) { params =>
+      params.map(param => Json.stringify(param))
     }
   }
 

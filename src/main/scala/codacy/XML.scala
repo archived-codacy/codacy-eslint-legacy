@@ -1,10 +1,11 @@
 package codacy
+
 import scala.xml.factory.XMLLoader
 import scala.xml.{Elem, SAXParser}
 
 object XML extends XMLLoader[Elem] {
   override def parser: SAXParser = {
-    val f = javax.xml.parsers.SAXParserFactory.newInstance()
+    val f = new com.sun.org.apache.xerces.internal.jaxp.SAXParserFactoryImpl()
     f.setNamespaceAware(false)
     f.setValidating(false)
     f.setFeature("http://xml.org/sax/features/namespaces", false)

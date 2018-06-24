@@ -1,0 +1,21 @@
+FROM library/node:10-alpine
+
+RUN adduser -u 2004 -D docker
+WORKDIR /opt/docker
+
+ADD --chown=docker:docker "build/codacy-eslint-linux" "/usr/bin/codacy-eslint"
+ADD --chown=docker:docker package.json /js/package.json
+ADD --chown=docker:docker yarn.lock /js/yarn.lock
+ADD --chown=docker:docker src/main/resources/docs /docs
+
+RUN \
+  cd /js && \
+  yarn install --production --cache-folder /tmp/yarn-cache && \
+  rm -rf /tmp/yarn-cache
+
+ENV NODE_PATH /js/node_modules
+ENV PATH "/js/node_modules/.bin:$PATH"
+
+USER docker
+ENTRYPOINT ["/usr/bin/codacy-eslint"]
+CMD []

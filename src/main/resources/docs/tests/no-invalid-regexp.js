@@ -1,12 +1,12 @@
 //#Patterns: no-invalid-regexp
 
 //#Err: no-invalid-regexp
-RegExp('[');
+RegExp('[')
 //#Err: no-invalid-regexp
-RegExp('.', 'z');
-//#Err: no-invalid-regexp
-new RegExp('\\');
+RegExp('.', 'z')
 
+RegExp('.')
 
-RegExp('.');
-new RegExp;
+new RegExp
+
+this.RegExp('[')

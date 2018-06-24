@@ -1,0 +1,378 @@
+# CircleCI 2.0 configuration file
+version: 2
+
+# Re-usable blocks to reduce boilerplate in job definitions.
+references:
+  host_environment_defaults: &host_environment_defaults
+    # Customize the JVM maximum heap limit
+    JAVA_OPTS: -Xmx3200m
+  docker_environment_defaults: &docker_environment_defaults
+    # Customize the JVM to read correct memory values
+    JAVA_OPTS: '-XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap -XX:MaxRAMFraction=1'
+
+  jar_environment_defaults: &jar_environment_defaults
+    <<: *host_environment_defaults
+    TAR_NAME: docker.tar
+    VERSION_PREFIX: ''
+  native_environment_defaults: &native_environment_defaults
+    <<: *host_environment_defaults
+    TAR_NAME: native-docker.tar
+    VERSION_PREFIX: 'native-'
+
+  default_java_job: &default_java_job
+    docker:
+      - image: circleci/openjdk:8-jdk
+        environment:
+          <<: *docker_environment_defaults
+    environment:
+      <<: *host_environment_defaults
+    working_directory: ~/workdir
+
+  restore_source_code: &restore_source_code
+    restore_cache:
+      keys:
+        - source-code-1.0.1-{{ .Branch }}-{{ .Revision }}
+        - source-code-1.0.1-{{ .Branch }}
+        - source-code-1.0.1
+  restore_dependencies: &restore_dependencies
+    restore_cache:
+      keys:
+        - sbt-ivy2-dependencies-1.0.1-{{ checksum "/tmp/dependencies.cache.tmp" }}
+        - sbt-ivy2-dependencies-1.0.1
+  restore_build: &restore_build
+    restore_cache:
+      keys:
+        - sbt-build-1.0.1-{{ .Branch }}-{{ .Revision }}
+        - sbt-build-1.0.1
+
+  restore_plugins_test_source_code: &restore_plugins_test_source_code
+    restore_cache:
+      keys:
+        - source-code-plugins-test-1.0.1-{{ .Branch }}-{{ .Revision }}
+        - source-code-plugins-test-1.0.1-{{ .Branch }}
+        - source-code-plugins-test-1.0.1
+  restore_plugins_test_dependencies: &restore_plugins_test_dependencies
+    restore_cache:
+      keys:
+        - sbt-ivy2-dependencies-plugins-test-1.0.1-{{ checksum "/tmp/dependencies.cache.tmp" }}
+        - sbt-ivy2-dependencies-plugins-test-1.0.1
+  restore_plugins_test_build: &restore_plugins_test_build
+    restore_cache:
+      keys:
+        - sbt-build-plugins-test-1.0.1-{{ .Branch }}-{{ .Revision }}
+        - sbt-build-plugins-test-1.0.1
+
+  setup_dependencies_key: &setup_dependencies_key
+    run:
+      name: Generate cache key
+      command: |
+        shasum build.sbt \
+          project/plugins.sbt \
+          project/build.properties \
+          project/Common.scala \
+          project/Dependencies.scala > /tmp/dependencies.cache.tmp
+
+  setup_plugins_test_dependencies_key: &setup_plugins_test_dependencies_key
+    run:
+      name: Generate cache key
+      command: |
+        shasum ~/codacy-plugins-test/build.sbt \
+          ~/codacy-plugins-test/project/build.properties > /tmp/dependencies.cache.tmp
+
+  publish_dockerhub: &publish_dockerhub
+    machine: true
+    working_directory: ~/workdir
+    steps:
+      - attach_workspace:
+          at: /tmp/workspace
+      - run:
+          name: Load docker from file
+          command: docker load --input /tmp/workspace/$TAR_NAME.tar
+      - deploy:
+          name: Push docker to DockerHub
+          command: |
+            export PUBLISH_VERSION="2.0.0-alpha.${VERSION_PREFIX}$CIRCLE_BUILD_NUM"
+
+            docker login -u $DOCKER_USER -p $DOCKER_PASS
+
+            docker tag codacy/$CIRCLE_PROJECT_REPONAME:${VERSION_PREFIX}dev codacy/$CIRCLE_PROJECT_REPONAME:$PUBLISH_VERSION
+
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              docker tag codacy/$CIRCLE_PROJECT_REPONAME:${VERSION_PREFIX}dev codacy/$CIRCLE_PROJECT_REPONAME:${VERSION_PREFIX}latest
+              docker push codacy/$CIRCLE_PROJECT_REPONAME:${VERSION_PREFIX}latest
+            fi
+
+            docker push codacy/$CIRCLE_PROJECT_REPONAME:$PUBLISH_VERSION
+
+  test_plugin: &test_plugin
+    machine: true
+    working_directory: ~/codacy-plugins-test
+    steps:
+      - *restore_plugins_test_source_code
+      - *setup_plugins_test_dependencies_key
+      - *restore_plugins_test_dependencies
+      - *restore_plugins_test_build
+      - attach_workspace:
+          at: /tmp/workspace
+      - run:
+          name: Load docker from file
+          command: docker load --input /tmp/workspace/$TAR_NAME
+      - run:
+          name: Test json
+          working_directory: ~/codacy-plugins-test
+          command: sbt -Dcodacy.tests.ignore.descriptions=true "run-main codacy.plugins.DockerTest json codacy/$CIRCLE_PROJECT_REPONAME:${VERSION_PREFIX}dev"
+      - run:
+          name: Test patterns
+          working_directory: ~/codacy-plugins-test
+          command: sbt -Dcodacy.tests.noremove=true -Dcodacy.tests.threads=8 "run-main codacy.plugins.DockerTest pattern codacy/$CIRCLE_PROJECT_REPONAME:${VERSION_PREFIX}dev"
+
+jobs:
+  checkout_code:
+    <<: *default_java_job
+    steps:
+      - *restore_source_code
+      - checkout
+      - save_cache:
+          key: source-code-1.0.1-{{ .Branch }}-{{ .Revision }}
+          paths:
+            - ~/workdir
+
+  sbt_dependencies:
+    <<: *default_java_job
+    steps:
+      - *restore_source_code
+      - *setup_dependencies_key
+      - *restore_dependencies
+      - run:
+          name: Resolve dependencies
+          command: |
+            sbt update
+      - save_cache:
+          paths:
+            - ~/.ivy2
+            - ~/.sbt
+          key: sbt-ivy2-dependencies-1.0.1-{{ checksum "/tmp/dependencies.cache.tmp" }}
+
+  compile:
+    <<: *default_java_job
+    steps:
+      - *restore_source_code
+      - *setup_dependencies_key
+      - *restore_dependencies
+      - *restore_build
+      - run:
+          name: Compile
+          command: ./scripts/compile.sh
+      - save_cache:
+          paths:
+            - ~/workdir/target
+            - ~/workdir/project/target
+            - ~/workdir/project/project
+          key: sbt-build-1.0.1-{{ .Branch }}-{{ .Revision }}
+
+  test:
+    machine: true
+    environment:
+      <<: *host_environment_defaults
+    working_directory: ~/workdir
+    steps:
+      - *restore_source_code
+      - *setup_dependencies_key
+      - *restore_dependencies
+      - *restore_build
+      - run:
+          name: Test
+          command: ./scripts/test.sh
+      - store_artifacts:
+          path: ~/workdir/target/scala-2.12/coverage-report
+      - store_artifacts:
+          path: ~/workdir/target/scala-2.12/scoverage-report
+      - store_artifacts:
+          path: ~/workdir/target/scala-2.12/scoverage-data
+
+  lint:
+    <<: *default_java_job
+    steps:
+      - *restore_source_code
+      - *setup_dependencies_key
+      - *restore_dependencies
+      - *restore_build
+      - run:
+          name: Lint
+          command: ./scripts/lint.sh
+
+  publish_docker_locally_jar:
+    machine: true
+    environment:
+      <<: *jar_environment_defaults
+    working_directory: ~/workdir
+    steps:
+      - *restore_source_code
+      - *setup_dependencies_key
+      - *restore_dependencies
+      - *restore_build
+      - run:
+          name: Publish local docker
+          command: ./scripts/publish.sh $CIRCLE_PROJECT_REPONAME ${VERSION_PREFIX}dev
+      - run:
+          name: Save docker to file
+          command: |
+            mkdir workspace
+            docker save --output workspace/${VERSION_PREFIX}docker.tar codacy/$CIRCLE_PROJECT_REPONAME:${VERSION_PREFIX}dev
+      - persist_to_workspace:
+          root: workspace
+          paths:
+            - docker.tar
+
+  publish_docker_locally_native:
+    machine: true
+    environment:
+      <<: *native_environment_defaults
+    working_directory: ~/workdir
+    steps:
+      - *restore_source_code
+      - *setup_dependencies_key
+      - *restore_dependencies
+      - *restore_build
+      - run:
+          name: Publish local docker
+          command: ./scripts/publish-native.sh $CIRCLE_PROJECT_REPONAME ${VERSION_PREFIX}dev
+      - run:
+          name: Save docker to file
+          command: |
+            mkdir workspace
+            docker save --output workspace/${VERSION_PREFIX}docker.tar codacy/$CIRCLE_PROJECT_REPONAME:${VERSION_PREFIX}dev
+      - persist_to_workspace:
+          root: workspace
+          paths:
+            - native-docker.tar
+
+  publish_dockerhub_jar:
+    <<: *publish_dockerhub
+    environment:
+      <<: *jar_environment_defaults
+
+  publish_dockerhub_native:
+    <<: *publish_dockerhub
+    environment:
+      <<: *native_environment_defaults
+
+  checkout_plugins_test_code:
+    <<: *default_java_job
+    steps:
+      - *restore_plugins_test_source_code
+      - run:
+          name: Clone test project
+          working_directory: ~/
+          command: |
+            (git -C ~/codacy-plugins-test fetch --all &&
+              git -C ~/codacy-plugins-test reset --hard origin/master) ||
+                git clone git://github.com/codacy/codacy-plugins-test.git ~/codacy-plugins-test
+      - save_cache:
+          key: source-code-plugins-test-1.0.1-{{ .Branch }}-{{ .Revision }}
+          paths:
+            - ~/codacy-plugins-test
+
+  sbt_plugins_test_dependencies:
+    <<: *default_java_job
+    working_directory: ~/codacy-plugins-test
+    steps:
+      - *restore_plugins_test_source_code
+      - *setup_plugins_test_dependencies_key
+      - *restore_plugins_test_dependencies
+      - run:
+          name: Resolve dependencies
+          command: |
+            sbt update
+      - save_cache:
+          paths:
+            - ~/.ivy2
+            - ~/.sbt
+          key: sbt-ivy2-dependencies-plugins-test-1.0.1-{{ checksum "/tmp/dependencies.cache.tmp" }}
+
+  compile_plugins_test:
+    <<: *default_java_job
+    working_directory: ~/codacy-plugins-test
+    steps:
+      - *restore_plugins_test_source_code
+      - *setup_plugins_test_dependencies_key
+      - *restore_plugins_test_dependencies
+      - *restore_plugins_test_build
+      - run:
+          name: Compile
+          command: sbt compile test:compile
+      - save_cache:
+          paths:
+            - ~/codacy-plugins-test/target
+            - ~/codacy-plugins-test/project/target
+            - ~/codacy-plugins-test/project/project
+          key: sbt-build-plugins-test-1.0.1-{{ .Branch }}-{{ .Revision }}
+
+  test_plugin_jar:
+    <<: *test_plugin
+    environment:
+      <<: *jar_environment_defaults
+
+  test_plugin_native:
+    <<: *test_plugin
+    environment:
+      <<: *native_environment_defaults
+
+workflows:
+  version: 2
+  test-and-publish:
+    jobs:
+      - checkout_code
+      - sbt_dependencies:
+          requires:
+            - checkout_code
+      - compile:
+          requires:
+            - sbt_dependencies
+      - test:
+          requires:
+            - compile
+      - lint:
+          requires:
+            - compile
+      - publish_docker_locally_jar:
+          requires:
+            - compile
+      - publish_docker_locally_native:
+          requires:
+            - compile
+      - publish_dockerhub_jar:
+          requires:
+            - test
+            - lint
+            - publish_docker_locally_jar
+            - test_plugin_native
+          filters:
+            branches:
+              only:
+                - master
+      - publish_dockerhub_native:
+          requires:
+            - test
+            - lint
+            - publish_docker_locally_native
+            - test_plugin_native
+          filters:
+            branches:
+              only:
+                - master
+      - checkout_plugins_test_code
+      - sbt_plugins_test_dependencies:
+          requires:
+            - checkout_plugins_test_code
+      - compile_plugins_test:
+          requires:
+            - sbt_plugins_test_dependencies
+      - test_plugin_jar:
+          requires:
+            - compile_plugins_test
+            - publish_docker_locally_jar
+      - test_plugin_native:
+          requires:
+            - compile_plugins_test
+            - publish_docker_locally_native
