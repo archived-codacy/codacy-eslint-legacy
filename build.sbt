@@ -135,7 +135,8 @@ dockerCommands := {
       cmd,
       Cmd("RUN", installAll(toolVersion.value)),
       Cmd("RUN", "mv /opt/docker/docs /docs"),
-      ExecCmd("RUN", Seq("chown", "-R", s"$dockerUser:$dockerGroup", "/docs"): _*)
+      ExecCmd("RUN", Seq("chown", "-R", s"$dockerUser:$dockerGroup", "/docs"): _*),
+      Cmd("ENV", "NODE_PATH /usr/lib/node_modules")
     )
     case other => List(other)
   }
