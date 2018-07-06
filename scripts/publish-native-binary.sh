@@ -106,7 +106,7 @@ case "$TARGET" in
       --entrypoint=bash \
       -v $HOME/.ivy2:$HOME/.ivy2 \
       -v $PWD:$PWD \
-      findepi/graalvm:1.0.0-rc2-all \
+      findepi/graalvm:1.0.0-rc4-all \
         -c 'cd /tmp && '"${BUILD_CMD}"' && mv '"$BINARY_NAME $PWD/build/$BINARY_NAME"
     ;;
   *)

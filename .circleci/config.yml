@@ -45,23 +45,6 @@ references:
         - sbt-build-1.0.1-{{ .Branch }}-{{ .Revision }}
         - sbt-build-1.0.1
 
-  restore_plugins_test_source_code: &restore_plugins_test_source_code
-    restore_cache:
-      keys:
-        - source-code-plugins-test-1.0.1-{{ .Branch }}-{{ .Revision }}
-        - source-code-plugins-test-1.0.1-{{ .Branch }}
-        - source-code-plugins-test-1.0.1
-  restore_plugins_test_dependencies: &restore_plugins_test_dependencies
-    restore_cache:
-      keys:
-        - sbt-ivy2-dependencies-plugins-test-1.0.1-{{ checksum "/tmp/dependencies.cache.tmp" }}
-        - sbt-ivy2-dependencies-plugins-test-1.0.1
-  restore_plugins_test_build: &restore_plugins_test_build
-    restore_cache:
-      keys:
-        - sbt-build-plugins-test-1.0.1-{{ .Branch }}-{{ .Revision }}
-        - sbt-build-plugins-test-1.0.1
-
   setup_dependencies_key: &setup_dependencies_key
     run:
       name: Generate cache key
@@ -71,13 +54,6 @@ references:
           project/build.properties \
           project/Common.scala \
           project/Dependencies.scala > /tmp/dependencies.cache.tmp
-
-  setup_plugins_test_dependencies_key: &setup_plugins_test_dependencies_key
-    run:
-      name: Generate cache key
-      command: |
-        shasum ~/codacy-plugins-test/build.sbt \
-          ~/codacy-plugins-test/project/build.properties > /tmp/dependencies.cache.tmp
 
   publish_dockerhub: &publish_dockerhub
     machine: true
@@ -106,25 +82,26 @@ references:
 
   test_plugin: &test_plugin
     machine: true
-    working_directory: ~/codacy-plugins-test
+    working_directory: ~/
     steps:
-      - *restore_plugins_test_source_code
-      - *setup_plugins_test_dependencies_key
-      - *restore_plugins_test_dependencies
-      - *restore_plugins_test_build
       - attach_workspace:
           at: /tmp/workspace
       - run:
           name: Load docker from file
           command: docker load --input /tmp/workspace/$TAR_NAME
       - run:
+          name: Download codacy-plugins-test binary
+          command: |
+            wget -O codacy-plugins-test $(curl https://api.github.com/repos/codacy/codacy-plugins-test/releases | jq -r .[0].assets[0].browser_download_url)
+            chmod +x ./codacy-plugins-test
+      - run:
           name: Test json
-          working_directory: ~/codacy-plugins-test
-          command: sbt -Dcodacy.tests.ignore.descriptions=true "run-main codacy.plugins.DockerTest json codacy/$CIRCLE_PROJECT_REPONAME:${VERSION_PREFIX}dev"
+          command: |
+            ./codacy-plugins-test -Dcodacy.tests.ignore.descriptions=true json codacy/$CIRCLE_PROJECT_REPONAME:${VERSION_PREFIX}dev
       - run:
           name: Test patterns
-          working_directory: ~/codacy-plugins-test
-          command: sbt -Dcodacy.tests.noremove=true -Dcodacy.tests.threads=8 "run-main codacy.plugins.DockerTest pattern codacy/$CIRCLE_PROJECT_REPONAME:${VERSION_PREFIX}dev"
+          command: |
+            ./codacy-plugins-test -Dcodacy.tests.noremove=true -Dcodacy.tests.threads=2 pattern codacy/$CIRCLE_PROJECT_REPONAME:${VERSION_PREFIX}dev
 
 jobs:
   checkout_code:
@@ -257,57 +234,6 @@ jobs:
     environment:
       <<: *native_environment_defaults
 
-  checkout_plugins_test_code:
-    <<: *default_java_job
-    steps:
-      - *restore_plugins_test_source_code
-      - run:
-          name: Clone test project
-          working_directory: ~/
-          command: |
-            (git -C ~/codacy-plugins-test fetch --all &&
-              git -C ~/codacy-plugins-test reset --hard origin/master) ||
-                git clone git://github.com/codacy/codacy-plugins-test.git ~/codacy-plugins-test
-      - save_cache:
-          key: source-code-plugins-test-1.0.1-{{ .Branch }}-{{ .Revision }}
-          paths:
-            - ~/codacy-plugins-test
-
-  sbt_plugins_test_dependencies:
-    <<: *default_java_job
-    working_directory: ~/codacy-plugins-test
-    steps:
-      - *restore_plugins_test_source_code
-      - *setup_plugins_test_dependencies_key
-      - *restore_plugins_test_dependencies
-      - run:
-          name: Resolve dependencies
-          command: |
-            sbt update
-      - save_cache:
-          paths:
-            - ~/.ivy2
-            - ~/.sbt
-          key: sbt-ivy2-dependencies-plugins-test-1.0.1-{{ checksum "/tmp/dependencies.cache.tmp" }}
-
-  compile_plugins_test:
-    <<: *default_java_job
-    working_directory: ~/codacy-plugins-test
-    steps:
-      - *restore_plugins_test_source_code
-      - *setup_plugins_test_dependencies_key
-      - *restore_plugins_test_dependencies
-      - *restore_plugins_test_build
-      - run:
-          name: Compile
-          command: sbt compile test:compile
-      - save_cache:
-          paths:
-            - ~/codacy-plugins-test/target
-            - ~/codacy-plugins-test/project/target
-            - ~/codacy-plugins-test/project/project
-          key: sbt-build-plugins-test-1.0.1-{{ .Branch }}-{{ .Revision }}
-
   test_plugin_jar:
     <<: *test_plugin
     environment:
@@ -361,18 +287,9 @@ workflows:
             branches:
               only:
                 - master
-      - checkout_plugins_test_code
-      - sbt_plugins_test_dependencies:
-          requires:
-            - checkout_plugins_test_code
-      - compile_plugins_test:
-          requires:
-            - sbt_plugins_test_dependencies
       - test_plugin_jar:
           requires:
-            - compile_plugins_test
             - publish_docker_locally_jar
       - test_plugin_native:
           requires:
-            - compile_plugins_test
             - publish_docker_locally_native
