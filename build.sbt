@@ -17,8 +17,8 @@ resolvers ++= Seq(
 )
 
 libraryDependencies ++= Seq(
-  "com.codacy" %% "codacy-engine-scala-seed" % "2.7.0" withSources(),
-  "org.scala-lang.modules" %% "scala-xml" % "1.0.4" withSources()
+  "com.codacy" %% "codacy-engine-scala-seed" % "2.7.10" withSources(),
+  "org.scala-lang.modules" %% "scala-xml" % "1.0.6" withSources()
 )
 
 enablePlugins(JavaAppPackaging)
