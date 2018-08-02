@@ -1,49 +1,47 @@
 import com.typesafe.sbt.packager.docker.{Cmd, ExecCmd}
 
-import scala.io.Source
-import scala.util.parsing.json.JSON
+name := "codacy-eslint"
 
-name := """codacy-engine-eslint"""
+version := "1.0.0-SNAPSHOT"
 
-version := "1.0-SNAPSHOT"
-
-val languageVersion = "2.11.7"
+val languageVersion = "2.12.6"
 
 scalaVersion := languageVersion
 
-resolvers ++= Seq(
-  "Sonatype OSS Snapshots" at "https://oss.sonatype.org/content/repositories/releases",
-  "Typesafe Repo" at "http://repo.typesafe.com/typesafe/releases/"
-)
+resolvers ++= Seq("Sonatype OSS Snapshots".at("https://oss.sonatype.org/content/repositories/releases"),
+                  "Typesafe Repo".at("http://repo.typesafe.com/typesafe/releases/"))
 
-libraryDependencies ++= Seq(
-  "com.codacy" %% "codacy-engine-scala-seed" % "2.7.10" withSources(),
-  "org.scala-lang.modules" %% "scala-xml" % "1.0.6" withSources()
-)
+libraryDependencies ++= Seq(("com.codacy" %% "codacy-engine-scala-seed" % "3.0.183").withSources(),
+                            ("org.scala-lang.modules" %% "scala-xml" % "1.0.6").withSources())
 
 enablePlugins(JavaAppPackaging)
 
 enablePlugins(DockerPlugin)
 
-version in Docker := "1.0"
+version in Docker := "1.0.0-SNAPSHOT"
 
 organization := "com.codacy"
 
-lazy val toolVersion = TaskKey[String]("Retrieve the version of the underlying tool from patterns.json")
-
+lazy val toolVersion = taskKey[String]("Retrieve the version of the underlying tool from patterns.json")
 toolVersion := {
-  val jsonFile = (resourceDirectory in Compile).value / "docs" / "patterns.json"
-  val toolMap = JSON.parseFull(Source.fromFile(jsonFile).getLines().mkString)
-    .getOrElse(throw new Exception("patterns.json is not a valid json"))
-    .asInstanceOf[Map[String, String]]
-  toolMap.getOrElse[String]("version", throw new Exception("Failed to retrieve 'version' from patterns.json"))
+  import better.files.File
+  import play.api.libs.json.{JsString, JsValue, Json}
+
+  val jsonFile = resourceDirectory.in(Compile).value / "docs" / "patterns.json"
+  val patternsJsonValues = Json.parse(File(jsonFile.toPath).contentAsString).as[Map[String, JsValue]]
+
+  patternsJsonValues
+    .collectFirst {
+      case ("version", JsString(version)) => version
+    }
+    .getOrElse(throw new Exception("Failed to retrieve version from docs/patterns.json"))
 }
 
 def installAll(toolVersion: String) =
   s"""apk update &&
      |apk add bash curl nodejs-npm &&
      |npm install -g npm@5 &&
-     |npm install -g eslint@${toolVersion} &&
+     |npm install -g eslint@$toolVersion &&
      |npm install -g babel-eslint@8.0.3 &&
      |npm install -g eslint-plugin-import@2.9.0 &&
      |npm install -g eslint-plugin-jsx-a11y@6.0.3 &&
@@ -107,17 +105,21 @@ def installAll(toolVersion: String) =
      |npm install -g eslint-plugin-redux-saga@0.8.0 &&
      |npm install -g eslint-config-gatsby-standard@1.2.0 &&
      |rm -rf /tmp/* &&
-     |rm -rf /var/cache/apk/*""".stripMargin.replaceAll(System.lineSeparator(), " ")
+     |rm -rf /var/cache/apk/*""".stripMargin
+    .replaceAll(System.lineSeparator(), " ")
 
-mappings in Universal <++= (resourceDirectory in Compile) map { (resourceDir: File) =>
-  val src = resourceDir / "docs"
-  val dest = "/docs"
+mappings.in(Universal) ++= resourceDirectory
+  .in(Compile)
+  .map { resourceDir: File =>
+    val src = resourceDir / "docs"
+    val dest = "/docs"
 
-  for {
-    path <- (src ***).get
-    if !path.isDirectory
-  } yield path -> path.toString.replaceFirst(src.toString, dest)
-}
+    (for {
+      path <- better.files.File(src.toPath).listRecursively()
+      if !path.isDirectory
+    } yield path.toJava -> path.toString.replaceFirst(src.toString, dest)).toSeq
+  }
+  .value
 
 val dockerUser = "docker"
 val dockerGroup = "docker"
@@ -130,14 +132,13 @@ dockerBaseImage := "openjdk:8-jre-alpine"
 
 dockerCommands := {
   dockerCommands.dependsOn(toolVersion).value.flatMap {
-    case cmd@(Cmd("ADD", _)) => List(
-      Cmd("RUN", "adduser -u 2004 -D docker"),
-      cmd,
-      Cmd("RUN", installAll(toolVersion.value)),
-      Cmd("RUN", "mv /opt/docker/docs /docs"),
-      ExecCmd("RUN", Seq("chown", "-R", s"$dockerUser:$dockerGroup", "/docs"): _*),
-      Cmd("ENV", "NODE_PATH /usr/lib/node_modules")
-    )
+    case cmd @ Cmd("ADD", _) =>
+      List(Cmd("RUN", "adduser -u 2004 -D docker"),
+           cmd,
+           Cmd("RUN", installAll(toolVersion.value)),
+           Cmd("RUN", "mv /opt/docker/docs /docs"),
+           ExecCmd("RUN", Seq("chown", "-R", s"$dockerUser:$dockerGroup", "/docs"): _*),
+           Cmd("ENV", "NODE_PATH /usr/lib/node_modules"))
     case other => List(other)
   }
 }
