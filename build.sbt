@@ -104,6 +104,7 @@ def installAll(toolVersion: String) =
      |npm install -g eslint-plugin-sfdx@1.0 &&
      |npm install -g eslint-plugin-redux-saga@0.8.0 &&
      |npm install -g eslint-config-gatsby-standard@1.2.0 &&
+     |npm install -g eslint-plugin-react-intl@1.1.2 &&
      |rm -rf /tmp/* &&
      |rm -rf /var/cache/apk/*""".stripMargin
     .replaceAll(System.lineSeparator(), " ")
