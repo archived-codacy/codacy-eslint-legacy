@@ -37,7 +37,7 @@ object ESLint extends Tool {
 
       val command = List("eslint") ++
         (if (configuration.nonEmpty) Some("--no-eslintrc") else None) ++
-        List("-f", "checkstyle", "--ext", ".js", "--ext", ".jsx", "-o", s"${outputFile.toJava.getCanonicalPath}") ++ toolConfiguration ++ filesToLint
+        List("-f", "checkstyle", "--ext", ".js", "--ext", ".jsm", "--ext", ".jsx", "--ext", ".vue", "--ext", ".json", "-o", s"${outputFile.toJava.getCanonicalPath}") ++ toolConfiguration ++ filesToLint
 
       CommandRunner.exec(command, Some(File(source.path).toJava)) match {
         case Right(resultFromTool) =>
