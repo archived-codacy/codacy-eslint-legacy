@@ -64,7 +64,7 @@ def installAll(toolVersion: String) =
      |npm install -g eslint-plugin-standard@3.0.1 &&
      |npm install -g eslint-config-standard@10.2.1 &&
      |npm install -g eslint-config-strongloop@2.1.0 &&
-     |npm install -g eslint-plugin-vue@2.1.0 &&
+     |npm install -g eslint-plugin-vue@4.7.1 &&
      |npm install -g eslint-config-vue@2.0.2 &&
      |npm install -g eslint-config-winedirect@1.0.0 &&
      |npm install -g lint-staged@4.0.2 &&
