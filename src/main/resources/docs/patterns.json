@@ -1165,6 +1165,11 @@
       "category": "CodeStyle"
     },
     {
+      "patternId": "prefer-object-spread",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
       "patternId": "prefer-spread",
       "level": "Info",
       "category": "CodeStyle"
