@@ -1296,6 +1296,29 @@
       "category": "CodeStyle"
     },
     {
+      "patternId": "max-lines-per-function",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "max",
+          "default": 50
+        },
+        {
+          "name": "skipBlankLines",
+          "default": false
+        },
+        {
+          "name": "skipComments",
+          "default": false
+        },
+        {
+          "name": "IIFEs",
+          "default": false
+        }
+      ]
+    },
+    {
       "patternId": "max-params",
       "level": "Warning",
       "category": "CodeStyle"
