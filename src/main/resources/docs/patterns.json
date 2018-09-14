@@ -1270,6 +1270,17 @@
       "category": "CodeStyle"
     },
     {
+      "patternId": "max-classes-per-file",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "unnamedParam",
+          "default": 0
+        }
+      ]
+    },
+    {
       "patternId": "max-depth",
       "level": "Warning",
       "category": "CodeStyle"
