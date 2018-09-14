@@ -1474,6 +1474,11 @@
       "category": "CodeStyle"
     },
     {
+      "patternId": "no-async-promise-executor",
+      "level": "Error",
+      "category": "ErrorProne"
+    },
+    {
       "patternId": "no-comma-dangle",
       "level": "Info",
       "category": "CodeStyle"
