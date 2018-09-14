@@ -984,6 +984,11 @@
       ]
     },
     {
+      "patternId": "require-atomic-updates",
+      "level": "Error",
+      "category": "ErrorProne"
+    },
+    {
       "patternId": "require-jsdoc",
       "level": "Info",
       "category": "CodeStyle"
