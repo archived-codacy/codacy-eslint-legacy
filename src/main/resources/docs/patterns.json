@@ -1349,6 +1349,11 @@
       "category": "ErrorProne"
     },
     {
+      "patternId": "no-misleading-character-class",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
       "patternId": "no-mixed-operators",
       "level": "Warning",
       "category": "CodeStyle"
