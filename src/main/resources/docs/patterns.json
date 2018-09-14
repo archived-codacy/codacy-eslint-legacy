@@ -523,11 +523,6 @@
       ]
     },
     {
-      "patternId": "no-catch-shadow",
-      "level": "Warning",
-      "category": "ErrorProne"
-    },
-    {
       "patternId": "no-delete-var",
       "level": "Warning",
       "category": "CodeStyle"
