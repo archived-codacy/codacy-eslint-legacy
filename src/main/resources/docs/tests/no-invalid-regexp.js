@@ -4,7 +4,6 @@
 RegExp('[');
 //#Err: no-invalid-regexp
 RegExp('.', 'z');
-//#Err: no-invalid-regexp
 new RegExp('\\');
 
 
