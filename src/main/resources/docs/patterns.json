@@ -1,6 +1,6 @@
 {
   "name": "eslint",
-  "version": "4.15.0",
+  "version": "5.7.0",
   "patterns": [
     {
       "patternId": "comma-dangle",
@@ -523,11 +523,6 @@
       ]
     },
     {
-      "patternId": "no-catch-shadow",
-      "level": "Warning",
-      "category": "ErrorProne"
-    },
-    {
       "patternId": "no-delete-var",
       "level": "Warning",
       "category": "CodeStyle"
@@ -989,9 +984,19 @@
       ]
     },
     {
+      "patternId": "require-atomic-updates",
+      "level": "Error",
+      "category": "ErrorProne"
+    },
+    {
       "patternId": "require-jsdoc",
       "level": "Info",
       "category": "CodeStyle"
+    },
+    {
+      "patternId": "require-unicode-regexp",
+      "level": "Warning",
+      "category": "ErrorProne"
     },
     {
       "patternId": "semi-spacing",
@@ -1160,6 +1165,11 @@
       "category": "CodeStyle"
     },
     {
+      "patternId": "prefer-object-spread",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
       "patternId": "prefer-spread",
       "level": "Info",
       "category": "CodeStyle"
@@ -1260,6 +1270,17 @@
       "category": "CodeStyle"
     },
     {
+      "patternId": "max-classes-per-file",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "unnamedParam",
+          "default": 0
+        }
+      ]
+    },
+    {
       "patternId": "max-depth",
       "level": "Warning",
       "category": "CodeStyle"
@@ -1273,6 +1294,29 @@
       "patternId": "max-lines",
       "level": "Warning",
       "category": "CodeStyle"
+    },
+    {
+      "patternId": "max-lines-per-function",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "max",
+          "default": 50
+        },
+        {
+          "name": "skipBlankLines",
+          "default": false
+        },
+        {
+          "name": "skipComments",
+          "default": false
+        },
+        {
+          "name": "IIFEs",
+          "default": false
+        }
+      ]
     },
     {
       "patternId": "max-params",
@@ -1301,6 +1345,11 @@
     },
     {
       "patternId": "no-bitwise",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "no-misleading-character-class",
       "level": "Warning",
       "category": "ErrorProne"
     },
@@ -1423,6 +1472,11 @@
       "patternId": "no-arrow-condition",
       "level": "Info",
       "category": "CodeStyle"
+    },
+    {
+      "patternId": "no-async-promise-executor",
+      "level": "Error",
+      "category": "ErrorProne"
     },
     {
       "patternId": "no-comma-dangle",
