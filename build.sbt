@@ -136,7 +136,7 @@ dockerBaseImage := "openjdk:8-jre-alpine"
 dockerCommands := {
   dockerCommands.dependsOn(toolVersion).value.flatMap {
     case cmd @ Cmd("ADD", _) =>
-      List(Cmd("RUN", "adduser -u 2004 -D docker"),
+      List(Cmd("RUN", s"adduser -u 2004 -D $dockerUser"),
            cmd,
            Cmd("RUN", installAll(toolVersion.value)),
            Cmd("RUN", "mv /opt/docker/docs /docs"),
