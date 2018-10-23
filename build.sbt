@@ -106,6 +106,7 @@ def installAll(toolVersion: String) =
      |npm install -g eslint-config-gatsby-standard@1.2.0 &&
      |npm install -g eslint-plugin-react-intl@1.1.2 &&
      |npm install -g eslint-plugin-json@1.2.1 &&
+     |npm install -g eslint-plugin-cypress@2.0.1 &&
      |rm -rf /tmp/* &&
      |rm -rf /var/cache/apk/*""".stripMargin
     .replaceAll(System.lineSeparator(), " ")
@@ -135,7 +136,7 @@ dockerBaseImage := "openjdk:8-jre-alpine"
 dockerCommands := {
   dockerCommands.dependsOn(toolVersion).value.flatMap {
     case cmd @ Cmd("ADD", _) =>
-      List(Cmd("RUN", "adduser -u 2004 -D docker"),
+      List(Cmd("RUN", s"adduser -u 2004 -D $dockerUser"),
            cmd,
            Cmd("RUN", installAll(toolVersion.value)),
            Cmd("RUN", "mv /opt/docker/docs /docs"),
