@@ -107,6 +107,7 @@ def installAll(toolVersion: String) =
      |npm install -g eslint-plugin-react-intl@1.1.2 &&
      |npm install -g eslint-plugin-json@1.2.1 &&
      |npm install -g eslint-plugin-cypress@2.0.1 &&
+     |npm install -g @prodigy/eslint-config-prodigy &&
      |rm -rf /tmp/* &&
      |rm -rf /var/cache/apk/*""".stripMargin
     .replaceAll(System.lineSeparator(), " ")
