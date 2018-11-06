@@ -1839,6 +1839,31 @@
       "category": "ErrorProne"
     },
     {
+      "patternId": "babel_no-invalid-this",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "babel_quotes",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "babel_semi",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "babel_no-unused-expressions",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
+      "patternId": "babel_valid-typeof",
+      "level": "Warning",
+      "category": "ErrorProne"
+    },
+    {
       "patternId": "mocha_no-exclusive-tests",
       "level": "Warning",
       "category": "ErrorProne"

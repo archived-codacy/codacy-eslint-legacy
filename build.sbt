@@ -42,7 +42,7 @@ def installAll(toolVersion: String) =
      |apk add bash curl nodejs-npm &&
      |npm install -g npm@5 &&
      |npm install -g eslint@$toolVersion &&
-     |npm install -g babel-eslint@8.0.3 &&
+     |npm install -g babel-eslint@10.0.1 &&
      |npm install -g eslint-plugin-import@2.9.0 &&
      |npm install -g eslint-plugin-jsx-a11y@6.0.3 &&
      |npm install -g eslint-plugin-react@7.8.2 &&
@@ -89,7 +89,7 @@ def installAll(toolVersion: String) =
      |npm install -g eslint-config-xo-react@0.13.0 &&
      |npm install -g eslint-config-xo-space@0.16.0 &&
      |npm install -g eslint-plugin-angular@3.1.1 &&
-     |npm install -g eslint-plugin-babel@4.1.2 &&
+     |npm install -g eslint-plugin-babel@5.2.0 &&
      |npm install -g eslint-plugin-backbone@2.1.1 &&
      |npm install -g eslint-plugin-flowtype@2.35.1 &&
      |npm install -g eslint-plugin-html@3.2.2 &&
