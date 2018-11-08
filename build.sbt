@@ -50,8 +50,8 @@ def installAll(toolVersion: String) =
      |npm install -g eslint-plugin-jest@21.15.0 &&
      |npm install -g eslint-import-resolver-webpack@0.8.3 &&
      |npm install -g eslint-import-resolver-node@0.3.1 &&
-     |npm install -g eslint-config-airbnb-base@12.1.0 &&
-     |npm install -g eslint-config-airbnb@16.1.0 &&
+     |npm install -g eslint-config-airbnb-base@13.1.0 &&
+     |npm install -g eslint-config-airbnb@17.1.0 &&
      |npm install -g eslint-config-angular@0.5.0 &&
      |npm install -g eslint-config-apiconnect@2.0.1 &&
      |npm install -g eslint-config-drupal@3.0.0 &&
