@@ -2009,6 +2009,11 @@
       "category": "CodeStyle"
     },
     {
+      "patternId": "jsx-a11y_label-has-associated-control",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
       "patternId": "jsx-a11y_lang",
       "level": "Info",
       "category": "CodeStyle"
