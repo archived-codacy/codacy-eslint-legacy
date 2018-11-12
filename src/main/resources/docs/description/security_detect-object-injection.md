@@ -7,6 +7,6 @@ variable[key] = value;
 
 ```
 
-[More information](https://blog.liftsecurity.io/2015/01/14/the-dangers-of-square-bracket-notation/)
+[More information](https://web.archive.org/web/20150430062816/https://blog.liftsecurity.io/2015/01/15/the-dangers-of-square-bracket-notation)
 
 [Source](https://github.com/nodesecurity/eslint-plugin-security#detect-object-injection)
