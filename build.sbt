@@ -109,6 +109,7 @@ def installAll(toolVersion: String) =
      |npm install -g eslint-plugin-json@1.2.1 &&
      |npm install -g eslint-plugin-cypress@2.0.1 &&
      |npm install -g @prodigy/eslint-config-prodigy &&
+     |npm install -g eslint-plugin-ember-suave@1.0.0 &&
      |rm -rf /tmp/* &&
      |rm -rf /var/cache/apk/*""".stripMargin
     .replaceAll(System.lineSeparator(), " ")
