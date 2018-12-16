@@ -46,6 +46,7 @@ def installAll(toolVersion: String) =
      |npm install -g eslint-plugin-import@2.9.0 &&
      |npm install -g eslint-plugin-jsx-a11y@6.1.2 &&
      |npm install -g eslint-plugin-react@7.8.2 &&
+     |npm install -g eslint-plugin-react-native@3.5.0 &&
      |npm install -g webpack@3.6.0 &&
      |npm install -g eslint-plugin-jest@21.15.0 &&
      |npm install -g eslint-import-resolver-webpack@0.8.3 &&
