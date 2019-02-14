@@ -3,14 +3,14 @@
 
 if (a) {
 
-//ok
+  //ok
   b=c;
 
   //#Info: indent
     b=c;
   //#Info: indent
-function foo(d) {  
+function foo(d) {
     //#Info: indent
-       e=f;        
+       e=f;
   }
 }
