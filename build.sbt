@@ -72,8 +72,7 @@ def installAll(toolVersion: String) =
      |npm install -g lint-staged@4.0.2 &&
      |npm install -g eslint-config-dbk@2.0.0 &&
      |npm install -g eslint-config-google@0.9.1 &&
-     |npm install -g prettier@1.9.2 &&
-     |npm install -g eslint-plugin-prettier@2.6.0 &&
+     |npm install -g prettier@1.16.4 &&
      |npm install -g eslint-config-prettier@4.0.0 &&
      |npm install -g eslint-config-signavio-test@2.0.0 &&
      |npm install -g eslint-config-signavio@3.2.0 &&
