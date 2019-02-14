@@ -45,11 +45,11 @@ def installAll(toolVersion: String) =
      |npm install -g npm@5 &&
      |npm install -g eslint@${toolVersion} &&
      |npm install -g babel-eslint@8.0.3 &&
-     |npm install -g eslint-plugin-import@2.7.0 &&
-     |npm install -g eslint-plugin-jsx-a11y@5.1.1 &&
-     |npm install -g eslint-plugin-react@7.2.1 &&
+     |npm install -g eslint-plugin-import@2.16.0 &&
+     |npm install -g eslint-plugin-jsx-a11y@6.2.1 &&
+     |npm install -g eslint-plugin-react@7.12.4 &&
      |npm install -g webpack@3.6.0 &&
-     |npm install -g eslint-plugin-jest@21.15.0 &&
+     |npm install -g eslint-plugin-jest@22.2.2 &&
      |npm install -g eslint-import-resolver-webpack@0.8.3 &&
      |npm install -g eslint-import-resolver-node@0.3.1 &&
      |npm install -g eslint-config-airbnb-base@12.1.0 &&
@@ -74,7 +74,7 @@ def installAll(toolVersion: String) =
      |npm install -g eslint-config-google@0.9.1 &&
      |npm install -g prettier@1.9.2 &&
      |npm install -g eslint-plugin-prettier@2.6.0 &&
-     |npm install -g eslint-config-prettier@2.9.0 &&
+     |npm install -g eslint-config-prettier@4.0.0 &&
      |npm install -g eslint-config-signavio-test@2.0.0 &&
      |npm install -g eslint-config-signavio@3.2.0 &&
      |npm install -g eslint-config-simplifield@7.0.1 &&
@@ -93,7 +93,7 @@ def installAll(toolVersion: String) =
      |npm install -g eslint-plugin-angular@3.1.1 &&
      |npm install -g eslint-plugin-babel@4.1.2 &&
      |npm install -g eslint-plugin-backbone@2.1.1 &&
-     |npm install -g eslint-plugin-flowtype@2.35.1 &&
+     |npm install -g eslint-plugin-flowtype@3.4.1 &&
      |npm install -g eslint-plugin-html@3.2.2 &&
      |npm install -g eslint-plugin-lodash@2.4.5 &&
      |npm install -g eslint-plugin-meteor@4.1.4 &&
