@@ -42,7 +42,7 @@ def installAll(toolVersion: String) =
      |apk add bash curl nodejs-npm &&
      |npm install -g npm@5 &&
      |npm install -g eslint@$toolVersion &&
-     |npm install -g babel-eslint@8.0.3 &&
+     |npm install -g babel-eslint@10.0.1 &&
      |npm install -g eslint-plugin-import@2.16.0 &&
      |npm install -g eslint-plugin-jsx-a11y@6.2.1 &&
      |npm install -g eslint-plugin-react@7.12.4 &&
