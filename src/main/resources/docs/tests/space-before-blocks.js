@@ -32,10 +32,10 @@ if (a) {
   c();
 }
 
-function a() {}
+function a2() {}
 
 for (;;) {
   b();
 }
 
-try {} catch(a) {}
+try {} catch(a2) {}

@@ -6,6 +6,6 @@ function a() {
 	return /foo/.test("bar");
 }
 
-function a() {
+function a2() {
     return (/foo/).test("bar");
 }

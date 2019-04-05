@@ -7,5 +7,5 @@ function foo() {
 }
 
 
-var foo = function() {
+var foo2 = function() {
 }

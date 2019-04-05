@@ -10,7 +10,7 @@ function foo() {
     	let norf;    
 }
 
-function foo() {
+function foo2() {
     	var bar, baz;   
 	let qux, norf;    
 }
