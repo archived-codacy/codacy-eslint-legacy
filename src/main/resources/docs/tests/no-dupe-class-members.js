@@ -6,19 +6,19 @@ class Foo {
 		console.log("hello"); 
 	} 
 	//#Warn: no-dupe-class-members
-	bar() { 
+	bar() {
 		console.log("goodbye"); 
 	} 
 }
 var foo = new Foo(); 
 foo.bar(); 
 
-class Foo {
+class Foo2 {
   bar() { }
   qux() { }
 }
 
-class Foo {
+class Foo3 {
   get bar() { }
   set bar(value) { }
 }

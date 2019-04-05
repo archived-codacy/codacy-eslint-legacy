@@ -5,7 +5,7 @@
 	 return 10; 
 }
 
-function* foo() {
+function* foo2() {
 	yield 5;
 	return 10;
 }

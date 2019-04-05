@@ -6,7 +6,7 @@ function loadData (err, data) {
     doSomething();
 }
 
-function loadData (err, data) {
+function loadData2 (err, data) {
     if (err) {
         console.log(err.stack);
     }

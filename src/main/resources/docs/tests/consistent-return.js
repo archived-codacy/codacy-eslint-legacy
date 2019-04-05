@@ -11,7 +11,7 @@ function doSomething(condition) {
     }
 }
 
-function doSomething(condition) {
+function doSomething2(condition) {
 
     if (condition) {
         return true;

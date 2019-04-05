@@ -9,7 +9,7 @@ function foo(n) {
     arguments.callee(n - 1);
 }
 
-function foo(n) {
+function foo2(n) {
     if (n <= 0) {
         return;
     }

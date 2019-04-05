@@ -7,13 +7,13 @@ class A extends B {
 		super(); 
 	} 
 } 
-class A extends B { 
+class C extends D {
 	constructor() {
 		//#Err: no-this-before-super
 		super.foo();
 		super(); 
 	} 
-} class A extends B { 
+} class E extends F {
 	constructor() { 
 		//#Err: no-this-before-super
 		super(this.foo()); 

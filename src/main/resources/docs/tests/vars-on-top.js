@@ -9,7 +9,7 @@ function doSomething() {
     var second;               
 }
 
-function doSomething() {
+function doSomething2() {
     var first;
     var second;
     if (true) {

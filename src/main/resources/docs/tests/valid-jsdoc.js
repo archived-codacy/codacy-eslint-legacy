@@ -15,6 +15,6 @@ function foo(num1) {
  * A description
  * @returns Something awesome
  */
-function foo() {
+function foo2() {
   // ...
 }
