@@ -39,8 +39,17 @@ object ESLint extends Tool {
         (if (configuration.nonEmpty) Some("--no-eslintrc") else None) ++
         List("-f", "checkstyle", "--ext", ".js,.jsm,.jsx,.vue,.json", "-o", s"${outputFile.toJava.getCanonicalPath}") ++ toolConfiguration ++ filesToLint
 
+      println("\n\n ||Running:|| \n\n")
+      println(s"""cmd: \n\n ${command.mkString(" ")} \n\n""")
+      println(s"""path: ${source.path} \n\n""")
+      println("\n\n |||| \n\n")
+
       CommandRunner.exec(command, Some(File(source.path).toJava)) match {
         case Right(resultFromTool) =>
+          println("\n\n ||Result raw from tool|| \n\n")
+          println(s"stdout: \n\n ${resultFromTool.stdout} \n\n")
+          println(s"stderr: \n\n ${resultFromTool.stderr} \n\n")
+          println("\n\n |||| \n\n")
           parseToolResult(outputFile) match {
             case s @ Success(_) => s
             case Failure(e) =>
@@ -70,8 +79,24 @@ object ESLint extends Tool {
     }
 
     Try {
+      val rawContent = scala.io.Source.fromFile(outputFile.toJava).getLines().mkString("\n")
+      println("\n\n ||TOOL RESULT ON XML FILE|| \n\n")
+      println(s"$rawContent")
+      println("\n\n |||| \n\n")
+
       val xmlParsed = XML.loadFile(outputFile.toJava)
-      parseToolResult(xmlParsed).filterNot(blacklisted)
+
+      println("\n\n ||TOOL RESULT PARSED TO XML|| \n\n")
+      println(s"$xmlParsed")
+      println("\n\n |||| \n\n")
+
+      val filteredResult = parseToolResult(xmlParsed).filterNot(blacklisted)
+
+      println("\n\n ||TOOL RESULT PARSED TO XML FILTERED|| \n\n")
+      println(s"$filteredResult")
+      println("\n\n |||| \n\n")
+
+      filteredResult
     } match {
       case s @ Success(_) => s
       case Failure(e) =>
@@ -156,7 +181,14 @@ object ESLint extends Tool {
          |  "rules": {${rules.mkString(",")}}
          |}""".stripMargin
 
-    FileHelper.createTmpFile(content, "config", ".json").toString
+    val location = FileHelper.createTmpFile(content, "config", ".json").toString
+
+    println("\n\n ||Config file|| \n\n")
+    println(s"location: \n\n $location \n\n")
+    println(s"stderr: \n\n $content \n\n")
+    println("\n\n |||| \n\n")
+
+    location
   }
 
   private def patternToConfig(pattern: Pattern.Definition): String = {
