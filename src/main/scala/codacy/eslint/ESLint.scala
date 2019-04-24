@@ -37,7 +37,8 @@ object ESLint extends Tool {
 
       val command = List("eslint") ++
         (if (configuration.nonEmpty) Some("--no-eslintrc") else None) ++
-        List("-f", "checkstyle", "--ext", ".js,.jsm,.jsx,.vue,.json", "-o", s"${outputFile.toJava.getCanonicalPath}") ++ toolConfiguration ++ filesToLint
+        List("-f", "checkstyle", "--ext", ".js,.jsm,.jsx,.vue,.json,.ts,.tsx",
+          "-o", s"${outputFile.toJava.getCanonicalPath}") ++ toolConfiguration ++ filesToLint
 
       CommandRunner.exec(command, Some(File(source.path).toJava)) match {
         case Right(resultFromTool) =>
@@ -151,9 +152,21 @@ object ESLint extends Tool {
          |    "react",
          |    "security",
          |    "standard",
-         |    "vue"
+         |    "vue",
+         |    "@typescript-eslint"
          |  ],
-         |  "rules": {${rules.mkString(",")}}
+         |  "rules": {${rules.mkString(",")}},
+         |  "overrides": [
+         |    {
+         |      "files": ["*.ts", "*.tsx"],
+         |      "parser": "@typescript-eslint/parser",
+         |      "parserOptions": {
+         |        "ecmaFeatures": {
+         |          "jsx": true
+         |        }
+         |      }
+         |    }
+         |  ]
          |}""".stripMargin
 
     FileHelper.createTmpFile(content, "config", ".json").toString
