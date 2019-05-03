@@ -153,7 +153,8 @@ object ESLint extends Tool {
          |    "security",
          |    "standard",
          |    "vue",
-         |    "@typescript-eslint"
+         |    "@typescript-eslint",
+         |    "relay"
          |  ],
          |  "rules": {${rules.mkString(",")}},
          |  "overrides": [
