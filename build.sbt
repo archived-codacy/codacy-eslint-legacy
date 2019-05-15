@@ -115,6 +115,7 @@ def installAll(toolVersion: String) =
      |npm install -g @typescript-eslint/eslint-plugin@1.6.0 &&
      |npm install -g @typescript-eslint/parser@1.6.0 &&
      |npm install -g eslint-plugin-relay@1.3.1 &&
+     |npm install -g eslint-config-kentcdodds@14.3.2 &&
      |rm -rf /tmp/* &&
      |rm -rf /var/cache/apk/*""".stripMargin
     .replaceAll(System.lineSeparator(), " ")
