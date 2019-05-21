@@ -1,5 +1,17 @@
 [
   {
+    "patternId": "no-useless-catch",
+    "title": "Disallow unnecessary catch clauses",
+    "description": "Disallow unnecessary catch clauses.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "prefer-named-capture-group",
+    "title": "Suggest using named capture group in regular expression ",
+    "description": "Enforce using named capture group in regular expression.",
+    "timeToFix": 5
+  },
+  {
     "patternId": "comma-dangle",
     "title": "Enforce Dangling Commas",
     "description": "Enforces consistent use of trailing commas in object and array literals",
