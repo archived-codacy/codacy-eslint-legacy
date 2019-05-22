@@ -1,7 +1,17 @@
 {
   "name": "eslint",
-  "version": "5.8.0",
+  "version": "5.16.0",
   "patterns": [
+    {
+      "patternId": "no-useless-catch",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "prefer-named-capture-group",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
     {
       "patternId": "comma-dangle",
       "level": "Warning",
