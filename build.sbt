@@ -109,6 +109,7 @@ def installAll(toolVersion: String) =
      |npm install -g eslint-plugin-react-intl@1.1.2 &&
      |npm install -g eslint-plugin-json@1.2.1 &&
      |npm install -g eslint-plugin-cypress@2.0.1 &&
+     |npm install -g eslint-plugin-chai-friendly@0.4.1 &&
      |npm install -g @prodigy/eslint-config-prodigy &&
      |npm install -g eslint-plugin-ember-suave@1.0.0 &&
      |npm install -g typescript@3.4.1 &&
