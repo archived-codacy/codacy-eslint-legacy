@@ -3,6 +3,195 @@
   "version": "5.16.0",
   "patterns": [
     {
+      "patternId": "no-assigning-return-values",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "no-unnecessary-waiting",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "assertion-before-screenshot",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "import_no-cycle",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "import_no-named-export",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "import_no-duplicates",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "import_no-useless-path-segments",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "noUselessIndex",
+          "default": false
+        }
+      ]
+    },
+    {
+      "patternId": "import_prefer-inline-snapshots",
+      "level": "Warning",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "vue_array-bracket-spacing",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "vue_arrow-spacing",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "vue_block-spacing",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "vue_brace-style",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "unnamedParam",
+          "default": "1tbs"
+        },
+        {
+          "name": "allowSingleLine",
+          "default": false
+        }
+      ]
+    },
+    {
+      "patternId": "vue_camelcase",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "properties",
+          "default": "always"
+        }
+      ]
+    },
+    {
+      "patternId": "vue_comma-dangle",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "comma-dangle",
+          "default": "never"
+        }
+      ]
+    },
+    {
+      "patternId": "vue_eqeqeq",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "unnamedParam",
+          "default": "smart"
+        }
+      ]
+    },
+    {
+      "patternId": "vue_key-spacing",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "vue_match-component-file-name",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "shouldMatchCase",
+          "default": false
+        },
+        {
+          "name": "extensions",
+          "default": [
+            "jsx"
+          ]
+        }
+      ]
+    },
+    {
+      "patternId": "vue_no-boolean-default",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "unnamedParam",
+          "default": "no-default"
+        }
+      ]
+    },
+    {
+      "patternId": "vue_no-restricted-syntax",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "vue_object-curly-spacing",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "unnamedParam",
+          "default": "never"
+        }
+      ]
+    },
+    {
+      "patternId": "vue_space-infix-ops",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "vue_space-unary-ops",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "vue_v-on-function-call",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "unnamedParam",
+          "default": "never"
+        }
+      ]
+    },
+    {
+      "patternId": "no-jasmin-globals",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "control-has-associated-label",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
       "patternId": "no-useless-catch",
       "level": "Info",
       "category": "CodeStyle"
