@@ -1,5 +1,223 @@
 [
   {
+    "patternId": "no-assigning-return-values",
+    "title": "No Assigning return values",
+    "description": "You rarely have to ever use const, let, or var in Cypress. If you’re using them, it’s usually a sign you’re doing it wrong.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "no-unnecessary-waiting",
+    "title": "Unnecessary wait for cy.request()",
+    "description": "Waiting here is unnecessary since the cy.request() command will not resolve until it receives a response from your server.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "assertion-before-screenshot",
+    "title": "Assertion Before Screenshot",
+    "description": "Prevents taking screenshots without assertions.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "import_no-cycle",
+    "title": "No import cycle",
+    "description": "Prevents resolvable path back to this module via its dependencies.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "import_no-named-export",
+    "title": "No named exports",
+    "description": "Prohibit named exports",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "import_no-duplicates",
+    "title": "No duplicate import statements",
+    "description": "Reports if a resolved path is imported more than once",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "import_no-useless-path-segments",
+    "title": "No useless import path segments",
+    "description": "Prevent unnecessary path segments in import and require statements",
+    "timeToFix": 5,
+    "parameters": [
+      {
+        "name": "noUselessIndex",
+        "description": "If you want to detect unnecessary /index or /index.js imports in your paths, you can enable the option noUselessIndex. [true, false]"
+      }
+    ]
+  },
+  {
+    "patternId": "import_prefer-inline-snapshots",
+    "title": "Suggest using inline snapshots",
+    "description": "Triggers a warning if toMatchSnapshot() or toThrowErrorMatchingSnapshot is used to capture a snapshot",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "vue_array-bracket-spacing",
+    "title": "Vue - Array bracket spacing",
+    "description": "Enforce consistent spacing inside array brackets",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "vue_arrow-spacing",
+    "title": "Vue - Arrow spacing",
+    "description": "Enforce consistent spacing before and after the arrow in arrow functions",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "vue_block-spacing",
+    "title": "Vue - Block spacing",
+    "description": "Disallow or enforce spaces inside of blocks after opening block and before closing block",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "vue_brace-style",
+    "title": "Vue - Brace style",
+    "description": "Enforce consistent brace style for blocks",
+    "timeToFix": 5,
+    "parameters": [
+      {
+        "name": "unnamedParam",
+        "description": "Brace style to enforces. [1tbs, stroustrup, allman]"
+      },
+      {
+        "name": "allowSingleLine",
+        "description": "Allows the opening and closing braces for a block to be on the same line. [true, false]"
+      }
+    ]
+  },
+  {
+    "patternId": "vue_camelcase",
+    "title": "Vue - Camelcase",
+    "description": "Enforce camelcase naming convention",
+    "timeToFix": 5,
+    "parameters": [
+      {
+        "name": "properties",
+        "description": "Specifies if this pattern should always check for property names [always, never]"
+      }
+    ]
+  },
+  {
+    "patternId": "vue_comma-dangle",
+    "title": "Vue - Comma dangle",
+    "description": "Require or disallow trailing commas",
+    "timeToFix": 5,
+    "parameters": [
+      {
+        "name": "comma-dangle",
+        "description": "The style of trailing commas [never, always, always-multiline]"
+      }
+    ]
+  },
+  {
+    "patternId": "vue_eqeqeq",
+    "title": "Vue - Eqeqeq",
+    "description": "Require the use of === and !==",
+    "timeToFix": 5,
+    "parameters": [
+      {
+        "name": "unnamedParam",
+        "description": "The style of equality to follow [smart, allow-null]"
+      }
+    ]
+  },
+  {
+    "patternId": "vue_key-spacing",
+    "title": "Vue - Key spacing",
+    "description": "Enforce consistent spacing between keys and values in object literal properties",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "vue_match-component-file-name",
+    "title": "Vue - Match component file name",
+    "description": "Require component name property to match its file name",
+    "timeToFix": 5,
+    "parameters": [
+      {
+        "name": "shouldMatchCase",
+        "description": "Indicating if component's name should also match its file name case. [true, false]"
+      },
+      {
+        "name": "extensions",
+        "description": "any combination of \".jsx\", \".vue\" and \".js\" extensions. [jsx, vue, js"
+      }
+    ]
+  },
+  {
+    "patternId": "vue_no-boolean-default",
+    "title": "Vue - No boolean default",
+    "description": "Disallow boolean defaults",
+    "timeToFix": 5,
+    "parameters": [
+      {
+        "name": "unnamedParam",
+        "description": "Enforces that the default can be set but must be set to false. [true, false]"
+      }
+    ]
+  },
+  {
+    "patternId": "vue_no-restricted-syntax",
+    "title": "Vue - No restricted syntax",
+    "description": "Disallow specified syntax",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "vue_object-curly-spacing",
+    "title": "Vue - Object curly spacing",
+    "description": "Enforce consistent spacing inside braces",
+    "timeToFix": 5,
+    "parameters": [
+      {
+        "name": "unnamedParam",
+        "description": "Specifies if you always want a space inside of curly braces [always, never]"
+      }
+    ]
+  },
+  {
+    "patternId": "vue_require-direct-export",
+    "title": "Vue - Require direct export",
+    "description": "Require the component to be directly exported",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "vue_space-infix-ops",
+    "title": "Vue - Space infix ops",
+    "description": "Require spacing around infix operators",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "vue_space-unary-ops",
+    "title": "Vue - Space unary ops",
+    "description": "Enforce consistent spacing before or after unary operators",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "vue_v-on-function-call",
+    "title": "Vue - On function call",
+    "description": "Enforce or forbid parentheses after method calls without arguments in v-on directives",
+    "timeToFix": 5,
+    "parameters": [
+      {
+        "name": "unnamedParam",
+        "description": "Always use parentheses in v-on directives. Never use parentheses in v-on directives for method calls without arguments [always, never]"
+      }
+    ]
+  },
+  {
+    "patternId": "no-jasmin-globals",
+    "title": "Disallow Jasmine globals",
+    "description": "Reports on any usage of Jasmine globals which is not ported to Jest",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "control-has-associated-label",
+    "title": "Controls have associated labels",
+    "description": "Enforce that a control (an interactive element) has a text label",
+    "timeToFix": 5
+  },
+  {
     "patternId": "no-useless-catch",
     "title": "Disallow unnecessary catch clauses",
     "description": "Disallow unnecessary catch clauses.",

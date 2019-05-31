@@ -40,15 +40,15 @@ toolVersion := {
 def installAll(toolVersion: String) =
   s"""apk update &&
      |apk add bash curl nodejs-npm &&
-     |npm install -g npm@5 &&
+     |npm install -g npm@6 &&
      |npm install -g eslint@$toolVersion &&
      |npm install -g babel-eslint@10.0.1 &&
-     |npm install -g eslint-plugin-import@2.9.0 &&
-     |npm install -g eslint-plugin-jsx-a11y@6.1.2 &&
-     |npm install -g eslint-plugin-react@7.11.1 &&
+     |npm install -g eslint-plugin-import@2.17.2 &&
+     |npm install -g eslint-plugin-jsx-a11y@6.2.1 &&
+     |npm install -g eslint-plugin-react@7.13.0 &&
      |npm install -g eslint-plugin-react-native@3.5.0 &&
-     |npm install -g webpack@3.6.0 &&
-     |npm install -g eslint-plugin-jest@21.15.0 &&
+     |npm install -g webpack@4.32.2 &&
+     |npm install -g eslint-plugin-jest@22.6.4 &&
      |npm install -g eslint-import-resolver-webpack@0.8.3 &&
      |npm install -g eslint-import-resolver-node@0.3.1 &&
      |npm install -g eslint-config-airbnb-base@13.1.0 &&
@@ -66,15 +66,15 @@ def installAll(toolVersion: String) =
      |npm install -g eslint-config-standard@10.2.1 &&
      |npm install -g eslint-config-standard-react@7.0.2 &&
      |npm install -g eslint-config-strongloop@2.1.0 &&
-     |npm install -g eslint-plugin-vue@5.0.0 &&
+     |npm install -g eslint-plugin-vue@5.2.2 &&
      |npm install -g eslint-config-vue@2.0.2 &&
      |npm install -g eslint-config-winedirect@1.0.0 &&
-     |npm install -g lint-staged@4.0.2 &&
+     |npm install -g lint-staged@8.1.7 &&
      |npm install -g eslint-config-dbk@2.0.0 &&
      |npm install -g eslint-config-google@0.9.1 &&
-     |npm install -g prettier@1.15.2 &&
-     |npm install -g eslint-plugin-prettier@3.0.0 &&
-     |npm install -g eslint-config-prettier@3.3.0 &&
+     |npm install -g prettier@1.17.1 &&
+     |npm install -g eslint-plugin-prettier@3.1.0 &&
+     |npm install -g eslint-config-prettier@4.3.0 &&
      |npm install -g eslint-config-signavio-test@2.0.0 &&
      |npm install -g eslint-config-signavio@3.2.0 &&
      |npm install -g eslint-config-simplifield@7.0.1 &&
@@ -93,7 +93,7 @@ def installAll(toolVersion: String) =
      |npm install -g eslint-plugin-angular@3.1.1 &&
      |npm install -g eslint-plugin-babel@5.2.0 &&
      |npm install -g eslint-plugin-backbone@2.1.1 &&
-     |npm install -g eslint-plugin-flowtype@2.35.1 &&
+     |npm install -g eslint-plugin-flowtype@3.9.1 &&
      |npm install -g eslint-plugin-html@3.2.2 &&
      |npm install -g eslint-plugin-lodash@2.4.5 &&
      |npm install -g eslint-plugin-meteor@4.1.4 &&
@@ -108,13 +108,13 @@ def installAll(toolVersion: String) =
      |npm install -g eslint-config-gatsby-standard@1.2.0 &&
      |npm install -g eslint-plugin-react-intl@1.1.2 &&
      |npm install -g eslint-plugin-json@1.2.1 &&
-     |npm install -g eslint-plugin-cypress@2.0.1 &&
+     |npm install -g eslint-plugin-cypress@2.2.1 &&
      |npm install -g eslint-plugin-chai-friendly@0.4.1 &&
      |npm install -g @prodigy/eslint-config-prodigy &&
      |npm install -g eslint-plugin-ember-suave@1.0.0 &&
-     |npm install -g typescript@3.4.1 &&
-     |npm install -g @typescript-eslint/eslint-plugin@1.6.0 &&
-     |npm install -g @typescript-eslint/parser@1.6.0 &&
+     |npm install -g typescript@3.4.5 &&
+     |npm install -g @typescript-eslint/eslint-plugin@1.9.0 &&
+     |npm install -g @typescript-eslint/parser@1.9.0 &&
      |npm install -g eslint-plugin-relay@1.3.1 &&
      |rm -rf /tmp/* &&
      |rm -rf /var/cache/apk/*""".stripMargin
