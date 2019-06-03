@@ -86,7 +86,7 @@ def installAll(toolVersion: String) =
      |npm install -g eslint-plugin-no-unsafe-innerhtml@1.0.16 &&
      |npm install -g eslint-plugin-hapi@4.1.0 &&
      |npm install -g eslint-plugin-security@1.4.0 &&
-     |npm install -g eslint-plugin-sorting@0.3.0 &&
+     |npm install -g eslint-plugin-sorting@0.4.1 &&
      |npm install -g eslint-config-xo@0.18.2 &&
      |npm install -g eslint-config-xo-react@0.13.0 &&
      |npm install -g eslint-config-xo-space@0.16.0 &&
