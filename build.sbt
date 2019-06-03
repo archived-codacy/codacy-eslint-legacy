@@ -81,7 +81,7 @@ def installAll(toolVersion: String) =
      |npm install -g eslint-plugin-drupal@0.3.1 &&
      |npm install -g eslint-plugin-lodash-fp@2.1.3 &&
      |npm install -g eslint-plugin-mocha@4.11.0 &&
-     |npm install -g eslint-plugin-chai-expect@1.1.1 &&
+     |npm install -g eslint-plugin-chai-expect@2.0.1 &&
      |npm install -g eslint-plugin-mongodb@0.2.4 &&
      |npm install -g eslint-plugin-no-unsafe-innerhtml@1.0.16 &&
      |npm install -g eslint-plugin-hapi@4.1.0 &&
