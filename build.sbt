@@ -43,7 +43,7 @@ def installAll(toolVersion: String) =
      |npm install -g npm@6 &&
      |npm install -g eslint@$toolVersion &&
      |npm install -g babel-eslint@10.0.1 &&
-     |npm install -g eslint-plugin-import@2.17.2 &&
+     |npm install -g eslint-plugin-import@2.17.3 &&
      |npm install -g eslint-plugin-jsx-a11y@6.2.1 &&
      |npm install -g eslint-plugin-react@7.13.0 &&
      |npm install -g eslint-plugin-react-native@3.5.0 &&
