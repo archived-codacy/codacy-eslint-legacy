@@ -90,7 +90,7 @@ def installAll(toolVersion: String) =
      |npm install -g eslint-config-xo@0.18.2 &&
      |npm install -g eslint-config-xo-react@0.13.0 &&
      |npm install -g eslint-config-xo-space@0.16.0 &&
-     |npm install -g eslint-plugin-angular@3.1.1 &&
+     |npm install -g eslint-plugin-angular@4.0.1 &&
      |npm install -g eslint-plugin-babel@5.2.0 &&
      |npm install -g eslint-plugin-backbone@2.1.1 &&
      |npm install -g eslint-plugin-flowtype@3.9.1 &&

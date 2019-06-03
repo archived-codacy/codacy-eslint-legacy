@@ -1,5 +1,359 @@
 [
   {
+    "patternId": "angular_typecheck-string",
+    "title": "AngularJS - Typecheck string",
+    "description": "You should use the angular.isString method instead of the default JavaScript implementation.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "angular_typecheck-object",
+    "title": "AngularJS - Typecheck object",
+    "description": "You should use the angular.isObject method instead of the default JavaScript implementation.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "angular_typecheck-number",
+    "title": "AngularJS - Typecheck number",
+    "description": "You should use the angular.isNumber method instead of the default JavaScript implementation.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "angular_typecheck-function",
+    "title": "AngularJS - Typecheck function",
+    "description": "You should use the angular.isFunction method instead of the default JavaScript implementation.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "angular_typecheck-date",
+    "title": "AngularJS - Typecheck date",
+    "description": "You should use the angular.isDate method instead of the default JavaScript implementation.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "angular_typecheck-array",
+    "title": "AngularJS - Typecheck array",
+    "description": "You should use the angular.isArray method instead of the default JavaScript implementation.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "angular_on-destroy",
+    "title": "AngularJS - On destroy spell check",
+    "description": "Check for common misspelling $on('destroy', ...).",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "angular_window-service",
+    "title": "AngularJS - Window service",
+    "description": "Instead of the default window object, you should prefer the AngularJS wrapper service $window.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "angular_timeout-service",
+    "title": "AngularJS - Timeout service",
+    "description": "Instead of the default setTimeout function, you should use the AngularJS wrapper service $timeout.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "angular_no-jquery-angularelement",
+    "title": "AngularJS - No angular mock",
+    "description": "Require to use angular.mock methods directly.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "angular_no-angular-mock",
+    "title": "AngularJS - No angular mock",
+    "description": "Require to use angular.mock methods directly.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "angular_log",
+    "title": "AngularJS - Log",
+    "description": "Use $log service instead of console for the methods 'log', 'debug', 'error', 'info', 'warn'.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "angular_json-functions",
+    "title": "AngularJS - Interval service",
+    "description": "Instead of the default setInterval function, you should use the AngularJS wrapper service $interval",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "angular_interval-service",
+    "title": "AngularJS - Interval service",
+    "description": "Instead of the default setInterval function, you should use the AngularJS wrapper service $interval",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "angular_foreach",
+    "title": "AngularJS - Foreach",
+    "description": "use the angular.forEach method instead of the default JavaScript implementation [].forEach.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "angular_document-service",
+    "title": "AngularJS - Document service",
+    "description": "Instead of the default document object, you should prefer the AngularJS wrapper service $document.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "angular_definedundefined",
+    "title": "AngularJS - Defined undefined",
+    "description": "Use the angular.isUndefined or angular.isDefined methods instead of using the keyword undefined",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "angular_angularelement",
+    "title": "AngularJS - Angular element",
+    "description": "The angular.element method should be used instead of the $ or jQuery object",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "angular_watchers-execution",
+    "title": "AngularJS - Watchers execution",
+    "description": "Require and specify consistent use $scope.digest() or $scope.apply()",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "angular_rest-service",
+    "title": "AngularJS - No different rest services",
+    "description": "Disallow different rest service and specify one of '$http', '$resource', 'Restangular'.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "angular_one-dependency-per-line",
+    "title": "AngularJS - No service method",
+    "description": "Require all DI parameters to be located in their own line.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "angular_no-service-method",
+    "title": "AngularJS - No service method",
+    "description": "You should prefer the factory() method instead of service().",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "angular_module-dependency-order",
+    "title": "AngularJS - Module Dependency Order",
+    "description": "Require a consistent order of module dependencies.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "angular_function-type",
+    "title": "AngularJS - Function type",
+    "description": "Require and specify a consistent function style for components.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "angular_dumb-inject",
+    "title": "AngularJS - Dumb inject",
+    "description": "Unit test inject functions should only consist of assignments from injected values to describe block variables.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "angular_di",
+    "title": "AngularJS - DI",
+    "description": "Require a consistent DI syntax.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "angular_di-order",
+    "title": "AngularJS - DI Order",
+    "description": "Require DI parameters to be sorted alphabetically.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "angular_value-name",
+    "title": "AngularJS - Value name",
+    "description": "Require and specify a prefix for all value names.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "angular_service-name",
+    "title": "AngularJS - Service name",
+    "description": "Require and specify a prefix for all service names.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "angular_provider-name",
+    "title": "AngularJS - Provider name",
+    "description": "Require and specify a prefix for all provider names.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "angular_module-name",
+    "title": "AngularJS - Module name",
+    "description": "Require and specify a prefix for all module names.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "angular_filter-name",
+    "title": "AngularJS - Filter name",
+    "description": "Require and specify a prefix for all filter names.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "angular_file-name",
+    "title": "AngularJS - File name",
+    "description": "Require and specify a consistent component name pattern.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "angular_factory-name",
+    "title": "AngularJS - Factory name",
+    "description": "Require and specify a prefix for all factory names.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "angular_directive-name",
+    "title": "AngularJS - Directive name",
+    "description": "Require and specify a prefix for all directive names.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "angular_controller-name",
+    "title": "AngularJS - Controller name",
+    "description": "Require and specify a prefix for all controller names.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "angular_constant-name",
+    "title": "AngularJS - Constant name",
+    "description": "Require and specify a prefix for all constant names.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "angular_component-name",
+    "title": "AngularJS - Component name",
+    "description": "Require and specify a prefix for all component names.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "angular_no-http-callback",
+    "title": "AngularJS - No HTTP callback",
+    "description": "Disallow the $http success and error function.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "angular_no-directive-replace",
+    "title": "AngularJS - Disallow the deprecated directive replace property",
+    "description": "This rule disallows the replace attribute in a directive definition object.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "angular_no-cookiestore",
+    "title": "AngularJS - No cookiesstore",
+    "description": "In Angular 1.4, the $cookieStore service is now deprected.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "angular_prefer-component",
+    "title": "AngularJS - Prefer component",
+    "description": "Since AngularJS 1.5, we can use a new API when creating directives.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "angular_on-watch",
+    "title": "AngularJS - On watch",
+    "description": "Watch and On methods on the scope object should be assigned to a variable.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "angular_no-services",
+    "title": "AngularJS - Disallow DI of specified services",
+    "description": "Some services should be used only in a specific AngularJS service (Ajax-based service for example).",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "angular_no-run-logic",
+    "title": "AngularJS - Keep run functions clean and simple",
+    "description": "Initialization logic should be moved into a factory or service.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "angular_no-inline-template",
+    "title": "AngularJS - Disallow the use of inline templates",
+    "description": "Instead of using inline HTML templates, it is better to load the HTML from an external file.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "angular_no-controller",
+    "title": "AngularJS - Disallow use of controllers",
+    "description": "According to the Component-First pattern, we should avoid the use of AngularJS controller.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "angular_empty-controller",
+    "title": "AngularJS - Disallow empty controllers",
+    "description": "If you have one empty controller, maybe you have linked it in your Router configuration or in one of your views.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "angular_directive-restrict",
+    "title": "AngularJS - disallow any other directive restrict than 'A' or 'E'",
+    "description": "Not all directive restrictions may be desirable.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "angular_di-unused",
+    "title": "AngularJS - disallow unused DI parameters",
+    "description": "Unused dependencies should not be injected.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "angular_deferred",
+    "title": "AngularJS - Use $q(function(resolve, reject){}) instead of $q.deferred",
+    "description": "When you want to create a new promise, you should not use the $q.deferred anymore.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "angular_controller-as",
+    "title": "AngularJS - Disallow assignments to $scope in controllers",
+    "description": "You should not set properties on $scope in controllers.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "angular_controller-as-vm",
+    "title": "AngularJS - Require and specify a capture variable for this in controllers",
+    "description": "You should use a capture variable for 'this' when using the controllerAs syntax.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "angular_controller-as-route",
+    "title": "AngularJS - Require the use of controllerAs in routes or states",
+    "description": "You should use Angular's controllerAs syntax when defining routes or states.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "angular_component-limit",
+    "title": "AngularJS - Limit the number of angular components per file",
+    "description": "The number of AngularJS components in one file should be limited. The default limit is one.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "angular_no-private-call",
+    "title": "AngularJS - Disallow use of internal angular properties prefixed with $$",
+    "description": "All scope's properties/methods starting with $$ are used internally by AngularJS.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "angular_module-setter",
+    "title": "AngularJS - Disallow to assign modules to variables",
+    "description": "Declare modules without a variable using the setter syntax.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "angular_module-getter",
+    "title": "AngularJS - Enforce to reference modules with the getter syntax",
+    "description": "When using a module, avoid using a variable and instead use chaining with the getter syntax.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "angular_avoid-scope-typos",
+    "title": "AngularJS - Avoid mistakes when naming methods defined on the scope object",
+    "description": "For example, you want to use $scope.$watch instead of $scope.watch.",
+    "timeToFix": 5
+  },
+  {
     "patternId": "no-assigning-return-values",
     "title": "No Assigning return values",
     "description": "You rarely have to ever use const, let, or var in Cypress. If you’re using them, it’s usually a sign you’re doing it wrong.",
