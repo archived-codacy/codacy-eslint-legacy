@@ -3,6 +3,31 @@
   "version": "5.16.0",
   "patterns": [
     {
+      "patternId": "collection-ordering",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "method",
+          "default": "sortBy"
+        },
+        {
+          "name": "useArray",
+          "default": "always"
+        }
+      ]
+    },
+    {
+      "patternId": "prefer-find",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "prefer-immutable-method",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
       "patternId": "no-promise-without-done-fail",
       "level": "Info",
       "category": "CodeStyle"

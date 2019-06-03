@@ -1,5 +1,33 @@
 [
   {
+    "patternId": "collection-ordering",
+    "title": "Collection Ordering",
+    "description": "Lodash has two methods for sorting a collection by a specific order: sortBy and orderBy.",
+    "timeToFix": 5,
+    "parameters": [
+      {
+        "name": "method",
+        "description": "Which method should be used for ordering [sortBy, orderBy, orderByExplicit]"
+      },
+      {
+        "name": "useArray",
+        "description": "When to wrap the iterates and orders in arrays [always, as-needed]"
+      }
+    ]
+  },
+  {
+    "patternId": "prefer-find",
+    "title": "Prefer find",
+    "description": "Prefer _.find over _.filter followed by selecting the first result.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "prefer-immutable-method",
+    "title": "Prefer immutable methods",
+    "description": "Prefer a method that doesn't mutate the arguments when available.",
+    "timeToFix": 5
+  },
+  {
     "patternId": "no-promise-without-done-fail",
     "title": "No promise without done fail",
     "description": "Make sure that all uses of the promises include a catch(done.fail) within a suite.",
