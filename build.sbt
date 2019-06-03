@@ -107,7 +107,7 @@ def installAll(toolVersion: String) =
      |npm install -g eslint-plugin-redux-saga@0.8.0 &&
      |npm install -g eslint-config-gatsby-standard@1.2.0 &&
      |npm install -g eslint-plugin-react-intl@1.1.2 &&
-     |npm install -g eslint-plugin-json@1.2.1 &&
+     |npm install -g eslint-plugin-json@1.4.0 &&
      |npm install -g eslint-plugin-cypress@2.2.1 &&
      |npm install -g eslint-plugin-chai-friendly@0.4.1 &&
      |npm install -g @prodigy/eslint-config-prodigy &&
