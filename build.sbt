@@ -62,7 +62,7 @@ def installAll(toolVersion: String) =
      |npm install -g eslint-config-nodesecurity@1.3.1 &&
      |npm install -g eslint-plugin-node@5.1.1 &&
      |npm install -g eslint-plugin-promise@4.1.1 &&
-     |npm install -g eslint-plugin-standard@3.0.1 &&
+     |npm install -g eslint-plugin-standard@4.0.0 &&
      |npm install -g eslint-config-standard@10.2.1 &&
      |npm install -g eslint-config-standard-react@7.0.2 &&
      |npm install -g eslint-config-strongloop@2.1.0 &&
