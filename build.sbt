@@ -98,7 +98,7 @@ def installAll(toolVersion: String) =
      |npm install -g eslint-plugin-lodash@5.1.0 &&
      |npm install -g eslint-plugin-meteor@5.1.1 &&
      |npm install -g eslint-plugin-no-only-tests@2.3.0 &&
-     |npm install -g eslint-plugin-no-unsanitized@3.0.0 &&
+     |npm install -g eslint-plugin-no-unsanitized@3.0.2 &&
      |npm install -g eslint-config-rallycoding@3.2.0 &&
      |npm install -g eslint-config-react-app@3.0.5 &&
      |npm install -g eslint-config-react@1.1.7 &&
