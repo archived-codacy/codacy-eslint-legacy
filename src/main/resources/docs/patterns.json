@@ -3,6 +3,16 @@
   "version": "5.16.0",
   "patterns": [
     {
+      "patternId": "no-setup-in-describe",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "no-async-describe",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
       "patternId": "collection-ordering",
       "level": "Info",
       "category": "CodeStyle",

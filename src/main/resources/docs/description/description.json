@@ -1,5 +1,17 @@
 [
   {
+    "patternId": "no-setup-in-describe",
+    "title": "Disallow setup in describe blocks",
+    "description": "Looks for all function calls and use of the dot operator which are nested directly in a describe block.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "no-async-describe",
+    "title": "Disallow async functions passed to describe",
+    "description": "Disallows the use of an async function with describe.",
+    "timeToFix": 5
+  },
+  {
     "patternId": "collection-ordering",
     "title": "Collection Ordering",
     "description": "Lodash has two methods for sorting a collection by a specific order: sortBy and orderBy.",
