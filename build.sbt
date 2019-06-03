@@ -94,7 +94,7 @@ def installAll(toolVersion: String) =
      |npm install -g eslint-plugin-babel@5.3.0 &&
      |npm install -g eslint-plugin-backbone@2.1.1 &&
      |npm install -g eslint-plugin-flowtype@3.9.1 &&
-     |npm install -g eslint-plugin-html@3.2.2 &&
+     |npm install -g eslint-plugin-html@5.0.5 &&
      |npm install -g eslint-plugin-lodash@2.4.5 &&
      |npm install -g eslint-plugin-meteor@4.1.4 &&
      |npm install -g eslint-plugin-no-only-tests@2.0.0 &&
