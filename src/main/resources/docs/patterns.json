@@ -3,6 +3,11 @@
   "version": "5.16.0",
   "patterns": [
     {
+      "patternId": "no-promise-without-done-fail",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
       "patternId": "angular_typecheck-string",
       "level": "Info",
       "category": "CodeStyle"

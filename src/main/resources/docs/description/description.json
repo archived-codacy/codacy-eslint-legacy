@@ -1,5 +1,11 @@
 [
   {
+    "patternId": "no-promise-without-done-fail",
+    "title": "No promise without done fail",
+    "description": "Make sure that all uses of the promises include a catch(done.fail) within a suite.",
+    "timeToFix": 5
+  },
+  {
     "patternId": "angular_typecheck-string",
     "title": "AngularJS - Typecheck string",
     "description": "You should use the angular.isString method instead of the default JavaScript implementation.",

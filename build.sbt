@@ -102,7 +102,7 @@ def installAll(toolVersion: String) =
      |npm install -g eslint-config-rallycoding@3.2.0 &&
      |npm install -g eslint-config-react-app@3.0.5 &&
      |npm install -g eslint-config-react@1.1.7 &&
-     |npm install -g eslint-plugin-jasmine@2.9.3 &&
+     |npm install -g eslint-plugin-jasmine@2.10.1 &&
      |npm install -g eslint-plugin-sfdx@1.0 &&
      |npm install -g eslint-plugin-redux-saga@0.8.0 &&
      |npm install -g eslint-config-gatsby-standard@1.2.0 &&
