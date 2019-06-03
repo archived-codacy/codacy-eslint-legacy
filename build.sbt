@@ -96,7 +96,7 @@ def installAll(toolVersion: String) =
      |npm install -g eslint-plugin-flowtype@3.9.1 &&
      |npm install -g eslint-plugin-html@5.0.5 &&
      |npm install -g eslint-plugin-lodash@5.1.0 &&
-     |npm install -g eslint-plugin-meteor@4.1.4 &&
+     |npm install -g eslint-plugin-meteor@5.1.1 &&
      |npm install -g eslint-plugin-no-only-tests@2.0.0 &&
      |npm install -g eslint-plugin-no-unsanitized@3.0.0 &&
      |npm install -g eslint-config-rallycoding@3.2.0 &&
