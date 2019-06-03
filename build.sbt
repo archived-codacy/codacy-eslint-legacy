@@ -104,7 +104,7 @@ def installAll(toolVersion: String) =
      |npm install -g eslint-config-react@1.1.7 &&
      |npm install -g eslint-plugin-jasmine@2.10.1 &&
      |npm install -g eslint-plugin-sfdx@1.0 &&
-     |npm install -g eslint-plugin-redux-saga@0.8.0 &&
+     |npm install -g eslint-plugin-redux-saga@1.0.0 &&
      |npm install -g eslint-config-gatsby-standard@1.2.0 &&
      |npm install -g eslint-plugin-react-intl@1.1.2 &&
      |npm install -g eslint-plugin-json@1.4.0 &&
