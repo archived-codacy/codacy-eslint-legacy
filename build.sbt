@@ -60,6 +60,7 @@ def installAll(toolVersion: String) =
      |npm install -g eslint-config-es6@1.10.3 &&
      |npm install -g eslint-config-gatsby-standard@2.2.0 &&
      |npm install -g eslint-config-google@0.13.0 &&
+     |npm install -g eslint-config-kentcdodds@14.3.2 &&
      |npm install -g eslint-config-loopback@13.1.0 &&
      |npm install -g eslint-config-nodesecurity@1.3.1 &&
      |npm install -g eslint-config-prettier@4.3.0 &&
