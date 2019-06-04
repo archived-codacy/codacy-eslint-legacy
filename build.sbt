@@ -70,6 +70,7 @@ def installAll(toolVersion: String) =
      |npm install -g eslint-config-signavio-test@2.0.0 &&
      |npm install -g eslint-config-simplifield@9.0.0 &&
      |npm install -g eslint-config-standard@12.0.0 &&
+     |npm install -g eslint-config-standard-jsx &&
      |npm install -g eslint-config-standard-react@7.0.2 &&
      |npm install -g eslint-config-strongloop@2.1.0 &&
      |npm install -g eslint-config-vue@2.0.2 &&
