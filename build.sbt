@@ -102,7 +102,7 @@ def installAll(toolVersion: String) =
      |npm install -g eslint-plugin-lodash-fp@2.1.3 &&
      |npm install -g eslint-plugin-meteor@5.1.1 &&
      |npm install -g eslint-plugin-mocha@5.3.0 &&
-     |npm install -g eslint-plugin-mongodb@0.2.4 &&
+     |npm install -g eslint-plugin-mongodb@1.0.0 &&
      |npm install -g eslint-plugin-no-only-tests@2.3.0 &&
      |npm install -g eslint-plugin-no-unsafe-innerhtml@1.0.16 &&
      |npm install -g eslint-plugin-no-unsanitized@3.0.2 &&
