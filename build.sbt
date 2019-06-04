@@ -46,8 +46,8 @@ def installAll(toolVersion: String) =
      |npm install -g lint-staged@8.1.7 &&
      |npm install -g npm@6.9.0 &&
      |npm install -g prettier@1.17.1 &&
-     |npm install -g typescript@3.4.1 &&
-     |npm install -g webpack@4.32.2 &&
+     |npm install -g typescript@3.5.1 &&
+     |npm install -g webpack@4.33.0 &&
      |npm install -g babel-eslint@10.0.1 &&
      |npm install -g eslint@$toolVersion &&
      |npm install -g eslint-config-airbnb@17.1.0 &&
