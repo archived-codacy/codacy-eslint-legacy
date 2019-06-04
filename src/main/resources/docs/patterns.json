@@ -3,6 +3,341 @@
   "version": "5.16.0",
   "patterns": [
     {
+      "patternId": "no-setup-in-describe",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "no-async-describe",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "collection-ordering",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "method",
+          "default": "sortBy"
+        },
+        {
+          "name": "useArray",
+          "default": "always"
+        }
+      ]
+    },
+    {
+      "patternId": "prefer-find",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "prefer-immutable-method",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "no-promise-without-done-fail",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_typecheck-string",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_typecheck-object",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_typecheck-number",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_typecheck-function",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_typecheck-date",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_typecheck-array",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_on-destroy",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_window-service",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_timeout-service",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_no-jquery-angularelement",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_no-angular-mock",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_log",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_json-functions",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_interval-service",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_foreach",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_document-service",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_definedundefined",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_angularelement",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_watchers-execution",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_rest-service",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_one-dependency-per-line",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_no-service-method",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_module-dependency-order",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_function-type",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_dumb-inject",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_di",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_di-order",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_value-name",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_service-name",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_provider-name",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_module-name",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_filter-name",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_file-name",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_factory-name",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_directive-name",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_controller-name",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_constant-name",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_component-name",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_no-http-callback",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_no-directive-replace",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_no-cookiestore",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_prefer-component",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_on-watch",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_no-services",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_no-run-logic",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_no-inline-template",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_no-controller",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_empty-controller",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_directive-restrict",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_di-unused",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_deferred",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_controller-as",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_controller-as-vm",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_controller-as-route",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_component-limit",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_no-private-call",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_module-setter",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_module-getter",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
+      "patternId": "angular_avoid-scope-typos",
+      "level": "Info",
+      "category": "CodeStyle"
+    },
+    {
       "patternId": "no-assigning-return-values",
       "level": "Info",
       "category": "CodeStyle"
