@@ -43,7 +43,7 @@ def installAll(toolVersion: String) =
      |npm install -g @prodigy/eslint-config-prodigy@0.0.7 &&
      |npm install -g @typescript-eslint/eslint-plugin@1.9.0 &&
      |npm install -g @typescript-eslint/parser@1.9.0 &&
-     |npm install -g lint-staged@8.1.7 &&
+     |npm install -g lint-staged@8.2.0 &&
      |npm install -g npm@6.9.0 &&
      |npm install -g prettier@1.17.1 &&
      |npm install -g typescript@3.5.1 &&
