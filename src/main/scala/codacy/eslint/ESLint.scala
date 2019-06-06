@@ -137,6 +137,7 @@ object ESLint extends Tool {
          |    "angular",
          |    "babel",
          |    "backbone",
+         |    "compat",
          |    "chai-friendly",
          |    "flowtype",
          |    "html",
