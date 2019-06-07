@@ -43,11 +43,11 @@ def installAll(toolVersion: String) =
      |npm install -g @prodigy/eslint-config-prodigy@0.0.7 &&
      |npm install -g @typescript-eslint/eslint-plugin@1.9.0 &&
      |npm install -g @typescript-eslint/parser@1.9.0 &&
-     |npm install -g lint-staged@8.1.7 &&
+     |npm install -g lint-staged@8.2.0 &&
      |npm install -g npm@6.9.0 &&
      |npm install -g prettier@1.17.1 &&
-     |npm install -g typescript@3.4.1 &&
-     |npm install -g webpack@4.32.2 &&
+     |npm install -g typescript@3.5.1 &&
+     |npm install -g webpack@4.33.0 &&
      |npm install -g babel-eslint@10.0.1 &&
      |npm install -g eslint@$toolVersion &&
      |npm install -g eslint-config-airbnb@17.1.0 &&
@@ -60,6 +60,7 @@ def installAll(toolVersion: String) =
      |npm install -g eslint-config-es6@1.10.3 &&
      |npm install -g eslint-config-gatsby-standard@2.2.0 &&
      |npm install -g eslint-config-google@0.13.0 &&
+     |npm install -g eslint-config-kentcdodds@14.3.2 &&
      |npm install -g eslint-config-loopback@13.1.0 &&
      |npm install -g eslint-config-nodesecurity@1.3.1 &&
      |npm install -g eslint-config-prettier@4.3.0 &&
@@ -70,6 +71,7 @@ def installAll(toolVersion: String) =
      |npm install -g eslint-config-signavio-test@2.0.0 &&
      |npm install -g eslint-config-simplifield@9.0.0 &&
      |npm install -g eslint-config-standard@12.0.0 &&
+     |npm install -g eslint-config-standard-jsx &&
      |npm install -g eslint-config-standard-react@7.0.2 &&
      |npm install -g eslint-config-strongloop@2.1.0 &&
      |npm install -g eslint-config-vue@2.0.2 &&
@@ -84,6 +86,7 @@ def installAll(toolVersion: String) =
      |npm install -g eslint-plugin-backbone@2.1.1 &&
      |npm install -g eslint-plugin-chai-expect@2.0.1 &&
      |npm install -g eslint-plugin-chai-friendly@0.4.1 &&
+     |npm install -g eslint-plugin-compat@3.1.1 &&
      |npm install -g eslint-plugin-cypress@2.2.1 &&
      |npm install -g eslint-plugin-drupal@0.3.1 &&
      |npm install -g eslint-plugin-ember-suave@1.0.0 &&
@@ -99,8 +102,8 @@ def installAll(toolVersion: String) =
      |npm install -g eslint-plugin-lodash-fp@2.1.3 &&
      |npm install -g eslint-plugin-meteor@5.1.1 &&
      |npm install -g eslint-plugin-mocha@5.3.0 &&
-     |npm install -g eslint-plugin-mongodb@0.2.4 &&
-     |npm install -g eslint-plugin-no-only-tests@2.3.0 &&
+     |npm install -g eslint-plugin-mongodb@1.0.0 &&
+     |npm install -g eslint-plugin-no-only-tests@2.3.1 &&
      |npm install -g eslint-plugin-no-unsafe-innerhtml@1.0.16 &&
      |npm install -g eslint-plugin-no-unsanitized@3.0.2 &&
      |npm install -g eslint-plugin-node@5.1.1 &&
