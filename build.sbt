@@ -109,9 +109,10 @@ def installAll(toolVersion: String) =
      |npm install -g eslint-plugin-node@5.1.1 &&
      |npm install -g eslint-plugin-prettier@3.1.0 &&
      |npm install -g eslint-plugin-promise@4.1.1 &&
-     |npm install -g eslint-plugin-react@7.13.0 &&
+     |npm install -g eslint-plugin-react-hooks@1.6.0 &&
      |npm install -g eslint-plugin-react-intl@1.1.2 &&
      |npm install -g eslint-plugin-react-native@3.7.0 &&
+     |npm install -g eslint-plugin-react@7.13.0 &&
      |npm install -g eslint-plugin-redux-saga@1.0.0 &&
      |npm install -g eslint-plugin-relay@1.3.1 &&
      |npm install -g eslint-plugin-security@1.4.0 &&

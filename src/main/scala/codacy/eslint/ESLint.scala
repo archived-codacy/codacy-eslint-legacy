@@ -152,6 +152,7 @@ object ESLint extends Tool {
          |    "node",
          |    "promise",
          |    "react",
+         |    "react-hooks",
          |    "security",
          |    "standard",
          |    "vue",
