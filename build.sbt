@@ -4,7 +4,7 @@ name := "codacy-eslint"
 
 version := "1.0.0-SNAPSHOT"
 
-val languageVersion = "2.12.6"
+val languageVersion = "2.12.9"
 
 scalaVersion := languageVersion
 
@@ -120,6 +120,7 @@ def installAll(toolVersion: String) =
      |npm install -g eslint-plugin-sorting@0.4.1 &&
      |npm install -g eslint-plugin-standard@4.0.0 &&
      |npm install -g eslint-plugin-vue@5.2.2 &&
+     |npm install -g eslint-plugin-xss@0.1.9 &&
      |rm -rf /tmp/* &&
      |rm -rf /var/cache/apk/*""".stripMargin
     .replaceAll(System.lineSeparator(), " ")
