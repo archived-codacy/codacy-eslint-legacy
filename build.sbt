@@ -122,6 +122,7 @@ def installAll(toolVersion: String) =
      |npm install -g eslint-plugin-vue@5.2.2 &&
      |npm install -g eslint-plugin-xss@0.1.9 &&
      |npm install -g eslint-plugin-wdio@5.12.1 &&
+     |npm install -g eslint-import-resolver-babel-module@5.1.0 &&
      |rm -rf /tmp/* &&
      |rm -rf /var/cache/apk/*""".stripMargin
     .replaceAll(System.lineSeparator(), " ")
