@@ -40,6 +40,7 @@ toolVersion := {
 def installAll(toolVersion: String) =
   s"""apk update &&
      |apk add bash curl nodejs-npm &&
+     |npm install -g @lwc/eslint-plugin-lwc@0.8.0 &&
      |npm install -g @prodigy/eslint-config-prodigy@0.0.7 &&
      |npm install -g @typescript-eslint/eslint-plugin@1.9.0 &&
      |npm install -g @typescript-eslint/parser@1.9.0 &&
@@ -122,7 +123,6 @@ def installAll(toolVersion: String) =
      |npm install -g eslint-plugin-vue@5.2.2 &&
      |npm install -g eslint-plugin-xss@0.1.9 &&
      |npm install -g eslint-plugin-wdio@5.12.1 &&
-     |npm install -g eslint-plugin-lwc@0.8.0 &&
      |rm -rf /tmp/* &&
      |rm -rf /var/cache/apk/*""".stripMargin
     .replaceAll(System.lineSeparator(), " ")
