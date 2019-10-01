@@ -50,6 +50,7 @@ def installAll(toolVersion: String) =
      |npm install -g typescript@3.5.1 &&
      |npm install -g webpack@4.33.0 &&
      |npm install -g babel-eslint@10.0.1 &&
+     |npm install -g vue-eslint-parser@6.0.4 &&
      |npm install -g eslint@$toolVersion &&
      |npm install -g eslint-config-airbnb@17.1.0 &&
      |npm install -g eslint-config-airbnb-base@13.1.0 &&
