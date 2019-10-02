@@ -44,15 +44,9 @@ def installAll(toolVersion: String) =
      |npm install -g @prodigy/eslint-config-prodigy@0.0.7 &&
      |npm install -g @typescript-eslint/eslint-plugin@1.9.0 &&
      |npm install -g @typescript-eslint/parser@1.9.0 &&
-     |npm install -g lint-staged@8.2.0 &&
-     |npm install -g npm@6.9.0 &&
-     |npm install -g prettier@1.17.1 &&
-     |npm install -g typescript@3.5.1 &&
-     |npm install -g webpack@4.33.0 &&
      |npm install -g babel-eslint@10.0.1 &&
-     |npm install -g eslint@$toolVersion &&
-     |npm install -g eslint-config-airbnb@17.1.0 &&
      |npm install -g eslint-config-airbnb-base@13.1.0 &&
+     |npm install -g eslint-config-airbnb@17.1.0 &&
      |npm install -g eslint-config-angular@0.5.0 &&
      |npm install -g eslint-config-apiconnect@2.0.1 &&
      |npm install -g eslint-config-dbk@3.3.4 &&
@@ -66,20 +60,21 @@ def installAll(toolVersion: String) =
      |npm install -g eslint-config-nodesecurity@1.3.1 &&
      |npm install -g eslint-config-prettier@4.3.0 &&
      |npm install -g eslint-config-rallycoding@3.2.0 &&
-     |npm install -g eslint-config-react@1.1.7 &&
      |npm install -g eslint-config-react-app@4.0.1 &&
-     |npm install -g eslint-config-signavio@3.2.0 &&
+     |npm install -g eslint-config-react@1.1.7 &&
      |npm install -g eslint-config-signavio-test@2.0.0 &&
+     |npm install -g eslint-config-signavio@3.2.0 &&
      |npm install -g eslint-config-simplifield@9.0.0 &&
-     |npm install -g eslint-config-standard@12.0.0 &&
      |npm install -g eslint-config-standard-jsx &&
      |npm install -g eslint-config-standard-react@7.0.2 &&
+     |npm install -g eslint-config-standard@12.0.0 &&
      |npm install -g eslint-config-strongloop@2.1.0 &&
      |npm install -g eslint-config-vue@2.0.2 &&
      |npm install -g eslint-config-winedirect@1.1.0 &&
-     |npm install -g eslint-config-xo@0.26.0 &&
      |npm install -g eslint-config-xo-react@0.19.0 &&
      |npm install -g eslint-config-xo-space@0.21.0 &&
+     |npm install -g eslint-config-xo@0.26.0 &&
+     |npm install -g eslint-import-resolver-babel-module@5.1.0 &&
      |npm install -g eslint-import-resolver-node@0.3.2 &&
      |npm install -g eslint-import-resolver-webpack@0.11.1 &&
      |npm install -g eslint-plugin-angular@4.0.1 &&
@@ -99,8 +94,8 @@ def installAll(toolVersion: String) =
      |npm install -g eslint-plugin-jest@22.6.4 &&
      |npm install -g eslint-plugin-json@1.4.0 &&
      |npm install -g eslint-plugin-jsx-a11y@6.2.1 &&
-     |npm install -g eslint-plugin-lodash@5.1.0 &&
      |npm install -g eslint-plugin-lodash-fp@2.1.3 &&
+     |npm install -g eslint-plugin-lodash@5.1.0 &&
      |npm install -g eslint-plugin-meteor@5.1.1 &&
      |npm install -g eslint-plugin-mocha@5.3.0 &&
      |npm install -g eslint-plugin-mongodb@1.0.0 &&
@@ -121,9 +116,15 @@ def installAll(toolVersion: String) =
      |npm install -g eslint-plugin-sorting@0.4.1 &&
      |npm install -g eslint-plugin-standard@4.0.0 &&
      |npm install -g eslint-plugin-vue@5.2.2 &&
-     |npm install -g eslint-plugin-xss@0.1.9 &&
      |npm install -g eslint-plugin-wdio@5.12.1 &&
-     |npm install -g eslint-import-resolver-babel-module@5.1.0 &&
+     |npm install -g eslint-plugin-xss@0.1.9 &&
+     |npm install -g eslint@$toolVersion &&
+     |npm install -g lint-staged@8.2.0 &&
+     |npm install -g npm@6.9.0 &&
+     |npm install -g prettier@1.17.1 &&
+     |npm install -g typescript@3.5.1 &&
+     |npm install -g vue-eslint-parser@6.0.4 &&
+     |npm install -g webpack@4.33.0 &&
      |rm -rf /tmp/* &&
      |rm -rf /var/cache/apk/*""".stripMargin
     .replaceAll(System.lineSeparator(), " ")
