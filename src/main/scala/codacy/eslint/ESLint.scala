@@ -37,8 +37,12 @@ object ESLint extends Tool {
 
       val command = List("eslint") ++
         (if (configuration.nonEmpty) Some("--no-eslintrc") else None) ++
-        List("-f", "checkstyle", "--ext", ".js,.jsm,.jsx,.vue,.json,.ts,.tsx",
-          "-o", s"${outputFile.toJava.getCanonicalPath}") ++ toolConfiguration ++ filesToLint
+        List("-f",
+             "checkstyle",
+             "--ext",
+             ".js,.jsm,.jsx,.vue,.json,.ts,.tsx",
+             "-o",
+             s"${outputFile.toJava.getCanonicalPath}") ++ toolConfiguration ++ filesToLint
 
       CommandRunner.exec(command, Some(File(source.path).toJava)) match {
         case Right(resultFromTool) =>
@@ -229,7 +233,8 @@ object ESLint extends Tool {
   }
 
   private def unnamedListParameterToConfig(parameter: Parameter.Definition): List[String] = {
-    parameter.value.asOpt[List[JsValue]].fold(List.empty[String]) { params => params.map(param => Json.stringify(param))
+    parameter.value.asOpt[List[JsValue]].fold(List.empty[String]) { params =>
+      params.map(param => Json.stringify(param))
     }
   }
 

@@ -8,3 +8,4 @@
 .metals
 .bloop
 .DS_Store
+node_modules
