@@ -44,6 +44,7 @@ def installAll(toolVersion: String) =
      |npm install -g babel-eslint@10.0.1 &&
      |npm install -g eslint-config-airbnb-base@13.1.0 &&
      |npm install -g eslint-config-airbnb@17.1.0 &&
+     |npm install -g eslint-config-airbnb-typescript@6.0.0 &&
      |npm install -g eslint-config-angular@0.5.0 &&
      |npm install -g eslint-config-apiconnect@2.0.1 &&
      |npm install -g eslint-config-dbk@3.3.4 &&
@@ -62,6 +63,7 @@ def installAll(toolVersion: String) =
      |npm install -g eslint-config-signavio-test@2.0.0 &&
      |npm install -g eslint-config-signavio@3.2.0 &&
      |npm install -g eslint-config-simplifield@9.0.0 &&
+     |npm install -g eslint-config-somos@1.0.1 &&
      |npm install -g eslint-config-standard-jsx &&
      |npm install -g eslint-config-standard-react@7.0.2 &&
      |npm install -g eslint-config-standard@12.0.0 &&
