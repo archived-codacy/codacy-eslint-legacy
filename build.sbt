@@ -86,6 +86,7 @@ def installAll(toolVersion: String) =
      |npm install -g eslint-plugin-drupal@0.3.1 &&
      |npm install -g eslint-plugin-ember-suave@1.0.0 &&
      |npm install -g eslint-plugin-flowtype@3.9.1 &&
+     |npm install -g eslint-plugin-graphql@3.1.0 &&
      |npm install -g eslint-plugin-hapi@4.1.0 &&
      |npm install -g eslint-plugin-html@5.0.5 &&
      |npm install -g eslint-plugin-import@2.17.3 &&
