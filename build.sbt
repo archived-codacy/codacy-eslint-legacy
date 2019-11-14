@@ -51,6 +51,7 @@ def installAll(toolVersion: String) =
      |npm install -g eslint-config-drupal@4.0.1 &&
      |npm install -g eslint-config-es5@0.5.0 &&
      |npm install -g eslint-config-es6@1.10.3 &&
+     |npm install -g eslint-config-expo@6.0.0 &&
      |npm install -g eslint-config-gatsby-standard@2.2.0 &&
      |npm install -g eslint-config-google@0.13.0 &&
      |npm install -g eslint-config-kentcdodds@14.3.2 &&
