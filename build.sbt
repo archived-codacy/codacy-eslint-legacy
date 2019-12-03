@@ -118,6 +118,7 @@ def installAll(toolVersion: String) =
      |npm install -g eslint-plugin-vue@5.2.2 &&
      |npm install -g eslint-plugin-wdio@5.12.1 &&
      |npm install -g eslint-plugin-xss@0.1.9 &&
+     |npm install -g @react-native-community/eslint-config@0.0.5 &&
      |npm install -g eslint@$toolVersion &&
      |npm install -g lint-staged@8.2.0 &&
      |npm install -g npm@6.9.0 &&
