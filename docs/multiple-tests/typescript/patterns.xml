@@ -1,0 +1,5 @@
+<module name="root">
+    <module name="BeforeExecutionExclusionFileFilter">
+        <property name="fileNamePattern" value="\.eslintrc\.json"/>
+    </module>
+</module>

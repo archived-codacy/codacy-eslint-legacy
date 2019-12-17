@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<checkstyle version="4.3">
+    <file name="accessor-pairs.js">
+        <error source="strict" line="3" message="Use the global form of 'use strict'." severity="error" />
+        <error source="no-redeclare" line="10" message="'o' is already defined." severity="info" />
+        <error source="eol-last" line="18" message="Newline required at end of file but not found." severity="info" />
+    </file>
+</checkstyle>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<checkstyle version="4.3">
+    <file name="eslint-nathan-example.js">
+        <error source="react_no-deprecated" line="1" message="React.PropTypes is deprecated since React 15.5.0, use the npm module prop-types instead" severity="info" />
+        <error source="babel_object-curly-spacing" line="1" message="There should be no space before '}'." severity="info" />
+        <error source="babel_object-curly-spacing" line="1" message="There should be no space after '{'." severity="info" />
+        <error source="react_no-comment-textnodes" line="1" message="Definition for rule 'react/no-comment-textnodes' was not found." severity="info" />
+        <error source="react_require-extension" line="1" message="Definition for rule 'react/require-extension' was not found." severity="info" />
+        <error source="comma-dangle" line="10" message="Missing trailing comma." severity="info" />
+        <error source="no-unused-vars" line="15" message="'IndexLink' is assigned a value but never used." severity="info" />
+        <error source="react_no-deprecated" line="15" message="React.createClass is deprecated since React 15.5.0, use the npm module create-react-class instead" severity="info" />
+        <error source="jsx-quotes" line="17" message="Unexpected usage of doublequote." severity="info" />
+        <error source="comma-dangle" line="18" message="Missing trailing comma." severity="info" />
+    </file>
+</checkstyle>

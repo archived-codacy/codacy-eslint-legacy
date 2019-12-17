@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<checkstyle version="4.3">
+    <file name="example.js">
+        <error source="prettier_prettier" line="2" message="Replace `&quot;33&quot;` with `'33';`" severity="info" />
+    </file>
+</checkstyle>

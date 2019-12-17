@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<checkstyle version="4.3">
+    <file name="testFile.js">
+        <error source="id-length" line="1" message="Identifier name 's' is too short (&lt; 3)." severity="info" />
+        <error source="id-length" line="2" message="Identifier name 'iAmTooLongNobodyWillLikeMe' is too long (&gt; 15)." severity="info" />
+    </file>
+</checkstyle>

@@ -1,0 +1,8 @@
+<module name="root">
+    <module name="id-length">
+        <property name="min" value="3"/>
+        <property name="max" value="15"/>
+        <property name="properties" value="never"/>
+        <property name="exceptions" value="[&quot;iAmTooLongButImTheException&quot;]"/>
+    </module>
+</module>

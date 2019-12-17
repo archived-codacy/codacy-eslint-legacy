@@ -1,0 +1,6 @@
+<module name="root">
+    <module name="BeforeExecutionExclusionFileFilter">
+        <property name="fileNamePattern" value="\.eslintrc\.yaml"/>
+    </module>
+    <module name="accessor-pairs"/>
+</module>

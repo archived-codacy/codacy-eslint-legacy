@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "incremental": true,
+    "target": "es6",
+    "module": "commonjs",
+    "lib": [
+      "es2015",
+      "dom"
+    ],
+    "sourceMap": true,
+    "outDir": "dist",
+    "resolveJsonModule": true,
+    "strict": true,
+    "esModuleInterop": true
+  },
+  "include": ["src/**/*.ts", "package.json"],
+  "exclude": ["node_modules"]
+}
